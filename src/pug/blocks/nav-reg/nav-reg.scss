@@ -1,0 +1,28 @@
+.nav-reg {
+  @include list-reset;
+  @include display-center
+}
+
+.nav-reg__item:last-child {
+  margin-left: 21px;
+}
+
+.nav-reg__link {
+  padding: 8px 18px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color-purple;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  box-shadow: 2px 1000px 1px #fff inset;
+
+  &--color {
+    color: #ffffff;
+    box-shadow: none;
+  }
+}

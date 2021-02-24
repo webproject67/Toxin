@@ -1,0 +1,19 @@
+.nav-link {
+  @include list-reset;
+  @include display-center;
+
+  line-height: 17px;
+  color: $color-50;
+}
+
+.nav-link__item {
+  @include display-center;
+
+  margin-right: 1.4vw;
+}
+
+.nav-link__icon {
+  font-family: MaterialIcons;
+  font-size: 24px;
+  line-height: 20px;
+}
