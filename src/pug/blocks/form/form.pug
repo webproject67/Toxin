@@ -19,6 +19,28 @@ form.form
       input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
       label(class="form__label" for="input3") 
         span.form__icon expand_more
+      .form__select-options
+        .form__select-option
+          p.form__option взрослые
+          .form__btns 
+            input(class="form__btn" type="button" value="-")
+            span.form__number 2 
+            input(class="form__btn" type="button" value="+")
+        .form__select-option
+          p.form__option дети
+          .form__btns 
+            input(class="form__btn" type="button" value="-")
+            span.form__number 1 
+            input(class="form__btn" type="button" value="+")
+        .form__select-option
+          p.form__option младенцы
+          .form__btns 
+            input(class="form__btn" type="button" value="-")
+            span.form__number 0 
+            input(class="form__btn" type="button" value="+")
+        .form__buttons
+            input(class="form__button" type="button" value="очистить")
+            input(class="form__button" type="button" value="применить")
   .form__block-label 
     input(class="form__submit" type="submit" id="input4" value="подобрать номер")
     label(class="form__label" for="input4") 

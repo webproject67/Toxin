@@ -57,6 +57,12 @@
     line-height: 18px;
     color: $color-75;
   }
+
+  &:focus {
+    outline: none;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 2px;
+  }
 }
 
 .form__icon {
@@ -71,6 +77,67 @@
   &--color {
     color: #ffffff;
   }
+}
+
+.form__select-options {
+  position: absolute;
+  top: 43px;
+  left: 0;
+  z-index: 1;
+  max-width: 320px;
+  width: 100%;
+  padding: 0 6px 0 14px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+.form__select-option {
+  @include display-center
+}
+
+.form__option,
+.form__number {
+  margin: 12px 0 10px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
+}
+
+.form__btns {
+  @include display-center;
+
+  width: 92px;
+}
+
+.form__btn {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color-50;
+  background: transparent;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 22px;
+}
+
+.form__buttons {
+  @include display-center;
+
+  padding: 19px 0 12px;
+}
+
+.form__button {
+  padding: 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color-purple;
+  background: transparent;
+  border: none;
 }
 
 .form__submit {
