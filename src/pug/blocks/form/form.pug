@@ -1,0 +1,25 @@
+form.form
+  p.form__title Найдём номера под ваши пожелания
+  .form__block-inputs 
+    div(class="form__block-label form__block-label--width") 
+      p.form__desc прибытие
+      .form__block-input
+        input(class="form__input" type="text" id="input1" placeholder="ДД.ММ.ГГГГ" readonly)
+        label(class="form__label" for="input1") 
+          span.form__icon expand_more
+    div(class="form__block-label form__block-label--width") 
+      p.form__desc выезд
+      .form__block-input
+        input(class="form__input" type="text" id="input2" placeholder="ДД.ММ.ГГГГ" readonly)
+        label(class="form__label" for="input2") 
+          span.form__icon expand_more
+  div(class="form__block-label form__block-label--margin")
+    p.form__desc гости
+    .form__block-input
+      input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
+      label(class="form__label" for="input3") 
+        span.form__icon expand_more
+  .form__block-label 
+    input(class="form__submit" type="submit" id="input4" value="подобрать номер")
+    label(class="form__label" for="input4") 
+      span(class="form__icon form__icon--color") arrow_forward
