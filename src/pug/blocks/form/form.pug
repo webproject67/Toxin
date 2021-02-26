@@ -48,7 +48,7 @@ mixin form()
         span(class="form__icon form__icon--color") arrow_forward
 
 mixin form-registration()
-  form(class="form form--margin")
+  form(class="form form--margin-registration")
     p.form__title Регистрация аккаунта
     input(class="form__input form__input--margin form__input--placeholder" type="text" placeholder="Имя")
     input(class="form__input form__input--margin form__input--placeholder" type="text" placeholder="Фамилия")
@@ -78,3 +78,17 @@ mixin form-registration()
     .form__reg 
       p.form__text Уже есть аккаунт на Toxin
       a(class="form__link" href="sign-in.html") Войти
+
+mixin form-sign-in()
+  form(class="form form--margin-sign-in")
+    p.form__title Войти
+    div(class="form__block-input form__block-input--margin")
+      input(class="form__input form__input--placeholder" type="email" placeholder="Email")
+      input(class="form__input form__input--margin2 form__input--placeholder" type="password" placeholder="Пароль")
+    div(class="form__block-label")
+      input(class="form__submit" type="submit" id="input4" value="Войти")
+      label(class="form__label" for="input4") 
+        span(class="form__icon form__icon--color") arrow_forward
+    .form__reg 
+      p.form__text Нет аккаунта на Toxin?
+      a(class="form__link form__link--padding" href="registration.html") Создать
