@@ -1,47 +1,80 @@
-form.form
-  p.form__title Найдём номера под ваши пожелания
-  .form__block-inputs 
-    div(class="form__block-label form__block-label--width") 
-      p.form__desc прибытие
+mixin form()
+  form.form
+    p.form__title Найдём номера под ваши пожелания
+    .form__block-inputs 
+      div(class="form__block-label form__block-label--width") 
+        p.form__desc прибытие
+        .form__block-input
+          input(class="form__input" type="text" id="input1" placeholder="ДД.ММ.ГГГГ" readonly)
+          label(class="form__label" for="input1") 
+            span.form__icon expand_more
+      div(class="form__block-label form__block-label--width") 
+        p.form__desc выезд
+        .form__block-input
+          input(class="form__input" type="text" id="input2" placeholder="ДД.ММ.ГГГГ" readonly)
+          label(class="form__label" for="input2") 
+            span.form__icon expand_more
+    div(class="form__block-label form__block-label--margin-bottom")
+      p.form__desc гости
       .form__block-input
-        input(class="form__input" type="text" id="input1" placeholder="ДД.ММ.ГГГГ" readonly)
-        label(class="form__label" for="input1") 
+        input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
+        label(class="form__label" for="input3") 
           span.form__icon expand_more
-    div(class="form__block-label form__block-label--width") 
-      p.form__desc выезд
-      .form__block-input
-        input(class="form__input" type="text" id="input2" placeholder="ДД.ММ.ГГГГ" readonly)
-        label(class="form__label" for="input2") 
-          span.form__icon expand_more
-  div(class="form__block-label form__block-label--margin")
-    p.form__desc гости
-    .form__block-input
-      input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
-      label(class="form__label" for="input3") 
-        span.form__icon expand_more
-      .form__select-options
-        .form__select-option
-          p.form__option взрослые
-          .form__btns 
-            input(class="form__btn" type="button" value="-")
-            span.form__number 2 
-            input(class="form__btn" type="button" value="+")
-        .form__select-option
-          p.form__option дети
-          .form__btns 
-            input(class="form__btn" type="button" value="-")
-            span.form__number 1 
-            input(class="form__btn" type="button" value="+")
-        .form__select-option
-          p.form__option младенцы
-          .form__btns 
-            input(class="form__btn form__btn--opacity" type="button" value="-")
-            span.form__number 0 
-            input(class="form__btn" type="button" value="+")
-        .form__buttons
-            input(class="form__button" type="button" value="очистить")
-            input(class="form__button" type="button" value="применить")
-  .form__block-label 
-    input(class="form__submit" type="submit" id="input4" value="подобрать номер")
-    label(class="form__label" for="input4") 
-      span(class="form__icon form__icon--color") arrow_forward
+        .form__select-options
+          .form__select-option
+            p.form__option взрослые
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option дети
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 1 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option младенцы
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__buttons
+              input(class="form__button" type="button" value="очистить")
+              input(class="form__button" type="button" value="применить")
+    .form__block-label 
+      input(class="form__submit" type="submit" id="input4" value="подобрать номер")
+      label(class="form__label" for="input4") 
+        span(class="form__icon form__icon--color") arrow_forward
+
+mixin form-registration()
+  form(class="form form--margin")
+    p.form__title Регистрация аккаунта
+    input(class="form__input form__input--margin form__input--placeholder" type="text" placeholder="Имя")
+    input(class="form__input form__input--margin form__input--placeholder" type="text" placeholder="Фамилия")
+    ul.form__radio-list 
+      li.form__radio-item 
+        input(class="form__radio visually-hidden--focusable" type="radio" id="man" name="man-woman" checked)
+        label(class="form__radio-label" for="man") Мужчина
+      li.form__radio-item
+        input(class="form__radio visually-hidden--focusable" type="radio" id="woman" name="man-woman") 
+        label(class="form__radio-label" for="woman") Женщина
+    div(class="form__block-label") 
+        p.form__desc дата рождения
+        .form__block-input
+          input(class="form__input form__input--placeholder" type="text" placeholder="ДД.ММ.ГГГГ" readonly)
+    div(class="form__block-label form__block-label--margin-top") 
+        p.form__desc данные для входа в сервис
+        .form__block-input
+          input(class="form__input form__input--placeholder" type="email" placeholder="Email")
+          input(class="form__input form__input--margin2 form__input--placeholder" type="password" placeholder="Пароль")
+    .form__block-checkbox
+      input(class="form__checkbox visually-hidden--focusable" type="checkbox" id="checkbox")
+      label(class="form__checkbox-label" for="checkbox") Получать спецпредложения
+    div(class="form__block-label form__block-label--margin")
+      input(class="form__submit" type="submit" id="input4" value="Зарегистрироваться")
+      label(class="form__label" for="input4") 
+        span(class="form__icon form__icon--color") arrow_forward
+    .form__reg 
+      p.form__text Уже есть аккаунт на Toxin
+      a(class="form__link" href="sign-in.html") Войти

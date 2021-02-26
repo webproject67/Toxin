@@ -1,7 +1,10 @@
+include ../form/form
+
 mixin main()
   main.page-main 
-    include ../form/form
+    +form
     h1.page-main__text Лучшие номера для вашей работы, <br> отдыха и просто вдохновения
 
 mixin main-registration()
   main.page-main 
+    +form-registration

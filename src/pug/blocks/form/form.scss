@@ -6,6 +6,11 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  &--margin {
+    margin: 18px auto;
+    padding: 15px 26px 29px 32px;
+  }
 }
 
 .form__title {
@@ -29,8 +34,16 @@
     width: 47%;
   }
   
-  &--margin {
+  &--margin-top {
+    margin-top: 19px;
+  }
+  
+  &--margin-bottom {
     margin-bottom: 30px;
+  }
+  
+  &--margin {
+    margin: 23px 0;
   }
 }
 
@@ -53,9 +66,21 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
 
+  &--margin {
+    margin: 5px 0;
+  }
+  
+  &--margin2 {
+    margin: 10px 0 7px;
+  }
+
   &::placeholder {
     line-height: 18px;
     color: $color-75;
+  }
+
+  &--placeholder::placeholder {
+    color: $color-25;
   }
 
   &:focus {
@@ -159,4 +184,101 @@
   border: 2px solid transparent;
   border-radius: 22px;
   box-shadow: none;
+}
+
+.form__radio-list {
+  @include list-reset;
+  @include display-center;
+
+  width: 220px;
+  padding: 2px 0 16px;
+}
+
+.form__radio-label {
+  position: relative;
+  padding: 0 0 0 30px;
+  color: $color-50;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+  }
+}
+
+.form__radio:checked + .form__radio-label {
+  color: $color-75;
+
+  &::before {
+    border: 1px solid #BC9CFF;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 10px;
+  }
+}
+
+.form__checkbox-label {
+  position: relative;
+  padding-left: 50px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+  }
+  
+  &::after {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+  }
+}
+
+.form__reg {
+  @include display-center;
+
+  margin-top:29px
+}
+
+.form__text {
+  line-height: 18px;
+  color: #000000;
+}
+
+.form__link {
+  padding: 13px 24px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color-purple;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  box-shadow: 2px 1000px 1px #fff inset;
 }
