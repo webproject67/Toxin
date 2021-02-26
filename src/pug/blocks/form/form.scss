@@ -1,6 +1,6 @@
 .form {
   max-width: 380px;
-  margin: 0 8.3vw;
+  margin: 69px 8.3vw;
   padding: 15px 29px 30px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -84,6 +84,7 @@
   top: 43px;
   left: 0;
   z-index: 1;
+  display: none;
   max-width: 320px;
   width: 100%;
   padding: 0 6px 0 14px;
@@ -121,6 +122,10 @@
   background: transparent;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 22px;
+
+  &--opacity {
+    opacity: 0.38;
+  }
 }
 
 .form__buttons {

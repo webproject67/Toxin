@@ -1,5 +1,8 @@
-nav.main-nav
-  include ../../blocks/logo/logo
-  .main-nav__list
-    include ../../blocks/nav-link/nav-link
-    include ../../blocks/nav-reg/nav-reg
+include ../../blocks/logo/logo
+
+mixin nav(options)
+  nav.main-nav
+    +logo(options)
+    .main-nav__list
+      include ../../blocks/nav-link/nav-link
+      include ../../blocks/nav-reg/nav-reg

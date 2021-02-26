@@ -1,10 +1,12 @@
 .page-main {
-  padding: 70px 20px 21px;
+  padding: 0 20px;
   background: url('../pug/blocks/main/img/image3.jpg') no-repeat center bottom;
+  border: 1px solid transparent;
 }
 
 .page-main__text {
   margin: 317px 7.9vw 0;
+  padding-bottom: 20px;
   font-weight: normal;
   font-size: 14px;
   text-align: right;

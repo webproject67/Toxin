@@ -1,2 +1,5 @@
-header.page-header 
-  include ../../blocks/nav/nav
+include ../../blocks/nav/nav
+
+mixin header(options)
+  header.page-header 
+    +nav(options)
