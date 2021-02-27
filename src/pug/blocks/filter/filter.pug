@@ -93,5 +93,31 @@
             input(class="form__btn" type="button" value="+")
   .filter-block
     .filter__block-options
-      p.filter__option дополнительные удобства
-      span.filter__icon expand_more
+      input(class="filter__button" type="button" id="button" value="дополнительные удобства")
+      label(class="filter__label" for="button") 
+        span.filter__icon expand_more
+    .filter__block-checkboxs
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="breakfast")
+        label(class="filter__checkbox-label" for="breakfast") Завтрак
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="desk" checked)
+        label(class="filter__checkbox-label" for="desk") Письменный стол
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="chair" checked)
+        label(class="filter__checkbox-label" for="chair") Стул для кормления
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="Crib" checked)
+        label(class="filter__checkbox-label" for="Crib") Кроватка
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="TV" )
+        label(class="filter__checkbox-label" for="TV") Телевизор
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="shampoo" )
+        label(class="filter__checkbox-label" for="shampoo") Шампунь

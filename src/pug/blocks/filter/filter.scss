@@ -14,7 +14,7 @@
   }
   
   &--margin3 {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 }
 
@@ -162,21 +162,38 @@
 .filter__block-options {
   @include display-center;
 
-  width: 257px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-.filter__option {
+.filter__button {
+  width: 100%;
   margin: 0;
+  padding: 7px 0;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
+  text-align: start;
   text-transform: uppercase;
   color: $color;
+  background: transparent;
+  border: none;
+
+  &:focus {
+    outline: 1px solid rgba(31, 32, 65, 0.5);
+  }
 }
 
 .filter__icon {
+  position: absolute;
+  top: 2px;
+  right: 10px;
   font-family: MaterialIcons;
   font-size: 24px;
   line-height: 24px;
   color: $color-50;
+}
+
+.filter__block-checkboxs {
+  display: none;
 }
