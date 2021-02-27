@@ -12,3 +12,7 @@ mixin main-registration()
 mixin main-sign-in()
   main.page-main 
     +form-sign-in
+
+mixin main-filter()
+  main(class="page-main page-main--background") 
+    include ../filter/filter
