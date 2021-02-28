@@ -1,12 +1,14 @@
 .page-main {
   padding: 0 20px;
-  background: url('../pug/blocks/main/img/image3.jpg') no-repeat center bottom;
+  background: url('../pug/blocks/main/img/img3.jpg') no-repeat center bottom;
   border: 1px solid transparent;
 
   &--background {
-    width: 83.5%;
     margin: 22px auto 0;
+    padding: 0 0 72px;
+    display: flex;
     background: none;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   }
 }
 

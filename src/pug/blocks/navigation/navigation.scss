@@ -1,0 +1,48 @@
+.navigation__list {
+  @include display-center;
+
+  width: 253px;
+  margin: 6px auto;
+  padding: 0 13px 0 0;
+  list-style: none;
+}
+
+.navigation__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color-50;
+  cursor: pointer;
+
+  &:first-child {
+    font-weight: bold;
+    color: #FFFFFF;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+  }
+
+  &:nth-child(4) {
+    cursor: default;
+  }
+}
+
+.navigation__button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-family: MaterialIcons;
+  font-size: 24px;
+  line-height: 20px;
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: none;
+  border-radius: 22px;
+}
+
+.navigation__text {
+  margin: 8px 0 0 35.5%;
+}
