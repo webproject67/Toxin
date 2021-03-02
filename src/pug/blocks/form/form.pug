@@ -92,3 +92,74 @@ mixin form-sign-in()
     .form__reg 
       p.form__text Нет аккаунта на Toxin?
       a(class="form__link form__link--padding" href="registration.html") Создать
+
+mixin form-room()
+  form(class="form form--margin-room")
+    div(class="rooms__block-price form__block-price")
+      .rooms__block-number
+        p.rooms__symbol № 
+          span(class="rooms__number form__nummber") 888
+        span.rooms__luxe Люкс
+      p.rooms__price 9 990₽
+        span.rooms__price-text в сутки
+    .form__block-inputs 
+      div(class="form__block-label form__block-label--width") 
+        p.form__desc прибытие
+        .form__block-input
+          input(class="form__input datepicker-toggle" type="text" id="input1" placeholder="ДД.ММ.ГГГГ" readonly)
+          label(class="form__label" for="input1") 
+            span.form__icon expand_more
+      div(class="form__block-label form__block-label--width") 
+        p.form__desc выезд
+        .form__block-input
+          input(class="form__input" type="text" id="input2" placeholder="ДД.ММ.ГГГГ" readonly)
+          label(class="form__label" for="input2") 
+            span.form__icon expand_more
+    div(class="form__block-label")
+      p.form__desc гости
+      .form__block-input
+        input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
+        label(class="form__label" for="input3") 
+          span.form__icon expand_more
+        .form__select-options
+          .form__select-option
+            p.form__option взрослые
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option дети
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 1 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option младенцы
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__buttons
+              input(class="form__button" type="button" value="очистить")
+              input(class="form__button" type="button" value="применить")
+    ul.form__list 
+      li.form__item 
+        p.form__text-price 9 990₽ х 4 суток
+        p.form__number-price 39 960₽
+      li.form__item 
+        p.form__text-price Сбор за услуги: скидка 2 179₽
+          span.form__icon-price i
+        p.form__number-price 0₽
+      li.form__item 
+        p.form__text-price Сбор за доп. услуги
+          span.form__icon-price i
+        p.form__number-price 300₽
+    .form__total-amount
+      p.form__total Итого
+        span.form__ellipsis
+      p.form__sum 38 081₽
+    .form__block-label 
+      input(class="form__submit" type="submit" id="input4" value="забронировать")
+      label(class="form__label" for="input4") 
+        span(class="form__icon form__icon--color") arrow_forward

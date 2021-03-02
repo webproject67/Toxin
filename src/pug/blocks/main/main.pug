@@ -15,5 +15,11 @@ mixin main-sign-in()
 
 mixin main-filter()
   main(class="page-main page-main--background") 
-    include ../filter/filter
-    include ../rooms/rooms
+    .page-main__wrapper
+      include ../filter/filter
+      include ../rooms/rooms
+
+mixin main-room()
+  main(class="page-main page-main--background") 
+    include ../gallery/gallery
+    include ../details/details

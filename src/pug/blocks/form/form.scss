@@ -15,6 +15,74 @@
   &--margin-sign-in {
     margin: 171px auto;
   }
+  
+  &--margin-room {
+    margin: 0;
+  }
+}
+
+.form__block-price {
+  padding: 16px 0 3px;
+  align-items: baseline;
+  border: none;
+}
+
+.form__nummber {
+  font-size: 24px;
+}
+
+.form__list {
+  @include list-reset;
+
+  margin: 11px 0 0;
+}
+
+.form__item {
+  @include display-center;
+}
+
+.form__text-price,
+.form__number-price {
+  margin: 5px 0;
+}
+
+.form__icon-price {
+  margin-left: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-25;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50px;
+}
+
+.form__total-amount {
+  @include display-center;
+
+  margin: 21px 0 2px;
+}
+
+.form__total {
+  display: contents;
+}
+
+.form__total,
+.form__sum {
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  color: $color;
+}
+
+.form__ellipsis {
+  width: 52%;
+  margin: 12px 0 0;
+  border: 1px dashed rgba(31, 32, 65, 0.25);
 }
 
 .form__title {

@@ -1,0 +1,80 @@
+section.details 
+  .details__block-details
+    .details__block-convenience 
+      .details__convenience
+        h3.details__title Сведения о номере
+        ul.details__list 
+          li.details__item 
+            p.details__icon insert_emoticon
+            p.details__text Комфорт
+              span.details__detail-text Шумопоглощающие стены
+          li.details__item 
+            p.details__icon location_city
+            p.details__text Удобство
+              span.details__detail-text Окно в каждой из спален
+          li.details__item 
+            p.details__icon whatshot
+            p.details__text Уют
+              span.details__detail-text Номер оснащен камином
+      .details__experience 
+        h3.details__title Впечатления от номера
+        svg(class="details__diagram" width="155px" height="155px" viewBox="0 0 42 42")
+          defs
+            linearGradient(id="Gradient1")
+              stop(offset="0%" stop-color="#FFE39C")
+              stop(offset="1000%" stop-color="#FFBA9C")
+            linearGradient(id="Gradient2")
+              stop(offset="0%" stop-color="#BC9CFF")
+              stop(offset="1000%" stop-color="#8BA4F9")
+            linearGradient(id="Gradient3")
+              stop(offset="0%" stop-color="#6FCF97")
+              stop(offset="1000%" stop-color="#66D2EA")
+          circle(cx="21" cy="21" r="15.91549430918954" fill="#fff")
+          circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ffffff" stroke-width="1")
+          circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#Gradient1)" stroke-width="1" stroke-dasharray="49 51" stroke-dashoffset="74.5")
+          circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#Gradient2)" stroke-width="1" stroke-dasharray="24 76" stroke-dashoffset="124.5")
+          circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#Gradient3)" stroke-width="1" stroke-dasharray="24 76" stroke-dashoffset="199.5")
+        p.details__diagram-number 260
+          span.details__diagram-label голосов
+        ul.details__diagram-list
+          li.details__diagram-item Великолепно
+          li.details__diagram-item Хорошо
+          li.details__diagram-item Удовлетворительно
+          li.details__diagram-item Разочарован
+    .details__block-reviews
+      h3(class="details__title details__title--margin") Отзывы посетителей номера
+        span.details__quantity-reviews 2 отзыва
+      ul.details__reviews
+        li.details__review
+          .details__block-avatar 
+            img(class="details__avatar" src="../../blocks/details/img/image16.jpg", alt="avatar")
+            button(class="details__button" type="button") favorite
+              span.details__button--number 12
+          .details__block-review 
+            p.details__name Мурад Сарафанов
+            p.details__date 5 дней назад
+            p.details__review-text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+        li.details__review
+          .details__block-avatar 
+            img(class="details__avatar" src="../../blocks/details/img/image17.jpg", alt="avatar")
+            button(class="details__button details__button--border" type="button") favorite_border
+              span.details__button--number 2
+          .details__block-review 
+            p.details__name Патрисия Стёклышкова
+            p.details__date Неделю назад
+            p.details__review-text Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
+    .details__conditions
+      .details__rules
+        h3.details__title Правила
+        ul.details__list-condition
+          li.details__item-condition
+            p.details__text-condition Нельзя с питомцами
+          li.details__item-condition
+            p.details__text-condition Без вечеринок и мероприятий
+          li.details__item-condition
+            p.details__text-condition Время прибытия — после 13:00, а выезд до 12:00
+      .details__cancel
+        h3.details__title Отмена
+        p.details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+  +form-room
+  
