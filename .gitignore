@@ -1,5 +1,5 @@
 node_modules
 public
-psd/*.psd
-psd/*.fig
+pixel_perfect/*.psd
+pixel_perfect/*.fig
 debug.log
