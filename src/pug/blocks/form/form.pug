@@ -1,5 +1,8 @@
-mixin form()
-  form.form
+mixin form(options)
+  -
+    var className = "form"
+    className += options ? ` ${options}` : ""
+  form(class = className)
     p.form__title Найдём номера под ваши пожелания
     .form__block-inputs 
       div(class="form__block-label form__block-label--width") 
@@ -47,8 +50,11 @@ mixin form()
       label(class="form__label" for="input4") 
         span(class="form__icon form__icon--color") arrow_forward
 
-mixin form-registration()
-  form(class="form form--margin-registration")
+mixin form-registration(options)
+  -
+    var className = "form form--margin-registration"
+    className += options ? ` ${options}` : ""
+  form(class = className)
     p.form__title Регистрация аккаунта
     input(class="form__input form__input--margin form__input--placeholder" type="text" placeholder="Имя")
     input(class="form__input form__input--margin form__input--placeholder" type="text" placeholder="Фамилия")
@@ -79,8 +85,11 @@ mixin form-registration()
       p.form__text Уже есть аккаунт на Toxin
       a(class="form__link" href="sign-in.html") Войти
 
-mixin form-sign-in()
-  form(class="form form--margin-sign-in")
+mixin form-sign-in(options)
+  -
+    var className = "form form--margin-sign-in"
+    className += options ? ` ${options}` : ""
+  form(class = className)
     p.form__title Войти
     div(class="form__block-input form__block-input--margin")
       input(class="form__input form__input--placeholder" type="email" placeholder="Email")

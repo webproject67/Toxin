@@ -30,3 +30,20 @@ $(".form__block-inputs").each(function () {
       datepicker.hide();
     });
 })
+
+$(".cards__calendar").each(function () {
+  $(this).datepicker({
+    clearButton: true,
+    range: true,
+    prevHtml: 'arrow_back',
+    nextHtml: 'arrow_forward',
+    navTitles: {
+      days: 'MM <i>yyyy</i>'
+    }
+  });
+
+  const button = $(`<span class='datepicker--btn'>Применить</span>`);
+  $(this).data("datepicker").$datepicker.find(".datepicker--buttons").append(button);
+
+  $(this).datepicker().data("datepicker").show();
+})

@@ -1,0 +1,16 @@
+.cards {
+  width: 83.3%;
+  margin: 35px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.cards__calendar {
+  width: 320px;
+  height: 2px;
+  border: none;
+  margin: -15px 0 0px;
+}

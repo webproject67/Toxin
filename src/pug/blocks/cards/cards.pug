@@ -1,0 +1,46 @@
+include ../form/form
+
+.cards
+  +form('form--margin')
+  +form-room
+  input(class="cards__calendar" type="text")
+  +form-registration('form--margin-top-card-registration')
+  +form-sign-in('form--margin-top-card-sign-in')
+  ul(class="rooms__list rooms__list--margin")
+    li(class="rooms__item rooms__item--margin") 
+      img(class="rooms__img" src="../../blocks/rooms/img/image1.jpg", alt="room")
+      a(class="rooms__block-texts" href="room.html")
+        .rooms__block-price
+          .rooms__block-number
+            p.rooms__symbol № 
+              span.rooms__number 888
+            span.rooms__luxe Люкс
+          p.rooms__price 9 990₽
+            span.rooms__price-text в сутки
+        .rooms__block-estimations
+          .rooms__estimations 
+            p.rooms__estimation star
+            p.rooms__estimation star
+            p.rooms__estimation star
+            p.rooms__estimation star
+            p.rooms__estimation star
+          p.rooms__reviews-number 145 
+            span.rooms__reviews Отзывов
+    li.rooms__item 
+      img(class="rooms__img" src="../../blocks/rooms/img/image2.jpg", alt="room")
+      a(class="rooms__block-texts" href="room.html")
+        .rooms__block-price
+          .rooms__block-number
+            p.rooms__symbol № 
+              span.rooms__number 840
+          p.rooms__price 9 990₽
+            span.rooms__price-text в сутки
+        .rooms__block-estimations
+          .rooms__estimations 
+            p.rooms__estimation star
+            p.rooms__estimation star
+            p.rooms__estimation star
+            p.rooms__estimation star
+            p.rooms__estimation star_border
+          p.rooms__reviews-number 65 
+            span.rooms__reviews Отзывов
