@@ -51,3 +51,16 @@ mixin footer(options)
           a(class="page-footer__link-social page-footer__link-social--facebook" href="https://ru-ru.facebook.com/") facebook
         li.page-footer__social
           a(class="page-footer__link-social page-footer__link-social--instagram" href="https://www.instagram.com/?hl=ru") instagram
+
+mixin footer-creative(options)
+  footer(Class="page-footer page-footer--width")
+    div(class="page-footer__bottom page-footer__bottom--flex") 
+      +logo(options)
+      p(class="page-footer__copyright page-footer__copyright--margin") Copyright © 2018 Toxin отель. Все права зачищены.
+      ul.page-footer__socials 
+        li.page-footer__social
+          a(class="page-footer__link-social page-footer__link-social--twitter" href="https://twitter.com/?lang=ru") twitter
+        li.page-footer__social
+          a(class="page-footer__link-social page-footer__link-social--facebook" href="https://ru-ru.facebook.com/") facebook
+        li.page-footer__social
+          a(class="page-footer__link-social page-footer__link-social--instagram" href="https://www.instagram.com/?hl=ru") instagram

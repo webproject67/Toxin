@@ -3,6 +3,14 @@
   @include display-center
 }
 
+.nav-reg__name {
+  margin: 0;
+  padding-left: 21px;
+  color: $color-50;
+  line-height: 30px;
+  border-left: 1px solid rgba(31, 32, 65, 0.1);
+}
+
 .nav-reg__item:last-child {
   margin-left: 21px;
 }
