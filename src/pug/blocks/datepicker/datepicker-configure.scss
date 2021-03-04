@@ -139,7 +139,12 @@
   cursor: pointer;
 
   &:hover {
-    color: $color-purple;
+    color: $color-50;
     background: none;
   }
+}
+
+.datepicker--hover {
+  color: $color-50;
+  background: none;
 }

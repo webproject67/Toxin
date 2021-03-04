@@ -1,0 +1,398 @@
+.form-elements 
+  .form-elements__block1
+    .form-elements__block-input
+      .form-elements__texts
+        p.form-elements__text-left Text Field
+        p.form-elements__text-right default
+      div(class="form__block-input")
+        input(class="form__input form__input--placeholder" type="email" placeholder="Email")
+    .form-elements__block-input
+      .form-elements__texts
+        p.form-elements__text-left Text Field
+        p.form-elements__text-right Hover / Focus
+      div(class="form__block-input")
+        input(class="form__input form__input--placeholder form-elements__input form-elements__input--hover" type="email" placeholder="This is pretty awesome")
+    div(class="form__block-label")
+      p.form__desc dropdown
+      .form__block-input
+        input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
+        label(class="form__label" for="input3") 
+          span.form__icon expand_more
+        .form__select-options
+          .form__select-option
+            p.form__option взрослые
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option дети
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 1 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option младенцы
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__buttons
+            input(class="form__button" type="button" value="очистить")
+            input(class="form__button" type="button" value="применить")
+    .form-elements__block-birthday
+      div(class="form__block-label") 
+        p.form__desc masked text field
+        .form__block-input
+          input(class="form__input form__input--placeholder" type="text" placeholder="ДД.ММ.ГГГГ" readonly)
+    .form__block-inputs 
+      div(class="form__block-label form__block-label--width") 
+        p.form__desc date Dropdown
+        .form__block-input
+          input(class="form__input datepicker-toggle" type="text" id="input1" placeholder="ДД.ММ.ГГГГ" readonly)
+          label(class="form__label" for="input1") 
+            span.form__icon expand_more
+      div(class="form__block-label form__block-label--width") 
+        p.form__desc date Dropdown
+        .form__block-input
+          input(class="form__input" type="text" id="input2" placeholder="ДД.ММ.ГГГГ" readonly)
+          label(class="form__label" for="input2") 
+            span.form__icon expand_more
+    .form-elements__block-filter-date
+      div(class="form__block-label") 
+        p.form__desc filter date dropdown
+        .form__block-input
+          input(class="form__input" type="text" id="input1" placeholder="19 авг - 23 авг" readonly)
+          label(class="form__label" for="input1") 
+            span.form__icon expand_more
+    .form-elements__block-email
+      .page-footer__block-submit 
+        p.form__desc subscription text field
+        .form__block-input
+          input(class="page-footer__input" type="text" placeholder="Email")
+          input(class="page-footer__submit" type="submit" value="arrow_forward")
+  .form-elements__block2 
+    div.form-elements__checkbox
+      p(class="filter__desc filter__desc--margin") Checkbox Buttons
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="smoke")
+        label(class="filter__checkbox-label" for="smoke") Можно курить
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="pets" checked)
+        label(class="filter__checkbox-label" for="pets") Можно с питомцами
+      .filter__block-checkbox
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="guests" checked)
+        label(class="filter__checkbox-label" for="guests") Можно пригласить гостей (до 10 человек)
+    p(class="filter__desc filter__desc--margin form-elements__text") Radio Buttons
+    ul.form__radio-list 
+      li.form__radio-item 
+        input(class="form__radio visually-hidden--focusable" type="radio" id="man" name="man-woman" checked)
+        label(class="form__radio-label" for="man") Мужчина
+      li.form__radio-item
+        input(class="form__radio visually-hidden--focusable" type="radio" id="woman" name="man-woman") 
+        label(class="form__radio-label" for="woman") Женщина
+    p(class="filter__desc filter__desc--margin form-elements-toggle") Toggle
+    div(class="form__block-checkbox form-elements-input-checbox")
+      input(class="form__checkbox visually-hidden--focusable" type="checkbox" id="checkbox" checked)
+      label(class="form__checkbox-label" for="checkbox") Получать спецпредложения
+    .form__block-checkbox
+      input(class="form__checkbox visually-hidden--focusable" type="checkbox" id="checkbox")
+      label(class="form__checkbox-label" for="checkbox") Получать спецпредложения
+    .form-elements__block-likes
+      p(class="filter__desc filter__desc--margin") like button
+      .form-elements__block-buttons
+        div(class="details__block-avatar form-elements_block-like")
+          button(class="details__button details__button--border form-elements__like" type="button") favorite_border
+            span.details__button--number 2
+        div(class="details__block-avatar form-elements_block-like")
+          button(class="details__button form-elements__like" type="button") favorite
+            span.details__button--number 12
+    p(class="filter__desc filter__desc--margin") rate button
+    .form-elements__block-rate-buttons 
+      .rooms__estimations 
+        p.rooms__estimation star
+        p.rooms__estimation star
+        p.rooms__estimation star
+        p.rooms__estimation star
+        p.rooms__estimation star_border
+      .rooms__estimations 
+        p.rooms__estimation star
+        p.rooms__estimation star
+        p.rooms__estimation star
+        p.rooms__estimation star
+        p.rooms__estimation star
+  .form-elements__block3
+    .filter-block-sliders
+      .filter-block-desc
+        p.filter__desc Range Slider
+        p.filter__price 5 000₽ - 10 000₽
+      .filter-block-slider 
+        .filter__scale
+          .filter__bar
+        div(class="filter__toggle filter__toggle-min")
+        div(class="filter__toggle filter__toggle-max")
+    .form-elements__btns 
+      p(class="filter__desc filter__desc--margin") buttons
+      ul(class="nav-reg form-elements__reg")
+        li.nav-reg__item
+          a(class="nav-reg__link nav-reg__link--color form-elements__link" href="registration.html") CLICK ME
+        li(class="nav-reg__item form-elements__item")
+          a(class="nav-reg__link nav-reg__link--color nav-reg__link--hover form-elements__link" href="registration.html") CLICK ME
+      ul(class="nav-reg form-elements__reg")
+        li(class="nav-reg__item form-elements__item")
+          a(class="nav-reg__link form-elements__link" href="sign-in.html") CLICK ME
+        li(class="nav-reg__item form-elements__item")
+          a(class="nav-reg__link nav-reg__link--hover form-elements__link" href="sign-in.html") CLICK ME
+      ul.form-elements__list
+        li.form-elements__item 
+          span(class='datepicker--btn') CLICK ME
+        li.form-elements__item
+          span(class='datepicker--btn datepicker--hover') CLICK ME
+      div(class="form__block-label form__block-label--margin")
+        input(class="form__submit" type="submit" id="input4" value="Перейти к оплате")
+        label(class="form__label" for="input4") 
+          span(class="form__icon form__icon--color") arrow_forward
+    .form-elements__pagination
+      p.form__desc pagination
+      ul(class="navigation__list form-elements__pagination-list")
+        li.navigation__item 
+          a(class="navigation__link" href="#") 1
+        li.navigation__item 
+          a(class="navigation__link" href="#") 2
+        li.navigation__item 
+          a(class="navigation__link" href="#") 3
+        li.navigation__item 
+          span.navigation__symbol ...
+        li.navigation__item 
+          a(class="navigation__link" href="#") 15
+        li.navigation__item 
+          button.navigation__button arrow_forward
+      p(class="navigation__text form-elements__pagination-text") 1 – 12 из 100+ вариантов аренды
+  .form-elements__block4
+    .form-elements__block-dropdown
+      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
+      .form-elements__texts
+        p.form-elements__text-left dropdown
+        p.form-elements__text-right default
+      .form__block-input
+        input(class="form__input" type="text" id="input3" placeholder="2 спальни, 2 кровати..." readonly)
+        label(class="form__label" for="input3") 
+          span.form__icon expand_more
+        .form__select-options
+          .form__select-option
+            p.form__option спальни
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option кровати
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option ванные комнаты
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+    .form-elements__block-dropdown
+      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
+      .form-elements__texts
+        p.form-elements__text-left dropdown
+        p.form-elements__text-right expanded
+      .form__block-input
+        input(class="form__input" type="text" id="input3" placeholder="2 спальни, 2 кровати..." readonly)
+        label(class="form__label" for="input3") 
+          span.form__icon expand_more
+        div(class="form__select-options form__select-options--display")
+          .form__select-option
+            p.form__option спальни
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option кровати
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option ванные комнаты
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+  .form-elements__block5
+    .form-elements__block-dropdown
+      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
+      .form-elements__texts
+        p.form-elements__text-left dropdown
+      .form__block-input
+        input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
+        label(class="form__label" for="input3") 
+          span.form__icon expand_more
+        div(class="form__select-options form__select-options--display")
+          .form__select-option
+            p.form__option взрослые
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option дети
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option младенцы
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__buttons
+              input(class="form__button" type="button" value="")
+              input(class="form__button" type="button" value="применить")
+  .form-elements__block6
+    .form-elements__block-dropdown
+      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
+      .form-elements__texts
+        p.form-elements__text-left dropdown
+      .form__block-input
+        input(class="form__input" type="text" id="input3" placeholder="3 гостя" readonly)
+        label(class="form__label" for="input3") 
+          span.form__icon expand_more
+        div(class="form__select-options form__select-options--display")
+          .form__select-option
+            p.form__option взрослые
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 2 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option дети
+            .form__btns 
+              input(class="form__btn" type="button" value="-")
+              span.form__number 1 
+              input(class="form__btn" type="button" value="+")
+          .form__select-option
+            p.form__option младенцы
+            .form__btns 
+              input(class="form__btn form__btn--opacity" type="button" value="-")
+              span.form__number 0 
+              input(class="form__btn" type="button" value="+")
+          .form__buttons
+              input(class="form__button" type="button" value="очистить")
+              input(class="form__button" type="button" value="применить")
+  .form-elements__block7
+    .form-elements__checkbox-list
+      .filter__block-options
+        input(class="filter__button" type="button" id="button" value="expandable checkbox list")
+        label(class="filter__label" for="button") 
+          span.filter__icon expand_more
+      .filter__block-checkboxs
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="breakfast")
+          label(class="filter__checkbox-label" for="breakfast") Завтрак
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="desk" checked)
+          label(class="filter__checkbox-label" for="desk") Письменный стол
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="chair" checked)
+          label(class="filter__checkbox-label" for="chair") Стул для кормления
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="Crib" checked)
+          label(class="filter__checkbox-label" for="Crib") Кроватка
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="TV" )
+          label(class="filter__checkbox-label" for="TV") Телевизор
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="shampoo" )
+          label(class="filter__checkbox-label" for="shampoo") Шампунь
+    .form-elements__checkbox-list
+      .filter__block-options
+        input(class="filter__button" type="button" id="button" value="expandable checkbox list")
+        label(class="filter__label" for="button") 
+          span(class="filter__icon filter__icon--rotate") expand_more
+      div(class="filter__block-checkboxs filter__block-checkboxs--display")
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="breakfast")
+          label(class="filter__checkbox-label" for="breakfast") Завтрак
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="desk" checked)
+          label(class="filter__checkbox-label" for="desk") Письменный стол
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="chair" checked)
+          label(class="filter__checkbox-label" for="chair") Стул для кормления
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="Crib" checked)
+          label(class="filter__checkbox-label" for="Crib") Кроватка
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="TV" )
+          label(class="filter__checkbox-label" for="TV") Телевизор
+        .filter__block-checkbox
+          span.filter__figure 
+          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="shampoo" )
+          label(class="filter__checkbox-label" for="shampoo") Шампунь
+  .form-elements__block8
+    div(class="filter-block filter-block--margin2")
+      p(class="filter__desc filter__desc--margin") rich Checkbox Buttons
+      div(class="filter__block-checkbox filter__block-checkbox--width1")
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="hallway" checked)
+        label(class="filter__checkbox-label filter__checkbox-label--color" for="hallway") Широкий коридор
+          p.filter__checkbox-text Ширина коридоров в номере не менее 91 см.
+      div(class="filter__block-checkbox filter__block-checkbox--width2")
+        span.filter__figure 
+        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="invalid")
+        label(class="filter__checkbox-label filter__checkbox-label--color" for="invalid") Помощник для инвалидов
+          p.filter__checkbox-text На 1 этаже вас встретит специалист  и проводит до номера.
+  .form-elements__block9
+    .details__rules
+      .form-elements__texts
+        p(class="form-elements__text-left form-elements__text-left--margin") bullet list
+      ul(class="details__list-condition form-elements__list-condition")
+        li.details__item-condition
+          p.details__text-condition Нельзя с питомцами
+        li.details__item-condition
+          p.details__text-condition Без вечеринок и мероприятий
+        li.details__item-condition
+          p.details__text-condition Время прибытия — после 13:00, а выезд до 12:00
+  .form-elements__block10
+    ul.details__list 
+      li.details__item 
+        p.details__icon insert_emoticon
+        p.details__text Комфорт
+          span.details__detail-text Шумопоглощающие стены
+      li.details__item 
+        p.details__icon location_city
+        p.details__text Удобство
+          span.details__detail-text Окно в каждой из спален
+  .form-elements__block11
+    ul.details__reviews
+      li.details__review
+        .details__block-avatar 
+          img(class="details__avatar" src="../../blocks/details/img/image16.jpg", alt="avatar")
+          button(class="details__button" type="button") favorite
+            span.details__button--number 12
+        .details__block-review 
+          p.details__name Мурад Сарафанов
+          p.details__date 5 дней назад
+          p.details__review-text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.

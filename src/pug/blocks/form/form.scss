@@ -200,10 +200,14 @@
   display: none;
   max-width: 320px;
   width: 100%;
-  padding: 0 6px 0 14px;
+  padding: 0 6px 0 19px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.5);
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  &--display {
+    display: block;
+  }
 }
 
 .form__select-option {
@@ -244,7 +248,7 @@
 .form__buttons {
   @include display-center;
 
-  padding: 19px 0 12px;
+  padding: 19px 0 6px;
 }
 
 .form__button {
@@ -341,6 +345,23 @@
     width: 12px;
     height: 12px;
     background: rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+  }
+}
+
+.form__checkbox:checked + .form__checkbox-label {
+  &::before {
+    border: 1px solid #BC9CFF;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 10px;
   }
 }

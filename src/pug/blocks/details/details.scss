@@ -45,7 +45,7 @@
   padding: 20px 0;
 }
 
-.details__item:not(:last-child) {
+.details__item:not(:nth-child(3)) {
   border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 }
 

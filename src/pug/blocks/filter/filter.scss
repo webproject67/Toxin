@@ -193,8 +193,16 @@
   font-size: 24px;
   line-height: 24px;
   color: $color-50;
+
+  &--rotate {
+    transform: rotate(180deg);
+  }
 }
 
 .filter__block-checkboxs {
   display: none;
+
+  &--display {
+    display: block;
+  }
 }

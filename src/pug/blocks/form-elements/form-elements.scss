@@ -1,0 +1,210 @@
+.form-elements {
+  width: 83.2%;
+  margin: 28px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.form-elements__block1,
+.form-elements__block3 {
+  width: 320px
+}
+
+.form-elements__block-input {
+  margin-bottom: 20px;
+}
+
+.form-elements__texts {
+  @include display-center;
+
+  margin-bottom: 5px;
+}
+
+.form-elements__text-left {
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
+
+  &--margin {
+    margin-left: -21px;
+  }
+}
+
+.form-elements__text-right {
+  margin: 0;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color-50;
+}
+
+.form-elements__input {
+
+  &:hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+
+    &::placeholder {
+      color: $color-75;
+    }
+  }
+
+  &--hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+
+    &::placeholder {
+      color: $color-75;
+    }
+  }
+}
+
+.form-elements__block-birthday {
+  margin: 21px 0 34px;
+}
+
+.form-elements__block-filter-date {
+  width: 266px;
+  margin-top: 39px;
+}
+
+.form-elements__block-email {
+  width: 266px;
+  margin-top: 40px;
+}
+
+.form-elements__block2 {
+  width: 266px;
+}
+
+.form-elements__checkbox {
+  margin-bottom: 42px;
+}
+
+.form-elements__text {
+  margin-bottom: 11px;
+}
+
+.form-elements-toggle {
+  margin: 24px 0 13px;
+}
+
+.form-elements-input-checbox {
+  margin-bottom: 10px;
+}
+
+.form-elements__block-likes {
+  margin: 43px 0 39px;
+}
+
+.form-elements__block-buttons {
+  display: flex;
+}
+
+.form-elements__like {
+  width: 40px;
+  margin: 0;
+}
+
+.form-elements_block-like {
+  margin-right: 5px;
+}
+
+.form-elements__block-rate-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+}
+
+.filter-block-sliders {
+  width: 266px;
+  margin-bottom: 43px;
+}
+
+.form-elements__reg {
+  width: 218px;
+  margin: 25px 0 50px;
+}
+
+.form-elements__item:last-child {
+  margin: 0;
+}
+
+.form-elements__link {
+  padding: 12px 17px;
+}
+
+.form-elements__list {
+  @include list-reset;
+  @include display-center;
+
+  width: 143px;
+  margin: -13px 0 26px;
+}
+
+.form-elements__pagination {
+  margin: 41px 1px 0;
+}
+
+.form-elements__pagination-list {
+  margin: 15px 0 9px;
+}
+
+.form-elements__pagination-text {
+  margin: 0 5px;
+}
+
+.form-elements__block4 {
+  width: 264px;
+}
+
+.form-elements__block-dropdown {
+  margin: 100px -1px -80px;
+}
+
+.form-elements__block5,
+.form-elements__block6 {
+  width: 318px;
+}
+
+.form-elements__block5 {
+  margin-left: 110px;
+}
+
+.form-elements__block7 {
+  width: 266px;
+  margin-top: 244px;
+}
+
+.form-elements__checkbox-list {
+  margin-bottom: 36px;
+}
+
+.form-elements__block8 {
+  width: 299px;
+  margin-top: 223px;
+  margin-left: 66px;
+}
+
+.form-elements__block9 {
+  width: 299px;
+  margin-top: 252px;
+}
+
+.form-elements__list-condition {
+  margin: 13px 0;
+}
+
+.form-elements__block10 {
+  width: 279px;
+  margin-top: 48px;
+}
+
+.form-elements__block11 {
+  width: 710px;
+  margin-top: 58px;
+}
