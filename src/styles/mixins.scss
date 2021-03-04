@@ -4,6 +4,12 @@
 	list-style: none;
 }
 
+@mixin display-top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
 @mixin display-center {
 	display: flex;
 	align-items: center;
