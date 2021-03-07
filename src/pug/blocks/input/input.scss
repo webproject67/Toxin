@@ -1,0 +1,63 @@
+.input__texts {
+  @include display-center;
+}
+
+.input__text {
+  margin: 0 0 5px;
+
+  &--color {
+    font-weight: normal;
+    color: $color-50;
+  }
+}
+
+.input__input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+
+  &::placeholder {
+    color: $color-25;
+  }
+
+  &:hover,
+  &:focus,
+  &--hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+
+    &::placeholder {
+      color: $color-75;
+    }
+  }
+
+  &--color {
+
+    &::placeholder {
+      color: $color-75;
+    }
+  }
+
+  &--width {
+    width: 150px;
+  }
+}
+
+.input__label,
+.input__form {
+  position: relative;
+}
+
+.input__icon {
+  position: absolute;
+  top: -4px;
+  right: 10px;
+}
+
+.input__submit {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  height: 100%;
+  border: none;
+}

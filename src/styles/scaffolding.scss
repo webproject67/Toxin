@@ -32,6 +32,19 @@ body {
 	color: $color;
 }
 
+.font-icon {
+	font-family: MaterialIcons;
+  font-size: 24px;
+  line-height: 24px;
+  color: $color-50;
+}
+
+.font-lg {
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 html {
 	box-sizing: border-box;
 }

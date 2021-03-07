@@ -3,6 +3,11 @@
 @import "fonts";
 @import "scaffolding";
 @import "mixins";
+@import "../pug/blocks/colors-type/colors-type";
+@import "../pug/blocks/form-elements/form-elements";
+@import "../pug/blocks/input/input";
+@import "../pug/blocks/cards/cards";
+@import "../pug/blocks/headers-footers/headers-footers";
 @import "../pug/blocks/header/header";
 @import "../pug/blocks/nav/nav";
 @import "../pug/blocks/logo/logo";
@@ -18,7 +23,3 @@
 @import "../pug/blocks/navigation/navigation";
 @import "../pug/blocks/gallery/gallery";
 @import "../pug/blocks/details/details";
-@import "../pug/blocks/colors-type/colors-type";
-@import "../pug/blocks/cards/cards";
-@import "../pug/blocks/headers-footers/headers-footers";
-@import "../pug/blocks/form-elements/form-elements";

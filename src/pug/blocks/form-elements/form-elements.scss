@@ -1,66 +1,37 @@
 .form-elements {
-  width: 83.2%;
+  @include display-top;
+
+  width: 80.4%;
   margin: 28px auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.form-elements__block1,
-.form-elements__block3 {
+.form-elements__block1 {
   width: 320px
 }
 
-.form-elements__block-input {
-  margin-bottom: 20px;
+.form-elements__block-input:nth-child(2) {
+  margin-top: 20px;
 }
 
-.form-elements__texts {
-  @include display-center;
-
-  margin-bottom: 5px;
+.form-elements__block-dropdown {
+  margin-top: 21px;
 }
 
-.form-elements__text-left {
-  margin: 0;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $color;
-
-  &--margin {
-    margin-left: -21px;
-  }
+.form-elements__block-input:nth-child(4) {
+  margin-top: 22px;
 }
 
-.form-elements__text-right {
-  margin: 0;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $color-50;
+.form-elements__block-dropdowns {
+  @include display-top;
+  
+  margin-top: 19px;
 }
 
-.form-elements__input {
-
-  &:hover {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-
-    &::placeholder {
-      color: $color-75;
-    }
-  }
-
-  &--hover {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-
-    &::placeholder {
-      color: $color-75;
-    }
-  }
+.form-elements__block-dropdown:nth-child(6),
+.form-elements__block-input:nth-child(7) {
+  width: 266px;
+  margin-top: 41px;
 }
 
 .form-elements__block-birthday {
@@ -114,6 +85,10 @@
   margin-right: 5px;
 }
 
+.form-elements__block3 {
+  width: 320px
+}
+
 .form-elements__block-rate-buttons {
   display: flex;
   justify-content: space-between;
@@ -162,9 +137,7 @@
   width: 264px;
 }
 
-.form-elements__block-dropdown {
-  margin: 100px -1px -80px;
-}
+
 
 .form-elements__block5,
 .form-elements__block6 {

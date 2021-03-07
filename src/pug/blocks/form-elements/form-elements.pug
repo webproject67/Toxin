@@ -1,76 +1,25 @@
+include ../../blocks/input/input
+
 .form-elements 
   .form-elements__block1
     .form-elements__block-input
-      .form-elements__texts
-        p.form-elements__text-left Text Field
-        p.form-elements__text-right default
-      div(class="form__block-input")
-        input(class="form__input form__input--placeholder" type="email" placeholder="Email")
+      +input({textLeft: 'Text Field', textRight: 'default', type: 'email', placeholder: 'Email'})
     .form-elements__block-input
-      .form-elements__texts
-        p.form-elements__text-left Text Field
-        p.form-elements__text-right Hover / Focus
-      div(class="form__block-input")
-        input(class="form__input form__input--placeholder form-elements__input form-elements__input--hover" type="email" placeholder="This is pretty awesome")
-    div(class="form__block-label")
-      p.form__desc dropdown
-      .form__block-input
-        input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
-        label(class="form__label" for="input3") 
-          span.form__icon expand_more
-        .form__select-options
-          .form__select-option
-            p.form__option взрослые
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 2 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option дети
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 1 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option младенцы
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
-          .form__buttons
-            input(class="form__button" type="button" value="очистить")
-            input(class="form__button" type="button" value="применить")
-    .form-elements__block-birthday
-      div(class="form__block-label") 
-        p.form__desc masked text field
-        .form__block-input
-          input(class="form__input form__input--placeholder" type="text" placeholder="ДД.ММ.ГГГГ" readonly)
-    .form__block-inputs 
-      div(class="form__block-label form__block-label--width") 
-        p.form__desc date Dropdown
-        .form__block-input
-          input(class="form__input datepicker-toggle" type="text" id="input1" placeholder="ДД.ММ.ГГГГ" readonly)
-          label(class="form__label" for="input1") 
-            span.form__icon expand_more
-      div(class="form__block-label form__block-label--width") 
-        p.form__desc date Dropdown
-        .form__block-input
-          input(class="form__input" type="text" id="input2" placeholder="ДД.ММ.ГГГГ" readonly)
-          label(class="form__label" for="input2") 
-            span.form__icon expand_more
-    .form-elements__block-filter-date
-      div(class="form__block-label") 
-        p.form__desc filter date dropdown
-        .form__block-input
-          input(class="form__input" type="text" id="input1" placeholder="19 авг - 23 авг" readonly)
-          label(class="form__label" for="input1") 
-            span.form__icon expand_more
-    .form-elements__block-email
-      .page-footer__block-submit 
-        p.form__desc subscription text field
-        .form__block-input
-          input(class="page-footer__input" type="text" placeholder="Email")
-          input(class="page-footer__submit" type="submit" value="arrow_forward")
+      +input({textLeft: 'Text Field', textRight: 'Hover / Focus', type: 'text', placeholder: 'This is pretty awesome', className: 'input__input--hover'})
+    .form-elements__block-dropdown
+      +input-dropdown({textLeft: 'dropdown', id: 'dropdown', placeholder: 'Сколько гостей'})
+    .form-elements__block-input
+      +input({textLeft: 'masked text field', type: 'text', placeholder: 'ДД.ММ.ГГГГ'})
+    .form-elements__block-dropdowns
+      .form-elements__block-dropdown
+        +input-dropdown({textLeft: 'date dropdown', id: 'dropdown1', placeholder: 'ДД.ММ.ГГГГ', className: 'input__input--width'})
+      .form-elements__block-dropdown
+        +input-dropdown({textLeft: 'date dropdown', id: 'dropdown2', placeholder: '19.08.2019', className: 'input__input--width'})
+    .form-elements__block-dropdown
+      +input-dropdown({textLeft: 'filter date dropdown', id: 'dropdown3', placeholder: '19 авг - 23 авг'})
+    .form-elements__block-input
+      +input-email({textLeft: 'subscription text field', type: 'email', placeholder: 'Email'})
+    
   .form-elements__block2 
     div.form-elements__checkbox
       p(class="filter__desc filter__desc--margin") Checkbox Buttons

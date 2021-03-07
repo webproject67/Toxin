@@ -1,0 +1,26 @@
+mixin input(options)
+  -
+    var className = "input__input"
+    className += options.className ? ` ${options.className}` : ""
+  .input 
+    .input__texts
+      h3(class="font-h3 input__text")= options.textLeft
+      p(class="font-h3 input__text input__text--color")= options.textRight
+    input(class= className type= options.type placeholder= options.placeholder)
+
+mixin input-dropdown(options)
+  -
+    var className = "input__input input__input--color"
+    className += options.className ? ` ${options.className}` : ""
+  .input 
+    h3(class="font-h3 input__text")= options.textLeft
+    input(class= className id= options.id type="text" placeholder= options.placeholder readonly)
+    label(class="input__label" for= options.id) 
+      span(class='font-icon input__icon') expand_more
+
+mixin input-email(options)
+  .input 
+    h3(class="font-h3 input__text")= options.textLeft
+    form.input__form
+      input(class='input__input' type= options.type placeholder= options.placeholder)
+      input(class="font-icon font-lg input__submit" type="submit" value="arrow_forward")
