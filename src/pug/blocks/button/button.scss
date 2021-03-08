@@ -1,0 +1,43 @@
+.button-like {
+  width: 40px;
+  height: 20px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  font-family: 'MaterialIcons';
+  font-size: 10px;
+  line-height: 9px;
+  color: $color-25;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+
+  &--number {
+    padding-left: 6px;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  &--active {
+    color: $color-purple;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border: 1px solid transparent;
+    box-shadow: 1px 1000px 1px #fff inset;
+  }
+
+  &:focus {
+    outline: 1px solid;
+  }
+}
+
+.button-rate {
+  @include list-reset;
+  @include display-top;
+}
+
+.button-rate__item {
+  margin: 0;
+}

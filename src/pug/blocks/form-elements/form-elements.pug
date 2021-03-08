@@ -1,4 +1,6 @@
 include ../../blocks/input/input
+include ../../blocks/checkbox-radio/checkbox-radio
+include ../../blocks/button/button
 
 .form-elements 
   .form-elements__block1
@@ -19,60 +21,26 @@ include ../../blocks/input/input
       +input-dropdown({textLeft: 'filter date dropdown', id: 'dropdown3', placeholder: '19 авг - 23 авг'})
     .form-elements__block-input
       +input-email({textLeft: 'subscription text field', type: 'email', placeholder: 'Email'})
-    
   .form-elements__block2 
-    div.form-elements__checkbox
-      p(class="filter__desc filter__desc--margin") Checkbox Buttons
-      .filter__block-checkbox
-        span.filter__figure 
-        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="smoke")
-        label(class="filter__checkbox-label" for="smoke") Можно курить
-      .filter__block-checkbox
-        span.filter__figure 
-        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="pets" checked)
-        label(class="filter__checkbox-label" for="pets") Можно с питомцами
-      .filter__block-checkbox
-        span.filter__figure 
-        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="guests" checked)
-        label(class="filter__checkbox-label" for="guests") Можно пригласить гостей (до 10 человек)
-    p(class="filter__desc filter__desc--margin form-elements__text") Radio Buttons
-    ul.form__radio-list 
-      li.form__radio-item 
-        input(class="form__radio visually-hidden--focusable" type="radio" id="man" name="man-woman" checked)
-        label(class="form__radio-label" for="man") Мужчина
-      li.form__radio-item
-        input(class="form__radio visually-hidden--focusable" type="radio" id="woman" name="man-woman") 
-        label(class="form__radio-label" for="woman") Женщина
-    p(class="filter__desc filter__desc--margin form-elements-toggle") Toggle
-    div(class="form__block-checkbox form-elements-input-checbox")
-      input(class="form__checkbox visually-hidden--focusable" type="checkbox" id="checkbox" checked)
-      label(class="form__checkbox-label" for="checkbox") Получать спецпредложения
-    .form__block-checkbox
-      input(class="form__checkbox visually-hidden--focusable" type="checkbox" id="checkbox")
-      label(class="form__checkbox-label" for="checkbox") Получать спецпредложения
-    .form-elements__block-likes
-      p(class="filter__desc filter__desc--margin") like button
+    .form-elements__block-checkbox
+      +checkbox({text: 'Checkbox Buttons'})
+    .form-elements__block-radio
+      h3(class="font-h3 form-elements__text") Radio Buttons
+      +radio()
+    .form-elements__block-toggle
+      h3(class="font-h3 form-elements__text form-elements__text--margin") toggle
+      +toggle({text: 'toggle', checkbox: 'checkbox1', checked: true})
+      +toggle({text: '', checkbox: 'checkbox2', checked: false})
+    .form-elements__block-button
+      h3(class="font-h3 form-elements__text") like button
       .form-elements__block-buttons
-        div(class="details__block-avatar form-elements_block-like")
-          button(class="details__button details__button--border form-elements__like" type="button") favorite_border
-            span.details__button--number 2
-        div(class="details__block-avatar form-elements_block-like")
-          button(class="details__button form-elements__like" type="button") favorite
-            span.details__button--number 12
-    p(class="filter__desc filter__desc--margin") rate button
-    .form-elements__block-rate-buttons 
-      .rooms__estimations 
-        p.rooms__estimation star
-        p.rooms__estimation star
-        p.rooms__estimation star
-        p.rooms__estimation star
-        p.rooms__estimation star_border
-      .rooms__estimations 
-        p.rooms__estimation star
-        p.rooms__estimation star
-        p.rooms__estimation star
-        p.rooms__estimation star
-        p.rooms__estimation star
+        +button-like({text: 'favorite_border', number: 2})
+        +button-like({className: 'button-like--active', text: 'favorite', number: 12})
+    .form-elements__block-button
+      h3(class="font-h3 form-elements__text") rate button
+      div(class='form-elements__block-buttons form-elements__block-buttons--width')
+        +button-rate({number: 4})
+        +button-rate({number: 5})
   .form-elements__block3
     .filter-block-sliders
       .filter-block-desc

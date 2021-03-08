@@ -6,7 +6,8 @@
   flex-wrap: wrap;
 }
 
-.form-elements__block1 {
+.form-elements__block1,
+.form-elements__block3 {
   width: 320px
 }
 
@@ -34,55 +35,40 @@
   margin-top: 41px;
 }
 
-.form-elements__block-birthday {
-  margin: 21px 0 34px;
-}
-
-.form-elements__block-filter-date {
-  width: 266px;
-  margin-top: 39px;
-}
-
-.form-elements__block-email {
-  width: 266px;
-  margin-top: 40px;
-}
-
 .form-elements__block2 {
   width: 266px;
 }
 
-.form-elements__checkbox {
-  margin-bottom: 42px;
+.form-elements__block-radio {
+  margin-top: 42px;
+}
+
+.form-elements__block-toggle,
+.form-elements__block-button:nth-child(5) {
+  margin-top: 40px;
 }
 
 .form-elements__text {
-  margin-bottom: 11px;
+  margin: 0 0 11px;
+
+  &--margin {
+    margin-bottom: 13px
+  }
 }
 
-.form-elements-toggle {
-  margin: 24px 0 13px;
-}
-
-.form-elements-input-checbox {
-  margin-bottom: 10px;
-}
-
-.form-elements__block-likes {
-  margin: 43px 0 39px;
+.form-elements__block-button {
+  margin-top: 43px;
 }
 
 .form-elements__block-buttons {
-  display: flex;
-}
+  @include display-top;
 
-.form-elements__like {
-  width: 40px;
-  margin: 0;
-}
+  width: 90px;
+  margin-top: 16px;
 
-.form-elements_block-like {
-  margin-right: 5px;
+  &--width {
+    width: 260px;
+  }
 }
 
 .form-elements__block3 {

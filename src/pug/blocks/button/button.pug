@@ -1,0 +1,13 @@
+mixin button-like(options)
+  -
+    var className = "button-like"
+    className += options.className ? ` ${options.className}` : ""
+  button(class= className type="button")= options.text
+    span.button-like--number= options.number
+
+mixin button-rate(options)
+  ul.button-rate
+    - for (var x = 0; x < options.number; x++)
+    li(class="font-icon font-lg button-rate__item") star
+    - for (var x = 0; x < 5 - options.number; x++)
+      li(class="font-icon font-lg button-rate__item") star_border

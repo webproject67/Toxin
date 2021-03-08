@@ -1,0 +1,31 @@
+mixin checkbox(options)
+  .checkbox
+    h3(class="font-h3 checkbox__text")= options.text
+    ul.checkbox__list 
+      li.checkbox__item 
+        span.checkbox__figure 
+        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id="smoke")
+        label(class="checkbox__label" for="smoke") Можно курить
+      li.checkbox__item 
+        span.checkbox__figure 
+        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id="pets" checked)
+        label(class="checkbox__label" for="pets") Можно с питомцами
+      li.checkbox__item 
+        span.checkbox__figure 
+        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id="guests" checked)
+        label(class="checkbox__label" for="guests") Можно пригласить гостей (до 10 человек)
+
+mixin radio(options)
+  .radio
+    ul.radio__list 
+      li.radio__item 
+        input(class="radio__radio visually-hidden--focusable" type="radio" id="man" name="man-woman" checked)
+        label(class="radio__label" for="man") Мужчина
+      li.radio__item
+        input(class="radio__radio visually-hidden--focusable" type="radio" id="woman" name="man-woman") 
+        label(class="radio__label" for="woman") Женщина
+
+mixin toggle(options)
+  .toggle
+    input(class="toggle__checkbox visually-hidden--focusable" type="checkbox" id= options.checkbox checked= options.checked)
+    label(class="toggle__label" for= options.checkbox) Получать спецпредложения
