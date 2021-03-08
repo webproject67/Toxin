@@ -40,4 +40,61 @@
 
 .button-rate__item {
   margin: 0;
+  cursor: pointer;
+}
+
+.button-link__link {
+  @include display-center;
+  
+  width: 99px;
+  height: 44px;
+  justify-content: center;
+  color: #ffffff;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  box-shadow: none;
+
+  &:hover,
+  &--hover {
+    opacity: 0.5;
+  }  
+
+  &--border {
+    color: $color-purple;
+    box-shadow: 2px 1000px 1px #fff inset;
+  }
+}
+
+.button-link2__link {
+  color: $color-purple;
+
+  &:hover,
+  &--hover {
+    color: $color-50;
+  }  
+}
+
+.button-submit{
+  position: relative;
+  width: 100%;
+}
+
+.button-submit__input {
+  width: 100%;
+  padding: 14px 0;
+  color: #ffffff;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border: none;
+  border-radius: 22px;
+}
+
+.button-submit__icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+  
 }

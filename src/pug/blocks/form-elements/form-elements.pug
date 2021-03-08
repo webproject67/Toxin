@@ -1,6 +1,7 @@
 include ../../blocks/input/input
 include ../../blocks/checkbox-radio/checkbox-radio
 include ../../blocks/button/button
+include ../../blocks/range-slider/range-slider
 
 .form-elements 
   .form-elements__block1
@@ -33,61 +34,35 @@ include ../../blocks/button/button
       +toggle({text: '', checkbox: 'checkbox2', checked: false})
     .form-elements__block-button
       h3(class="font-h3 form-elements__text") like button
-      .form-elements__block-buttons
+      div(class='form-elements__block-buttons form-elements__block-buttons--width1')
         +button-like({text: 'favorite_border', number: 2})
         +button-like({className: 'button-like--active', text: 'favorite', number: 12})
     .form-elements__block-button
       h3(class="font-h3 form-elements__text") rate button
-      div(class='form-elements__block-buttons form-elements__block-buttons--width')
+      div(class='form-elements__block-buttons form-elements__block-buttons--width2')
         +button-rate({number: 4})
         +button-rate({number: 5})
   .form-elements__block3
-    .filter-block-sliders
-      .filter-block-desc
-        p.filter__desc Range Slider
-        p.filter__price 5 000₽ - 10 000₽
-      .filter-block-slider 
-        .filter__scale
-          .filter__bar
-        div(class="filter__toggle filter__toggle-min")
-        div(class="filter__toggle filter__toggle-max")
-    .form-elements__btns 
-      p(class="filter__desc filter__desc--margin") buttons
-      ul(class="nav-reg form-elements__reg")
-        li.nav-reg__item
-          a(class="nav-reg__link nav-reg__link--color form-elements__link" href="registration.html") CLICK ME
-        li(class="nav-reg__item form-elements__item")
-          a(class="nav-reg__link nav-reg__link--color nav-reg__link--hover form-elements__link" href="registration.html") CLICK ME
-      ul(class="nav-reg form-elements__reg")
-        li(class="nav-reg__item form-elements__item")
-          a(class="nav-reg__link form-elements__link" href="sign-in.html") CLICK ME
-        li(class="nav-reg__item form-elements__item")
-          a(class="nav-reg__link nav-reg__link--hover form-elements__link" href="sign-in.html") CLICK ME
-      ul.form-elements__list
-        li.form-elements__item 
-          span(class='datepicker--btn') CLICK ME
-        li.form-elements__item
-          span(class='datepicker--btn datepicker--hover') CLICK ME
-      div(class="form__block-label form__block-label--margin")
-        input(class="form__submit" type="submit" id="input4" value="Перейти к оплате")
-        label(class="form__label" for="input4") 
-          span(class="form__icon form__icon--color") arrow_forward
-    .form-elements__pagination
-      p.form__desc pagination
-      ul(class="navigation__list form-elements__pagination-list")
-        li.navigation__item 
-          a(class="navigation__link" href="#") 1
-        li.navigation__item 
-          a(class="navigation__link" href="#") 2
-        li.navigation__item 
-          a(class="navigation__link" href="#") 3
-        li.navigation__item 
-          span.navigation__symbol ...
-        li.navigation__item 
-          a(class="navigation__link" href="#") 15
-        li.navigation__item 
-          button.navigation__button arrow_forward
-      p(class="navigation__text form-elements__pagination-text") 1 – 12 из 100+ вариантов аренды
+    .form-elements__block-range-slider
+      +range-slider({textLeft: 'Range Slider', textRight: '5 000₽ - 10 000₽'})
+    .form-elements__block-button
+      h3(class="font-h3 form-elements__text") buttons
+      div(class='form-elements__block-buttons form-elements__block-buttons--width3 form-elements__block-buttons--margin')
+        +button-link({text: 'click me', className: 'button-link__link'})
+        +button-link({text: 'click me', className: 'button-link__link button-link__link--hover'})
+      div(class='form-elements__block-buttons form-elements__block-buttons--width3 form-elements__block-buttons--margin')
+        +button-link({text: 'click me', className: 'button-link__link button-link__link--border'})
+        +button-link({text: 'click me', className: 'button-link__link button-link__link--hover button-link__link--border'})
+      div(class='form-elements__block-buttons form-elements__block-buttons--width4 form-elements__block-buttons--margin')
+        +button-link({text: 'click me', className: 'button-link2__link'})
+        +button-link({text: 'click me', className: 'button-link2__link button-link2__link--hover'})
+      div(class='form-elements__block-buttons')
+        +button-submit({text: 'перейти к оплате'})
+    .form-elements__block-pagination
+      h3(class="font-h3 form-elements__text form-elements__text--margin2") pagination
+      include ../../blocks/pagination/pagination
+
+   
   .form-elements__block4
     .form-elements__block-dropdown
       div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")

@@ -35,7 +35,8 @@
   margin-top: 41px;
 }
 
-.form-elements__block2 {
+.form-elements__block2,
+.form-elements__block-range-slider {
   width: 266px;
 }
 
@@ -54,6 +55,10 @@
   &--margin {
     margin-bottom: 13px
   }
+ 
+  &--margin2 {
+    margin-bottom: 15px
+  }
 }
 
 .form-elements__block-button {
@@ -63,61 +68,35 @@
 .form-elements__block-buttons {
   @include display-top;
 
-  width: 90px;
   margin-top: 16px;
 
-  &--width {
+  &--width1 {
+    width: 90px;
+  }
+
+  &--width2 {
     width: 260px;
+  }
+  
+  &--width3 {
+    width: 218px;
+  }
+  
+  &--width4 {
+    width: 143px;
+    margin-top: 31px;
+  }
+  
+  &--margin {
+    margin-bottom: 30px;
   }
 }
 
-.form-elements__block3 {
-  width: 320px
+.form-elements__block-pagination {
+  margin-top: 41px;
 }
 
-.form-elements__block-rate-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 260px;
-}
 
-.filter-block-sliders {
-  width: 266px;
-  margin-bottom: 43px;
-}
-
-.form-elements__reg {
-  width: 218px;
-  margin: 25px 0 50px;
-}
-
-.form-elements__item:last-child {
-  margin: 0;
-}
-
-.form-elements__link {
-  padding: 12px 17px;
-}
-
-.form-elements__list {
-  @include list-reset;
-  @include display-center;
-
-  width: 143px;
-  margin: -13px 0 26px;
-}
-
-.form-elements__pagination {
-  margin: 41px 1px 0;
-}
-
-.form-elements__pagination-list {
-  margin: 15px 0 9px;
-}
-
-.form-elements__pagination-text {
-  margin: 0 5px;
-}
 
 .form-elements__block4 {
   width: 264px;
