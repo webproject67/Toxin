@@ -24,7 +24,14 @@ include ../../blocks/range-slider/range-slider
       +input-email({textLeft: 'subscription text field', type: 'email', placeholder: 'Email'})
   .form-elements__block2 
     .form-elements__block-checkbox
-      +checkbox({text: 'Checkbox Buttons'})
+      +checkbox({
+        text: 'Checkbox Buttons',
+        options: [
+          {label: 'Можно курить', id: 'smoke', checked: false},
+          {label: 'Можно с питомцами', id: 'pets', checked: true},
+          {label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true}
+        ]
+      })
     .form-elements__block-radio
       h3(class="font-h3 form-elements__text") Radio Buttons
       +radio()
@@ -108,66 +115,10 @@ include ../../blocks/range-slider/range-slider
         btns: true
       })
   .form-elements__block7
-    .form-elements__checkbox-list
-      .filter__block-options
-        input(class="filter__button" type="button" id="button" value="expandable checkbox list")
-        label(class="filter__label" for="button") 
-          span.filter__icon expand_more
-      .filter__block-checkboxs
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="breakfast")
-          label(class="filter__checkbox-label" for="breakfast") Завтрак
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="desk" checked)
-          label(class="filter__checkbox-label" for="desk") Письменный стол
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="chair" checked)
-          label(class="filter__checkbox-label" for="chair") Стул для кормления
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="Crib" checked)
-          label(class="filter__checkbox-label" for="Crib") Кроватка
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="TV" )
-          label(class="filter__checkbox-label" for="TV") Телевизор
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="shampoo" )
-          label(class="filter__checkbox-label" for="shampoo") Шампунь
-    .form-elements__checkbox-list
-      .filter__block-options
-        input(class="filter__button" type="button" id="button" value="expandable checkbox list")
-        label(class="filter__label" for="button") 
-          span(class="filter__icon filter__icon--rotate") expand_more
-      div(class="filter__block-checkboxs filter__block-checkboxs--display")
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="breakfast")
-          label(class="filter__checkbox-label" for="breakfast") Завтрак
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="desk" checked)
-          label(class="filter__checkbox-label" for="desk") Письменный стол
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="chair" checked)
-          label(class="filter__checkbox-label" for="chair") Стул для кормления
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="Crib" checked)
-          label(class="filter__checkbox-label" for="Crib") Кроватка
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="TV" )
-          label(class="filter__checkbox-label" for="TV") Телевизор
-        .filter__block-checkbox
-          span.filter__figure 
-          input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="shampoo" )
-          label(class="filter__checkbox-label" for="shampoo") Шампунь
+    .form-elements__block-checkbox-list
+      +checkbox-list({className: 'checkbox__list--display'})
+    .form-elements__block-checkbox-list
+      +checkbox-list({className2: 'checkbox-list__icon--rotate'})
   .form-elements__block8
     div(class="filter-block filter-block--margin2")
       p(class="filter__desc filter__desc--margin") rich Checkbox Buttons

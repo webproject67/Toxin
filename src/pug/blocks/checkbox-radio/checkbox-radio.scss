@@ -9,6 +9,10 @@
 
   width: 230px;
   margin: 17px 0 0;
+
+  &--display {
+    display: none;
+  }
 }
 
 .checkbox__item {
@@ -151,5 +155,31 @@
   &::after {
     left: 24px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+}
+
+.checkbox-list__btn {
+  @include display-center;
+}
+
+.checkbox-list__button {
+  width: 100%;
+  padding: 0;
+  text-align: start;
+  background: transparent;
+  border: none;
+}
+
+.checkbox-list__label {
+  position: relative;
+}
+
+.checkbox-list__icon {
+  position: absolute;
+  top: -12px;
+  right: 10px;
+
+  &--rotate {
+    transform: rotate(180deg);
   }
 }

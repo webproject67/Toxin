@@ -1,19 +1,15 @@
 mixin checkbox(options)
+  -
+    let className = "checkbox__list"
+    className += options.className ? ` ${options.className}` : ""
   .checkbox
     h3(class="font-h3 checkbox__text")= options.text
-    ul.checkbox__list 
-      li.checkbox__item 
-        span.checkbox__figure 
-        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id="smoke")
-        label(class="checkbox__label" for="smoke") Можно курить
-      li.checkbox__item 
-        span.checkbox__figure 
-        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id="pets" checked)
-        label(class="checkbox__label" for="pets") Можно с питомцами
-      li.checkbox__item 
-        span.checkbox__figure 
-        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id="guests" checked)
-        label(class="checkbox__label" for="guests") Можно пригласить гостей (до 10 человек)
+    ul(class= className) 
+      each val in options.options
+        li.checkbox__item 
+          span.checkbox__figure 
+          input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id= val.id checked= val.checked)
+          label(class="checkbox__label" for= val.id)= val.label
 
 mixin radio(options)
   .radio
@@ -29,3 +25,24 @@ mixin toggle(options)
   .toggle
     input(class="toggle__checkbox visually-hidden--focusable" type="checkbox" id= options.checkbox checked= options.checked)
     label(class="toggle__label" for= options.checkbox) Получать спецпредложения
+
+mixin checkbox-list(options)
+  -
+    let className2 = "font-icon checkbox-list__icon"
+    className2 += options.className2 ? ` ${options.className2}` : ""
+  .checkbox-list
+    .checkbox-list__btn
+      input(class="font-h3 checkbox-list__button" type="button" id="button" value="expandable checkbox list")
+      label(class="checkbox-list__label" for="button") 
+        span(class= className2) expand_more
+    +checkbox({
+      className: options.className ? options.className : '',
+      options: [
+        {label: 'Завтрак', id: 'breakfast', checked: false},
+        {label: 'Письменный стол', id: 'desk', checked: true},
+        {label: 'Стул для кормления', id: 'chair', checked: true},
+        {label: 'Кроватка', id: 'Crib', checked: true},
+        {label: 'Телевизор', id: 'TV', checked: false},
+        {label: 'Шампунь', id: 'shampoo', checked: false}
+      ]
+    })
