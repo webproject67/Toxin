@@ -1,6 +1,6 @@
 mixin input(options)
   -
-    var className = "input__input"
+    let className = "input__input"
     className += options.className ? ` ${options.className}` : ""
   .input 
     .input__texts
@@ -10,13 +10,54 @@ mixin input(options)
 
 mixin input-dropdown(options)
   -
-    var className = "input__input input__input--color"
+    const options1 = [
+      {text: 'спальни', number: 2}, 
+      {text: 'кровати', number: 2}, 
+      {text: 'ванные комнаты', number: 0, className: 'input__btn--opacity'}
+    ]   
+    const options2 = [
+      {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
+      {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
+      {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+    ]   
+    const options3 = [
+      {text: 'взрослые', number: 2}, 
+      {text: 'дети', number: 1}, 
+      {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+    ]   
+    let optionsSelected = options1
+    let className = "input__input input__input--color"
     className += options.className ? ` ${options.className}` : ""
+    let className2 = "input__select-options"
+    className2 += options.className2 ? ` ${options.className2}` : ""
   .input 
-    h3(class="font-h3 input__text")= options.textLeft
+    .input__texts
+      h3(class="font-h3 input__text")= options.textLeft
+      p(class="font-h3 input__text input__text--color")= options.textRight
     input(class= className id= options.id type="text" placeholder= options.placeholder readonly)
     label(class="input__label" for= options.id) 
       span(class='font-icon input__icon') expand_more
+    div(class= className2)
+      if options.options === 'options1'
+        - optionsSelected = options1
+      else if options.options === 'options2'
+        - optionsSelected = options2
+      else if options.options === 'options3'
+        - optionsSelected = options3
+      each val in optionsSelected
+        -
+          let className3 = "input__btn"
+          className3 += val.className ? ` ${val.className}` : ""
+        .input__select-option
+          h3(class='font-h3 input__option')= val.text
+          .input__btns 
+            input(class= className3 type="button" value="-")
+            h3(class='font-h3 input__number')= val.number
+            input(class="input__btn" type="button" value="+")
+      if options.btns
+        .input__buttons
+          +button-link({text: options.textLeft2, className: 'button-link2__link'})
+          +button-link({text: options.textRight2, className: 'button-link2__link'})
 
 mixin input-email(options)
   .input 

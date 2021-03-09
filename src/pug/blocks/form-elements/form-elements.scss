@@ -8,7 +8,7 @@
 
 .form-elements__block1,
 .form-elements__block3 {
-  width: 320px;
+  width: 100%;
   max-width: 320px;
 }
 
@@ -100,21 +100,21 @@
   margin-top: 41px;
 }
 
-
-
 .form-elements__block4 {
-  width: 264px;
+  width: 266px;
+  margin: 38px 0;
+  margin-right: 7.5vw;
 }
 
-
+.form-elements__block4 .form-elements__block-dropdown:nth-child(2) {
+  margin-top: 20px;
+}
 
 .form-elements__block5,
 .form-elements__block6 {
-  width: 318px;
-}
-
-.form-elements__block5 {
-  margin-left: 110px;
+  width: 100%;
+  max-width: 320px;
+  margin: 38px 0;
 }
 
 .form-elements__block7 {
@@ -149,4 +149,15 @@
 .form-elements__block11 {
   width: 710px;
   margin-top: 58px;
+}
+
+@media (max-width: 1250px) {
+  .form-elements__block4 {
+    margin-right: 0;
+  }
+
+  .form-elements__block5,
+  .form-elements__block6 {
+    margin: 80px 0;
+  }
 }

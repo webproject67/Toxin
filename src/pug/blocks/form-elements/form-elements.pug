@@ -61,127 +61,52 @@ include ../../blocks/range-slider/range-slider
     .form-elements__block-pagination
       h3(class="font-h3 form-elements__text form-elements__text--margin2") pagination
       include ../../blocks/pagination/pagination
-
-   
   .form-elements__block4
     .form-elements__block-dropdown
-      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
-      .form-elements__texts
-        p.form-elements__text-left dropdown
-        p.form-elements__text-right default
-      .form__block-input
-        input(class="form__input" type="text" id="input3" placeholder="2 спальни, 2 кровати..." readonly)
-        label(class="form__label" for="input3") 
-          span.form__icon expand_more
-        .form__select-options
-          .form__select-option
-            p.form__option спальни
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 2 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option кровати
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 2 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option ванные комнаты
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
+      +input-dropdown({
+        textLeft: 'dropdown', 
+        textRight: 'default',
+        id: 'dropdown4', 
+        placeholder: '2 спальни, 2 кровати...',
+        options: 'options1'
+      })
     .form-elements__block-dropdown
-      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
-      .form-elements__texts
-        p.form-elements__text-left dropdown
-        p.form-elements__text-right expanded
-      .form__block-input
-        input(class="form__input" type="text" id="input3" placeholder="2 спальни, 2 кровати..." readonly)
-        label(class="form__label" for="input3") 
-          span.form__icon expand_more
-        div(class="form__select-options form__select-options--display")
-          .form__select-option
-            p.form__option спальни
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 2 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option кровати
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 2 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option ванные комнаты
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
+      +input-dropdown({
+        textLeft: 'dropdown', 
+        textRight: 'expanded', 
+        textLeft2: 'очистить', 
+        textRight2: 'применить', 
+        id: 'dropdown5', 
+        placeholder: '2 спальни, 2 кровати...', 
+        className: 'input__input--border', 
+        className2: 'input__select-options--display', 
+        options: 'options1'
+      })
   .form-elements__block5
     .form-elements__block-dropdown
-      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
-      .form-elements__texts
-        p.form-elements__text-left dropdown
-      .form__block-input
-        input(class="form__input" type="text" id="input3" placeholder="Сколько гостей" readonly)
-        label(class="form__label" for="input3") 
-          span.form__icon expand_more
-        div(class="form__select-options form__select-options--display")
-          .form__select-option
-            p.form__option взрослые
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option дети
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option младенцы
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
-          .form__buttons
-              input(class="form__button" type="button" value="")
-              input(class="form__button" type="button" value="применить")
+      +input-dropdown({
+        textLeft: 'dropdown', 
+        textRight2: 'применить', 
+        id: 'dropdown6', 
+        placeholder: 'Сколько гостей', 
+        className: 'input__input--border', 
+        className2: 'input__select-options--display', 
+        options: 'options2',
+        btns: true
+      })
   .form-elements__block6
     .form-elements__block-dropdown
-      div(class="form__block-label form__block-label--margin-bottom filter-block filter-block--margin3")
-      .form-elements__texts
-        p.form-elements__text-left dropdown
-      .form__block-input
-        input(class="form__input" type="text" id="input3" placeholder="3 гостя" readonly)
-        label(class="form__label" for="input3") 
-          span.form__icon expand_more
-        div(class="form__select-options form__select-options--display")
-          .form__select-option
-            p.form__option взрослые
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 2 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option дети
-            .form__btns 
-              input(class="form__btn" type="button" value="-")
-              span.form__number 1 
-              input(class="form__btn" type="button" value="+")
-          .form__select-option
-            p.form__option младенцы
-            .form__btns 
-              input(class="form__btn form__btn--opacity" type="button" value="-")
-              span.form__number 0 
-              input(class="form__btn" type="button" value="+")
-          .form__buttons
-              input(class="form__button" type="button" value="очистить")
-              input(class="form__button" type="button" value="применить")
+      +input-dropdown({
+        textLeft: 'dropdown', 
+        textLeft2: 'очистить', 
+        textRight2: 'применить', 
+        id: 'dropdown7', 
+        placeholder: '3 гостя', 
+        className: 'input__input--border', 
+        className2: 'input__select-options--display', 
+        options: 'options3',
+        btns: true
+      })
   .form-elements__block7
     .form-elements__checkbox-list
       .filter__block-options
