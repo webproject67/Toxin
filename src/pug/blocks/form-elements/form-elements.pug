@@ -10,7 +10,16 @@ include ../../blocks/range-slider/range-slider
     .form-elements__block-input
       +input({textLeft: 'Text Field', textRight: 'Hover / Focus', type: 'text', placeholder: 'This is pretty awesome', className: 'input__input--hover'})
     .form-elements__block-dropdown
-      +input-dropdown({textLeft: 'dropdown', id: 'dropdown', placeholder: 'Сколько гостей'})
+      +input-dropdown({
+        textLeft: 'dropdown', 
+        id: 'dropdown', 
+        placeholder: 'Сколько гостей',
+        options: [
+          {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
+          {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
+          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+        ]
+      })
     .form-elements__block-input
       +input({textLeft: 'masked text field', type: 'text', placeholder: 'ДД.ММ.ГГГГ'})
     .form-elements__block-dropdowns
@@ -75,7 +84,11 @@ include ../../blocks/range-slider/range-slider
         textRight: 'default',
         id: 'dropdown4', 
         placeholder: '2 спальни, 2 кровати...',
-        options: 'options1'
+        options: [
+          {text: 'спальни', number: 2}, 
+          {text: 'кровати', number: 2}, 
+          {text: 'ванные комнаты', number: 0, className: 'input__btn--opacity'}
+        ]   
       })
     .form-elements__block-dropdown
       +input-dropdown({
@@ -87,7 +100,11 @@ include ../../blocks/range-slider/range-slider
         placeholder: '2 спальни, 2 кровати...', 
         className: 'input__input--border', 
         className2: 'input__select-options--display', 
-        options: 'options1'
+        options: [
+          {text: 'спальни', number: 2}, 
+          {text: 'кровати', number: 2}, 
+          {text: 'ванные комнаты', number: 0, className: 'input__btn--opacity'}
+        ]   
       })
   .form-elements__block5
     .form-elements__block-dropdown
@@ -98,7 +115,11 @@ include ../../blocks/range-slider/range-slider
         placeholder: 'Сколько гостей', 
         className: 'input__input--border', 
         className2: 'input__select-options--display', 
-        options: 'options2',
+        options: [
+          {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
+          {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
+          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+        ],
         btns: true
       })
   .form-elements__block6
@@ -111,7 +132,11 @@ include ../../blocks/range-slider/range-slider
         placeholder: '3 гостя', 
         className: 'input__input--border', 
         className2: 'input__select-options--display', 
-        options: 'options3',
+        options: [
+          {text: 'взрослые', number: 2}, 
+          {text: 'дети', number: 1}, 
+          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+        ],
         btns: true
       })
   .form-elements__block7

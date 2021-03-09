@@ -10,26 +10,11 @@ mixin input(options)
 
 mixin input-dropdown(options)
   -
-    const options1 = [
-      {text: 'спальни', number: 2}, 
-      {text: 'кровати', number: 2}, 
-      {text: 'ванные комнаты', number: 0, className: 'input__btn--opacity'}
-    ]   
-    const options2 = [
-      {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
-      {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
-      {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
-    ]   
-    const options3 = [
-      {text: 'взрослые', number: 2}, 
-      {text: 'дети', number: 1}, 
-      {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
-    ]   
-    let optionsSelected = options1
     let className = "input__input input__input--color"
     className += options.className ? ` ${options.className}` : ""
     let className2 = "input__select-options"
     className2 += options.className2 ? ` ${options.className2}` : ""
+    let optionsArr = options.options ? options.options : []
   .input 
     .input__texts
       h3(class="font-h3 input__text")= options.textLeft
@@ -38,13 +23,7 @@ mixin input-dropdown(options)
     label(class="input__label" for= options.id) 
       span(class='font-icon input__icon') expand_more
     div(class= className2)
-      if options.options === 'options1'
-        - optionsSelected = options1
-      else if options.options === 'options2'
-        - optionsSelected = options2
-      else if options.options === 'options3'
-        - optionsSelected = options3
-      each val in optionsSelected
+      each val in optionsArr
         -
           let className3 = "input__btn"
           className3 += val.className ? ` ${val.className}` : ""
