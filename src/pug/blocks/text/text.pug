@@ -8,3 +8,25 @@ mixin text()
         p.text__text-condition Без вечеринок и мероприятий
       li.text__item
         p.text__text-condition Время прибытия — после 13:00, а выезд до 12:00
+
+mixin text-advantage()
+  ul.text-advantage__list 
+    li.text-advantage__item 
+      p(class="font-lg text-advantage__icon") insert_emoticon
+      p.text-advantage__text Комфорт
+        span.text-advantage__text--color Шумопоглощающие стены
+    li.text-advantage__item 
+      p(class="font-lg text-advantage__icon") location_city
+      p.text-advantage__text Удобство
+        span.text-advantage__text--color Окно в каждой из спален
+
+mixin text-feedback()
+  ul.text-feedback__list
+    li.text-feedback__item
+      .text-feedback__block-avatar 
+        img(class="text-feedback__avatar" src="../../blocks/text/img/image16.jpg", alt="avatar")
+        +button-like({className: 'button-like--active', text: 'favorite', number: 12})
+      .text-feedback__block-review 
+        p.text-feedback__name Мурад Сарафанов
+        p.text-feedback__date 5 дней назад
+        p.text-feedback__review-text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
