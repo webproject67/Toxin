@@ -2,6 +2,7 @@ include ../../blocks/input/input
 include ../../blocks/checkbox-radio/checkbox-radio
 include ../../blocks/button/button
 include ../../blocks/range-slider/range-slider
+include ../../blocks/text/text
 
 .form-elements 
   .form-elements__block1
@@ -151,16 +152,7 @@ include ../../blocks/range-slider/range-slider
       classNameList2: 'checkbox__item--width2',
     })
   .form-elements__block9
-    .details__rules
-      .form-elements__texts
-        p(class="form-elements__text-left form-elements__text-left--margin") bullet list
-      ul(class="details__list-condition form-elements__list-condition")
-        li.details__item-condition
-          p.details__text-condition Нельзя с питомцами
-        li.details__item-condition
-          p.details__text-condition Без вечеринок и мероприятий
-        li.details__item-condition
-          p.details__text-condition Время прибытия — после 13:00, а выезд до 12:00
+    +text()
   .form-elements__block10
     ul.details__list 
       li.details__item 
