@@ -46,3 +46,25 @@ mixin checkbox-list(options)
         {label: 'Шампунь', id: 'shampoo', checked: false}
       ]
     })
+
+mixin checkbox-buttons(options)
+  -
+    let className = "checkbox__list"
+    className += options.className ? ` ${options.className}` : ""
+    let classNameList1 = "checkbox__item"
+    classNameList1 += options.classNameList1 ? ` ${options.classNameList1}` : ""
+    let classNameList2 = "checkbox__item"
+    classNameList2 += options.classNameList2 ? ` ${options.classNameList2}` : ""
+  .checkbox
+    h3(class="font-h3 checkbox__text") rich Checkbox Buttons
+    ul(class= className) 
+      li(class= classNameList1)
+        span.checkbox__figure 
+        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id='hallway')
+        label(class="checkbox__label checkbox__label--color1" for='hallway') Широкий коридор
+          p.checkbox__label--color2 Ширина коридоров в номере не менее 91 см.
+      li(class= classNameList2)
+        span.checkbox__figure 
+        input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id='invalid')
+        label(class="checkbox__label checkbox__label--color1" for='invalid') Помощник для инвалидов
+          p.checkbox__label--color2 На 1 этаже вас встретит специалист  и проводит до номера.

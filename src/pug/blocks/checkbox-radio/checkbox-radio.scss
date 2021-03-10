@@ -13,10 +13,23 @@
   &--display {
     display: none;
   }
+ 
+  &--width {
+    width: auto;
+  }
 }
 
 .checkbox__item {
   margin-bottom: 12px;
+
+  &--width1 {
+    width: 230px;
+    margin-bottom: 8px;
+  }
+  
+  &--width2 {
+    width: 260px;
+  }
 }
 
 .checkbox__label {
@@ -25,6 +38,21 @@
   display: block;
   line-height: 18px;
   color: $color-50;
+
+  &--color1 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color:$color-75;
+  }
+
+  &--color2 {
+    margin: 7px 0 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $color-50;
+  }
 
   &::before {
     position: absolute;

@@ -145,18 +145,11 @@ include ../../blocks/range-slider/range-slider
     .form-elements__block-checkbox-list
       +checkbox-list({className2: 'checkbox-list__icon--rotate'})
   .form-elements__block8
-    div(class="filter-block filter-block--margin2")
-      p(class="filter__desc filter__desc--margin") rich Checkbox Buttons
-      div(class="filter__block-checkbox filter__block-checkbox--width1")
-        span.filter__figure 
-        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="hallway" checked)
-        label(class="filter__checkbox-label filter__checkbox-label--color" for="hallway") Широкий коридор
-          p.filter__checkbox-text Ширина коридоров в номере не менее 91 см.
-      div(class="filter__block-checkbox filter__block-checkbox--width2")
-        span.filter__figure 
-        input(class="filter__checkbox visually-hidden--focusable" type="checkbox" id="invalid")
-        label(class="filter__checkbox-label filter__checkbox-label--color" for="invalid") Помощник для инвалидов
-          p.filter__checkbox-text На 1 этаже вас встретит специалист  и проводит до номера.
+    +checkbox-buttons({
+      className: 'checkbox__list--width',
+      classNameList1: 'checkbox__item--width1',
+      classNameList2: 'checkbox__item--width2',
+    })
   .form-elements__block9
     .details__rules
       .form-elements__texts
