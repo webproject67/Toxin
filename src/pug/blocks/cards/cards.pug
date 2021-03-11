@@ -1,46 +1,36 @@
 include ../form/form
+include ../card-photo/card-photo
 
 .cards
-  +form('form--margin')
-  +form-room
-  input(class="cards__calendar" type="text")
-  +form-registration('form--margin-top-card-registration')
-  +form-sign-in('form--margin-top-card-sign-in')
-  ul(class="rooms__list rooms__list--margin")
-    li(class="rooms__item rooms__item--margin") 
-      img(class="rooms__img" src="../../blocks/rooms/img/image1.jpg", alt="room")
-      a(class="rooms__block-texts" href="room.html")
-        .rooms__block-price
-          .rooms__block-number
-            p.rooms__symbol № 
-              span.rooms__number 888
-            span.rooms__luxe Люкс
-          p.rooms__price 9 990₽
-            span.rooms__price-text в сутки
-        .rooms__block-estimations
-          .rooms__estimations 
-            p.rooms__estimation star
-            p.rooms__estimation star
-            p.rooms__estimation star
-            p.rooms__estimation star
-            p.rooms__estimation star
-          p.rooms__reviews-number 145 
-            span.rooms__reviews Отзывов
-    li.rooms__item 
-      img(class="rooms__img" src="../../blocks/rooms/img/image2.jpg", alt="room")
-      a(class="rooms__block-texts" href="room.html")
-        .rooms__block-price
-          .rooms__block-number
-            p.rooms__symbol № 
-              span.rooms__number 840
-          p.rooms__price 9 990₽
-            span.rooms__price-text в сутки
-        .rooms__block-estimations
-          .rooms__estimations 
-            p.rooms__estimation star
-            p.rooms__estimation star
-            p.rooms__estimation star
-            p.rooms__estimation star
-            p.rooms__estimation star_border
-          p.rooms__reviews-number 65 
-            span.rooms__reviews Отзывов
+  .cards__block1
+    +form-search()
+  .cards__block2
+    +form-room()
+  .cards__block3
+    +input-dropdown({
+      className: 'cards__calendar', 
+      type: 'text'
+    })
+  .cards__block4
+    +form-registration()
+  .cards__block5
+    +form-sign-in()
+  .cards__block6
+    +card-photo([
+      {
+        img: 'image1.jpg',
+        number: 888,
+        luxe: 'Люкс',
+        price: '9 990',
+        estimation: 5,
+        review: 145 
+      },
+      {
+        img: 'image2.jpg',
+        number: 840,
+        luxe: '',
+        price: '9 900',
+        estimation: 4,
+        review: 65 
+      }
+    ])

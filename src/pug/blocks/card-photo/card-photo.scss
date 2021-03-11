@@ -1,0 +1,35 @@
+.card-photo__list {
+  @include list-reset;
+}
+
+.card-photo__item {
+  max-width: 270px;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  overflow: auto;
+}
+
+.card-photo__block-texts {
+  display: block;
+  width: 235px;
+  margin: 0 auto;
+}
+
+.card-photo__block-estimations {
+  @include display-center;
+
+  width: 98%;
+  margin: 0 auto;
+  border-top: 1px solid rgba(31, 32, 65, 0.1);
+}
+
+.card-photo__text-review {
+  margin: 8px 0;
+  font-weight: bold;
+
+  &--weight {
+    font-weight: normal;
+  }
+}

@@ -88,6 +88,43 @@
   margin: 10px 0;
 }
 
+.text-price__block-price {
+  @include display-top;
+
+  align-items: baseline;
+}
+
+.text-price__number {
+  font-weight: bold;
+  line-height: 17px;
+  color: $color;
+
+  &--size1 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  
+  &--size2 {
+    font-size: 20px;
+    line-height: 15px;
+  }
+
+  &--color {
+    color: $color-purple;
+  }
+}
+
+.text-price__price {
+  font-weight: bold;
+  line-height: 18px;
+  color: $color-50;
+
+  &--size {
+    font-weight: normal;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 1250px) {
   .text__list {
     margin: 13px;

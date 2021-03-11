@@ -30,3 +30,12 @@ mixin text-feedback()
         p.text-feedback__name Мурад Сарафанов
         p.text-feedback__date 5 дней назад
         p.text-feedback__review-text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+mixin text-price(options)
+  - const {spanClassName, number, luxe, price} = options
+  .text-price__block-price
+    p.text-price__number № 
+      span(class= spanClassName)= number
+        span(class="font-h3 text-price__number--color")= luxe
+    p.text-price__price= `${price}₽ `
+      span.text-price__price--size в сутки

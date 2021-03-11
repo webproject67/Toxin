@@ -1,0 +1,20 @@
+include ../text/text
+include ../button/button
+
+mixin card-photo(options)
+  ul.card-photo__list
+    each val in options
+      - const {img, number, luxe, price, estimation, review} = val
+      li.card-photo__item
+        img(class="card-photo__img" src=`../../blocks/card-photo/img/${img}`, alt="photo")
+        a(class="card-photo__block-texts" href="room.html")
+          +text-price({
+            spanClassName: 'text-price__number--size2',
+            number: number,
+            luxe: luxe,
+            price: price
+          })
+          .card-photo__block-estimations
+            +button-rate({number: estimation})
+            p.card-photo__text-review= review  
+              span.card-photo__text-review--weight  Отзывов

@@ -3,9 +3,10 @@ mixin input(options)
     let className = "input__input"
     className += options.className ? ` ${options.className}` : ""
   .input 
-    .input__texts
-      h3(class="font-h3 input__text")= options.textLeft
-      p(class="font-h3 input__text input__text--color")= options.textRight
+    if options.textLeft
+      .input__texts
+        h3(class="font-h3 input__text")= options.textLeft
+        p(class="font-h3 input__text input__text--color")= options.textRight
     input(class= className type= options.type placeholder= options.placeholder)
 
 mixin input-dropdown(options)
