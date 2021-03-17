@@ -3,34 +3,37 @@ include ../card-photo/card-photo
 
 .cards
   .cards__block1
-    +form-search()
+    +form-search
   .cards__block2
-    +form-room()
+    +form-room
   .cards__block3
     +input-dropdown({
-      className: 'cards__calendar', 
-      type: 'text'
+      id: 'date5',
+      inputClassName: 'input__input--padding date1'
     })
   .cards__block4
-    +form-registration()
+    +form-registration
   .cards__block5
-    +form-sign-in()
+    +form-sign-in
   .cards__block6
-    +card-photo([
-      {
-        img: 'image1.jpg',
-        number: 888,
-        luxe: 'Люкс',
-        price: '9 990',
-        estimation: 5,
-        review: 145 
-      },
-      {
-        img: 'image2.jpg',
-        number: 840,
-        luxe: '',
-        price: '9 900',
-        estimation: 4,
-        review: 65 
-      }
-    ])
+    +card-photo({
+      itemClassName: 'card-photo__item--margin1',
+      photos: [
+        {
+          img: 'image1.jpg',
+          number: 888,
+          luxe: ' Люкс',
+          price: '9 990',
+          estimation: 5,
+          review: 145 
+        },
+        {
+          img: 'image2.jpg',
+          number: 840,
+          luxe: '',
+          price: '9 900',
+          estimation: 4,
+          review: 65 
+        }
+      ]
+    })

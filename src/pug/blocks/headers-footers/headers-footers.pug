@@ -1,11 +1,15 @@
-include ../../blocks/header/header
-include ../../blocks/footer/footer
+include ../header/header
+include ../footer/footer
 
-.headers-footers__block1 
-  +header({aLink: false})
-.headers-footers__block2
-  +header({aLink: false, name: 'Юлий Цезарь'})
-.headers-footers__block3
-  +footer({aLink: false})
-.headers-footers__block4
-  +footer-creative({aLink: false})
+.headers-footers
+  .headers-footers__block1 
+    +header({})
+  .headers-footers__block2
+    +header({name: 'Юлий Цезарь'})
+  .headers-footers__block3
+    +footer()
+  .headers-footers__block4
+    +footer-reduction({
+      bottomClassName: 'page-footer__bottom--display',
+      listClassName: 'page-footer__socials--margin',
+    })

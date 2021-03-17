@@ -1,24 +1,30 @@
 .cards {
   @include display-top;
 
-  width: 80.6%;
-  margin: 35px auto;
   flex-wrap: wrap;
+  margin: 0 9.7% 40px;
 }
 
-.cards__block3 {
-  margin-top: 18px;
+.cards__block1,
+.cards__block2 {
+  margin-top: 30px;
 }
 
-.cards__calendar {
+.cards__block1,
+.cards__block2,
+.cards__block4,
+.cards__block5 {
+  width: 380px;
+}
+
+.cards__block3,
+.cards__block6 {
   width: 320px;
-  height: 1px;
-  padding: 0;
-  border: none;
+  height: 400px;
 }
 
 .cards__block4 {
-  margin-top: -97px;
+  margin-top: -98px;
 }
 
 .cards__block5 {
@@ -26,6 +32,30 @@
 }
 
 .cards__block6 {
-  width: 320px;
-  margin-top: -102px;
+  margin-top: -103px;
+}
+
+@media (min-width: 1800px) {
+  .cards__block4 {
+    margin-top: 30px;
+  }
+  
+  .cards__block6 {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .cards__block2,
+  .cards__block4,
+  .cards__block5,
+  .cards__block6 {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .cards {
+    margin: 15px;
+  }
 }

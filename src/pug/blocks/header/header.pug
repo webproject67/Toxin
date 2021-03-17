@@ -1,5 +1,12 @@
-include ../../blocks/nav/nav
+include ../logo/logo
+include ../nav/nav
 
 mixin header(options)
   header.page-header 
-    +nav(options)
+    .page-header__wrapper
+      +logotype({})
+      +nav(options)
+      button.page-header__hamburger
+        div(class="page-header__streak page-header__streak--top")
+        div(class="page-header__streak page-header__streak--middle")
+        div(class="page-header__streak page-header__streak--bottom")

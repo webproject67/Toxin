@@ -1,9 +1,13 @@
-mixin logo(options)
-  if options.aLink === false
-    img(class="logo__img" src="../../blocks/logo/img/svg/Logo.svg", alt="logo")
-  else
-    a(class="logo__link" href="landing-page.html")
+mixin logo()
+  .logo
+    a(class= "logo__link" href="index.html" title="На главную") главная страница
       img(class="logo__img" src="../../blocks/logo/img/svg/Logo.svg", alt="logo")
 
-mixin logo-icon()
-  img(class="logo__img-icon" src="../../blocks/logo/img/svg/Logotype.svg", alt="logo")
+mixin logotype(options)
+  -
+    const {imgClassName} = options
+    let letImgClassName = 'logotype__img'
+    letImgClassName += imgClassName ? ` ${imgClassName}` : ''
+    
+  .logotype
+    img(class= letImgClassName src="../../blocks/logo/img/svg/Logotype.svg", alt="logo") 

@@ -1,150 +1,159 @@
 include ../input/input
 include ../button/button
-include ../text/text
-include ../checkbox-radio/checkbox-radio
+include ../checkbox/checkbox
 
 mixin form-search()
   form.form
     h1(class="font-h1 form__title") Найдём номера под ваши пожелания
-    .form__block-inputs 
+    .form__inputs 
       +input-dropdown({
-        textLeft: 'прибытие', 
-        className: 'input__input--width',
-        id: 'arrival1', 
-        placeholder: 'ДД.ММ.ГГГГ'
+        value: 'ДД.ММ.ГГГГ',
+        id: 'date1',
+        inputClassName: 'input__input--width',
+        text: 'прибытие'
       })
       +input-dropdown({
-        textLeft: 'выезд', 
-        className: 'input__input--width',
-        id: 'exit1', 
-        placeholder: 'ДД.ММ.ГГГГ'
+        value: 'ДД.ММ.ГГГГ',
+        id: 'date2',
+        inputClassName: 'input__input--width',
+        text: 'выезд'
       })
-    +input-dropdown({
-        textLeft: 'гости', 
-        id: 'guests1', 
-        placeholder: 'Сколько гостей',
-        options: [
-          {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
-          {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
-          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
-        ]
+    .form__guests 
+      +input-dropdown({
+        value: 'Сколько гостей',
+        id: 'guest1',
+        option: [
+          {text: 'взрослые', number: 0, opacityClassName: 'input__btn--opacity'}, 
+          {text: 'дети', number: 0, opacityClassName: 'input__btn--opacity'}, 
+          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
+        ],
+        textLeft: '', 
+        textRight: 'применить',
+        text: 'гости'
       })
-    .form__submit
+    .form__submit 
       +button-submit({text: 'подобрать номер'})
 
 mixin form-room()
   form.form
     .form__block-price
-      +text-price({
-        spanClassName: 'text-price__number--size1',
-        number: 888,
-        luxe: 'Люкс',
-        price: '9 990',
-      })
-    .form__block-inputs 
+      p.form__symbol № 
+        span.form__symbol--size 888
+          span(class="font-h3 form__symbol--color") Люкс
+      p.form__number 9 990₽ 
+        span.form__number--size в сутки
+    .form__inputs 
       +input-dropdown({
-        textLeft: 'прибытие', 
-        className: 'input__input--width',
-        id: 'arrival2', 
-        placeholder: '19.08.2019'
+        value: '19.08.2019',
+        id: 'date3',
+        inputClassName: 'input__input--width',
+        text: 'прибытие'
       })
       +input-dropdown({
-        textLeft: 'выезд', 
-        className: 'input__input--width',
-        id: 'exit2', 
-        placeholder: '23.08.2019'
+        value: '23.08.2019',
+        id: 'date4',
+        inputClassName: 'input__input--width',
+        text: 'выезд'
       })
-    +input-dropdown({
-        textLeft: 'гости', 
-        textLeft2: 'очистить', 
-        textRight2: 'применить', 
-        id: 'guests2', 
-        placeholder: '3 гостя', 
-        options: [
+    .form__guests 
+      +input-dropdown({
+        value: '3 гостя',
+        id: 'guest2',
+        option: [
           {text: 'взрослые', number: 2}, 
           {text: 'дети', number: 1}, 
-          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
         ],
-        btns: true
+        textLeft: 'очистить', 
+        textRight: 'применить',
+        text: 'гости'
       })
-    ul.form__list 
-      li.form__item 
-        p.form__text-price 9 990₽ х 4 суток
-        p.form__number-price 39 960₽
-      li.form__item 
-        p.form__text-price Сбор за услуги: скидка 2 179₽
-          span.form__icon-price i
-        p.form__number-price 0₽
-      li.form__item 
-        p.form__text-price Сбор за дополнительные услуги
-          span.form__icon-price i
-        p.form__number-price 300₽
-    .form__total-amount
+    .form__block-prices 
+      ul.form__list 
+        li.form__item 
+          p.form__text-price 9 990₽ х 4 суток
+          p.form__number-price 39 960₽
+        li.form__item 
+          p.form__text-price Сбор за услуги: скидка 2 179₽
+            span.form__icon-price i
+          p.form__number-price 0₽
+        li.form__item 
+          p.form__text-price Сбор за дополнительные услуги
+            span.form__icon-price i
+          p.form__number-price 300₽
+    .form__amount
       p.form__total Итого
-        span.form__ellipsis
-      p.form__sum 38 081₽
-    +button-submit({text: 'забронировать'})
+      p.form__ellipsis
+      p.form__total-number 38 081₽
+    .form__submit--margin1
+      +button-submit({text: 'забронировать'})
 
 mixin form-registration()
   form.form
     h1(class="font-h1 form__title") Регистрация аккаунта
-    +input({
-      type: 'text', 
-      placeholder: 'Имя'
-    })
-    .form__surname
+    .form__name 
       +input({
-        type: 'text', 
+        types: 'text',
+        placeholder: 'Имя'
+      })
+    .form__surname 
+      +input({
+        types: 'text',
         placeholder: 'Фамилия'
       })
-    +radio()
-    .form__birthday
+    .form__radio
+      include ../radio/radio
+    .form__birthdate
       +input({
-        textLeft: 'дата рождения', 
-        type: 'text', 
-        placeholder: 'ДД.ММ.ГГГГ'
+        types: 'text',
+        placeholder: 'ДД.ММ.ГГГГ',
+        text: 'дата рождения'
       })
-    +input({
-      textLeft: 'данные для входа в сервис', 
-      type: 'email', 
-      placeholder: 'Email'
-    })
+    .form__email
+      +input({
+        types: 'email',
+        placeholder: 'Email',
+        text: 'данные для входа в сервис'
+      })
     .form__password
       +input({
-        type: 'password', 
+        types: 'password',
         placeholder: 'Пароль'
       })
-    +toggle({
-      checkbox: 'checkbox2', 
-      checked: false
-    })
-    .form__submit--margin1
+    .form__checkbox
+      +checkbox-toggle({
+        id: 'checkbox', 
+        checked: false
+      })
+    .form__submit--margin2
       +button-submit({text: 'перейти к оплате'})
     .form__reg 
       p.form__text-reg Уже есть аккаунт на Toxin
       +button-link({
         text: 'ВОЙТИ', 
-        className: 'button-link__link button-link__link--border'
+        href: 'sign-in.html',
+        linkClassName: 'button-link__link button-link__link--border'
       })
-
 
 mixin form-sign-in()
   form.form
     h1(class="font-h1 form__title") Войти
-    +input({
-      type: 'email', 
-      placeholder: 'Email'
-    })
+    .form__email
+      +input({
+        types: 'email',
+        placeholder: 'Email'
+      })
     .form__password
       +input({
-        type: 'password', 
+        types: 'password',
         placeholder: 'Пароль'
       })
-    .form__submit--margin2
+    .form__submit--margin3
       +button-submit({text: 'войти'})
     .form__reg 
       p.form__text-reg Нет аккаунта на Toxin?
       +button-link({
-        text: 'Создать', 
-        className: 'button-link__link button-link__link--border'
+        text: 'СОЗДАТЬ', 
+        href: 'registration.html',
+        linkClassName: 'button-link__link button-link__link--border'
       })

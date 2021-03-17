@@ -1,11 +1,10 @@
 .main-nav {
   @include display-center;
-
-  width: 83.4%;
-  margin: 0 auto;
-  padding: 15px 20px;
 }
 
-.main-nav__list {
-  display: flex;
+@media (max-width: $desktop-width) {
+  .main-nav {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
 }

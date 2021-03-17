@@ -1,9 +1,9 @@
-.button-like {
+.button-like__button {
+  display: flex;
+  align-items: center;
   width: 40px;
   height: 20px;
   padding: 0 4px;
-  display: flex;
-  align-items: center;
   font-family: 'MaterialIcons';
   font-size: 10px;
   line-height: 9px;
@@ -29,11 +29,11 @@
   }
 
   &:focus {
-    outline: 1px solid;
+    outline: none;
   }
 }
 
-.button-rate {
+.button-rate__list {
   @include list-reset;
   @include display-top;
 }
@@ -44,11 +44,11 @@
 }
 
 .button-link__link {
-  @include display-center;
-  
+  display: flex;
+  align-items: center;  
+  justify-content: center;
   width: 99px;
   height: 44px;
-  justify-content: center;
   color: #ffffff;
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-origin: border-box;
@@ -66,6 +66,16 @@
     color: $color-purple;
     box-shadow: 2px 1000px 1px #fff inset;
   }
+
+  &--width1 {
+    width: 87px;
+    height: 34px;
+  }
+  
+  &--width2 {
+    width: 196px;
+    height: 34px;
+  }
 }
 
 .button-link2__link {
@@ -79,7 +89,6 @@
 
 .button-submit{
   position: relative;
-  width: 100%;
 }
 
 .button-submit__input {
@@ -96,5 +105,4 @@
   top: 10px;
   right: 10px;
   color: #ffffff;
-  
 }

@@ -4,17 +4,105 @@
 
 .card-photo__item {
   max-width: 270px;
-  margin-bottom: 40px;
   padding-bottom: 10px;
   border-radius: 4px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   overflow: auto;
+
+  &--margin1 {
+    margin-bottom: 40px;
+  }
 }
 
-.card-photo__block-texts {
+.card-photo__block-img {
+  position: relative;
+  display: flex;
+
+  &:hover {
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 42px;
+      height: 100%;
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 42px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    & .card-photo__button {
+        color: #FFFFFF;
+      
+        &--next {
+          left: 10px;
+          transform: rotate(90deg);
+        }
+        
+        &--prev {
+          right: 10px;
+          transform: rotate(-90deg);
+        }
+      }
+  }
+}
+
+.card-photo__button {
+  position: absolute;
+  z-index: 1;
+  top: 64px;
+  color: transparent;
+  cursor: pointer;
+}
+
+.card-photo__link {
   display: block;
   width: 235px;
   margin: 0 auto;
+}
+
+.card-photo__block-price {
+  @include display-baseline;
+}
+
+.card-photo__symbol {
+  margin: 21px 0 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color;
+
+  &--size {
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  &--color {
+    color: $color-purple;
+  }
+}
+
+.card-photo__number {
+  margin: 21px 0 10px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-50;
+
+  &--size {
+    font-weight: normal;
+    font-size: 12px;
+  }
 }
 
 .card-photo__block-estimations {

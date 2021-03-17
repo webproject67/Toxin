@@ -1,159 +1,313 @@
-include ../../blocks/input/input
-include ../../blocks/checkbox-radio/checkbox-radio
-include ../../blocks/button/button
-include ../../blocks/range-slider/range-slider
-include ../../blocks/text/text
+include ../input/input
+include ../checkbox/checkbox
+include ../button/button
+include ../slider/slider
+include ../condition/condition
+include ../advantage/advantage
+include ../reviews/reviews
 
 .form-elements 
   .form-elements__block1
-    .form-elements__block-input
-      +input({textLeft: 'Text Field', textRight: 'default', type: 'email', placeholder: 'Email'})
-    .form-elements__block-input
-      +input({textLeft: 'Text Field', textRight: 'Hover / Focus', type: 'text', placeholder: 'This is pretty awesome', className: 'input__input--hover'})
-    .form-elements__block-dropdown
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") Text Field
+        p(class="font-h3 form-elements__text form-elements__text--color") default
+      +input({
+        types: 'email',
+        placeholder: 'Email'
+      })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") Text Field
+        p(class="font-h3 form-elements__text form-elements__text--color") Hover / Focus
+      +input({
+        types: 'text',
+        placeholder: 'This is pretty awesome',
+        inputClassName: 'input__input--hover'
+      })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") dropdown
       +input-dropdown({
-        textLeft: 'dropdown', 
-        id: 'dropdown', 
-        placeholder: 'Сколько гостей',
-        options: [
-          {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
-          {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
-          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
-        ]
+        value: 'Сколько гостей',
+        id: 'guest1',
+        option: [
+          {text: 'взрослые', number: 0, opacityClassName: 'input__btn--opacity'}, 
+          {text: 'дети', number: 0, opacityClassName: 'input__btn--opacity'}, 
+          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
+        ],
+        textLeft: '', 
+        textRight: 'применить'
       })
-    .form-elements__block-input
-      +input({textLeft: 'masked text field', type: 'text', placeholder: 'ДД.ММ.ГГГГ'})
-    .form-elements__block-dropdowns
-      .form-elements__block-dropdown
-        +input-dropdown({textLeft: 'date dropdown', id: 'dropdown1', placeholder: 'ДД.ММ.ГГГГ', className: 'input__input--width'})
-      .form-elements__block-dropdown
-        +input-dropdown({textLeft: 'date dropdown', id: 'dropdown2', placeholder: '19.08.2019', className: 'input__input--width'})
-    .form-elements__block-dropdown
-      +input-dropdown({textLeft: 'filter date dropdown', id: 'dropdown3', placeholder: '19 авг - 23 авг'})
-    .form-elements__block-input
-      +input-email({textLeft: 'subscription text field', type: 'email', placeholder: 'Email'})
-  .form-elements__block2 
-    .form-elements__block-checkbox
-      +checkbox({
-        text: 'Checkbox Buttons',
-        options: [
-          {label: 'Можно курить', id: 'smoke', checked: false},
-          {label: 'Можно с питомцами', id: 'pets', checked: true},
-          {label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true}
-        ]
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") masked text field
+      +input({
+        types: 'text',
+        placeholder: 'ДД.ММ.ГГГГ'
       })
-    .form-elements__block-radio
-      h3(class="font-h3 form-elements__text") Radio Buttons
-      +radio()
-    .form-elements__block-toggle
-      h3(class="font-h3 form-elements__text form-elements__text--margin") toggle
-      +toggle({text: 'toggle', checkbox: 'checkbox1', checked: true})
-      +toggle({text: '', checkbox: 'checkbox2', checked: false})
-    .form-elements__block-button
-      h3(class="font-h3 form-elements__text") like button
-      div(class='form-elements__block-buttons form-elements__block-buttons--width1')
-        +button-like({text: 'favorite_border', number: 2})
-        +button-like({className: 'button-like--active', text: 'favorite', number: 12})
-    .form-elements__block-button
-      h3(class="font-h3 form-elements__text") rate button
-      div(class='form-elements__block-buttons form-elements__block-buttons--width2')
+    .form-elements__block
+      .form-elements__block-left
+        .form-elements__texts
+          h3(class="font-h3 form-elements__text") date dropdown
+        +input-dropdown({
+          value: 'ДД.ММ.ГГГГ',
+          id: 'date1',
+          inputClassName: 'input__input--width'
+        })
+      .form-elements__block-right
+        .form-elements__texts
+          h3(class="font-h3 form-elements__text") date dropdown
+        +input-dropdown({
+          value: '19.08.2019',
+          id: 'date2',
+          inputClassName: 'input__input--width'
+        })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") filter date dropdown
+      +input-dropdown({
+        value: '19 авг - 23 авг',
+        id: 'date'
+      })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") subscription text field
+      +input-email
+  .form-elements__block2
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") Checkbox Buttons
+      .form-elements__block-checkbox
+        +checkbox({
+          checkboxs: [
+            {label: 'Можно курить', id: 'smoke', checked: false},
+            {label: 'Можно с питомцами', id: 'pets', checked: true},
+            {label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true}
+          ]
+        })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") Radio Buttons
+      .form-elements__block-radio
+        include ../radio/radio
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") Toggle
+      .form-elements__block-toggle
+        +checkbox-toggle({
+          id: 'checkboxOn', 
+          checked: true
+        })
+        +checkbox-toggle({
+          id: 'checkboxOff', 
+          checked: false
+        })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") like button
+      .form-elements__block-like
+        +button-like({
+          text: 'favorite_border', 
+          number: 2
+        })
+        +button-like({
+          text: 'favorite', 
+          number: 12,
+          buttonClassName: 'button-like__button--active'
+        })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") rate button
+      .form-elements__block-rate
         +button-rate({number: 4})
         +button-rate({number: 5})
-  .form-elements__block3
-    .form-elements__block-range-slider
-      +range-slider({textLeft: 'Range Slider', textRight: '5 000₽ - 10 000₽'})
-    .form-elements__block-button
-      h3(class="font-h3 form-elements__text") buttons
-      div(class='form-elements__block-buttons form-elements__block-buttons--width3 form-elements__block-buttons--margin')
-        +button-link({text: 'click me', className: 'button-link__link'})
-        +button-link({text: 'click me', className: 'button-link__link button-link__link--hover'})
-      div(class='form-elements__block-buttons form-elements__block-buttons--width3 form-elements__block-buttons--margin')
-        +button-link({text: 'click me', className: 'button-link__link button-link__link--border'})
-        +button-link({text: 'click me', className: 'button-link__link button-link__link--hover button-link__link--border'})
-      div(class='form-elements__block-buttons form-elements__block-buttons--width4 form-elements__block-buttons--margin')
-        +button-link({text: 'click me', className: 'button-link2__link'})
-        +button-link({text: 'click me', className: 'button-link2__link button-link2__link--hover'})
-      div(class='form-elements__block-buttons')
+  .form-elements__block3 
+    .form-elements__block
+      +slider({text: 'Range Slider'})
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") buttons
+      .form-elements__block-link-bg 
+        +button-link({
+          text: 'click me', 
+          href: '#',
+          linkClassName: 'button-link__link'
+        })
+        +button-link({
+          text: 'click me', 
+          href: '#',
+          linkClassName: 'button-link__link button-link__link--hover'
+        })
+      div(class="form-elements__block-link-bg form-elements__block-link-bg--margin")
+        +button-link({
+          text: 'click me', 
+          href: '#',
+          linkClassName: 'button-link__link button-link__link--border'
+        })
+        +button-link({
+          text: 'click me', 
+          href: '#',
+          linkClassName: 'button-link__link button-link__link--hover button-link__link--border'
+        })
+      .form-elements__block-link 
+        +button-link({
+          text: 'click me', 
+          href: '#',
+          linkClassName: 'button-link2__link'
+        })
+        +button-link({
+          text: 'click me',
+          href: '#',
+          linkClassName: 'button-link2__link button-link2__link--hover'
+        })
+      .form-elements__block-link-submit
         +button-submit({text: 'перейти к оплате'})
-    .form-elements__block-pagination
-      h3(class="font-h3 form-elements__text form-elements__text--margin2") pagination
-      include ../../blocks/pagination/pagination
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") pagination
+      .form-elements__block-pagination
+        include ../pagination/pagination
   .form-elements__block4
-    .form-elements__block-dropdown
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") dropdown
+        p(class="font-h3 form-elements__text form-elements__text--color") default
       +input-dropdown({
-        textLeft: 'dropdown', 
-        textRight: 'default',
-        id: 'dropdown4', 
-        placeholder: '2 спальни, 2 кровати...',
-        options: [
+        value: '2 спальни, 2 кровати...',
+        id: 'rooms1',
+        option: [
           {text: 'спальни', number: 2}, 
           {text: 'кровати', number: 2}, 
-          {text: 'ванные комнаты', number: 0, className: 'input__btn--opacity'}
-        ]   
+          {text: 'ванные комнаты', number: 0, opacityClassName: 'input__btn--opacity'}
+        ]
       })
-    .form-elements__block-dropdown
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") dropdown
+        p(class="font-h3 form-elements__text form-elements__text--color") expanded
       +input-dropdown({
-        textLeft: 'dropdown', 
-        textRight: 'expanded', 
-        textLeft2: 'очистить', 
-        textRight2: 'применить', 
-        id: 'dropdown5', 
-        placeholder: '2 спальни, 2 кровати...', 
-        className: 'input__input--border', 
-        className2: 'input__select-options--display', 
-        options: [
+        value: '2 спальни, 2 кровати...',
+        id: 'rooms2',
+        inputClassName: 'input__input--border', 
+        optionsClassName: 'input__select-options--display', 
+        option: [
           {text: 'спальни', number: 2}, 
           {text: 'кровати', number: 2}, 
-          {text: 'ванные комнаты', number: 0, className: 'input__btn--opacity'}
-        ]   
+          {text: 'ванные комнаты', number: 0, opacityClassName: 'input__btn--opacity'}
+        ]
       })
   .form-elements__block5
-    .form-elements__block-dropdown
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") dropdown
       +input-dropdown({
-        textLeft: 'dropdown', 
-        textRight2: 'применить', 
-        id: 'dropdown6', 
-        placeholder: 'Сколько гостей', 
-        className: 'input__input--border', 
-        className2: 'input__select-options--display', 
-        options: [
-          {text: 'взрослые', number: 0, className: 'input__btn--opacity'}, 
-          {text: 'дети', number: 0, className: 'input__btn--opacity'}, 
-          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+        value: 'Сколько гостей',
+        id: 'guest2',
+        inputClassName: 'input__input--border', 
+        optionsClassName: 'input__select-options--display', 
+        option: [
+          {text: 'взрослые', number: 0, opacityClassName: 'input__btn--opacity'}, 
+          {text: 'дети', number: 0, opacityClassName: 'input__btn--opacity'}, 
+          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
         ],
-        btns: true
+        textLeft: '', 
+        textRight: 'применить'
       })
   .form-elements__block6
-    .form-elements__block-dropdown
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") dropdown
       +input-dropdown({
-        textLeft: 'dropdown', 
-        textLeft2: 'очистить', 
-        textRight2: 'применить', 
-        id: 'dropdown7', 
-        placeholder: '3 гостя', 
-        className: 'input__input--border', 
-        className2: 'input__select-options--display', 
-        options: [
+        value: '3 гостя',
+        id: 'guest3',
+        inputClassName: 'input__input--border', 
+        optionsClassName: 'input__select-options--display', 
+        option: [
           {text: 'взрослые', number: 2}, 
           {text: 'дети', number: 1}, 
-          {text: 'младенцы', number: 0, className: 'input__btn--opacity'}
+          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
         ],
-        btns: true
+        textLeft: 'очистить', 
+        textRight: 'применить'
       })
   .form-elements__block7
-    .form-elements__block-checkbox-list
-      +checkbox-list({className: 'checkbox__list--display'})
-    .form-elements__block-checkbox-list
-      +checkbox-list({className2: 'checkbox-list__icon--rotate'})
+    .form-elements__block
+      +checkbox-list({
+        text: 'expandable checkbox list',
+        optionsClassName: 'checkbox__list--display',
+        checkboxs: [
+          {label: 'Завтрак', id: 'breakfast1', checked: false},
+          {label: 'Письменный стол', id: 'desk1', checked: true},
+          {label: 'Стул для кормления', id: 'chair1', checked: true},
+          {label: 'Кроватка', id: 'Crib1', checked: true},
+          {label: 'Телевизор', id: 'TV1', checked: false},
+          {label: 'Шампунь', id: 'shampoo1', checked: false}
+        ]
+      })
+    .form-elements__block
+      +checkbox-list({
+        text: 'expandable checkbox list',
+        iconClassName: 'checkbox-list__icon--rotate',
+        checkboxs: [
+          {label: 'Завтрак', id: 'breakfast2', checked: false},
+          {label: 'Письменный стол', id: 'desk2', checked: true},
+          {label: 'Стул для кормления', id: 'chair2', checked: true},
+          {label: 'Кроватка', id: 'Crib2', checked: true},
+          {label: 'Телевизор', id: 'TV2', checked: false},
+          {label: 'Шампунь', id: 'shampoo2', checked: false}
+        ]
+      })
   .form-elements__block8
-    +checkbox-buttons({
-      className: 'checkbox__list--width',
-      classNameList1: 'checkbox__item--width1',
-      classNameList2: 'checkbox__item--width2',
-    })
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") rich Checkbox Buttons
+      .form-elements__block-checkbox
+        +checkbox({
+            labelClassName: 'checkbox__label--color1',
+            checkboxs: [
+              {
+                label: 'Широкий коридор', 
+                id: 'hallway', 
+                checked: false,
+                text: 'Ширина коридоров в номере не менее 91 см.',
+                className: 'checkbox__item--width1'
+              },
+              {
+                label: 'Помощник для инвалидов', 
+                id: 'invalid', 
+                checked: false,
+                text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                className: 'checkbox__item--width2'
+              }
+            ]
+          })
   .form-elements__block9
-    +text()
+    .form-elements__block
+      .form-elements__texts
+        h3(class="font-h3 form-elements__text") bullet list
+      .form-elements__block-condition
+        +condition
   .form-elements__block10
-    +text-advantage()
+    .form-elements__block
+      +advantage({
+        texts: [
+          {icon: 'insert_emoticon', text: 'Комфорт', span: 'Шумопоглощающие стены'},
+          {icon: 'location_city', text: 'Удобство', span: 'Окно в каждой из спален'}
+        ] 
+      })
   .form-elements__block11
-    +text-feedback()
+    .form-elements__block
+      +reviews({
+        reviews: [
+          {
+            image: 'image16', 
+            buttonText: 'favorite', 
+            buttonNumber: 12,
+            buttonButtonClassName: 'button-like__button--active',
+            name: 'Мурад Сарафанов', 
+            date: '5 дней назад',
+            reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+          }
+        ] 
+      })

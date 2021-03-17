@@ -1,0 +1,13 @@
+mixin slider(options)
+  -
+    const {text} = options
+
+  .slider
+    .slider__texts
+      h3(class="font-h3 slider__text")= text
+      p(class="font-h3 slider__text slider__text--color") 5 000₽ - 10 000₽
+    .slider__slider 
+      .slider__scale
+        .slider__bar
+      div(class="slider__toggle slider__toggle-min")
+      div(class="slider__toggle slider__toggle-max")

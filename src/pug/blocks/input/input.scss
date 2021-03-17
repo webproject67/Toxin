@@ -2,22 +2,14 @@
   position: relative;
 }
 
-.input__texts {
-  @include display-center;
-}
-
 .input__text {
   margin: 0 0 5px;
-
-  &--color {
-    font-weight: normal;
-    color: $color-50;
-  }
 }
 
 .input__input {
   width: 100%;
   padding: 13px 14px;
+  color: $color-75;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
 
@@ -35,13 +27,6 @@
     }
   }
 
-  &--color {
-
-    &::placeholder {
-      color: $color-75;
-    }
-  }
-
   &--width {
     max-width: 150px;
   }
@@ -50,27 +35,21 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 2px;
   }
-}
 
-.input__label,
-.input__form {
-  position: relative;
-}
-
-.input__icon {
-  position: absolute;
-  top: -4px;
-  right: 10px;
+  &--padding {
+    padding: 0;
+    color: transparent;
+    border: 0;
+  }
 }
 
 .input__select-options {
   position: absolute;
-  top: 63px;
+  top: 43px;
   left: 0;
   z-index: 1;
   display: none;
   width: 100%;
-  max-width: 320px;
   padding: 0 7px 6px 13px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.5);
@@ -111,18 +90,34 @@
     opacity: 0.38;
     cursor: default;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .input__buttons {
   @include display-center;
 
-  padding: 19px 0 6px;
+  padding: 14px 0 2px;
+}
+
+.input__label,
+.input__form {
+  position: relative;
+}
+
+.input__icon {
+  position: absolute;
+  top: -3px;
+  right: 10px;
 }
 
 .input__submit {
   position: absolute;
   top: 0;
-  right: 4px;
+  right: 0;
   height: 100%;
+  padding: 0 10px;
   border: none;
 }

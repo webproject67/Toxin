@@ -10,24 +10,28 @@
 }
 
 .pagination__item {
-  @include display-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  justify-content: center;
   font-size: 12px;
   line-height: 15px;
   color: $color-50;
   cursor: pointer;
 
-  &:first-child {
+  &:hover,
+  &--active {
     font-weight: bold;
     color: #FFFFFF;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
   }
 
-  &:nth-child(4) {
-    cursor: default;
+  & .pagination__symbol {
+    width: 40px;
+    height: 40px;
+    padding: 13px 0 0;
   }
 }
 

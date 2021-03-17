@@ -1,90 +1,115 @@
 .form {
-  width: 380px;
-  max-width: 380px;
   padding: 23px 29px 30px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 
-.form__title {
-  margin-bottom: 22px;
+.form__inputs {
+  @include display-top;
+
+  margin-top: 22px;
 }
 
-.form__block-inputs {
-  @include display-center;
-
-  margin-bottom: 21px;
+.form__guests,
+.form__name {
+  margin-top: 21px;
 }
 
 .form__submit {
   margin-top: 31px;
 
   &--margin1 {
-    margin: 23px 0 0;
+    margin-top: 6px;
   }
   
   &--margin2 {
-    margin: 19px 0 0;
+    margin-top: 23px;
+  }
+  
+  &--margin3 {
+    margin-top: 20px;
   }
 }
 
-.form__block-price {
-  margin: 4px 0 6px;
+.form__block-price,
+.form__amount {
+  @include display-baseline;
+}
+
+.form__symbol {
+  margin: 16px 0 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color;
+
+  &--size {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &--color {
+    color: $color-purple;
+  }
+}
+
+.form__number {
+  margin: 16px 0 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-50;
+
+  &--size {
+    font-weight: normal;
+    font-size: 12px;
+  }
 }
 
 .form__list {
   @include list-reset;
 
-  margin: 17px 0 2px;
+  margin: 17px 0;
 }
 
 .form__item {
-  @include display-center;
+  @include display-baseline;
 
-  &:last-child {
-    align-items: baseline;
-  }
-}
-
-.form__text-price,
-.form__number-price {
-  margin: 0 0 10px;
+  margin-bottom: 10px
 }
 
 .form__text-price {
   @include display-top;
 
-  width: 75%;
+  width: 100%;
+  margin: 0;
   line-height: 18px;
 }
 
 .form__icon-price {
-  @include display-center;
-
-  width: 20px;
-  height: 20px;
+  display: flex;
   justify-content: center;
+  align-items: center;
   font-weight: bold;
   font-size: 12px;
   line-height: 14px;
-  text-align: right;
   color: $color-25;
+  min-width: 20px;
+  height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50px;
-  box-sizing: border-box;
 }
 
-.form__total-amount {
-  @include display-center;
-}
-
-.form__total {
-  display: contents;
+.form__number-price {
+  width: 33%;
+  margin: 0;
+  text-align: right;
 }
 
 .form__total,
-.form__sum {
+.form__total-number {
+  margin: 14px 0;
   font-weight: bold;
   font-size: 19px;
   line-height: 23px;
@@ -92,29 +117,44 @@
 }
 
 .form__ellipsis {
-  width: 54%;
-  margin: 12px 0 0;
+  width: 47%;
   border-top: 1px dotted rgba(31, 32, 65, 0.25);
 }
 
-.form__surname {
-  margin: 9px 0 5px;
-}
-
-.form__birthday {
-  margin: 23px 0 20px;
-}
-
+.form__surname,
 .form__password {
-  margin: 10px 0 7px;
+  margin-top: 10px;
+}
+
+.form__radio,
+.form__checkbox {
+  margin-top: 7px;
+}
+
+.form__birthdate {
+  margin-top: 23px;
+}
+
+.form__email {
+  margin-top: 20px;
 }
 
 .form__reg {
   @include display-center;
 
-  margin: 26px 0 -4px;
+  margin-top: 30px;
 }
 
 .form__text-reg {
-  color: #000000;
+  margin: 0;
+}
+
+@media (max-width: $tablet-width) {
+  .form {
+    padding: 15px;
+  }
+
+  .form__title {
+    font-size: 20px;
+  }
 }

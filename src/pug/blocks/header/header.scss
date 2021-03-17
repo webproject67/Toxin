@@ -1,3 +1,42 @@
 .page-header {
+  padding: 15px 0;
+  background: #ffffff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+.page-header__wrapper {
+  @include display-center;
+
+  position: relative;
+  margin: 0 9.7%;
+}
+
+.page-header__hamburger {
+  background: transparent;
+  border: none;
+
+  &:hover .page-header__streak--top {
+    transform: translateY(9px) rotateZ(45deg);
+  }
+
+  &:hover .page-header__streak--middle {
+    width: 0;
+  }
+
+  &:hover .page-header__streak--bottom {
+    transform: translateY(-9px) rotateZ(-45deg);
+  }
+}
+
+.page-header__streak {
+  width: 25px;
+  height: 2px;
+  background: $color;
+  margin: 7px auto;
+}
+
+@media (min-width: $tablet-width) {
+  .page-header__hamburger {
+    display: none;
+  }
 }

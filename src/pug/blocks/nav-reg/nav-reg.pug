@@ -1,9 +1,23 @@
+include ../button/button
+
 mixin nav-reg(options)
-  if options.name 
-    a(class="nav-reg__name" href="#")= options.name 
-  else 
-    ul.nav-reg 
-      li.nav-reg__item
-        a(class="nav-reg__link" href="sign-in.html") Войти
-      li.nav-reg__item
-        a(class="nav-reg__link nav-reg__link--color" href="registration.html") Зарегистрироваться
+  -
+    const {name} = options
+
+  if name 
+    a(class="nav-reg__name" href="#")= name 
+  else
+    .nav-reg 
+      ul.nav-reg__list 
+        li.nav-reg__item
+          +button-link({
+            text: 'Войти', 
+            href: 'sign-in.html',
+            linkClassName: 'button-link__link button-link__link--border button-link__link--width1'
+          })
+        li.nav-reg__item
+          +button-link({
+            text: 'Зарегистрироваться', 
+            href: 'registration.html',
+            linkClassName: 'button-link__link button-link__link--width2'
+          })

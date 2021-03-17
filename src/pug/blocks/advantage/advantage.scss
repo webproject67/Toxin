@@ -1,0 +1,30 @@
+.advantage__list {
+  @include list-reset;
+}
+
+.advantage__item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.advantage__item:not(:nth-child(3)) {
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+}
+
+.advantage__icon {
+  margin: 0 10px 0 0;
+  font-family: MaterialIcons;
+  font-size: 48px;
+  line-height: 41px;
+}
+
+.advantage__text {
+  margin: 0;
+  font-weight: bold;
+
+  &--color {
+    display: block;
+    font-weight: normal;
+  }
+}

@@ -1,20 +1,26 @@
-include ../text/text
-include ../button/button
-
 mixin card-photo(options)
-  ul.card-photo__list
-    each val in options
-      - const {img, number, luxe, price, estimation, review} = val
-      li.card-photo__item
-        img(class="card-photo__img" src=`../../blocks/card-photo/img/${img}`, alt="photo")
-        a(class="card-photo__block-texts" href="room.html")
-          +text-price({
-            spanClassName: 'text-price__number--size2',
-            number: number,
-            luxe: luxe,
-            price: price
-          })
-          .card-photo__block-estimations
-            +button-rate({number: estimation})
-            p.card-photo__text-review= review  
-              span.card-photo__text-review--weight  Отзывов
+  -
+    const {itemClassName, photos} = options
+    let letitemClassName = 'card-photo__item'
+    letitemClassName += itemClassName ? ` ${itemClassName}` : ''
+
+  .card-photo
+    ul.card-photo__list
+      each val in photos
+        li(class= letitemClassName)
+          .card-photo__block-img
+            img(class="card-photo__img" src=`../../blocks/card-photo/img/${val.img}`, alt="photo")
+            div(class="font-icon card-photo__button card-photo__button--next") expand_more
+            div(class="font-icon card-photo__button card-photo__button--prev") expand_more
+            div.card-photo__pagination
+          a(class="card-photo__link" href="room-details.html")
+            .card-photo__block-price
+              p.card-photo__symbol № 
+                span.card-photo__symbol--size= val.number
+                  span(class="font-h3 card-photo__symbol--color")=  val.luxe 
+              p.card-photo__number= `${val.price}₽ ` 
+                span.card-photo__number--size в сутки
+            .card-photo__block-estimations
+              +button-rate({number: val.estimation})
+              p.card-photo__text-review= val.review  
+                span.card-photo__text-review--weight  Отзывов

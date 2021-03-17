@@ -15,3 +15,9 @@
 	align-items: center;
 	justify-content: space-between;
 }
+
+@mixin display-baseline {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}

@@ -1,9 +1,6 @@
-include ../../blocks/logo/logo
-include ../../blocks/nav-reg/nav-reg
+include ../nav-reg/nav-reg
 
 mixin nav(options)
   nav.main-nav
-    +logo(options)
-    .main-nav__list
-      include ../../blocks/nav-link/nav-link
-      +nav-reg(options)
+    include ../nav-link/nav-link
+    +nav-reg(options)

@@ -1,0 +1,18 @@
+mixin reviews(options)
+  -
+    const {reviews} = options 
+
+  ul.reviews__list
+    each val in reviews
+      li.reviews__item
+        .reviews__block-avatar 
+          img(class="reviews__avatar" src=`../../blocks/reviews/img/${val.image}.jpg`, alt="avatar")
+          +button-like({
+            text: val.buttonText, 
+            number: val.buttonNumber,
+            buttonClassName: val.buttonButtonClassName
+          })
+        .reviews__block-review 
+          p.reviews__name= val.name
+          p.reviews__date= val.date
+          p.reviews__review-text= val.reviewText

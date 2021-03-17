@@ -1,25 +1,38 @@
 mixin button-like(options)
   -
-    var className = "button-like"
-    className += options.className ? ` ${options.className}` : ""
-  button(class= className type="button")= options.text
-    span.button-like--number= options.number
+    const {text, number, buttonClassName} = options
+    let letButtonClassName = 'button-like__button'
+    letButtonClassName += buttonClassName ? ` ${buttonClassName}` : ''
+
+  .button-like  
+    button(class= letButtonClassName type="button")= text
+      span.button-like__button--number= number
 
 mixin button-rate(options)
-  ul.button-rate
-    - for (var x = 0; x < options.number; x++)
-    li(class="font-icon font-lg button-rate__item") star
-    - for (var x = 0; x < 5 - options.number; x++)
-      li(class="font-icon font-lg button-rate__item") star_border
+  -
+    const {number} = options
+
+  .button-rate
+    ul.button-rate__list
+      - for (let x = 0; x < number; x++)
+      li(class="font-icon font-lg button-rate__item") star
+      - for (let x = 0; x < 5 - number; x++)
+        li(class="font-icon font-lg button-rate__item") star_border
 
 mixin button-link(options) 
   -
-    var className = "font-h3"
-    className += options.className ? ` ${options.className}` : ""
-  a(class= className)= options.text
+    const {text, href, linkClassName} = options
+    let letLinkClassName = 'font-h3'
+    letLinkClassName += linkClassName ? ` ${linkClassName}` : ''
+
+  .button-link
+    a(class= letLinkClassName href= href)= text
 
 mixin button-submit(options) 
+  -
+    const {text} = options
+
   .button-submit
-    input(class="font-h3 button-submit__input" type="submit" id="submit" value= options.text)
+    input(class="font-h3 button-submit__input" type="submit" id="submit" value= text)
     label(class="button-submit__label" for="submit") 
-      span(class="font-icon button-submit__icon button-submit__icon--color") arrow_forward
+      span(class="font-icon button-submit__icon") arrow_forward

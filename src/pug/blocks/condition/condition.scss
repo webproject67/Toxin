@@ -1,0 +1,24 @@
+.condition__list {
+  @include list-reset;
+
+  margin: 0 56px 0 21px;
+}
+
+.condition__item {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: -21px;
+    width: 10px;
+    height: 10px;
+    background: rgba(31, 32, 65, 0.25);
+    border-radius: 50px;
+  }
+}
+
+.condition__text {
+  margin: 9px 0;
+}

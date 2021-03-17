@@ -1,7 +1,22 @@
-.logo__link {
-  height: 40px
+.logo__link{
+  display: inline-block;
+  font-size: 0;
 }
 
-.logo__img-icon {
+.logo__img {
   margin: 30px;
+}
+
+.logotype {
+  display: flex;
+}
+
+.logotype__img--display {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .logotype__img--display {
+    display: block;
+  }
 }
