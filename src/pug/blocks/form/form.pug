@@ -88,7 +88,10 @@ mixin form-room()
     .form__submit--margin1
       +button-submit({text: 'забронировать'})
 
-mixin form-registration()
+mixin form-registration(options)
+  -
+    const {textSubmit} = options
+
   form.form
     h1(class="font-h1 form__title") Регистрация аккаунта
     .form__name 
@@ -126,7 +129,7 @@ mixin form-registration()
         checked: false
       })
     .form__submit--margin2
-      +button-submit({text: 'перейти к оплате'})
+      +button-submit({text: textSubmit})
     .form__reg 
       p.form__text-reg Уже есть аккаунт на Toxin
       +button-link({

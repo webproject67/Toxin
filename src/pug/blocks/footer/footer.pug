@@ -21,13 +21,21 @@ mixin footer-bottom(options)
         a(class="page-footer__link-social" href="https://www.instagram.com/?hl=ru")
           img(class="page-footer__img" src="../../blocks/footer/img/svg/instagram.svg", alt="logo")
 
-mixin footer()
-  footer.page-footer 
+mixin footer(options)
+  -
+    const {logoLink, footerClassName} = options
+    let letFooterClassName = 'page-footer'
+    letFooterClassName += footerClassName ? ` ${footerClassName}` : ''
+
+  footer(class= letFooterClassName)
     .page-footer__logo
-        +logotype({imgClassName: 'logotype__img--display'})
+        +logotype({
+          logoLink: logoLink,
+          imgClassName: 'logotype__img--display'
+        })
     .page-footer__top
       .page-footer__block-logo 
-        +logotype({})
+        +logotype(options)
         p.page-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       .page-footer__block-nav 
         h3(class="font-h3 page-footer__links") навигация
@@ -70,5 +78,5 @@ mixin footer()
 
 mixin footer-reduction(options)
   footer(Class="page-footer page-footer--width")
-    +logotype({})
+    +logotype(options)
     +footer-bottom(options)

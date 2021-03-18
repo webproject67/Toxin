@@ -3,11 +3,20 @@
   background: url('../pug/blocks/main/img/img3.jpg') no-repeat center bottom;
   background-size: cover;
   border: 1px solid transparent;
+
+  &--background {
+    background: url('../pug/blocks/main/img/img4.jpg') no-repeat center bottom;
+    background-size: cover;
+  }
 }
 
 .page-main__form {
   max-width: 380px;
   margin: 69px 124px;
+
+  &--margin {
+    margin: 18px auto;
+  }
 }
 
 .page-main__text {
@@ -19,6 +28,10 @@
 @media (max-width: $mobile-width-only) {
   .page-main__form {
     margin: 69px auto;
+
+    &--margin {
+      margin: 18px auto;
+    }
   }
 
   .page-main__text {

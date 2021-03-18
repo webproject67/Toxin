@@ -4,6 +4,9 @@ include ../../blocks/main/main
 include ../../blocks/footer/footer
 
 block body
-  +header({})
-  +main-landing()
-  +footer({})
+  +header({logoLink: true})
+  +main-registration()
+  +footer({
+    logoLink: true,
+    footerClassName: 'page-footer--padding'
+    })

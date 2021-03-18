@@ -5,4 +5,8 @@ mixin main-landing()
     section.page-main__form
       +form-search
     p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-    
+
+mixin main-registration()
+  main(class="page-main page-main--background")
+    section(class="page-main__form page-main__form--margin")
+      +form-registration({textSubmit: 'зарегистрироваться'})
