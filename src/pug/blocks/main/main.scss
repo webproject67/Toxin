@@ -1,0 +1,28 @@
+.page-main {
+  padding: 0 15px;
+  background: url('../pug/blocks/main/img/img3.jpg') no-repeat center bottom;
+  background-size: cover;
+  border: 1px solid transparent;
+}
+
+.page-main__form {
+  max-width: 380px;
+  margin: 69px 124px;
+}
+
+.page-main__text {
+  width: 297px;
+  margin: 317px 118px 21px auto;
+  text-align: right;
+}
+
+@media (max-width: $mobile-width-only) {
+  .page-main__form {
+    margin: 69px auto;
+  }
+
+  .page-main__text {
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}

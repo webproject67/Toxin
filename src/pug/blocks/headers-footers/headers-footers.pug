@@ -3,9 +3,12 @@ include ../footer/footer
 
 .headers-footers
   .headers-footers__block1 
-    +header({})
+    +header({itemClassName: 'nav-link__item--hover'})
   .headers-footers__block2
-    +header({name: 'Юлий Цезарь'})
+    +header({
+      itemClassName: 'nav-link__item--hover',
+      name: 'Юлий Цезарь'
+    })
   .headers-footers__block3
     +footer()
   .headers-footers__block4

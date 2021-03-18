@@ -1,4 +1,4 @@
-.logo__link{
+.logo__link {
   display: inline-block;
   font-size: 0;
 }
@@ -7,15 +7,17 @@
   margin: 30px;
 }
 
-.logotype {
+.logotype,
+.logotype__link {
   display: flex;
+  font-size: 0;
 }
 
 .logotype__img--display {
   display: none;
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width-only) {
   .logotype__img--display {
     display: block;
   }

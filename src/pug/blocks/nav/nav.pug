@@ -1,6 +1,7 @@
+include ../nav-link/nav-link
 include ../nav-reg/nav-reg
 
 mixin nav(options)
   nav.main-nav
-    include ../nav-link/nav-link
+    +nav-link(options)
     +nav-reg(options)

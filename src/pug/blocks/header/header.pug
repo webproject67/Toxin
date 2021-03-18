@@ -4,7 +4,7 @@ include ../nav/nav
 mixin header(options)
   header.page-header 
     .page-header__wrapper
-      +logotype({})
+      +logotype(options)
       +nav(options)
       button.page-header__hamburger
         div(class="page-header__streak page-header__streak--top")
