@@ -26,9 +26,7 @@ mixin checkbox-toggle(options)
 
 mixin checkbox-list(options)
   -
-    const {text, optionsClassName, iconClassName, checkboxs} = options
-    let letOptionsClassName = 'input__input'
-    letOptionsClassName += optionsClassName ? ` ${optionsClassName}` : ''
+    const {text, listClassName, iconClassName, checkboxs} = options
     let letIconClassName = 'font-icon checkbox-list__icon'
     letIconClassName += iconClassName ? ` ${iconClassName}` : ''
 
@@ -38,6 +36,6 @@ mixin checkbox-list(options)
       label(class="checkbox-list__label" for="button") 
         span(class= letIconClassName) expand_more
     +checkbox({
-      listClassName: optionsClassName,
+      listClassName: listClassName,
       checkboxs: checkboxs
     })

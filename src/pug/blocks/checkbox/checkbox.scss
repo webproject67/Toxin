@@ -7,6 +7,10 @@
   &--display {
     display: none;
   }
+
+  &--margin {
+    margin: 17px 0 0;
+  }
 }
 
 .checkbox__item {
@@ -134,6 +138,8 @@
 
 .checkbox-list__btn {
   @include display-center;
+
+  cursor: pointer;
 }
 
 .checkbox-list__button {

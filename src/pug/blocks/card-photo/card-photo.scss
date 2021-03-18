@@ -1,5 +1,11 @@
 .card-photo__list {
   @include list-reset;
+
+  &--display {
+    @include display-top;
+
+    flex-wrap: wrap;
+  }
 }
 
 .card-photo__item {
@@ -11,6 +17,11 @@
 
   &--margin1 {
     margin-bottom: 40px;
+  }
+  
+  &--margin2 {
+    margin: 0 15px;
+    margin-bottom: 21px;
   }
 }
 
@@ -73,6 +84,8 @@
 
 .card-photo__block-price {
   @include display-baseline;
+
+  padding-left: 2px;
 }
 
 .card-photo__symbol {
@@ -89,6 +102,10 @@
 
   &--color {
     color: $color-purple;
+  }
+
+  &--padding {
+    padding-left: 6px;
   }
 }
 
@@ -119,5 +136,11 @@
 
   &--weight {
     font-weight: normal;
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .card-photo__list--display {
+    justify-content: center;
   }
 }

@@ -1,11 +1,15 @@
 mixin card-photo(options)
   -
-    const {itemClassName, photos} = options
+    const {listClassName, itemClassName, spanClassName, photos} = options
     let letitemClassName = 'card-photo__item'
     letitemClassName += itemClassName ? ` ${itemClassName}` : ''
+    let letListClassName = 'card-photo__list'
+    letListClassName += listClassName ? ` ${listClassName}` : ''
+    let letSpanClassName = 'font-h3 card-photo__symbol--color'
+    letSpanClassName += spanClassName ? ` ${spanClassName}` : ''
 
   .card-photo
-    ul.card-photo__list
+    ul(class= letListClassName)
       each val in photos
         li(class= letitemClassName)
           .card-photo__block-img
@@ -17,7 +21,7 @@ mixin card-photo(options)
             .card-photo__block-price
               p.card-photo__symbol № 
                 span.card-photo__symbol--size= val.number
-                  span(class="font-h3 card-photo__symbol--color")=  val.luxe 
+                  span(class= letSpanClassName)=  val.luxe 
               p.card-photo__number= `${val.price}₽ ` 
                 span.card-photo__number--size в сутки
             .card-photo__block-estimations

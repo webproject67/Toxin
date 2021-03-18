@@ -235,7 +235,7 @@ include ../reviews/reviews
     .form-elements__block
       +checkbox-list({
         text: 'expandable checkbox list',
-        optionsClassName: 'checkbox__list--display',
+        listClassName: 'checkbox__list--display',
         checkboxs: [
           {label: 'Завтрак', id: 'breakfast1', checked: false},
           {label: 'Письменный стол', id: 'desk1', checked: true},
@@ -264,24 +264,24 @@ include ../reviews/reviews
         h3(class="font-h3 form-elements__text") rich Checkbox Buttons
       .form-elements__block-checkbox
         +checkbox({
-            labelClassName: 'checkbox__label--color1',
-            checkboxs: [
-              {
-                label: 'Широкий коридор', 
-                id: 'hallway', 
-                checked: false,
-                text: 'Ширина коридоров в номере не менее 91 см.',
-                className: 'checkbox__item--width1'
-              },
-              {
-                label: 'Помощник для инвалидов', 
-                id: 'invalid', 
-                checked: false,
-                text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-                className: 'checkbox__item--width2'
-              }
-            ]
-          })
+          labelClassName: 'checkbox__label--color1',
+          checkboxs: [
+            {
+              label: 'Широкий коридор', 
+              id: 'hallway', 
+              checked: false,
+              text: 'Ширина коридоров в номере не менее 91 см.',
+              className: 'checkbox__item--width1'
+            },
+            {
+              label: 'Помощник для инвалидов', 
+              id: 'invalid', 
+              checked: false,
+              text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+              className: 'checkbox__item--width2'
+            }
+          ]
+        })
   .form-elements__block9
     .form-elements__block
       .form-elements__texts

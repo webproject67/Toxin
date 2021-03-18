@@ -1,0 +1,12 @@
+extends ../../layouts/layout
+include ../../blocks/header/header
+include ../../blocks/main/main
+include ../../blocks/footer/footer
+
+block body
+  +header({logoLink: true})
+  +main-search-room()
+  +footer({
+    logoLink: true,
+    footerClassName: 'page-footer--padding page-footer--border'
+    })

@@ -1,4 +1,6 @@
 include ../form/form
+include ../slider/slider
+include ../card-photo/card-photo
 
 mixin main-landing()
   main.page-main
@@ -15,3 +17,194 @@ mixin main-sign-in()
   main(class="page-main page-main--background2")
     section(class="page-main__form page-main__form--margin2")
       +form-sign-in
+
+mixin main-search-room()
+  main(class="page-main page-main--background3")
+    section.page-main__filters
+      .page-main__filter-block1
+        h3(class="font-h3 page-main__text-filter") даты пребывания в отеле
+        +input-dropdown({
+          value: '19 авг - 23 авг',
+          id: 'date'
+        })
+      .page-main__filter-block2
+        h3(class="font-h3 page-main__text-filter") гости
+        +input-dropdown({
+          value: '3 гостя, 1 младенец',
+          id: 'guest',
+          option: [
+            {text: 'взрослые', number: 2}, 
+            {text: 'дети', number: 1}, 
+            {text: 'младенцы', number: 1}
+          ],
+          textLeft: 'очистить', 
+          textRight: 'применить'
+        })
+      .page-main__filter-block3
+        +slider({
+          text: 'диапазон цены',
+          desc: 'Стоимость за сутки пребывания в номере'
+        })
+      .page-main__filter-block4
+        h3(class="font-h3 page-main__text-filter") правила дома
+        +checkbox({
+          listClassName: 'checkbox__list--margin',
+          checkboxs: [
+            {label: 'Можно курить', id: 'smoke', checked: false},
+            {label: 'Можно с питомцами', id: 'pets', checked: true},
+            {label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true}
+          ]
+        })
+      .page-main__filter-block5
+        h3(class="font-h3 page-main__text-filter") доступность
+        +checkbox({
+          labelClassName: 'checkbox__label--color1',
+          listClassName: 'checkbox__list--margin',
+          checkboxs: [
+            {
+              label: 'Широкий коридор', 
+              id: 'hallway', 
+              checked: false,
+              text: 'Ширина коридоров в номере не менее 91 см.',
+              className: 'checkbox__item--width1'
+            },
+            {
+              label: 'Помощник для инвалидов', 
+              id: 'invalid', 
+              checked: false,
+              text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+              className: 'checkbox__item--width2'
+            }
+          ]
+        })
+      .page-main__filter-block6
+        h3(class="font-h3 page-main__text-filter") удобства номера
+        +input-dropdown({
+          value: '2 спальни, 2 кровати...',
+          id: 'rooms',
+          option: [
+            {text: 'спальни', number: 2}, 
+            {text: 'кровати', number: 2}, 
+            {text: 'ванные комнаты', number: 0, opacityClassName: 'input__btn--opacity'}
+          ]
+        })
+      .page-main__filter-block7
+        +checkbox-list({
+          text: 'дополнительные удобства',
+          listClassName: 'checkbox__list--display',
+          checkboxs: [
+            {label: 'Завтрак', id: 'breakfast', checked: false},
+            {label: 'Письменный стол', id: 'desk', checked: true},
+            {label: 'Стул для кормления', id: 'chair', checked: true},
+            {label: 'Кроватка', id: 'Crib', checked: true},
+            {label: 'Телевизор', id: 'TV', checked: false},
+            {label: 'Шампунь', id: 'shampoo', checked: false}
+          ]
+        })
+    section.page-main__rooms
+      h1(class="font-h1 page-main__title") Номера, которые мы для вас подобрали
+      +card-photo({
+        listClassName: 'card-photo__list--display',
+        itemClassName: 'card-photo__item--margin2',
+        spanClassName: 'card-photo__symbol--padding',
+        photos: [
+          {
+            img: 'image1.jpg',
+            number: 888,
+            luxe: ' Люкс',
+            price: '9 990',
+            estimation: 5,
+            review: 145 
+          },
+          {
+            img: 'image2.jpg',
+            number: 840,
+            luxe: '',
+            price: '9 900',
+            estimation: 4,
+            review: 65 
+          },
+          {
+            img: 'image3.jpg',
+            number: 980,
+            luxe: ' Люкс',
+            price: '8 500',
+            estimation: 3,
+            review: 35 
+          },
+          {
+            img: 'image4.jpg',
+            number: 856,
+            luxe: '',
+            price: '7 300',
+            estimation: 5,
+            review: 19 
+          },
+          {
+            img: 'image5.jpg',
+            number: 740,
+            luxe: '',
+            price: '6 000',
+            estimation: 4,
+            review: 44 
+          },
+          {
+            img: 'image6.jpg',
+            number: 982,
+            luxe: '',
+            price: '5 800',
+            estimation: 3,
+            review: 56 
+          },
+          {
+            img: 'image7.jpg',
+            number: 678,
+            luxe: '',
+            price: '5 500',
+            estimation: 5,
+            review: 45 
+          },
+          {
+            img: 'image8.jpg',
+            number: 450,
+            luxe: '',
+            price: '5 300',
+            estimation: 4,
+            review: 39 
+          },
+          {
+            img: 'image9.jpg',
+            number: 350,
+            luxe: '',
+            price: '5 000',
+            estimation: 3,
+            review: 77 
+          },
+          {
+            img: 'image10.jpg',
+            number: 666,
+            luxe: '',
+            price: '5 000',
+            estimation: 5,
+            review: 25 
+          },
+          {
+            img: 'image11.jpg',
+            number: 444,
+            luxe: '',
+            price: '5 000',
+            estimation: 3,
+            review: 15 
+          },
+          {
+            img: 'image12.jpg',
+            number: 352,
+            luxe: '',
+            price: '5 000',
+            estimation: 3,
+            review: 55 
+          }
+        ]
+      })
+      .page-main__pagination
+        include ../pagination/pagination

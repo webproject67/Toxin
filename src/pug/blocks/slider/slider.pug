@@ -1,6 +1,6 @@
 mixin slider(options)
   -
-    const {text} = options
+    const {text, desc} = options
 
   .slider
     .slider__texts
@@ -11,3 +11,4 @@ mixin slider(options)
         .slider__bar
       div(class="slider__toggle slider__toggle-min")
       div(class="slider__toggle slider__toggle-max")
+    p.slider__desc= desc
