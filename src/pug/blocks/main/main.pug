@@ -7,6 +7,11 @@ mixin main-landing()
     p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 
 mixin main-registration()
-  main(class="page-main page-main--background")
-    section(class="page-main__form page-main__form--margin")
+  main(class="page-main page-main--background1")
+    section(class="page-main__form page-main__form--margin1")
       +form-registration({textSubmit: 'зарегистрироваться'})
+
+mixin main-sign-in()
+  main(class="page-main page-main--background2")
+    section(class="page-main__form page-main__form--margin2")
+      +form-sign-in

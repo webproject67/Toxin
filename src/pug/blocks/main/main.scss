@@ -4,8 +4,13 @@
   background-size: cover;
   border: 1px solid transparent;
 
-  &--background {
-    background: url('../pug/blocks/main/img/img4.jpg') no-repeat center bottom;
+  &--background1 {
+    background: url('../pug/blocks/main/img/img4.jpg') no-repeat center 79%;
+    background-size: cover;
+  }
+  
+  &--background2 {
+    background: url('../pug/blocks/main/img/img4.jpg') no-repeat center 98%;
     background-size: cover;
   }
 }
@@ -14,8 +19,12 @@
   max-width: 380px;
   margin: 69px 124px;
 
-  &--margin {
+  &--margin1 {
     margin: 18px auto;
+  }
+  
+  &--margin2 {
+    margin: 172px auto;
   }
 }
 
@@ -29,8 +38,12 @@
   .page-main__form {
     margin: 69px auto;
 
-    &--margin {
+    &--margin1 {
       margin: 18px auto;
+    }
+    
+    &--margin2 {
+      margin: 172px auto;
     }
   }
 
