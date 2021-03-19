@@ -1,6 +1,9 @@
 include ../form/form
 include ../slider/slider
 include ../card-photo/card-photo
+include ../advantage/advantage
+include ../reviews/reviews
+include ../condition/condition
 
 mixin main-landing()
   main.page-main
@@ -22,14 +25,14 @@ mixin main-search-room()
   main(class="page-main page-main--background3")
     section.page-main__filters
       .page-main__filter-block1
-        h3(class="font-h3 page-main__text-filter") даты пребывания в отеле
         +input-dropdown({
+          text: 'даты пребывания в отеле',
           value: '19 авг - 23 авг',
           id: 'date'
         })
       .page-main__filter-block2
-        h3(class="font-h3 page-main__text-filter") гости
         +input-dropdown({
+          text: 'гости',
           value: '3 гостя, 1 младенец',
           id: 'guest',
           option: [
@@ -78,8 +81,8 @@ mixin main-search-room()
           ]
         })
       .page-main__filter-block6
-        h3(class="font-h3 page-main__text-filter") удобства номера
         +input-dropdown({
+          text: 'удобства номера',
           value: '2 спальни, 2 кровати...',
           id: 'rooms',
           option: [
@@ -114,7 +117,8 @@ mixin main-search-room()
             luxe: ' Люкс',
             price: '9 990',
             estimation: 5,
-            review: 145 
+            review: 145,
+            className: 'card-photo__block-img--hover' 
           },
           {
             img: 'image2.jpg',
@@ -208,3 +212,67 @@ mixin main-search-room()
       })
       .page-main__pagination
         include ../pagination/pagination
+
+mixin main-room-details()
+  main(class="page-main page-main--margin")
+    section.page-main__gallery
+      include ../gallery/gallery
+    .page-main__wrapper
+      section.page-main__details
+        .page-main__conveniences
+          .page-main__convenience
+            h2(class="font-h2 page-main__subtitle") Сведения о номере
+            +advantage({
+              texts: [
+                {icon: 'insert_emoticon', text: 'Комфорт', span: 'Шумопоглощающие стены'},
+                {icon: 'location_city', text: 'Удобство', span: 'Окно в каждой из спален'},
+                {icon: 'whatshot', text: 'Уют', span: 'Номер оснащён камином'}
+              ] 
+            })
+          .page-main__experience
+            h2(class="font-h2 page-main__subtitle") Впечатления от номера
+            include ../chart/chart
+        .page-main__reviews
+          h2(class="font-h2 page-main__subtitle page-main__subtitle--margin1") Отзывы посетителей номера
+            span.page-main__subtitle--color 2 отзыва
+          +reviews({
+            listClassName: 'reviews__list--margin',
+            itemClassName: 'reviews__item--margin',
+            reviews: [
+              {
+                image: 'image16', 
+                buttonText: 'favorite', 
+                buttonNumber: 12,
+                buttonButtonClassName: 'button-like__button--active',
+                name: 'Мурад Сарафанов', 
+                date: '5 дней назад',
+                reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+              },
+              {
+                image: 'image17', 
+                buttonText: 'favorite_border', 
+                buttonNumber: 2,
+                buttonButtonClassName: 'button-like__button',
+                name: 'Патрисия Стёклышкова', 
+                date: 'Неделю назад',
+                reviewText: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+              }
+            ] 
+          })
+        .page-main__conditions
+          .page-main__condition
+            h2(class="font-h2 page-main__subtitle page-main__subtitle--margin2 page-main__subtitle--padding") Правила
+            +condition
+          .page-main__cancel
+            h2(class="font-h2 page-main__subtitle page-main__subtitle--margin2") Отмена
+            p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      section(class="page-main__form page-main__form--margin3")
+        +form-room({
+          textItem: 'Сбор за доп. услуги',
+          luxeClassName: 'form__symbol--padding',
+          inputsClassName: 'form__inputs--margin',
+          amountClassName: 'form__amount--margin',
+          textClassName: 'form__text-price--justify',
+          iconClassName: 'form__icon-price--margin',
+          numberClassName: 'form__number-price--width'
+        })

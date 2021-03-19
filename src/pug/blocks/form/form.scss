@@ -10,6 +10,10 @@
   @include display-top;
 
   margin-top: 22px;
+
+  &--margin {
+    margin-top: 20px;
+  }
 }
 
 .form__guests,
@@ -33,8 +37,7 @@
   }
 }
 
-.form__block-price,
-.form__amount {
+.form__block-price {
   @include display-baseline;
 }
 
@@ -52,6 +55,10 @@
 
   &--color {
     color: $color-purple;
+  }
+
+  &--padding {
+    padding-left: 9px;
   }
 }
 
@@ -82,10 +89,14 @@
 
 .form__text-price {
   @include display-top;
-
+  
   width: 100%;
   margin: 0;
   line-height: 18px;
+
+  &--justify {
+    justify-content: flex-start;
+  }
 }
 
 .form__icon-price {
@@ -100,12 +111,28 @@
   height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50px;
+
+  &--margin {
+    margin-left: 10px;
+  }
 }
 
 .form__number-price {
   width: 33%;
   margin: 0;
   text-align: right;
+
+  &--width {
+   width: 31%;
+  }
+}
+
+.form__amount {
+  @include display-baseline;
+
+  &--margin {
+    margin-top: 31px;
+  }
 }
 
 .form__total,
@@ -115,10 +142,14 @@
   font-size: 19px;
   line-height: 23px;
   color: $color;
+
+  &--transform {
+    transform: translateX(9px);
+  }
 }
 
 .form__ellipsis {
-  width: 47%;
+  width: 46.7%;
   border-top: 1px dotted rgba(31, 32, 65, 0.25);
 }
 

@@ -20,6 +20,12 @@
     display: flex;
     background: none;
   }
+
+  &--margin {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
 }
 
 .page-main__form {
@@ -33,6 +39,11 @@
   &--margin2 {
     margin: 172px auto;
   }
+  
+  &--margin3 {
+    width: 100%;
+    margin: 17px 0 0 auto;
+  }
 }
 
 .page-main__text {
@@ -44,10 +55,6 @@
 .page-main__filters {
   min-width: 266px;
   margin-right: 5.1%;
-}
-
-.page-main__text-filter {
-  margin: 0 0 5px;
 }
 
 .page-main__filter-block2,
@@ -80,9 +87,89 @@
   margin: 20px auto;
 }
 
+.page-main__wrapper {
+  @include display-top;
+  
+  margin: 38px 9.7% 63px;
+}
+
+.page-main__details {
+  width: 61.8%;
+}
+
+.page-main__conveniences,
+.page-main__conditions {
+  @include display-top;
+}
+
+.page-main__convenience {
+  width: 290px;
+}
+
+.page-main__subtitle {
+  margin-bottom: 0;
+
+  &--margin1 {
+    @include display-baseline;
+
+    margin-top: 14px;
+  }
+  
+  &--margin2 {
+    margin-top: 10px;
+  }
+
+  &--padding {
+    padding-left: 19px;
+    margin-bottom: 19px;
+  }
+
+  &--color {
+    min-width: 62px;
+    margin-left: 15px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: $color-50;
+  }
+}
+
+.page-main__experience {
+  width: 49.7%;
+}
+
+.page-main__reviews {
+  margin-right: 6px
+}
+
+.page-main__condition {
+  width: 36%;
+}
+
+.page-main__cancel {
+  width: 48%;
+  margin-right: 12px;
+}
+
+.page-main__cancel-text {
+  margin-top: 18px;
+}
+
 @media (max-width: $desktop-width) {
   .page-main__title {
     text-align: center;
+  }
+
+  .page-main__wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .page-main__form--margin3 {
+    margin: 0 auto;
+  }
+
+  .page-main__details {
+    width: auto;
   }
 }
 
@@ -96,6 +183,10 @@
     
     &--margin2 {
       margin: 172px auto;
+    }
+    
+    &--margin3 {
+      margin: 0 auto;
     }
   }
 
@@ -116,5 +207,32 @@
 
   .page-main__title {
     margin: 22px 0;
+  }
+
+  .page-main__wrapper {
+    margin: 0 15px;
+  }
+
+  .page-main__conveniences,
+  .page-main__conditions {
+    flex-direction: column-reverse;
+  }
+
+  .page-main__conveniences {
+    align-items: center;
+  }
+
+  .page-main__experience {
+    width: 290px;
+  }
+  
+  .page-main__condition,
+  .page-main__cancel {
+    width: auto;
+    align-items: flex-start;
+  }
+
+  .page-main__subtitle--padding {
+    padding-left: 0;
   }
 }

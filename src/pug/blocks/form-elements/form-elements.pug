@@ -26,9 +26,8 @@ include ../reviews/reviews
         inputClassName: 'input__input--hover'
       })
     .form-elements__block
-      .form-elements__texts
-        h3(class="font-h3 form-elements__text") dropdown
       +input-dropdown({
+        text: 'dropdown',
         value: 'Сколько гостей',
         id: 'guest1',
         option: [
@@ -48,25 +47,22 @@ include ../reviews/reviews
       })
     .form-elements__block
       .form-elements__block-left
-        .form-elements__texts
-          h3(class="font-h3 form-elements__text") date dropdown
         +input-dropdown({
+          text: 'date dropdown',
           value: 'ДД.ММ.ГГГГ',
           id: 'date1',
           inputClassName: 'input__input--width'
         })
       .form-elements__block-right
-        .form-elements__texts
-          h3(class="font-h3 form-elements__text") date dropdown
         +input-dropdown({
+          text: 'date dropdown',
           value: '19.08.2019',
           id: 'date2',
           inputClassName: 'input__input--width'
         })
     .form-elements__block
-      .form-elements__texts
-        h3(class="font-h3 form-elements__text") filter date dropdown
       +input-dropdown({
+        text: 'filter date dropdown',
         value: '19 авг - 23 авг',
         id: 'date'
       })
@@ -170,10 +166,9 @@ include ../reviews/reviews
         include ../pagination/pagination
   .form-elements__block4
     .form-elements__block
-      .form-elements__texts
-        h3(class="font-h3 form-elements__text") dropdown
-        p(class="font-h3 form-elements__text form-elements__text--color") default
       +input-dropdown({
+        text: 'dropdown',
+        text2: 'default',
         value: '2 спальни, 2 кровати...',
         id: 'rooms1',
         option: [
@@ -183,10 +178,9 @@ include ../reviews/reviews
         ]
       })
     .form-elements__block
-      .form-elements__texts
-        h3(class="font-h3 form-elements__text") dropdown
-        p(class="font-h3 form-elements__text form-elements__text--color") expanded
       +input-dropdown({
+        text: 'dropdown',
+        text2: 'expanded',
         value: '2 спальни, 2 кровати...',
         id: 'rooms2',
         inputClassName: 'input__input--border', 
@@ -199,9 +193,8 @@ include ../reviews/reviews
       })
   .form-elements__block5
     .form-elements__block
-      .form-elements__texts
-        h3(class="font-h3 form-elements__text") dropdown
       +input-dropdown({
+        text: 'dropdown',
         value: 'Сколько гостей',
         id: 'guest2',
         inputClassName: 'input__input--border', 
@@ -216,9 +209,8 @@ include ../reviews/reviews
       })
   .form-elements__block6
     .form-elements__block
-      .form-elements__texts
-        h3(class="font-h3 form-elements__text") dropdown
       +input-dropdown({
+        text: 'dropdown',
         value: '3 гостя',
         id: 'guest3',
         inputClassName: 'input__input--border', 

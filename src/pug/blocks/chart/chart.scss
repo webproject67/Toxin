@@ -1,0 +1,65 @@
+.chart {
+  position: relative;
+}
+
+.chart__svg {
+  margin: 5px -17px;
+}
+
+.chart__number {
+  position: absolute;
+  top: 41px;
+  left: 37px;
+  color: $color-purple;
+}
+
+.chart__text {
+  position: absolute;
+  top: 75px;
+  left: 28px;
+  color: $color-purple;
+}
+
+.chart__list {
+  @include list-reset;
+
+  position: absolute;
+  top: 48px;
+  left: 165px;
+}
+
+.chart__item {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+  }
+
+  &:first-child::before {
+    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+  }
+  
+  &:nth-child(2)::before {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  }
+  
+  &:nth-child(3)::before {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+  
+  &:last-child::before {
+    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .chart__list {
+    left: 145px;
+  }
+}

@@ -10,10 +10,6 @@
     padding: 120px 0 10px;
   }
 
-  &--padding {
-    padding: 76px 0 10px;
-  }
-
   &--border {
     border-top: 1px solid rgba(31, 32, 65, 0.25);
   }
@@ -109,6 +105,12 @@
 
 .page-footer__link-social {
   display: flex;
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer__logo {
+    height: 0;
+  }
 }
 
 @media (min-width: 1500px) {

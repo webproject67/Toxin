@@ -1,9 +1,17 @@
 .reviews__list {
   @include list-reset;
+
+  &--margin {
+    margin-top: 21px;
+  }
 }
 
 .reviews__item {
   display: flex;
+
+  &--margin {
+    margin-bottom: 13px;
+  }
 }
 
 .reviews__block-avatar {

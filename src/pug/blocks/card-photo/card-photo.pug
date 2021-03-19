@@ -12,7 +12,7 @@ mixin card-photo(options)
     ul(class= letListClassName)
       each val in photos
         li(class= letitemClassName)
-          .card-photo__block-img
+          div(class= val.className ? `card-photo__block-img ${val.className}` : 'card-photo__block-img')
             img(class="card-photo__img" src=`../../blocks/card-photo/img/${val.img}`, alt="photo")
             div(class="font-icon card-photo__button card-photo__button--next") expand_more
             div(class="font-icon card-photo__button card-photo__button--prev") expand_more

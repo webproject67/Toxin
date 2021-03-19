@@ -1,0 +1,24 @@
+.chart 
+  svg(class="chart__svg" width="155px" height="155px" viewBox="0 0 42 42")
+    defs
+      linearGradient(id="Gradient1")
+        stop(offset="0%" stop-color="#FFE39C")
+        stop(offset="100%" stop-color="#FFBA9C")
+      linearGradient(id="Gradient2")
+        stop(offset="0%" stop-color="#BC9CFF")
+        stop(offset="100%" stop-color="#8BA4F9")
+      linearGradient(id="Gradient3")
+        stop(offset="0%" stop-color="#6FCF97")
+        stop(offset="100%" stop-color="#66D2EA")
+    circle(cx="21" cy="21" r="15.91549430918954" fill="#fff")
+    circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ffffff" stroke-width="1")
+    circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#Gradient1)" stroke-width="1" stroke-dasharray="49 51" stroke-dashoffset="74.5")
+    circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#Gradient2)" stroke-width="1" stroke-dasharray="24 76" stroke-dashoffset="124.5")
+    circle(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#Gradient3)" stroke-width="1" stroke-dasharray="24 76" stroke-dashoffset="199.5")
+  h1(class="font-h1 chart__number") 260
+    h3(class="font-h3 chart__text") голосов
+  ul.chart__list
+    li.chart__item Великолепно
+    li.chart__item Хорошо
+    li.chart__item Удовлетворительно
+    li.chart__item Разочарован

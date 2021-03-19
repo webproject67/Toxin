@@ -11,7 +11,7 @@ mixin input(options)
 
 mixin input-dropdown(options)
   - 
-    const {value, id, inputClassName, optionsClassName, option, textLeft, textRight, text} = options
+    const {value, id, inputClassName, optionsClassName, option, textLeft, textRight, text, text2} = options
     let letInputClassName = 'input__input'
     letInputClassName += inputClassName ? ` ${inputClassName}` : ''
     let letOptionsClassName = 'input__select-options'
@@ -19,7 +19,9 @@ mixin input-dropdown(options)
   
   .input
     if text 
-      h3(class="font-h3 input__text")= text
+      .input__texts
+        h3(class="font-h3 input__text")= text
+        p(class="font-h3 input__text input__text--color")= text2
     input(class= letInputClassName id= id type="text" value= value readonly)
     label(class="input__label" for= id) 
       span(class="font-icon input__icon") expand_more

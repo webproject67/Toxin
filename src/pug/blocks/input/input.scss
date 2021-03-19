@@ -2,8 +2,17 @@
   position: relative;
 }
 
+.input__texts {
+  @include display-top;
+}
+
 .input__text {
   margin: 0 0 5px;
+
+  &--color {
+    font-weight: normal;
+    color: $color-50;
+  }
 }
 
 .input__input {
@@ -45,7 +54,7 @@
 
 .input__select-options {
   position: absolute;
-  top: 43px;
+  top: 63px;
   left: 0;
   z-index: 1;
   display: none;

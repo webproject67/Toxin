@@ -5,7 +5,10 @@ include ../card-photo/card-photo
   .cards__block1
     +form-search
   .cards__block2
-    +form-room
+    +form-room({
+      textItem: 'Сбор за дополнительные услуги',
+      totalClassName: 'form__total-number--transform'
+    })
   .cards__block3
     +input-dropdown({
       id: 'date5',
@@ -25,7 +28,8 @@ include ../card-photo/card-photo
           luxe: ' Люкс',
           price: '9 990',
           estimation: 5,
-          review: 145 
+          review: 145,
+          className: 'card-photo__block-img--hover' 
         },
         {
           img: 'image2.jpg',
