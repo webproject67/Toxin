@@ -10,7 +10,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
-  entry: './src/scripts/index.js',
+  entry: './src/scripts/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
@@ -92,5 +92,9 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: ['.js', '.ts']
+  },
+  devtool: `source-map`
 }
