@@ -60,11 +60,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(woff2|woff)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'fonts'
+        test: /\.(woff2|woff|ttf|svg)$/i,
+        include: [/fonts/],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts'
+          }
         }
       },
       {
@@ -76,11 +79,14 @@ module.exports = {
         }
       },
       {
-        test: /\.(svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'img/svg'
+        test: /\.svg$/i,
+        include: [/img/],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/svg'
+          }
         }
       },
       {
