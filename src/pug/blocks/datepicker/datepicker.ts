@@ -1,3 +1,7 @@
+interface JQuery {
+  datepicker({}): any
+}
+
 $('.cards__block3').each(() => {
   const myDatepicker = $('.date1').datepicker({
     startDate: new Date(2019, 7, 1),
@@ -15,7 +19,7 @@ $('.cards__block3').each(() => {
   $('.datepicker--cell-day[data-year="2019"][data-month="7"][data-date="8"]').addClass("-current-");
   myDatepicker.show();
 
-  $(".datepicker--btn").click(() => {
+  $(".datepicker--btn").on('click', () => {
     if (myDatepicker.selectedDates.length === 2) myDatepicker.hide();
   });
 });
