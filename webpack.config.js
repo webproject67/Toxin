@@ -11,6 +11,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
   entry: './src/scripts/index.ts',
+  devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
@@ -90,6 +91,11 @@ module.exports = {
         }
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.pug$/,
         use: ['html-loader', 'pug-html-loader']
       },
@@ -100,7 +106,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts', '.jsx', '.tsx']
   },
   devtool: `source-map`
 }
