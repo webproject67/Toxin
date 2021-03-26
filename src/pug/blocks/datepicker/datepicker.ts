@@ -1,5 +1,5 @@
 interface JQuery {
-  datepicker({}): any
+  datepicker({}): JQuery
 }
 
 $('.cards__block3').each(() => {
