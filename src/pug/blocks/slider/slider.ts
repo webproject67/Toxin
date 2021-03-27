@@ -1,4 +1,4 @@
-import getNum from '../../../scripts/utils';
+import {getNum} from '../../../scripts/utils';
 
 $('.slider__slider').slider({
   range: true,

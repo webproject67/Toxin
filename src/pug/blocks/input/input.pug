@@ -1,13 +1,13 @@
 mixin input(options)
   - 
-    const {type, placeholder, inputClassName, text} = options
+    const {type, placeholder, inputClassName, id, text} = options
     let letInputClassName = 'input__input'
     letInputClassName += inputClassName ? ` ${inputClassName}` : ''
 
   .input
     if text 
       h3(class="font-h3 input__text")= text
-    input(class= letInputClassName type= types placeholder= placeholder)
+    input(class= letInputClassName id= id type= types placeholder= placeholder)
 
 mixin input-dropdown(options)
   - 

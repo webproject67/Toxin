@@ -1,4 +1,4 @@
-import getNum from '../src/scripts/utils';
+import {getNum} from '../src/scripts/utils';
 
 describe('Ставит пробел после каждого третьего символа в строке', () => {
   it('0 === 0', () => {
