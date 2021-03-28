@@ -1,6 +1,7 @@
 interface JQuery {
   datepicker({}): JQuery
   addRating({}): JQuery
+  pagination({}): JQuery
 }
 
 $('.cards__block3').each(() => {
