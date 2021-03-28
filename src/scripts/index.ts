@@ -2,6 +2,7 @@ import '../styles/style.scss';
 
 import $ from "jquery";
 import '../pug/blocks/input/input';
+import '../pug/blocks/button/button-like';
 import '../pug/blocks/button/button-rate-library';
 import '../pug/blocks/button/button-rate';
 import '../pug/blocks/slider/slider-library';
