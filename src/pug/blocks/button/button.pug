@@ -10,14 +10,9 @@ mixin button-like(options)
 
 mixin button-rate(options)
   -
-    const {number} = options
+    const {id} = options
 
-  .button-rate
-    ul.button-rate__list
-      - for (let x = 0; x < number; x++)
-      li(class="font-icon font-lg button-rate__item") star
-      - for (let x = 0; x < 5 - number; x++)
-        li(class="font-icon font-lg button-rate__item") star_border
+  div(class='button-rate' id= id)
 
 mixin button-link(options) 
   -
