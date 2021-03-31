@@ -11,13 +11,15 @@ mixin input(options)
 
 mixin input-dropdown(options)
   - 
-    const {value, id, inputClassName, optionsClassName, option, textLeft, textRight, text, text2} = options
+    const {value, id, dropdownClassName, inputClassName, optionsClassName, option, textLeft, textRight, text, text2} = options
+    let letDropdownClassName = 'input'
+    letDropdownClassName += dropdownClassName ? ` ${dropdownClassName}` : ''
     let letInputClassName = 'input__input'
     letInputClassName += inputClassName ? ` ${inputClassName}` : ''
     let letOptionsClassName = 'input__select-options'
     letOptionsClassName += optionsClassName ? ` ${optionsClassName}` : ''
   
-  .input
+  div(class= letDropdownClassName)
     if text 
       .input__texts
         h3(class="font-h3 input__text")= text
@@ -35,9 +37,9 @@ mixin input-dropdown(options)
           .input__select-option
             h3(class="font-h3 input__option")= val.text
             .input__btns 
-              input(class= letCpacityClassName type="button" value="-")
+              input(class= letCpacityClassName type="button" data-selected="-" value="-")
               h3(class="font-h3 input__number")= val.number
-              input(class="input__btn" type="button" value="+")
+              input(class="input__btn" type="button" data-selected="+" value="+")
         if textRight
           .input__buttons
             +button-link({
