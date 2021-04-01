@@ -53,7 +53,7 @@ include ../reviews/reviews
           text: 'date dropdown',
           value: 'ДД.ММ.ГГГГ',
           id: 'date1',
-          inputClassName: 'input__input--width'
+          inputClassName: 'input__input--width date2'
         })
       .form-elements__block-right
         +input-dropdown({
@@ -66,7 +66,8 @@ include ../reviews/reviews
       +input-dropdown({
         text: 'filter date dropdown',
         value: '19 авг - 23 авг',
-        id: 'date'
+        id: 'date',
+        inputClassName: 'date3'
       })
     .form-elements__block
       .form-elements__texts
