@@ -1,6 +1,4 @@
-import {rateButtonsFormElements} from '../../../scripts/data';
-
-$('.button-rate').each((i) => {
-  $(`#rate${i + 1}`).addRating({selectedRatings: rateButtonsFormElements[i]});
+$('.button-rate').each(function() {
+  $(this).addRating({selectedRatings: $(this).data('count')});
   $('i.material-icons').removeClass('material-icons').addClass('font-icon font-lg button-rate__icon')
 })

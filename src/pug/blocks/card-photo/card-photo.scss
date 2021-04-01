@@ -27,45 +27,6 @@
 .card-photo__block-img {
   position: relative;
   display: flex;
-
-  &--hover,
-  &:hover {
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      width: 42px;
-      height: 100%;
-      background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
-    
-    &::after {
-      position: absolute;
-      content: "";
-      top: 0;
-      right: 0;
-      width: 42px;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
-
-    & .card-photo__button {
-        color: #FFFFFF;
-      
-        &--next {
-          left: 10px;
-          transform: rotate(90deg);
-        }
-        
-        &--prev {
-          right: 10px;
-          transform: rotate(-90deg);
-        }
-      }
-  }
 }
 
 .card-photo__button {
@@ -76,7 +37,7 @@
   cursor: pointer;
 }
 
-.card-photo__link {
+.card-photo__details {
   display: block;
   width: 235px;
   margin: 0 auto;
@@ -137,6 +98,72 @@
   &--weight {
     font-weight: normal;
   }
+}
+
+.card-photo .flexslider {
+  width: 100%;
+  margin: 0;
+  border: none;
+  overflow: hidden;
+
+  &:hover .flex-prev {
+    left: 0;
+  }
+  
+  &:hover .flex-next {
+    right: 0;
+  }
+}
+
+.card-photo .flex-control-nav {
+  bottom: -3px;
+  right: -100px;
+}
+
+.card-photo .flex-control-nav li {
+  margin: 0 2px;
+}
+
+.card-photo .flex-control-nav a {
+  width: 7px;
+  height: 7px;
+  background: none;
+  border: 1px solid #FFFFFF;
+  box-shadow: none;
+  filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
+}
+
+.card-photo .flex-control-nav .flex-active {
+  background: #FFFFFF;
+  box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+}
+
+
+.card-photo .flex-prev,
+.card-photo a.flex-next {
+  top: 20px;
+  height: 100%;
+  font-size: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  
+  &::before {
+    content: 'expand_more';
+    font-family: MaterialIcons;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-shadow: none;
+    transform: rotate(90deg) translate(63px, -10px);
+  }
+}
+
+.card-photo a.flex-next::before {
+  transform: rotate(90deg) translate(63px, 6px);
+}
+
+.card-photo .flex-prev {
+  transform: revert;
 }
 
 @media (max-width: $desktop-width) {

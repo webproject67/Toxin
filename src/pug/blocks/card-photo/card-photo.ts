@@ -1,0 +1,3 @@
+$('.flexslider').flexslider({
+  animation: "slide"
+});
