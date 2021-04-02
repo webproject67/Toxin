@@ -16,3 +16,5 @@ import '../pug/blocks/datepicker/datepicker-library';
 import '../pug/blocks/datepicker/datepicker';
 import '../pug/blocks/card-photo/card-photo-library';
 import '../pug/blocks/card-photo/card-photo';
+import '../pug/blocks/header/header';
+import '../pug/blocks/nav-link/nav-link';

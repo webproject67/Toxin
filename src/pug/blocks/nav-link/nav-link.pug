@@ -7,14 +7,28 @@ mixin nav-link(options)
   .nav-link
     ul.nav-link__list
       li(class= letItemClassName)
-        a(class="nav-link__link" href="#") О нас
+        a(class="nav-link__link") О нас
       li.nav-link__item
         a(class="nav-link__link") Услуги
         span(class="font-icon nav-link__icon") expand_more
+        ul.nav-link__options 
+          li.nav-link__option
+            a(class="nav-link__link") О сервисе
+          li.nav-link__option
+            a(class="nav-link__link") Инвесторы
+          li.nav-link__option
+            a(class="nav-link__link") Сообщества
       li.nav-link__item
-        a(class="nav-link__link" href="#") Вакансии
+        a(class="nav-link__link") Вакансии
       li.nav-link__item
-        a(class="nav-link__link" href="#") Новости
+        a(class="nav-link__link") Новости
       li.nav-link__item
         a(class="nav-link__link") Соглашения
         span(class="font-icon nav-link__icon") expand_more
+        ul.nav-link__options 
+          li.nav-link__option
+            a(class="nav-link__link") Служба поддержки
+          li.nav-link__option
+            a(class="nav-link__link") Наша команда
+          li.nav-link__option
+            a(class="nav-link__link") Связь с нами

@@ -15,15 +15,15 @@
   background: transparent;
   border: none;
 
-  &:hover .page-header__streak--top {
+  &--active .page-header__streak--top {
     transform: translateY(9px) rotateZ(45deg);
   }
 
-  &:hover .page-header__streak--middle {
+  &--active .page-header__streak--middle {
     width: 0;
   }
 
-  &:hover .page-header__streak--bottom {
+  &--active .page-header__streak--bottom {
     transform: translateY(-9px) rotateZ(-45deg);
   }
 }
