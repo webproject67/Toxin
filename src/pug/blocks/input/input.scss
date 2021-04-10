@@ -1,4 +1,6 @@
-.input {
+.input,
+.input__label,
+.input__form {
   position: relative;
 }
 
@@ -21,9 +23,11 @@
   color: $color-75;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
+  transition: all 0.4s ease;
 
   &::placeholder {
     color: $color-25;
+    transition: all 0.4s ease;
   }
 
   &:hover,
@@ -44,19 +48,13 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 2px;
   }
-
-  &--padding {
-    padding: 0;
-    color: transparent;
-    border: 0;
-  }
 }
 
 .input__select-options {
   position: absolute;
   top: 63px;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   display: none;
   width: 100%;
   padding: 0 7px 6px 13px;
@@ -70,7 +68,9 @@
   }
 }
 
-.input__select-option {
+.input__select-option,
+.input__btns,
+.input__buttons {
   @include display-center
 }
 
@@ -80,8 +80,6 @@
 }
 
 .input__btns {
-  @include display-center;
-
   width: 92px;
 }
 
@@ -99,21 +97,10 @@
     opacity: 0.38;
     cursor: default;
   }
-
-  &:focus {
-    outline: none;
-  }
 }
 
 .input__buttons {
-  @include display-center;
-
   padding: 14px 0 2px;
-}
-
-.input__label,
-.input__form {
-  position: relative;
 }
 
 .input__icon {

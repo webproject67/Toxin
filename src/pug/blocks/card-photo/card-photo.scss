@@ -39,8 +39,8 @@
 
 .card-photo__details {
   display: block;
-  width: 235px;
-  margin: 0 auto;
+  width: 270px;
+  padding: 0 17px;
 }
 
 .card-photo__block-price {
@@ -105,13 +105,17 @@
   margin: 0;
   border: none;
   overflow: hidden;
-
+  
+  &--hover .flex-prev,
   &:hover .flex-prev {
     left: 0;
+    opacity: 0.7;
   }
-  
+
+  &--hover .flex-next,
   &:hover .flex-next {
     right: 0;
+    opacity: 0.7;
   }
 }
 
@@ -137,7 +141,6 @@
   background: #FFFFFF;
   box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
 }
-
 
 .card-photo .flex-prev,
 .card-photo a.flex-next {

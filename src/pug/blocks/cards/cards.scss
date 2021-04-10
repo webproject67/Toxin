@@ -2,16 +2,11 @@
   @include display-top;
 
   flex-wrap: wrap;
-  margin: 0 9.7% 40px;
-}
-
-.cards__block1,
-.cards__block2 {
-  margin-top: 30px;
+  margin: 30px 9.7% 40px;
 }
 
 .cards__block3 {
-  margin-top: 4px;
+  margin-top: -6px;
 }
 
 .cards__block1,
@@ -41,7 +36,7 @@
 
 @media (min-width: 1800px) {
   .cards__block4 {
-    margin-top: 30px;
+    margin-top: 0;
   }
   
   .cards__block6 {
@@ -50,7 +45,6 @@
 }
 
 @media (max-width: 1350px) {
-  .cards__block2,
   .cards__block4,
   .cards__block5,
   .cards__block6 {
@@ -58,8 +52,13 @@
   }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width-only) {
   .cards {
     margin: 15px;
+  }
+
+  .cards__block2,
+  .cards__block3 {
+    margin-top: 30px;
   }
 }

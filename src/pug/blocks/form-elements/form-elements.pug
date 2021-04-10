@@ -1,8 +1,7 @@
 include ../input/input
 include ../checkbox/checkbox
 include ../button/button
-include ../slider/slider
-include ../condition/condition
+include ../slide/slide
 include ../advantage/advantage
 include ../reviews/reviews
 
@@ -11,17 +10,15 @@ include ../reviews/reviews
     .form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Text Field
-        p(class="font-h3 form-elements__text form-elements__text--color") default
+        h3(class="font-h3 form-elements__text form-elements__text--color") default
       +input({
-        types: 'email',
         placeholder: 'Email'
       })
     .form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Text Field
-        p(class="font-h3 form-elements__text form-elements__text--color") Hover / Focus
+        h3(class="font-h3 form-elements__text form-elements__text--color") Hover / Focus
       +input({
-        types: 'text',
         placeholder: 'This is pretty awesome',
         inputClassName: 'input__input--hover'
       })
@@ -32,9 +29,21 @@ include ../reviews/reviews
         value: 'Сколько гостей',
         id: 'guest1',
         option: [
-          {text: 'взрослые', number: 0, opacityClassName: 'input__btn--opacity'}, 
-          {text: 'дети', number: 0, opacityClassName: 'input__btn--opacity'}, 
-          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
+          {
+            text: 'взрослые', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }, 
+          {
+            text: 'дети', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }, 
+          {
+            text: 'младенцы', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }
         ],
         textLeft: '', 
         textRight: 'применить'
@@ -43,7 +52,6 @@ include ../reviews/reviews
       .form-elements__texts
         h3(class="font-h3 form-elements__text") masked text field
       +input({
-        types: 'text',
         placeholder: 'ДД.ММ.ГГГГ',
         id: 'birthdate'
       })
@@ -53,7 +61,8 @@ include ../reviews/reviews
           text: 'date dropdown',
           value: 'ДД.ММ.ГГГГ',
           id: 'date1',
-          inputClassName: 'input__input--width date2'
+          inputClassName: 'input__input--width',
+          spanClassName: 'datepick4'
         })
       .form-elements__block-right
         +input-dropdown({
@@ -67,7 +76,7 @@ include ../reviews/reviews
         text: 'filter date dropdown',
         value: '19 авг - 23 авг',
         id: 'date',
-        inputClassName: 'date3'
+        spanClassName: 'datepick5'
       })
     .form-elements__block
       .form-elements__texts
@@ -80,9 +89,21 @@ include ../reviews/reviews
       .form-elements__block-checkbox
         +checkbox({
           checkboxs: [
-            {label: 'Можно курить', id: 'smoke', checked: false},
-            {label: 'Можно с питомцами', id: 'pets', checked: true},
-            {label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true}
+            {
+              label: 'Можно курить', 
+              id: 'smoke', 
+              checked: false
+            },
+            {
+              label: 'Можно с питомцами', 
+              id: 'pets', 
+              checked: true
+            },
+            {
+              label: 'Можно пригласить гостей (до 10 человек)', 
+              id: 'guests', 
+              checked: true
+            }
           ]
         })
     .form-elements__block
@@ -123,41 +144,35 @@ include ../reviews/reviews
         +button-rate({count: 5})
   .form-elements__block3 
     .form-elements__block
-      +slider({text: 'Range Slider'})
+      +slide({text: 'Range Slider'})
     .form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") buttons
       .form-elements__block-link-bg 
         +button-link({
           text: 'click me', 
-          href: '#',
           linkClassName: 'button-link__link'
         })
         +button-link({
           text: 'click me', 
-          href: '#',
           linkClassName: 'button-link__link button-link__link--hover'
         })
       div(class="form-elements__block-link-bg form-elements__block-link-bg--margin")
         +button-link({
           text: 'click me', 
-          href: '#',
           linkClassName: 'button-link__link button-link__link--border'
         })
         +button-link({
           text: 'click me', 
-          href: '#',
           linkClassName: 'button-link__link button-link__link--hover button-link__link--border'
         })
       .form-elements__block-link 
         +button-link({
           text: 'click me', 
-          href: '#',
           linkClassName: 'button-link2__link'
         })
         +button-link({
           text: 'click me',
-          href: '#',
           linkClassName: 'button-link2__link button-link2__link--hover'
         })
       .form-elements__block-link-submit
@@ -176,9 +191,19 @@ include ../reviews/reviews
         value: '2 спальни, 2 кровати...',
         id: 'rooms1',
         option: [
-          {text: 'спальни', number: 2}, 
-          {text: 'кровати', number: 2}, 
-          {text: 'ванные комнаты', number: 0, opacityClassName: 'input__btn--opacity'}
+          {
+            text: 'спальни', 
+            number: 2
+          }, 
+          {
+            text: 'кровати', 
+            number: 2
+          }, 
+          {
+            text: 'ванные комнаты', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }
         ]
       })
     .form-elements__block
@@ -191,9 +216,19 @@ include ../reviews/reviews
         inputClassName: 'input__input--border', 
         optionsClassName: 'input__select-options--display', 
         option: [
-          {text: 'спальни', number: 2}, 
-          {text: 'кровати', number: 2}, 
-          {text: 'ванные комнаты', number: 0, opacityClassName: 'input__btn--opacity'}
+          {
+            text: 'спальни', 
+            number: 2
+          }, 
+          {
+            text: 'кровати', 
+            number: 2
+          }, 
+          {
+            text: 'ванные комнаты', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }
         ]
       })
   .form-elements__block5
@@ -206,9 +241,21 @@ include ../reviews/reviews
         inputClassName: 'input__input--border', 
         optionsClassName: 'input__select-options--display', 
         option: [
-          {text: 'взрослые', number: 0, opacityClassName: 'input__btn--opacity'}, 
-          {text: 'дети', number: 0, opacityClassName: 'input__btn--opacity'}, 
-          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
+          {
+            text: 'взрослые', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }, 
+          {
+            text: 'дети', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }, 
+          {
+            text: 'младенцы', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }
         ],
         textLeft: '', 
         textRight: 'применить'
@@ -223,9 +270,19 @@ include ../reviews/reviews
         inputClassName: 'input__input--border', 
         optionsClassName: 'input__select-options--display', 
         option: [
-          {text: 'взрослые', number: 2}, 
-          {text: 'дети', number: 1}, 
-          {text: 'младенцы', number: 0, opacityClassName: 'input__btn--opacity'}
+          {
+            text: 'взрослые', 
+            number: 2
+          }, 
+          {
+            text: 'дети', 
+            number: 1
+          }, 
+          {
+            text: 'младенцы', 
+            number: 0, 
+            opacityClassName: 'input__btn--opacity'
+          }
         ],
         textLeft: 'очистить', 
         textRight: 'применить'
@@ -236,12 +293,36 @@ include ../reviews/reviews
         text: 'expandable checkbox list',
         listClassName: 'checkbox__list--display',
         checkboxs: [
-          {label: 'Завтрак', id: 'breakfast1', checked: false},
-          {label: 'Письменный стол', id: 'desk1', checked: true},
-          {label: 'Стул для кормления', id: 'chair1', checked: true},
-          {label: 'Кроватка', id: 'Crib1', checked: true},
-          {label: 'Телевизор', id: 'TV1', checked: false},
-          {label: 'Шампунь', id: 'shampoo1', checked: false}
+          {
+            label: 'Завтрак', 
+            id: 'breakfast1', 
+            checked: false
+          },
+          {
+            label: 'Письменный стол', 
+            id: 'desk1', 
+            checked: true
+          },
+          {
+            label: 'Стул для кормления', 
+            id: 'chair1', 
+            checked: true
+          },
+          {
+            label: 'Кроватка', 
+            id: 'Crib1', 
+            checked: true
+          },
+          {
+            label: 'Телевизор', 
+            id: 'TV1', 
+            checked: false
+          },
+          {
+            label: 'Шампунь', 
+            id: 'shampoo1', 
+            checked: false
+          }
         ]
       })
     .form-elements__block
@@ -249,12 +330,36 @@ include ../reviews/reviews
         text: 'expandable checkbox list',
         iconClassName: 'checkbox-list__icon--rotate',
         checkboxs: [
-          {label: 'Завтрак', id: 'breakfast2', checked: false},
-          {label: 'Письменный стол', id: 'desk2', checked: true},
-          {label: 'Стул для кормления', id: 'chair2', checked: true},
-          {label: 'Кроватка', id: 'Crib2', checked: true},
-          {label: 'Телевизор', id: 'TV2', checked: false},
-          {label: 'Шампунь', id: 'shampoo2', checked: false}
+          {
+            label: 'Завтрак', 
+            id: 'breakfast2', 
+            checked: false
+          },
+          {
+            label: 'Письменный стол', 
+            id: 'desk2', 
+            checked: true
+          },
+          {
+            label: 'Стул для кормления', 
+            id: 'chair2', 
+            checked: true
+          },
+          {
+            label: 'Кроватка', 
+            id: 'Crib2', 
+            checked: true
+          },
+          {
+            label: 'Телевизор', 
+            id: 'TV2', 
+            checked: false
+          },
+          {
+            label: 'Шампунь', 
+            id: 'shampoo2', 
+            checked: false
+          }
         ]
       })
   .form-elements__block8
@@ -286,13 +391,21 @@ include ../reviews/reviews
       .form-elements__texts
         h3(class="font-h3 form-elements__text") bullet list
       .form-elements__block-condition
-        +condition
+        include ../condition/condition
   .form-elements__block10
     .form-elements__block
       +advantage({
         texts: [
-          {icon: 'insert_emoticon', text: 'Комфорт', span: 'Шумопоглощающие стены'},
-          {icon: 'location_city', text: 'Удобство', span: 'Окно в каждой из спален'}
+          {
+            icon: 'insert_emoticon', 
+            text: 'Комфорт', 
+            span: 'Шумопоглощающие стены'
+          },
+          {
+            icon: 'location_city', 
+            text: 'Удобство', 
+            span: 'Окно в каждой из спален'
+          }
         ] 
       })
   .form-elements__block11

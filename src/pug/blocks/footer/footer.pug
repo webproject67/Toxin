@@ -23,16 +23,13 @@ mixin footer-bottom(options)
 
 mixin footer(options)
   -
-    const {logoLink, footerClassName} = options
+    const {footerClassName} = options
     let letFooterClassName = 'page-footer'
     letFooterClassName += footerClassName ? ` ${footerClassName}` : ''
 
   footer(class= letFooterClassName)
     .page-footer__logo
-        +logotype({
-          logoLink: logoLink,
-          imgClassName: 'logotype__img--display'
-        })
+        +logotype({imgClassName: 'logotype__img--display'})
     .page-footer__top
       .page-footer__block-logo 
         +logotype(options)
@@ -41,34 +38,34 @@ mixin footer(options)
         h3(class="font-h3 page-footer__links") навигация
         ul.page-footer__list  
           li.page-footer__item 
-            a(class="page-footer__link" href="#") О нас  
+            a.page-footer__link О нас  
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Новости
+            a.page-footer__link Новости
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Служба поддержки 
+            a.page-footer__link Служба поддержки 
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Услуги
+            a.page-footer__link Услуги
       .page-footer__block-nav 
         h3(class="font-h3 page-footer__links") о нас
         ul.page-footer__list  
           li.page-footer__item 
-            a(class="page-footer__link" href="#") О сервисе 
+            a.page-footer__link О сервисе 
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Наша команда
+            a.page-footer__link Наша команда
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Вакансии 
+            a.page-footer__link Вакансии 
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Инвесторы
+            a.page-footer__link Инвесторы
       .page-footer__block-nav 
         h3(class="font-h3 page-footer__links") служба поддержки
         ul.page-footer__list  
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Соглашения
+            a.page-footer__link Соглашения
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Сообщества
+            a.page-footer__link Сообщества
           li.page-footer__item 
-            a(class="page-footer__link" href="#") Связь с нами
-      form.page-footer__block-subscription
+            a.page-footer__link Связь с нами
+      .page-footer__block-subscription
         h3(class="font-h3 page-footer__links") Подписка
         p(class="page-footer__text page-footer__text--margin") Получайте специальные предложения и новости сервиса
         .page-footer__block-submit 

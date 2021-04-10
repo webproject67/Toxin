@@ -33,6 +33,7 @@
   height: 2px;
   background: $color;
   margin: 7px auto;
+  transition: all 0.4s ease;
 }
 
 @media (min-width: $tablet-width) {

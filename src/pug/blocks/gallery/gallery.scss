@@ -2,8 +2,8 @@
   @include list-reset;
 
   display: grid;
-  grid-template-columns: 68.2% 32%;
-  grid-template-rows: 48.6% 48.6%;
+  grid-template-columns: 68% 32%;
+  grid-template-rows: 48.4%;
 }
 
 .gallery__item:first-child {
@@ -21,7 +21,7 @@
 
   .gallery__list {
     grid-template-columns: 981px 459px;
-    grid-template-rows: 243px 242px;
+    grid-template-rows: 243px;
   }
 }
 

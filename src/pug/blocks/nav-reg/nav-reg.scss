@@ -30,6 +30,7 @@
   .nav-reg__list,
   .nav-reg__name {
     position: absolute;
+    z-index: 4;
     top: 190px;
     right: 0;
     display: none; 
@@ -42,9 +43,9 @@
 
   .nav-reg__item {
     margin: 5px 0;
-  }
 
-  .nav-reg__item:last-child {
-    margin-left: 0;
+    &:last-child {
+      margin-left: 0;
+    }
   }
 }

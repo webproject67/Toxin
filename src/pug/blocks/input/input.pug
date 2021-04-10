@@ -1,6 +1,6 @@
 mixin input(options)
   - 
-    const {type, placeholder, inputClassName, id, text} = options
+    const {types, placeholder, inputClassName, id, text} = options
     let letInputClassName = 'input__input'
     letInputClassName += inputClassName ? ` ${inputClassName}` : ''
 
@@ -11,22 +11,24 @@ mixin input(options)
 
 mixin input-dropdown(options)
   - 
-    const {value, id, dropdownClassName, inputClassName, optionsClassName, option, textLeft, textRight, text, text2} = options
+    const {value, id, dropdownClassName, inputClassName, optionsClassName, spanClassName, option, textLeft, textRight, text, text2} = options
     let letDropdownClassName = 'input'
     letDropdownClassName += dropdownClassName ? ` ${dropdownClassName}` : ''
     let letInputClassName = 'input__input'
     letInputClassName += inputClassName ? ` ${inputClassName}` : ''
     let letOptionsClassName = 'input__select-options'
     letOptionsClassName += optionsClassName ? ` ${optionsClassName}` : ''
+    let letSpanClassName = spanClassName ? ` ${spanClassName}` : ''
   
   div(class= letDropdownClassName)
     if text 
       .input__texts
         h3(class="font-h3 input__text")= text
-        p(class="font-h3 input__text input__text--color")= text2
+        h3(class="font-h3 input__text input__text--color")= text2
     input(class= letInputClassName id= id type="text" value= value readonly)
     label(class="input__label" for= id) 
       span(class="font-icon input__icon") expand_more
+    span(class= letSpanClassName)
     if option
       div(class= letOptionsClassName)
         each val in option
@@ -37,19 +39,17 @@ mixin input-dropdown(options)
           .input__select-option
             h3(class="font-h3 input__option")= val.text
             .input__btns 
-              input(class= letCpacityClassName type="button" data-selected="-" value="-")
+              input(class= letCpacityClassName type="button" value="-")
               h3(class="font-h3 input__number")= val.number
-              input(class="input__btn" type="button" data-selected="+" value="+")
+              input(class="input__btn" type="button" value="+")
         if textRight
           .input__buttons
             +button-link({
               text: textLeft, 
-              href: '#',
               linkClassName: 'button-link2__link'
             })
             +button-link({
               text: textRight, 
-              href: '#',
               linkClassName: 'button-link2__link'
             })
 

@@ -108,5 +108,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx']
   },
-  devtool: `source-map`
+  devtool: 'source-map'
 }

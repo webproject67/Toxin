@@ -181,16 +181,20 @@
   }
 
   .form-elements__block4,
-  .form-elements__block8 {
+  .form-elements__block7 {
     margin-right: 0;
   }
 
   .form-elements__block7 {
     margin-bottom: 40px;
   }
+
+  .form-elements__block9 {
+    padding-right: 0;
+  }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width-only) {
   .form-elements {
     margin: 15px;
   }

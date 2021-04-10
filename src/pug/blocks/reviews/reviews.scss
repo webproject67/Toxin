@@ -26,13 +26,13 @@
   margin-bottom: 15px;
 }
 
-.reviews__name {
-  margin: 0;
-  font-weight: bold;
-}
-
+.reviews__name,
 .reviews__date {
   margin: 0;
+}
+
+.reviews__name {
+  font-weight: bold;
 }
 
 .reviews__review-text {

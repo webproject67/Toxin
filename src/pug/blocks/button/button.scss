@@ -27,10 +27,6 @@
     border: 1px solid transparent;
     box-shadow: 1px 1000px 1px #fff inset;
   }
-
-  &:focus {
-    outline: none;
-  }
 }
 
 .button-rate {
@@ -56,6 +52,7 @@
   border: 2px solid transparent;
   border-radius: 22px;
   box-shadow: none;
+  transition: all 0.4s ease;
 
   &:hover,
   &--hover {
@@ -80,6 +77,7 @@
 
 .button-link2__link {
   color: $color-purple;
+  transition: all 0.4s ease;
 
   &:hover,
   &--hover {
@@ -98,6 +96,11 @@
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border: none;
   border-radius: 22px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    opacity: 0.5;
+  } 
 }
 
 .button-submit__icon {

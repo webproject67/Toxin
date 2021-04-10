@@ -1,39 +1,44 @@
-.page-main {
-  padding: 0 15px;
-  background: url('../pug/blocks/main/img/img3.jpg') no-repeat center bottom;
-  background-size: cover;
-  border: 1px solid transparent;
-
+.page-main { 
   &--background1 {
-    background: url('../pug/blocks/main/img/img4.jpg') no-repeat center 79%;
+    background: url('../pug/blocks/main/img/img1.jpg') no-repeat;
     background-size: cover;
   }
   
   &--background2 {
-    background: url('../pug/blocks/main/img/img4.jpg') no-repeat center 98%;
+    background: url('../pug/blocks/main/img/img2.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &--background3 {
+    background: url('../pug/blocks/main/img/img3.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &--background4 {
+    background: url('../pug/blocks/main/img/img4.jpg') no-repeat;
     background-size: cover;
   }
   
-  &--background3 {
+  &--display {
     margin: 0 9.7%;
-    padding: 29px 0 51px;
+    padding: 29px 0 42px;
     display: flex;
-    background: none;
   }
 
   &--margin {
-    margin: 0;
     padding: 0;
-    background: none;
   }
 }
 
 .page-main__form {
+  position: relative;
+  z-index: 1;
   max-width: 380px;
-  margin: 69px 124px;
+  margin: 69px 140px;
 
   &--margin1 {
     margin: 18px auto;
+    transform: translate(3px, 1px);
   }
   
   &--margin2 {
@@ -47,8 +52,10 @@
 }
 
 .page-main__text {
+  position: relative;
+  z-index: 1;
   width: 297px;
-  margin: 317px 118px 21px auto;
+  margin: 317px 134px 21px auto;
   text-align: right;
 }
 
@@ -83,8 +90,9 @@
 }
 
 .page-main__pagination {
-  width: 255px;
-  margin: 20px auto;
+  margin: 21px auto;
+  text-align: center;
+  transform: translate(-7px, 0px);
 }
 
 .page-main__wrapper {
@@ -139,7 +147,7 @@
 }
 
 .page-main__reviews {
-  margin-right: 6px
+  margin-right: 7px
 }
 
 .page-main__condition {
@@ -175,9 +183,11 @@
 
 @media (max-width: $mobile-width-only) {
   .page-main__form {
-    margin: 69px auto;
+    margin: 69px auto 209px;
+    padding: 0 15px;
 
     &--margin1 {
+      transform: translate(0, 0);
       margin: 18px auto;
     }
     
@@ -187,6 +197,7 @@
     
     &--margin3 {
       margin: 0 auto;
+      padding: 0;
     }
   }
 
@@ -195,7 +206,7 @@
     text-align: center;
   }
 
-  .page-main--background3 {
+  .page-main--display {
     margin: 0 2%;
     flex-direction: column;
   }
@@ -207,6 +218,10 @@
 
   .page-main__title {
     margin: 22px 0;
+  }
+
+  .page-main__pagination {
+    transform: translate(0, 0);
   }
 
   .page-main__wrapper {

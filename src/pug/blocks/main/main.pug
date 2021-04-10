@@ -1,50 +1,78 @@
 include ../form/form
-include ../slider/slider
+include ../slide/slide
 include ../card-photo/card-photo
 include ../advantage/advantage
 include ../reviews/reviews
-include ../condition/condition
 
 mixin main-landing()
-  main.page-main
-    section.page-main__form
-      +form-search
-    p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+  main(class="page-main page-main--position1")
+    .slider
+      .slItems
+        .page-main__form
+          +form-search
+        p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        div(class="slItem page-main--background3" style="background-position: center bottom")
+        div(class="slItem page-main--background1" style="background-position: center bottom")
+        div(class="slItem page-main--background2" style="background-position: center bottom")
+    
 
 mixin main-registration()
-  main(class="page-main page-main--background1")
-    section(class="page-main__form page-main__form--margin1")
-      +form-registration({textSubmit: 'зарегистрироваться'})
+  main(class="page-main page-main--position2")
+    .slider
+      .slItems
+        div(class="page-main__form page-main__form--margin1")
+          +form-registration({textSubmit: 'зарегистрироваться'})
+        div(class="slItem page-main--background4" style="background-position: center 79%")
+        div(class="slItem page-main--background3" style="background-position: center 79%")
+        div(class="slItem page-main--background1" style="background-position: center 79%")
+        div(class="slItem page-main--background2" style="background-position: center 79%")
 
 mixin main-sign-in()
-  main(class="page-main page-main--background2")
-    section(class="page-main__form page-main__form--margin2")
-      +form-sign-in
+  main(class="page-main page-main--position3")
+    .slider
+      .slItems
+        div(class="page-main__form page-main__form--margin2")
+          +form-sign-in
+        div(class="slItem page-main--background4" style="background-position: center 98%")
+        div(class="slItem page-main--background3" style="background-position: center 98%")
+        div(class="slItem page-main--background1" style="background-position: center 98%")
+        div(class="slItem page-main--background2" style="background-position: center 98%")
 
 mixin main-search-room()
-  main(class="page-main page-main--background3")
+  main(class="page-main page-main--display")
     section.page-main__filters
       .page-main__filter-block1
         +input-dropdown({
           text: 'даты пребывания в отеле',
           value: '19 авг - 23 авг',
-          id: 'date'
+          id: 'date',
+          spanClassName: 'datepick5'
         })
       .page-main__filter-block2
         +input-dropdown({
+          dropdownClassName: 'input-dropdown',
           text: 'гости',
           value: '3 гостя, 1 младенец',
           id: 'guest',
           option: [
-            {text: 'взрослые', number: 2}, 
-            {text: 'дети', number: 1}, 
-            {text: 'младенцы', number: 1}
+            {
+              text: 'взрослые', 
+              number: 2
+            }, 
+            {
+              text: 'дети', 
+              number: 1
+            }, 
+            {
+              text: 'младенцы', 
+              number: 1
+            }
           ],
           textLeft: 'очистить', 
           textRight: 'применить'
         })
       .page-main__filter-block3
-        +slider({
+        +slide({
           text: 'диапазон цены',
           desc: 'Стоимость за сутки пребывания в номере'
         })
@@ -53,9 +81,21 @@ mixin main-search-room()
         +checkbox({
           listClassName: 'checkbox__list--margin',
           checkboxs: [
-            {label: 'Можно курить', id: 'smoke', checked: false},
-            {label: 'Можно с питомцами', id: 'pets', checked: true},
-            {label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true}
+            {
+              label: 'Можно курить', 
+              id: 'smoke', 
+              checked: false
+            },
+            {
+              label: 'Можно с питомцами', 
+              id: 'pets', 
+              checked: true
+            },
+            {
+              label: 'Можно пригласить гостей (до 10 человек)', 
+              id: 'guests', 
+              checked: true
+            }
           ]
         })
       .page-main__filter-block5
@@ -82,13 +122,24 @@ mixin main-search-room()
         })
       .page-main__filter-block6
         +input-dropdown({
+          dropdownClassName: 'input-dropdown',
           text: 'удобства номера',
           value: '2 спальни, 2 кровати...',
           id: 'rooms',
           option: [
-            {text: 'спальни', number: 2}, 
-            {text: 'кровати', number: 2}, 
-            {text: 'ванные комнаты', number: 0, opacityClassName: 'input__btn--opacity'}
+            {
+              text: 'спальни', 
+              number: 2
+            }, 
+            {
+              text: 'кровати', 
+              number: 2
+            }, 
+            {
+              text: 'ванные комнаты', 
+              number: 0, 
+              opacityClassName: 'input__btn--opacity'
+            }
           ]
         })
       .page-main__filter-block7
@@ -96,12 +147,36 @@ mixin main-search-room()
           text: 'дополнительные удобства',
           listClassName: 'checkbox__list--display',
           checkboxs: [
-            {label: 'Завтрак', id: 'breakfast', checked: false},
-            {label: 'Письменный стол', id: 'desk', checked: true},
-            {label: 'Стул для кормления', id: 'chair', checked: true},
-            {label: 'Кроватка', id: 'Crib', checked: true},
-            {label: 'Телевизор', id: 'TV', checked: false},
-            {label: 'Шампунь', id: 'shampoo', checked: false}
+            {
+              label: 'Завтрак', 
+              id: 'breakfast', 
+              checked: false
+            },
+            {
+              label: 'Письменный стол', 
+              id: 'desk', 
+              checked: true
+            },
+            {
+              label: 'Стул для кормления', 
+              id: 'chair', 
+              checked: true
+            },
+            {
+              label: 'Кроватка', 
+              id: 'Crib', 
+              checked: true
+            },
+            {
+              label: 'Телевизор', 
+              id: 'TV', 
+              checked: false
+            },
+            {
+              label: 'Шампунь', 
+              id: 'shampoo', 
+              checked: false
+            }
           ]
         })
     section.page-main__rooms
@@ -112,113 +187,161 @@ mixin main-search-room()
         spanClassName: 'card-photo__symbol--padding',
         photos: [
           {
-            img: 'image1.jpg',
             number: 888,
             luxe: ' Люкс',
             price: '9 990',
             count: 5,
             review: 145,
-            imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
-            className: 'card-photo__block-img--hover' 
+            imgs: [
+              'image1.jpg', 
+              'image2.jpg', 
+              'image3.jpg', 
+              'image4.jpg'
+            ],
+            sliderClassName: 'flexslider--hover' 
           },
           {
-            img: 'image2.jpg',
             number: 840,
             luxe: '',
             price: '9 900',
             count: 4,
             review: 65,
-            imgs: ['image2.jpg', 'image1.jpg', 'image3.jpg', 'image4.jpg'] 
+            imgs: [
+              'image2.jpg', 
+              'image3.jpg', 
+              'image4.jpg', 
+              'image5.jpg'
+            ] 
           },
           {
-            img: 'image3.jpg',
             number: 980,
             luxe: ' Люкс',
             price: '8 500',
             count: 3,
             review: 35,
-            imgs: ['image3.jpg', 'image1.jpg', 'image2.jpg', 'image4.jpg'] 
+            imgs: [
+              'image3.jpg', 
+              'image4.jpg', 
+              'image5.jpg', 
+              'image6.jpg'
+            ] 
           },
           {
-            img: 'image4.jpg',
             number: 856,
             luxe: '',
             price: '7 300',
             count: 5,
             review: 19,
-            imgs: ['image4.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg'] 
+            imgs: [
+              'image4.jpg', 
+              'image5.jpg', 
+              'image6.jpg', 
+              'image7.jpg'
+            ] 
           },
           {
-            img: 'image5.jpg',
             number: 740,
             luxe: '',
             price: '6 000',
             count: 4,
             review: 44,
-            imgs: ['image5.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg'] 
+            imgs: [
+              'image5.jpg', 
+              'image6.jpg', 
+              'image7.jpg', 
+              'image8.jpg'
+            ] 
           },
           {
-            img: 'image6.jpg',
             number: 982,
             luxe: '',
             price: '5 800',
             count: 3,
             review: 56,
-            imgs: ['image6.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image6.jpg', 
+              'image7.jpg', 
+              'image8.jpg', 
+              'image9.jpg'
+            ]  
           },
           {
-            img: 'image7.jpg',
             number: 678,
             luxe: '',
             price: '5 500',
             count: 5,
             review: 45,
-            imgs: ['image7.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image7.jpg', 
+              'image8.jpg', 
+              'image9.jpg', 
+              'image10.jpg'
+            ]  
           },
           {
-            img: 'image8.jpg',
             number: 450,
             luxe: '',
             price: '5 300',
             count: 4,
             review: 39,
-            imgs: ['image8.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image8.jpg', 
+              'image9.jpg', 
+              'image10.jpg', 
+              'image11.jpg'
+            ]  
           },
           {
-            img: 'image9.jpg',
             number: 350,
             luxe: '',
             price: '5 000',
             count: 3,
             review: 77,
-            imgs: ['image9.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image9.jpg', 
+              'image10.jpg', 
+              'image11.jpg', 
+              'image12.jpg'
+            ]  
           },
           {
-            img: 'image10.jpg',
             number: 666,
             luxe: '',
             price: '5 000',
             count: 5,
             review: 25,
-            imgs: ['image10.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image10.jpg', 
+              'image11.jpg', 
+              'image12.jpg', 
+              'image1.jpg'
+            ]  
           },
           {
-            img: 'image11.jpg',
             number: 444,
             luxe: '',
             price: '5 000',
             count: 3,
             review: 15,
-            imgs: ['image11.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image11.jpg', 
+              'image12.jpg', 
+              'image1.jpg', 
+              'image2.jpg'
+            ]  
           },
           {
-            img: 'image12.jpg',
             number: 352,
             luxe: '',
             price: '5 000',
             count: 3,
             review: 55,
-            imgs: ['image12.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg']  
+            imgs: [
+              'image12.jpg',
+              'image1.jpg', 
+              'image2.jpg', 
+              'image3.jpg'
+            ]  
           }
         ]
       })
@@ -236,9 +359,21 @@ mixin main-room-details()
             h2(class="font-h2 page-main__subtitle") Сведения о номере
             +advantage({
               texts: [
-                {icon: 'insert_emoticon', text: 'Комфорт', span: 'Шумопоглощающие стены'},
-                {icon: 'location_city', text: 'Удобство', span: 'Окно в каждой из спален'},
-                {icon: 'whatshot', text: 'Уют', span: 'Номер оснащён камином'}
+                {
+                  icon: 'insert_emoticon', 
+                  text: 'Комфорт', 
+                  span: 'Шумопоглощающие стены'
+                },
+                {
+                  icon: 'location_city', 
+                  text: 'Удобство', 
+                  span: 'Окно в каждой из спален'
+                },
+                {
+                  icon: 'whatshot', 
+                  text: 'Уют', 
+                  span: 'Номер оснащён камином'
+                }
               ] 
             })
           .page-main__experience
@@ -274,7 +409,7 @@ mixin main-room-details()
         .page-main__conditions
           .page-main__condition
             h2(class="font-h2 page-main__subtitle page-main__subtitle--margin2 page-main__subtitle--padding") Правила
-            +condition
+            include ../condition/condition
           .page-main__cancel
             h2(class="font-h2 page-main__subtitle page-main__subtitle--margin2") Отмена
             p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

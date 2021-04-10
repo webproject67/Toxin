@@ -95,7 +95,7 @@
   color: $color-25;
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width-only) {
   .colors-type {
     margin: 15px;
   }

@@ -10,10 +10,7 @@ include ../card-photo/card-photo
       totalClassName: 'form__total-number--transform'
     })
   .cards__block3
-    +input-dropdown({
-      id: 'date5',
-      inputClassName: 'input__input--padding date1'
-    })
+    .datepick1
   .cards__block4
     +form-registration({textSubmit: 'перейти к оплате'})
   .cards__block5
@@ -23,23 +20,31 @@ include ../card-photo/card-photo
       itemClassName: 'card-photo__item--margin1',
       photos: [
         {
-          img: 'image1.jpg',
           number: 888,
           luxe: ' Люкс',
           price: '9 990',
           count: 5,
           review: 145,
-          imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
-          className: 'card-photo__block-img--hover' 
+          imgs: [
+            'image1.jpg', 
+            'image2.jpg', 
+            'image3.jpg', 
+            'image4.jpg'
+          ],
+          sliderClassName: 'flexslider--hover' 
         },
         {
-          img: 'image2.jpg',
           number: 840,
           luxe: '',
           price: '9 900',
           count: 4,
           review: 65,
-          imgs: ['image2.jpg', 'image1.jpg', 'image3.jpg', 'image4.jpg']
+          imgs: [
+            'image2.jpg', 
+            'image1.jpg', 
+            'image4.jpg', 
+            'image3.jpg'
+          ]
         }
       ]
     })

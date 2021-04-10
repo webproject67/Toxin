@@ -1,8 +1,8 @@
-.slider__texts {
+.slide__texts {
   @include display-center;
 }
 
-.slider__text {
+.slide__text {
   margin: 0 0 5px;
 
   &--color {
@@ -11,17 +11,17 @@
   }
 }
 
-.slider__slider.ui-widget.ui-widget-content {
+.slide__slide.ui-widget.ui-widget-content {
   margin-top: 19px;
   height: 6px;
   border: 1px solid rgba(31, 32, 65, 0.25);
 }
 
-.slider__slider .ui-widget-header {
+.slide__slide .ui-widget-header {
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 
-.slider__slider .ui-state-default {
+.slide__slide .ui-state-default {
   top: -6px;
   width: 16px;
   height: 16px;
@@ -31,7 +31,7 @@
   cursor: pointer;
 }
 
-.slider__desc {
+.slide__desc {
   font-size: 12px;
   line-height: 17px;
   color: $color-50;

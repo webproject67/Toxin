@@ -4,9 +4,6 @@ include ../../blocks/main/main
 include ../../blocks/footer/footer
 
 block body
-  +header({logoLink: true})
+  +header({})
   +main-search-room()
-  +footer({
-    logoLink: true,
-    footerClassName: 'page-footer--border'
-  })
+  +footer({footerClassName: 'page-footer--border'})

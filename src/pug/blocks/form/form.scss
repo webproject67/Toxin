@@ -175,13 +175,14 @@
   @include display-center;
 
   margin-top: 30px;
+  color: #000000;
 }
 
 .form__text-reg {
   margin: 0;
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width-only) {
   .form {
     padding: 15px;
   }
