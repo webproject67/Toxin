@@ -80,6 +80,7 @@
 
 .checkbox__figure {
   position: relative;
+  display: block;
   cursor: pointer;
 
   &::before {
