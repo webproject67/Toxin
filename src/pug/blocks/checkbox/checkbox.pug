@@ -14,7 +14,7 @@ mixin checkbox(options)
           input(class="checkbox__checkbox visually-hidden--focusable" type="checkbox" id= val.id checked= val.checked)
           label(class= letLabelClassName for= val.id)= val.label
             if val.text
-              p.checkbox__label--color2= val.text
+              span.checkbox__label--color2= val.text
 
 mixin checkbox-toggle(options)
   -
@@ -32,8 +32,8 @@ mixin checkbox-list(options)
 
   .checkbox-list
     .checkbox-list__btn
-      input(class="font-h3 checkbox-list__button" type="button" id="button" value= text)
-      label(class="checkbox-list__label" for="buttonn") 
+      input(class="font-h3 checkbox-list__button" type="button" value= text)
+      label(class="checkbox-list__label") 
         span(class= letIconClassName) expand_more
     +checkbox({
       listClassName: listClassName,

@@ -24,7 +24,7 @@ mixin input-dropdown(options)
     if text 
       .input__texts
         h3(class="font-h3 input__text")= text
-        h3(class="font-h3 input__text input__text--color")= text2
+        p(class="font-h3 input__text input__text--color")= text2
     input(class= letInputClassName id= id type="text" value= value readonly)
     label(class="input__label" for= id) 
       span(class="font-icon input__icon") expand_more
