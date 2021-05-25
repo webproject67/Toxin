@@ -1,2 +1,7 @@
-$('.form').on('submit', (evt) => evt.preventDefault());
-$('.form-search').on('submit', () => location.href = 'search-room.html');
+const handleFormSubmit = (evt: JQuery.SubmitEvent<HTMLElement>) => evt.preventDefault();
+
+$('.js-form').on('submit', handleFormSubmit);
+
+const handleFormSearchSubmit = () => location.href = 'search-room.html';
+
+$('.js-form-search').on('submit', handleFormSearchSubmit);

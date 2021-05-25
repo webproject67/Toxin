@@ -3,3 +3,4 @@ public
 pixel_perfect/*.psd
 pixel_perfect/*.fig
 debug.log
+package-lock.json

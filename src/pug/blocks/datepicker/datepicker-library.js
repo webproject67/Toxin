@@ -5,7 +5,7 @@
         $body, $datepickersContainer,
         containerBuilt = false,
         baseTemplate = '' +
-            '<div class="datepicker">' +
+            '<div class="datepicker js-datepicker">' +
             '<i class="datepicker--pointer"></i>' +
             '<nav class="datepicker--nav"></nav>' +
             '<div class="datepicker--content"></div>' +

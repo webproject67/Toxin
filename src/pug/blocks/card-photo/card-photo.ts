@@ -2,6 +2,6 @@ interface JQuery {
   flexslider({}): JQuery
 }
 
-$('.flexslider').flexslider({
+$('.js-flexslider').flexslider({
   animation: 'slide'
 });

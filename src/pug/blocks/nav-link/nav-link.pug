@@ -8,7 +8,7 @@ mixin nav-link(options)
     ul.nav-link__list
       li(class= letItemClassName)
         a.nav-link__link О нас
-      li.nav-link__item
+      li(class="nav-link__item js-nav-link__item")
         a.nav-link__link Услуги
         span(class="font-icon nav-link__icon") expand_more
         ul.nav-link__options 
@@ -22,7 +22,7 @@ mixin nav-link(options)
         a.nav-link__link Вакансии
       li.nav-link__item
         a.nav-link__link Новости
-      li.nav-link__item
+      li(class="nav-link__item js-nav-link__item")
         a.nav-link__link Соглашения
         span(class="font-icon nav-link__icon") expand_more
         ul.nav-link__options 

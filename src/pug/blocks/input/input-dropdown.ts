@@ -1,4 +1,4 @@
-$('.input-dropdown').each(function() {
+$('.js-input-dropdown').each(function() {
   const setInputValue = ():void => {
     let counts: number[] = [0, 0, 0];
     input.find('.input__number').map(function (i) {
@@ -73,17 +73,21 @@ $('.input-dropdown').each(function() {
 
   const input: JQuery<HTMLElement> = $(this);
 
-  $(this).find('.input__input').on('click', function() {
+  const handleInputClick = function(this: HTMLElement) {
     $(this).toggleClass('input__input--border');
     input.find('.input__select-options').slideToggle(300);
-  })
+  };
 
-  input.find('.button-link2__link:last').on('click', function() {
+  $(this).find('.input__input').on('click', handleInputClick);
+
+  const handleLink1Click = function() {
     input.find('.input__input').toggleClass('input__input--border');
     input.find('.input__select-options').slideToggle(300);
-  })
+  };
 
-  input.find('.input__btn:nth-child(3)').on('click', function() {
+  input.find('.button-link2__link:last').on('click', handleLink1Click);
+
+  const handleBtn3Click = function(this: HTMLElement) {
     let value: number = +$(this).siblings('.input__number').text();
     value++;
     $(this).siblings('.input__number').text(value);
@@ -91,9 +95,11 @@ $('.input-dropdown').each(function() {
     input.find('.button-link2__link:first').text('очистить');
 
     setInputValue();
-  })
-  
-  input.find('.input__btn:nth-child(1)').on('click', function() {
+  };
+
+  input.find('.input__btn:nth-child(3)').on('click', handleBtn3Click);
+
+  const handleBtn1Click = function(this: HTMLElement) {
     let value: number = +$(this).siblings('.input__number').text();
     value--;
     if(value <= 0) {
@@ -111,14 +117,18 @@ $('.input-dropdown').each(function() {
     }
 
     setInputValue();
-  })
+  };
+  
+  input.find('.input__btn:nth-child(1)').on('click', handleBtn1Click);
 
-  input.find('.button-link2__link:first').on('click', function() {
+  const handleLink2Click = function(this: HTMLElement) {
     input.find('.input__number').map(function () {
       $(this).text(0);
     })
     $(this).text('');
     input.find('.input__btn:nth-child(1)').addClass('input__btn--opacity');
     input.find('.input__input').val('Сколько гостей')
-  })
+  };
+
+  input.find('.button-link2__link:first').on('click', handleLink2Click);
 })

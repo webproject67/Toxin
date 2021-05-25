@@ -7,11 +7,9 @@ const setHeightMain = (
   heightDesktop: number, 
   heightMobile: number
 ): void => {
-  if($('body').width() as number >= 768) {
-    $('.slider').height(heightDesktop)
-  } else {
-    $('.slider').height(heightMobile)
-  }
+  let height: number;
+  ($('body').width() as number >= 768) ? height = heightDesktop : height = heightMobile;
+  $('.js-slider').height(height)
 }
 
 const setupOptions = (
@@ -24,20 +22,22 @@ const setupOptions = (
 	});
   
   setHeightMain(main, heightDesktop, heightMobile)
-  
-  $(window).on('resize', function () { 
+
+  const handleWindowResize = function () { 
     setHeightMain(main, heightDesktop, heightMobile)
-  })
+  };
+  
+  $(window).on('resize', handleWindowResize);
 }
 
-$('.page-main--position1').each(function() {
+$('.js-page-main--position1').each(function() {
   setupOptions($(this).children(), 830, 690)
 })
 
-$('.page-main--position2').each(function() {
+$('.js-page-main--position2').each(function() {
   setupOptions($(this).children(), 683, 661)
 })
 
-$('.page-main--position3').each(function() {
+$('.js-page-main--position3').each(function() {
   setupOptions($(this).children(), 702, 677)
 })

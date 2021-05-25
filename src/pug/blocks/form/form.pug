@@ -3,7 +3,7 @@ include ../button/button
 include ../checkbox/checkbox
 
 mixin form-search()
-  form(class="form form-search")
+  form(class="form js-form form-search js-form-search")
     h1(class="font-h1 form__title") Найдём номера под ваши пожелания
     .form__inputs 
       +input-dropdown({
@@ -11,7 +11,7 @@ mixin form-search()
         id: 'date1',
         inputClassName: 'input__input--width',
         text: 'прибытие',
-        spanClassName: 'datepick2'
+        spanClassName: 'datepick2 js-datepick2'
       })
       +input-dropdown({
         value: 'ДД.ММ.ГГГГ',
@@ -21,7 +21,7 @@ mixin form-search()
       })
     .form__guests 
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         value: 'Сколько гостей',
         id: 'guest1',
         option: [
@@ -66,7 +66,7 @@ mixin form-room(options)
     let letNumberClassName = 'form__number-price'
     letNumberClassName += numberClassName ? ` ${numberClassName}` : ''
 
-  form.form
+  form(class="form js-form")
     .form__block-price
       p.form__symbol № 
         span.form__symbol--size 888
@@ -79,7 +79,7 @@ mixin form-room(options)
         id: 'date3',
         inputClassName: 'input__input--width',
         text: 'прибытие',
-        spanClassName: 'datepick3'
+        spanClassName: 'datepick3 js-datepick3'
       })
       +input-dropdown({
         value: '23.08.2019',
@@ -89,7 +89,7 @@ mixin form-room(options)
       })
     .form__guests 
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         value: '3 гостя',
         id: 'guest2',
         option: [
@@ -135,7 +135,7 @@ mixin form-registration(options)
   -
     const {textSubmit} = options
 
-  form.form
+  form(class="form js-form")
     h1(class="font-h1 form__title") Регистрация аккаунта
     .form__name 
       +input({placeholder: 'Имя'})
@@ -175,7 +175,7 @@ mixin form-registration(options)
       })
 
 mixin form-sign-in()
-  form.form
+  form(class="form js-form")
     h1(class="font-h1 form__title") Войти
     .form__email
       +input({placeholder: 'Email'})

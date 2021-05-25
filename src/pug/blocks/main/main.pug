@@ -5,8 +5,8 @@ include ../advantage/advantage
 include ../reviews/reviews
 
 mixin main-landing()
-  main(class="page-main page-main--position1")
-    .slider
+  main(class="page-main page-main--position1 js-page-main--position1")
+    div(class="slider js-slider")
       .slItems
         .page-main__form
           +form-search
@@ -17,8 +17,8 @@ mixin main-landing()
     
 
 mixin main-registration()
-  main(class="page-main page-main--position2")
-    .slider
+  main(class="page-main page-main--position2 js-page-main--position2")
+    div(class="slider js-slider")
       .slItems
         div(class="page-main__form page-main__form--margin1")
           +form-registration({textSubmit: 'зарегистрироваться'})
@@ -28,8 +28,8 @@ mixin main-registration()
         div(class="slItem page-main--background2" style="background-position: center 79%")
 
 mixin main-sign-in()
-  main(class="page-main page-main--position3")
-    .slider
+  main(class="page-main page-main--position3 js-page-main--position3")
+    div(class="slider js-slider")
       .slItems
         div(class="page-main__form page-main__form--margin2")
           +form-sign-in
@@ -46,11 +46,11 @@ mixin main-search-room()
           text: 'даты пребывания в отеле',
           value: '19 авг - 23 авг',
           id: 'date',
-          spanClassName: 'datepick5'
+          spanClassName: 'datepick5 js-datepick5'
         })
       .page-main__filter-block2
         +input-dropdown({
-          dropdownClassName: 'input-dropdown',
+          dropdownClassName: 'input-dropdown js-input-dropdown',
           text: 'гости',
           value: '3 гостя, 1 младенец',
           id: 'guest',
@@ -122,7 +122,7 @@ mixin main-search-room()
         })
       .page-main__filter-block6
         +input-dropdown({
-          dropdownClassName: 'input-dropdown',
+          dropdownClassName: 'input-dropdown js-input-dropdown',
           text: 'удобства номера',
           value: '2 спальни, 2 кровати...',
           id: 'rooms',

@@ -13,7 +13,7 @@ mixin card-photo(options)
       each val in photos
         li(class= letitemClassName)
           .card-photo__block-img
-            div(class= val.sliderClassName ? `flexslider ${val.sliderClassName}` : 'flexslider')
+            div(class= val.sliderClassName ? `flexslider js-flexslider ${val.sliderClassName}` : 'flexslider js-flexslider')
               ul.slides
                 each img in val.imgs
                   li

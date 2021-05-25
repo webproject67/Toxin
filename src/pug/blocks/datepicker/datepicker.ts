@@ -13,21 +13,20 @@ const getOptionsDatepicker = (input: JQuery<HTMLElement>):void => {
     }
   }).data('datepicker');
   input.find('.datepicker--buttons').append('<span class="datepicker--btn">Применить</span>');
-  input.find('.datepicker--btn').on('click', () => input.hide());
+  const handleDatepickerClick = () => input.hide();
+  input.find('.datepicker--btn').on('click', handleDatepickerClick);
 }
 
-$('.datepick1').each(function () {
+$('.js-datepick1').each(function () {
   getOptionsDatepicker($(this));
   $(this).data('datepicker').selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
   $(this).find('.datepicker--cell-day[data-year="2019"][data-month="7"][data-date="8"]').addClass('-current-');
-  if($('body').width() as number <= 348) {
-    $('.datepicker').width(288)
-  } else {
-    $('.datepicker').width(318)
-  }
+  let width: number;
+  ($('body').width() as number <= 348) ? width = 288 :  width = 318;
+  $('.js-datepicker').width(width)
 })
 
-$('.datepick2').each(function () {
+$('.js-datepick2').each(function () {
   getOptionsDatepicker($(this));
   $(this).datepicker({
     onSelect: (date) => {
@@ -37,11 +36,13 @@ $('.datepick2').each(function () {
     }
   }).data('datepicker');
   $(this).hide();
-  $(this).siblings('#date1').on('click', () => $('.datepick2').toggle());
-  $(this).closest('.form__inputs').find('#date2').on('click', () => $('.datepick2').toggle());
+  const handleDateClick = () => $('.js-datepick2').toggle();
+  $(this).siblings('#date1').on('click', handleDateClick);
+  const handleInputsClick = () => $('.js-datepick2').toggle();
+  $(this).closest('.form__inputs').find('#date2').on('click', handleInputsClick);
 });
 
-$('.datepick3').each(function () {
+$('.js-datepick3').each(function () {
   getOptionsDatepicker($(this));
   $(this).datepicker({
     onSelect: (date) => {
@@ -51,31 +52,34 @@ $('.datepick3').each(function () {
     }
   }).data('datepicker').selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
   $(this).hide();
-  $(this).siblings('#date3').on('click', () => $('.datepick3').toggle());
-  $(this).closest('.form__inputs').find('#date4').on('click', () => $('.datepick3').toggle());
+  const handleDateClick = () => $('.js-datepick3').toggle();
+  $(this).siblings('#date3').on('click', handleDateClick);
+  const handleInputsClick = () => $('.js-datepick3').toggle();
+  $(this).closest('.form__inputs').find('#date4').on('click', handleInputsClick);
 });
 
-$('.datepick4').each(function () {
+$('.js-datepick4').each(function () {
   getOptionsDatepicker($(this));
   $(this).datepicker({
     onSelect: (date) => {
       const dates: string[] = date.split(',');
-      $('#date1').val(dates[0]);
+      let date1:string;
+      (dates[0] === '08.08.2019') ? date1 = 'ДД.ММ.ГГГГ' : date1 = dates[0];
+      $('#date1').val(date1);
       $('#date2').val(dates[1]);
-      if (dates[0] === '08.08.2019') $('#date1').val('ДД.ММ.ГГГГ');
     }
   }).data('datepicker').selectDate([new Date(2019, 7, 8), new Date(2019, 7, 19)]);
   $(this).hide();
-  $(this).siblings('#date1').on('click', () => $('.datepick4').toggle());
-  $(this).closest('.form-elements__block').find('#date2').on('click', () => $('.datepick4').toggle());
-  if($('body').width() as number <= 348) {
-    $('.datepicker').width(288)
-  } else {
-    $('.datepicker').width(318)
-  }
+  const handleDateClick = () => $('.js-datepick4').toggle();
+  $(this).siblings('#date1').on('click', handleDateClick);
+  const handleBlockClick = () => $('.js-datepick4').toggle();
+  $(this).closest('.form-elements__block').find('#date2').on('click', handleBlockClick);
+  let width: number;
+  ($('body').width() as number <= 348) ? width = 288 : width = 318;
+  $('.js-datepicker').width(width)
 });
 
-$('.datepick5').each(function () {
+$('.js-datepick5').each(function () {
   const getMonthString = (month:string):string => {
     switch (month) {
       case '01':
@@ -116,12 +120,14 @@ $('.datepick5').each(function () {
         const date2: string[] = dates[1].split('.');
         value += ` - ${date2[0]} ${getMonthString(date2[1])}`;
       }  
-      $('#date').val(value);
-      if (dates[0] === '') $('#date').val('');
+      let date1Value:string;
+      (dates[0] === '') ? date1Value = '' : date1Value = value;
+      $('#date').val(date1Value);
     }
   }).data('datepicker').selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
   $(this).hide();
-  $(this).siblings('#date').on('click', () => $('.datepick5').toggle());
+  const handleDateClick = () => $('.js-datepick5').toggle();
+  $(this).siblings('#date').on('click', handleDateClick);
   $(this).find('.datepicker').width(264);
   $(this).find('.datepicker--content').css('padding', '0');
 });

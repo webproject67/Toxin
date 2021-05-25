@@ -24,7 +24,7 @@ include ../reviews/reviews
       })
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         text: 'dropdown',
         value: 'Сколько гостей',
         id: 'guest1',
@@ -62,7 +62,7 @@ include ../reviews/reviews
           value: 'ДД.ММ.ГГГГ',
           id: 'date1',
           inputClassName: 'input__input--width',
-          spanClassName: 'datepick4'
+          spanClassName: 'datepick4 js-datepick4'
         })
       .form-elements__block-right
         +input-dropdown({
@@ -76,7 +76,7 @@ include ../reviews/reviews
         text: 'filter date dropdown',
         value: '19 авг - 23 авг',
         id: 'date',
-        spanClassName: 'datepick5'
+        spanClassName: 'datepick5 js-datepick5'
       })
     .form-elements__block
       .form-elements__texts
@@ -185,7 +185,7 @@ include ../reviews/reviews
   .form-elements__block4
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         text: 'dropdown',
         text2: 'default',
         value: '2 спальни, 2 кровати...',
@@ -208,7 +208,7 @@ include ../reviews/reviews
       })
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         text: 'dropdown',
         text2: 'expanded',
         value: '2 спальни, 2 кровати...',
@@ -234,7 +234,7 @@ include ../reviews/reviews
   .form-elements__block5
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         text: 'dropdown',
         value: 'Сколько гостей',
         id: 'guest2',
@@ -263,7 +263,7 @@ include ../reviews/reviews
   .form-elements__block6
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown',
+        dropdownClassName: 'input-dropdown js-input-dropdown',
         text: 'dropdown',
         value: '3 гостя',
         id: 'guest3',

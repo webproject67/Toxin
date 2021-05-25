@@ -1,7 +1,7 @@
 mixin button-like(options)
   -
     const {text, number, buttonClassName} = options
-    let letButtonClassName = 'button-like__button'
+    let letButtonClassName = 'button-like__button js-button-like__button'
     letButtonClassName += buttonClassName ? ` ${buttonClassName}` : ''
 
   .button-like  
@@ -12,7 +12,7 @@ mixin button-rate(options)
   -
     const {count} = options
 
-  div(class="button-rate" data-count= count)
+  div(class="button-rate js-button-rate" data-count= count)
 
 mixin button-link(options) 
   -

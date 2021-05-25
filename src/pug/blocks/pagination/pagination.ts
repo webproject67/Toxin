@@ -2,7 +2,7 @@ interface JQuery {
   pagination({}): JQuery
 }
 
-$('.pagination__nav').pagination({
+$('.js-pagination__nav').pagination({
     items: 15,
     itemsOnPage: 1,
     displayedPages: 3,
