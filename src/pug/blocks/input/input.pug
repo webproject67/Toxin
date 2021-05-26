@@ -28,7 +28,7 @@ mixin input-dropdown(options)
     input(class= letInputClassName id= id type="text" value= value readonly)
     label(class="input__label" for= id) 
       span(class="font-icon input__icon") expand_more
-    span(class= letSpanClassName)
+    div(class= letSpanClassName)
     if option
       div(class= letOptionsClassName)
         each val in option
@@ -56,5 +56,5 @@ mixin input-dropdown(options)
 mixin input-email()
   .input 
     form(class="input__form js-input__form")
-      input(class="input__input" id="email" type="text" placeholder="Email")
+      input(class="input__input input__input--padding" id="email" type="email" placeholder="Email")
       input(class="font-icon font-lg input__submit" type="submit" value="arrow_forward")

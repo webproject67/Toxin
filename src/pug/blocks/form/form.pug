@@ -152,6 +152,7 @@ mixin form-registration(options)
     .form__email
       +input({
         placeholder: 'Email',
+        types: 'email',
         text: 'данные для входа в сервис'
       })
     .form__password
@@ -178,7 +179,10 @@ mixin form-sign-in()
   form(class="form js-form")
     h1(class="font-h1 form__title") Войти
     .form__email
-      +input({placeholder: 'Email'})
+      +input({
+        placeholder: 'Email',
+        types: 'email'
+      })
     .form__password
       +input({
         types: 'password',
