@@ -26,6 +26,10 @@
   border-radius: 4px;
   transition: all 0.4s ease;
 
+  &--padding {
+    padding: 13px 35px 13px 14px;
+  }
+
   &::placeholder {
     color: $color-25;
     transition: all 0.4s ease;

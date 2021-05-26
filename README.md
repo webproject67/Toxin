@@ -7,12 +7,12 @@
 ### https://webproject67.github.io/Toxin/
 
 ## Используемые библиотеки
-[jquery datepicker]:https://github.com/t1m0n/air-datepicker
-[jquery star rating]:https://github.com/jvv/jquery-star-rating-plugin
-[jquery ui slider]:https://atuin.ru/blog/polzunok-diapazonov-jquery-ui-slider/
-[jquery simple pagination]:https://flaviusmatis.github.io/simplePagination.js/
-[jquery woocommerce]:https://github.com/woocommerce/FlexSlider
-[jquery carousel]:https://github.com/vshovkovych/carousel
+[jquery datepicker](https://github.com/t1m0n/air-datepicker)
+[jquery star rating](https://github.com/jvv/jquery-star-rating-plugin)
+[jquery ui slider](https://atuin.ru/blog/polzunok-diapazonov-jquery-ui-slider/)
+[jquery simple pagination](https://flaviusmatis.github.io/simplePagination.js/)
+[jquery woocommerce](https://github.com/woocommerce/FlexSlider)
+[jquery carousel](https://github.com/vshovkovych/carousel)
 
 ## Команды запуска
 ### npm i - установка

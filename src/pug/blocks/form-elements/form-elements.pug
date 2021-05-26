@@ -7,14 +7,15 @@ include ../reviews/reviews
 
 .form-elements 
   .form-elements__block1
-    .form-elements__block
+    form.form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Text Field
         h3(class="font-h3 form-elements__text form-elements__text--color") default
       +input({
-        placeholder: 'Email'
+        placeholder: 'Email',
+        types: 'email'
       })
-    .form-elements__block
+    form.form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Text Field
         h3(class="font-h3 form-elements__text form-elements__text--color") Hover / Focus
@@ -22,7 +23,7 @@ include ../reviews/reviews
         placeholder: 'This is pretty awesome',
         inputClassName: 'input__input--hover'
       })
-    .form-elements__block
+    form.form-elements__block
       +input-dropdown({
         dropdownClassName: 'input-dropdown js-input-dropdown',
         text: 'dropdown',
@@ -48,14 +49,14 @@ include ../reviews/reviews
         textLeft: '', 
         textRight: 'применить'
       })
-    .form-elements__block
+    form.form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") masked text field
       +input({
         placeholder: 'ДД.ММ.ГГГГ',
         id: 'birthdate'
       })
-    .form-elements__block
+    form.form-elements__block
       .form-elements__block-left
         +input-dropdown({
           text: 'date dropdown',
@@ -71,7 +72,7 @@ include ../reviews/reviews
           id: 'date2',
           inputClassName: 'input__input--width'
         })
-    .form-elements__block
+    form.form-elements__block
       +input-dropdown({
         text: 'filter date dropdown',
         value: '19 авг - 23 авг',
@@ -82,7 +83,7 @@ include ../reviews/reviews
       .form-elements__texts
         h3(class="font-h3 form-elements__text") subscription text field
       +input-email
-  .form-elements__block2
+  form.form-elements__block2
     .form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Checkbox Buttons
@@ -142,7 +143,7 @@ include ../reviews/reviews
       .form-elements__block-rate
         +button-rate({count: 4})
         +button-rate({count: 5})
-  .form-elements__block3 
+  form.form-elements__block3 
     .form-elements__block
       +slide({text: 'Range Slider'})
     .form-elements__block
@@ -287,7 +288,7 @@ include ../reviews/reviews
         textLeft: 'очистить', 
         textRight: 'применить'
       })
-  .form-elements__block7
+  form.form-elements__block7
     .form-elements__block
       +checkbox-list({
         text: 'expandable checkbox list',
@@ -362,7 +363,7 @@ include ../reviews/reviews
           }
         ]
       })
-  .form-elements__block8
+  form.form-elements__block8
     .form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") rich Checkbox Buttons
