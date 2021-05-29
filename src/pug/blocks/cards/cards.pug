@@ -7,17 +7,17 @@ include ../card-photo/card-photo
   .cards__block2
     +form-room({
       textItem: 'Сбор за дополнительные услуги',
-      totalClassName: 'form__total-number--transform'
+      transformed: 'form__total-number_transformed'
     })
   .cards__block3
-    div(class="datepick1 js-datepick1")
+    div(class="js-datepick1")
   .cards__block4
     +form-registration({textSubmit: 'перейти к оплате'})
   .cards__block5
     +form-sign-in
   .cards__block6
     +card-photo({
-      itemClassName: 'card-photo__item--margin1',
+      margin: 'card-photo__item_margin_bottom1',
       photos: [
         {
           number: 888,
@@ -31,7 +31,7 @@ include ../card-photo/card-photo
             'image3.jpg', 
             'image4.jpg'
           ],
-          sliderClassName: 'flexslider--hover' 
+          hover: 'flexslider_hovering' 
         },
         {
           number: 840,

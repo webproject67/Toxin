@@ -1,12 +1,12 @@
 mixin button-like(options)
   -
-    const {text, number, buttonClassName} = options
-    let letButtonClassName = 'button-like__button js-button-like__button'
-    letButtonClassName += buttonClassName ? ` ${buttonClassName}` : ''
+    const {text, number, active} = options
+    let letActive = 'button-like__button js-button-like__button'
+    letActive += active ? ` ${active}` : ''
 
   .button-like  
-    button(class= letButtonClassName type="button")= text
-      span.button-like__button--number= number
+    button(class= letActive type="button")= text
+      span.button-like__button_font_another= number
 
 mixin button-rate(options)
   -

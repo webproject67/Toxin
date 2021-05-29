@@ -74,14 +74,14 @@ $('.js-input-dropdown').each(function() {
   const input: JQuery<HTMLElement> = $(this);
 
   const handleInputClick = function(this: HTMLElement) {
-    $(this).toggleClass('input__input--border');
+    $(this).toggleClass('input__input_bordered');
     input.find('.input__select-options').slideToggle(300);
   };
 
   $(this).find('.input__input').on('click', handleInputClick);
 
   const handleLink1Click = function() {
-    input.find('.input__input').toggleClass('input__input--border');
+    input.find('.input__input').toggleClass('input__input_bordered');
     input.find('.input__select-options').slideToggle(300);
   };
 
@@ -91,7 +91,7 @@ $('.js-input-dropdown').each(function() {
     let value: number = +$(this).siblings('.input__number').text();
     value++;
     $(this).siblings('.input__number').text(value);
-    $(this).siblings('.input__btn').removeClass('input__btn--opacity');
+    $(this).siblings('.input__btn').removeClass('input__btn_opaque');
     input.find('.button-link2__link:first').text('очистить');
 
     setInputValue();
@@ -104,7 +104,7 @@ $('.js-input-dropdown').each(function() {
     value--;
     if(value <= 0) {
       value = 0;
-      $(this).addClass('input__btn--opacity');
+      $(this).addClass('input__btn_opaque');
     };
     $(this).siblings('.input__number').text(value);
 
@@ -126,7 +126,7 @@ $('.js-input-dropdown').each(function() {
       $(this).text(0);
     })
     $(this).text('');
-    input.find('.input__btn:nth-child(1)').addClass('input__btn--opacity');
+    input.find('.input__btn:nth-child(1)').addClass('input__btn_opaque');
     input.find('.input__input').val('Сколько гостей')
   };
 

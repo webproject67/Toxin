@@ -1,9 +1,10 @@
 .gallery__list {
-  @include list-reset;
-
   display: grid;
   grid-template-columns: 68% 32%;
   grid-template-rows: 50%;
+  margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .gallery__item {

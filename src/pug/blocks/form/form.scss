@@ -7,11 +7,12 @@
 }
 
 .form__inputs {
-  @include display-top;
-
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   margin-top: 22px;
 
-  &--margin {
+  &_margin_top {
     margin-top: 20px;
   }
 }
@@ -24,21 +25,23 @@
 .form__submit {
   margin-top: 31px;
 
-  &--margin1 {
+  &_margin_top1 {
     margin-top: 6px;
   }
   
-  &--margin2 {
+  &_margin_top2 {
     margin-top: 23px;
   }
   
-  &--margin3 {
+  &_margin_top3 {
     margin-top: 20px;
   }
 }
 
 .form__block-price {
-  @include display-baseline;
+  display: flex;
+	align-items: baseline;
+	justify-content: space-between;
 }
 
 .form__symbol {
@@ -48,16 +51,16 @@
   line-height: 17px;
   color: $color;
 
-  &--size {
+  &_size_large {
     font-size: 24px;
     line-height: 29px;
   }
 
-  &--color {
+  &_colored {
     color: $color-purple;
   }
 
-  &--padding {
+  &_padding_left {
     padding-left: 9px;
   }
 }
@@ -69,32 +72,34 @@
   line-height: 18px;
   color: $color-50;
 
-  &--size {
+  &_size_small {
     font-weight: normal;
     font-size: 12px;
   }
 }
 
 .form__list {
-  @include list-reset;
-
   margin: 17px 0;
+	padding: 0;
+	list-style: none;
 }
 
 .form__item {
-  @include display-baseline;
-
+  display: flex;
+	align-items: baseline;
+	justify-content: space-between;
   margin-bottom: 10px
 }
 
 .form__text-price {
-  @include display-top;
-  
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   width: 100%;
   margin: 0;
   line-height: 18px;
 
-  &--justify {
+  &_justify_contented {
     justify-content: flex-start;
   }
 }
@@ -112,7 +117,7 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50px;
 
-  &--margin {
+  &_margin_left {
     margin-left: 10px;
   }
 }
@@ -122,15 +127,17 @@
   margin: 0;
   text-align: right;
 
-  &--width {
+  &_narrow {
    width: 31%;
   }
 }
 
 .form__amount {
-  @include display-baseline;
+  display: flex;
+	align-items: baseline;
+	justify-content: space-between;
 
-  &--margin {
+  &_margin_top {
     margin-top: 31px;
   }
 }
@@ -143,7 +150,7 @@
   line-height: 23px;
   color: $color;
 
-  &--transform {
+  &_transformed {
     transform: translateX(9px);
   }
 }
@@ -172,8 +179,9 @@
 }
 
 .form__reg {
-  @include display-center;
-
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
   margin-top: 30px;
   color: #000000;
 }

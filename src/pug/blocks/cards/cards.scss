@@ -1,6 +1,7 @@
 .cards {
-  @include display-top;
-
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   flex-wrap: wrap;
   margin: 30px 9.7% 40px;
 }

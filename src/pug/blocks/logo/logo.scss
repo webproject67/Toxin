@@ -18,12 +18,12 @@
   display: flex;
 }
 
-.logotype__img--display {
+.logotype__img_displayed {
   display: none;
 }
 
 @media (max-width: $mobile-width-only) {
-  .logotype__img--display {
+  .logotype__img_displayed {
     display: block;
   }
 }

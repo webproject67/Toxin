@@ -30,14 +30,14 @@ const setupOptions = (
   $(window).on('resize', handleWindowResize);
 }
 
-$('.js-page-main--position1').each(function() {
+$('.js-page-main_image1').each(function() {
   setupOptions($(this).children(), 830, 690)
 })
 
-$('.js-page-main--position2').each(function() {
+$('.js-page-main_image2').each(function() {
   setupOptions($(this).children(), 683, 661)
 })
 
-$('.js-page-main--position3').each(function() {
+$('.js-page-main_image3').each(function() {
   setupOptions($(this).children(), 702, 677)
 })

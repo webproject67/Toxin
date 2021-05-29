@@ -3,16 +3,16 @@ include ../footer/footer
 
 .headers-footers
   .headers-footers__block1 
-    +header({itemClassName: 'nav-link__item--hover'})
+    +header({hover: 'nav-link__item_hovering'})
   .headers-footers__block2
     +header({
-      itemClassName: 'nav-link__item--hover',
+      hover: 'nav-link__item_hovering',
       name: 'Юлий Цезарь'
     })
   .headers-footers__block3
     +footer({})
   .headers-footers__block4
     +footer-reduction({
-      bottomClassName: 'page-footer__bottom--display',
-      listClassName: 'page-footer__socials--margin',
+      display: 'page-footer__bottom_displayed',
+      margin: 'page-footer__socials_margin_common',
     })

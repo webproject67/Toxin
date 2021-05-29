@@ -1,14 +1,14 @@
 .checkbox__list {
-  @include list-reset;
-
   width: 230px;
   margin: 8px 0 0;
+	padding: 0;
+	list-style: none;
 
-  &--display {
+  &_unreflected {
     display: none;
   }
 
-  &--margin {
+  &_margin_common {
     margin: 17px 0 0;
   }
 }
@@ -16,12 +16,12 @@
 .checkbox__item {
   margin-bottom: 12px;
 
-  &--width1 {
+  &_wide1 {
     width: 230px;
     margin-bottom: 8px;
   }
   
-  &--width2 {
+  &_wide2 {
     width: 260px;
   }
 }
@@ -44,14 +44,14 @@
     border-radius: 4px;
   }
 
-  &--color1 {
+  &_colored1 {
     font-weight: bold;
     font-size: 14px;
     line-height: 18px;
     color:$color-75;
   }
 
-  &--color2 {
+  &_colored2 {
     display: block;
     margin: 7px 0 0;
     font-weight: normal;
@@ -142,8 +142,9 @@
 }
 
 .checkbox-list__btn {
-  @include display-center;
-
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
   cursor: pointer;
 }
 
@@ -163,7 +164,7 @@
   top: -12px;
   right: 10px;
 
-  &--rotate {
+  &_transformed {
     transform: rotate(180deg);
   }
 }

@@ -10,7 +10,7 @@ include ../reviews/reviews
     form.form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Text Field
-        h3(class="font-h3 form-elements__text form-elements__text--color") default
+        h3(class="font-h3 form-elements__text form-elements__text_colored") default
       +input({
         placeholder: 'Email',
         types: 'email'
@@ -18,14 +18,14 @@ include ../reviews/reviews
     form.form-elements__block
       .form-elements__texts
         h3(class="font-h3 form-elements__text") Text Field
-        h3(class="font-h3 form-elements__text form-elements__text--color") Hover / Focus
+        h3(class="font-h3 form-elements__text form-elements__text_colored") Hover / Focus
       +input({
         placeholder: 'This is pretty awesome',
-        inputClassName: 'input__input--hover'
+        hover: 'input__input_hovering'
       })
     form.form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown js-input-dropdown',
+        dropdown: 'js-input-dropdown',
         text: 'dropdown',
         value: 'Сколько гостей',
         id: 'guest1',
@@ -33,17 +33,17 @@ include ../reviews/reviews
           {
             text: 'взрослые', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }, 
           {
             text: 'дети', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }, 
           {
             text: 'младенцы', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }
         ],
         textLeft: '', 
@@ -62,22 +62,22 @@ include ../reviews/reviews
           text: 'date dropdown',
           value: 'ДД.ММ.ГГГГ',
           id: 'date1',
-          inputClassName: 'input__input--width',
-          spanClassName: 'datepick4 js-datepick4'
+          inputClassName: 'input__input_width_maximum',
+          datepicker: 'js-datepick4'
         })
       .form-elements__block-right
         +input-dropdown({
           text: 'date dropdown',
           value: '19.08.2019',
           id: 'date2',
-          inputClassName: 'input__input--width'
+          inputClassName: 'input__input_width_maximum'
         })
     form.form-elements__block
       +input-dropdown({
         text: 'filter date dropdown',
         value: '19 авг - 23 авг',
         id: 'date',
-        spanClassName: 'datepick5 js-datepick5'
+        datepicker: 'js-datepick5'
       })
     .form-elements__block
       .form-elements__texts
@@ -135,7 +135,7 @@ include ../reviews/reviews
         +button-like({
           text: 'favorite', 
           number: 12,
-          buttonClassName: 'button-like__button--active'
+          active: 'button-like__button_active'
         })
     .form-elements__block
       .form-elements__texts
@@ -153,19 +153,19 @@ include ../reviews/reviews
         +button-link({
           text: 'click me', 
           linkClassName: 'button-link__link'
+          })
+        +button-link({
+          text: 'click me', 
+          linkClassName: 'button-link__link button-link__link_hovering'
+        })
+      div(class="form-elements__block-link-bg form-elements__block-link-bg_margin_top")
+        +button-link({
+          text: 'click me', 
+          linkClassName: 'button-link__link button-link__link_bordered'
         })
         +button-link({
           text: 'click me', 
-          linkClassName: 'button-link__link button-link__link--hover'
-        })
-      div(class="form-elements__block-link-bg form-elements__block-link-bg--margin")
-        +button-link({
-          text: 'click me', 
-          linkClassName: 'button-link__link button-link__link--border'
-        })
-        +button-link({
-          text: 'click me', 
-          linkClassName: 'button-link__link button-link__link--hover button-link__link--border'
+          linkClassName: 'button-link__link button-link__link_bordered button-link__link_hovering'
         })
       .form-elements__block-link 
         +button-link({
@@ -174,7 +174,7 @@ include ../reviews/reviews
         })
         +button-link({
           text: 'click me',
-          linkClassName: 'button-link2__link button-link2__link--hover'
+          linkClassName: 'button-link2__link button-link2__link_hovering'
         })
       .form-elements__block-link-submit
         +button-submit({text: 'перейти к оплате'})
@@ -186,7 +186,7 @@ include ../reviews/reviews
   .form-elements__block4
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown js-input-dropdown',
+        dropdown: 'js-input-dropdown',
         text: 'dropdown',
         text2: 'default',
         value: '2 спальни, 2 кровати...',
@@ -203,19 +203,19 @@ include ../reviews/reviews
           {
             text: 'ванные комнаты', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }
         ]
       })
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown js-input-dropdown',
+        dropdown: 'js-input-dropdown',
         text: 'dropdown',
         text2: 'expanded',
         value: '2 спальни, 2 кровати...',
         id: 'rooms2',
-        inputClassName: 'input__input--border', 
-        optionsClassName: 'input__select-options--display', 
+        inputClassName: 'input__input_bordered', 
+        display: 'input__select-options_displayed', 
         option: [
           {
             text: 'спальни', 
@@ -228,34 +228,34 @@ include ../reviews/reviews
           {
             text: 'ванные комнаты', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }
         ]
       })
   .form-elements__block5
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown js-input-dropdown',
+        dropdown: 'js-input-dropdown',
         text: 'dropdown',
         value: 'Сколько гостей',
         id: 'guest2',
-        inputClassName: 'input__input--border', 
-        optionsClassName: 'input__select-options--display', 
+        inputClassName: 'input__input_bordered', 
+        display: 'input__select-options_displayed', 
         option: [
           {
             text: 'взрослые', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }, 
           {
             text: 'дети', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }, 
           {
             text: 'младенцы', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }
         ],
         textLeft: '', 
@@ -264,12 +264,12 @@ include ../reviews/reviews
   .form-elements__block6
     .form-elements__block
       +input-dropdown({
-        dropdownClassName: 'input-dropdown js-input-dropdown',
+        dropdown: 'js-input-dropdown',
         text: 'dropdown',
         value: '3 гостя',
         id: 'guest3',
-        inputClassName: 'input__input--border', 
-        optionsClassName: 'input__select-options--display', 
+        inputClassName: 'input__input_bordered', 
+        display: 'input__select-options_displayed', 
         option: [
           {
             text: 'взрослые', 
@@ -282,7 +282,7 @@ include ../reviews/reviews
           {
             text: 'младенцы', 
             number: 0, 
-            opacityClassName: 'input__btn--opacity'
+            opacity: 'input__btn_opaque'
           }
         ],
         textLeft: 'очистить', 
@@ -292,7 +292,7 @@ include ../reviews/reviews
     .form-elements__block
       +checkbox-list({
         text: 'expandable checkbox list',
-        listClassName: 'checkbox__list--display',
+        unreflected: 'checkbox__list_unreflected',
         checkboxs: [
           {
             label: 'Завтрак', 
@@ -329,7 +329,7 @@ include ../reviews/reviews
     .form-elements__block
       +checkbox-list({
         text: 'expandable checkbox list',
-        iconClassName: 'checkbox-list__icon--rotate',
+        transform: 'checkbox-list__icon_transformed',
         checkboxs: [
           {
             label: 'Завтрак', 
@@ -369,21 +369,21 @@ include ../reviews/reviews
         h3(class="font-h3 form-elements__text") rich Checkbox Buttons
       .form-elements__block-checkbox
         +checkbox({
-          labelClassName: 'checkbox__label--color1',
+          color: 'checkbox__label_colored1',
           checkboxs: [
             {
               label: 'Широкий коридор', 
               id: 'hallway', 
               checked: false,
               text: 'Ширина коридоров в номере не менее 91 см.',
-              className: 'checkbox__item--width1'
+              width: 'checkbox__item_wide1'
             },
             {
               label: 'Помощник для инвалидов', 
               id: 'invalid', 
               checked: false,
               text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-              className: 'checkbox__item--width2'
+              width: 'checkbox__item_wide2'
             }
           ]
         })
@@ -417,7 +417,7 @@ include ../reviews/reviews
             image: 'image16', 
             buttonText: 'favorite', 
             buttonNumber: 12,
-            buttonButtonClassName: 'button-like__button--active',
+            active: 'button-like__button_active',
             name: 'Мурад Сарафанов', 
             date: '5 дней назад',
             reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'

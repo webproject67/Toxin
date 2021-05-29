@@ -5,13 +5,15 @@
 }
 
 .input__texts {
-  @include display-top;
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
 }
 
 .input__text {
   margin: 0 0 5px;
 
-  &--color {
+  &_colored {
     font-weight: normal;
     color: $color-50;
   }
@@ -26,7 +28,7 @@
   border-radius: 4px;
   transition: all 0.4s ease;
 
-  &--padding {
+  &_padding_common {
     padding: 13px 35px 13px 14px;
   }
 
@@ -37,7 +39,7 @@
 
   &:hover,
   &:focus,
-  &--hover {
+  &_hovering {
     border: 1px solid rgba(31, 32, 65, 0.5);
 
     &::placeholder {
@@ -45,11 +47,11 @@
     }
   }
 
-  &--width {
+  &_width_maximum {
     max-width: 150px;
   }
 
-  &--border {
+  &_bordered {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 2px;
   }
@@ -68,7 +70,7 @@
   border-radius: 2px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-  &--display {
+  &_displayed {
     display: block;
   }
 }
@@ -76,7 +78,9 @@
 .input__select-option,
 .input__btns,
 .input__buttons {
-  @include display-center
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .input__option,
@@ -98,7 +102,7 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 22px;
 
-  &--opacity {
+  &_opaque {
     opacity: 0.38;
     cursor: default;
   }
