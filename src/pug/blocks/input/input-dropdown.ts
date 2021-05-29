@@ -1,11 +1,19 @@
-$('.js-input-dropdown').each(function() {
+const Value = {
+  AGE: 'взрослые',
+  ROOM: 'спальни'
+};
+
+const $inputDropdown: JQuery<HTMLElement> = $('.js-input-dropdown');
+$inputDropdown.each(function() {
   const setInputValue = ():void => {
     let counts: number[] = [0, 0, 0];
-    input.find('.input__number').map(function (i) {
+    const $inputNumber: JQuery<HTMLElement> = $input.find('.input__number');
+    $inputNumber.map(function (i) {
       counts[i] = +$(this).text()
     })
 
-    if (input.find('.input__option:first').text() === 'взрослые') {
+    const $inputOptionFirst: string = $input.find('.input__option:first').text();
+    if ($inputOptionFirst === Value.AGE) {
       const count1: number = counts[0] + counts[1];
       const count2: number = counts[2];
 
@@ -30,15 +38,15 @@ $('.js-input-dropdown').each(function() {
       }
 
       if(count1 === 0 && count2 === 0) {
-        input.find('.input__input').val(`${value1}`) 
+        $input.find('.input__input').val(`${value1}`) 
       } else if (count1 === 0) {
-        input.find('.input__input').val(`${count2} ${value2}`)
+        $input.find('.input__input').val(`${count2} ${value2}`)
       } else if (count2 === 0) {
-        input.find('.input__input').val(`${count1} ${value1}`)
+        $input.find('.input__input').val(`${count1} ${value1}`)
       } else {
-        input.find('.input__input').val(`${count1} ${value1}, ${count2} ${value2}`)
+        $input.find('.input__input').val(`${count1} ${value1}, ${count2} ${value2}`)
       }
-    } else if (input.find('.input__option:first').text() === 'спальни') {
+    } else if ($inputOptionFirst === Value.ROOM) {
       let value1: string = '';
       if (counts[0] === 0) {
         value1 = 'Сколько спален'
@@ -60,75 +68,75 @@ $('.js-input-dropdown').each(function() {
       }
 
       if(counts[0] === 0 && counts[1] === 0) {
-        input.find('.input__input').val(`${value1}`) 
+        $input.find('.input__input').val(`${value1}`) 
       } else if (counts[0] === 0) {
-        input.find('.input__input').val(`${counts[1]} ${value2}`)
+        $input.find('.input__input').val(`${counts[1]} ${value2}`)
       } else if (counts[1] === 0) {
-        input.find('.input__input').val(`${counts[0]} ${value1}`)
+        $input.find('.input__input').val(`${counts[0]} ${value1}`)
       } else {
-        input.find('.input__input').val(`${counts[0]} ${value1}, ${counts[1]} ${value2}...`)
+        $input.find('.input__input').val(`${counts[0]} ${value1}, ${counts[1]} ${value2}...`)
       }
     }
   }
 
-  const input: JQuery<HTMLElement> = $(this);
+  const $input: JQuery<HTMLElement> = $(this);
 
   const handleInputClick = function(this: HTMLElement) {
     $(this).toggleClass('input__input_bordered');
-    input.find('.input__select-options').slideToggle(300);
+    $input.find('.input__select-options').slideToggle(300);
   };
 
   $(this).find('.input__input').on('click', handleInputClick);
 
   const handleLink1Click = function() {
-    input.find('.input__input').toggleClass('input__input_bordered');
-    input.find('.input__select-options').slideToggle(300);
+    $input.find('.input__input').toggleClass('input__input_bordered');
+    $input.find('.input__select-options').slideToggle(300);
   };
 
-  input.find('.button-link2__link:last').on('click', handleLink1Click);
+  $input.find('.button-link2__link:last').on('click', handleLink1Click);
 
   const handleBtn3Click = function(this: HTMLElement) {
-    let value: number = +$(this).siblings('.input__number').text();
-    value++;
-    $(this).siblings('.input__number').text(value);
+    let $value: number = +$(this).siblings('.input__number').text();
+    $value++;
+    $(this).siblings('.input__number').text($value);
     $(this).siblings('.input__btn').removeClass('input__btn_opaque');
-    input.find('.button-link2__link:first').text('очистить');
+    $input.find('.button-link2__link:first').text('очистить');
 
     setInputValue();
   };
 
-  input.find('.input__btn:nth-child(3)').on('click', handleBtn3Click);
+  $input.find('.input__btn:nth-child(3)').on('click', handleBtn3Click);
 
   const handleBtn1Click = function(this: HTMLElement) {
-    let value: number = +$(this).siblings('.input__number').text();
-    value--;
-    if(value <= 0) {
-      value = 0;
+    let $value: number = +$(this).siblings('.input__number').text();
+    $value--;
+    if($value <= 0) {
+      $value = 0;
       $(this).addClass('input__btn_opaque');
     };
-    $(this).siblings('.input__number').text(value);
+    $(this).siblings('.input__number').text($value);
 
-    let total: number = 0;
-    input.find('.input__number').map(function () {
-      total += +$(this).text()
+    let $total: number = 0;
+    $input.find('.input__number').map(function () {
+      $total += +$(this).text()
     })
-    if(total === 0) {
-      input.find('.button-link2__link:first').text('');
+    if($total === 0) {
+      $input.find('.button-link2__link:first').text('');
     }
 
     setInputValue();
   };
   
-  input.find('.input__btn:nth-child(1)').on('click', handleBtn1Click);
+  $input.find('.input__btn:nth-child(1)').on('click', handleBtn1Click);
 
   const handleLink2Click = function(this: HTMLElement) {
-    input.find('.input__number').map(function () {
+    $input.find('.input__number').map(function () {
       $(this).text(0);
     })
     $(this).text('');
-    input.find('.input__btn:nth-child(1)').addClass('input__btn_opaque');
-    input.find('.input__input').val('Сколько гостей')
+    $input.find('.input__btn:nth-child(1)').addClass('input__btn_opaque');
+    $input.find('.input__input').val('Сколько гостей')
   };
 
-  input.find('.button-link2__link:first').on('click', handleLink2Click);
+  $input.find('.button-link2__link:first').on('click', handleLink2Click);
 })
