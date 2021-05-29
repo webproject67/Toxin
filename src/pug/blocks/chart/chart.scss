@@ -21,11 +21,12 @@
 }
 
 .chart__list {
-  @include list-reset;
-
   position: absolute;
   top: 48px;
   left: 165px;
+  margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .chart__item {

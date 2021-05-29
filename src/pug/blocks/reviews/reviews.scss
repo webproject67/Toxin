@@ -1,7 +1,9 @@
 .reviews__list {
-  @include list-reset;
+  margin: 0;
+	padding: 0;
+	list-style: none;
 
-  &--margin {
+  &_margin_top {
     margin-top: 21px;
   }
 }
@@ -9,7 +11,7 @@
 .reviews__item {
   display: flex;
 
-  &--margin {
+  &_margin_top {
     margin-bottom: 13px;
   }
 }

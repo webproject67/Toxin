@@ -5,9 +5,10 @@
 }
 
 .page-header__wrapper {
-  @include display-center;
-
   position: relative;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
   margin: 0 9.7%;
 }
 
@@ -15,15 +16,15 @@
   background: transparent;
   border: none;
 
-  &--active .page-header__streak--top {
+  &_active .page-header__streak_top {
     transform: translateY(9px) rotateZ(45deg);
   }
 
-  &--active .page-header__streak--middle {
+  &_active .page-header__streak_middle {
     width: 0;
   }
 
-  &--active .page-header__streak--bottom {
+  &_active .page-header__streak_bottom {
     transform: translateY(-9px) rotateZ(-45deg);
   }
 }

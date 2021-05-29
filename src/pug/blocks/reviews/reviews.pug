@@ -1,20 +1,20 @@
 mixin reviews(options)
   -
-    const {reviews, listClassName, itemClassName} = options 
-    let letListClassName = 'reviews__list'
-    letListClassName += listClassName ? ` ${listClassName}` : ''
-    let letItemClassName = 'reviews__item'
-    letItemClassName += itemClassName ? ` ${itemClassName}` : ''
+    const {reviews, marginList, marginItem} = options 
+    let letMarginList = 'reviews__list'
+    letMarginList += marginList ? ` ${marginList}` : ''
+    let letMarginItem = 'reviews__item'
+    letMarginItem += marginItem ? ` ${marginItem}` : ''
 
-  ul(class= letListClassName)
+  ul(class= letMarginList)
     each val in reviews
-      li(class= letItemClassName)
+      li(class= letMarginItem)
         .reviews__block-avatar 
           img(class="reviews__avatar" src=`../../blocks/reviews/img/${val.image}.jpg`, alt="avatar")
           +button-like({
             text: val.buttonText, 
             number: val.buttonNumber,
-            buttonClassName: val.buttonButtonClassName
+            active: val.active
           })
         .reviews__block-review 
           p.reviews__name= val.name

@@ -5,10 +5,10 @@ mixin logo()
 
 mixin logotype(options)
   -
-    const {imgClassName} = options
-    let letImgClassName = 'logotype__img'
-    letImgClassName += imgClassName ? ` ${imgClassName}` : ''
+    const {displayed} = options
+    let letDisplayed = 'logotype__img'
+    letDisplayed += displayed ? ` ${displayed}` : ''
     
   .logotype
     a(class="logotype__link" href="index.html" title="На главную") главная страница 
-      img(class= letImgClassName src="../../blocks/logo/img/svg/Logotype.svg", alt="logo") 
+      img(class= letDisplayed src="../../blocks/logo/img/svg/Logotype.svg", alt="logo") 

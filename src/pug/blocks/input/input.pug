@@ -1,45 +1,45 @@
 mixin input(options)
   - 
-    const {types, placeholder, inputClassName, id, text} = options
-    let letInputClassName = 'input__input'
-    letInputClassName += inputClassName ? ` ${inputClassName}` : ''
+    const {types, placeholder, hover, id, text} = options
+    let letHover = 'input__input'
+    letHover += hover ? ` ${hover}` : ''
 
   .input
     if text 
       h3(class="font-h3 input__text")= text
-    input(class= letInputClassName id= id type= types placeholder= placeholder)
+    input(class= letHover id= id type= types placeholder= placeholder)
 
 mixin input-dropdown(options)
   - 
-    const {value, id, dropdownClassName, inputClassName, optionsClassName, spanClassName, option, textLeft, textRight, text, text2} = options
-    let letDropdownClassName = 'input'
-    letDropdownClassName += dropdownClassName ? ` ${dropdownClassName}` : ''
+    const {value, id, dropdown, inputClassName, display, datepicker, option, textLeft, textRight, text, text2} = options
+    let letDropdown = 'input'
+    letDropdown += dropdown ? ` ${dropdown}` : ''
     let letInputClassName = 'input__input'
     letInputClassName += inputClassName ? ` ${inputClassName}` : ''
-    let letOptionsClassName = 'input__select-options'
-    letOptionsClassName += optionsClassName ? ` ${optionsClassName}` : ''
-    let letSpanClassName = spanClassName ? ` ${spanClassName}` : ''
+    let letDisplay = 'input__select-options'
+    letDisplay += display ? ` ${display}` : ''
+    let letDatepicker = datepicker ? ` ${datepicker}` : ''
   
-  div(class= letDropdownClassName)
+  div(class= letDropdown)
     if text 
       .input__texts
         h3(class="font-h3 input__text")= text
-        p(class="font-h3 input__text input__text--color")= text2
+        p(class="font-h3 input__text input__text_colored")= text2
     input(class= letInputClassName id= id type="text" value= value readonly)
     label(class="input__label" for= id) 
       span(class="font-icon input__icon") expand_more
-    div(class= letSpanClassName)
+    div(class= letDatepicker)
     if option
-      div(class= letOptionsClassName)
+      div(class= letDisplay)
         each val in option
           -
-            let letCpacityClassName = 'input__btn'
-            letCpacityClassName += val.opacityClassName ? ` ${val.opacityClassName}` : ''
+            let letOpacityClassName = 'input__btn'
+            letOpacityClassName += val.opacity ? ` ${val.opacity}` : ''
 
           .input__select-option
             h3(class="font-h3 input__option")= val.text
             .input__btns 
-              input(class= letCpacityClassName type="button" value="-")
+              input(class= letOpacityClassName type="button" value="-")
               h3(class="font-h3 input__number")= val.number
               input(class="input__btn" type="button" value="+")
         if textRight
@@ -56,5 +56,5 @@ mixin input-dropdown(options)
 mixin input-email()
   .input 
     form(class="input__form js-input__form")
-      input(class="input__input input__input--padding" id="email" type="email" placeholder="Email")
+      input(class="input__input input__input_padding_common" id="email" type="email" placeholder="Email")
       input(class="font-icon font-lg input__submit" type="submit" value="arrow_forward")

@@ -1,5 +1,7 @@
 .form-elements {
-  @include display-top;
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
 
   flex-wrap: wrap;
   margin: 23px 9.8%;
@@ -11,13 +13,15 @@
 }
 
 .form-elements__texts {
-  @include display-top;
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
 }
 
 .form-elements__text {
   margin: 0 0 5px;
 
-  &--color {
+  &_colored {
     font-weight: normal;
     color: $color-50;
   }
@@ -33,8 +37,9 @@
 }
 
 .form-elements__block:nth-child(5) {
-  @include display-top;
-  
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   margin-top: 40px;
 }
 
@@ -78,15 +83,17 @@
 }
 
 .form-elements__block-like {
-  @include display-top;
-
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   width: 90px;
   margin-top: 11px;
 }
 
 .form-elements__block-rate {
-  @include display-top;
-
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   width: 260px;
   margin-top: 11px;
 }
@@ -108,19 +115,21 @@
 }
 
 .form-elements__block-link-bg {
-  @include display-top;
-  
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   width: 218px;
   margin-top: 11px;
 
-  &--margin {
+  &_margin_top {
     margin-top: 30px;
   }
 }
 
 .form-elements__block-link {
-  @include display-top;
-  
+  display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
   width: 143px;
   margin-top: 26px;
 }

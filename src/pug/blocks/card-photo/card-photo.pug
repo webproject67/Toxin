@@ -1,19 +1,19 @@
 mixin card-photo(options)
   -
-    const {listClassName, itemClassName, spanClassName, photos} = options
-    let letitemClassName = 'card-photo__item'
-    letitemClassName += itemClassName ? ` ${itemClassName}` : ''
-    let letListClassName = 'card-photo__list'
-    letListClassName += listClassName ? ` ${listClassName}` : ''
-    let letSpanClassName = 'font-h3 card-photo__symbol--color'
-    letSpanClassName += spanClassName ? ` ${spanClassName}` : ''
+    const {display, margin, padding, photos} = options
+    let letMargin = 'card-photo__item'
+    letMargin += margin ? ` ${margin}` : ''
+    let letDisplay = 'card-photo__list'
+    letDisplay += display ? ` ${display}` : ''
+    let letPadding = 'font-h3 card-photo__symbol_colored'
+    letPadding += padding ? ` ${padding}` : ''
 
   .card-photo
-    ul(class= letListClassName)
+    ul(class= letDisplay)
       each val in photos
-        li(class= letitemClassName)
+        li(class= letMargin)
           .card-photo__block-img
-            div(class= val.sliderClassName ? `flexslider js-flexslider ${val.sliderClassName}` : 'flexslider js-flexslider')
+            div(class= val.hover ? `flexslider js-flexslider ${val.hover}` : 'flexslider js-flexslider')
               ul.slides
                 each img in val.imgs
                   li
@@ -22,11 +22,11 @@ mixin card-photo(options)
           .card-photo__details
             .card-photo__block-price
               p.card-photo__symbol № 
-                span.card-photo__symbol--size= val.number
-                  span(class= letSpanClassName)=  val.luxe 
+                span.card-photo__symbol_size_large= val.number
+                  span(class= letPadding)=  val.luxe 
               p.card-photo__number= `${val.price}₽ ` 
-                span.card-photo__number--size в сутки
+                span.card-photo__number_size_small в сутки
             .card-photo__block-estimations
               +button-rate({count: val.count})
               p.card-photo__text-review= val.review  
-                span.card-photo__text-review--weight  Отзывов
+                span.card-photo__text-review_weight_normal  Отзывов

@@ -2,7 +2,7 @@ body {
 	min-width: 320px;
 	max-width: 1920px;
 	margin: 0 auto;
-	font-family: "Montserrat", Arial, sans-serif;
+	font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
 	font-size: 14px;
@@ -45,7 +45,7 @@ h3 {
 }
 
 .visually-hidden:not(:focus):not(:active),
-.visually-hidden--focusable {
+.visually-hidden_focusable {
   position: absolute;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);

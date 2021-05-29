@@ -1,5 +1,7 @@
 .main-nav {
-  @include display-center;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 @media (max-width: $desktop-width) {

@@ -1,11 +1,13 @@
 .slide__texts {
-  @include display-center;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .slide__text {
   margin: 0 0 5px;
 
-  &--color {
+  &_colored {
     font-weight: normal;
     color: $color-50;
   }

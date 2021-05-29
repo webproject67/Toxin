@@ -1,8 +1,11 @@
 .radio__list {
-  @include list-reset;
-  @include display-center;
-
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
   width: 220px;
+  margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .radio__label {

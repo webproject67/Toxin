@@ -1,12 +1,12 @@
 mixin nav-link(options)
   -
-    const {itemClassName} = options
-    let letItemClassName = 'nav-link__item'
-    letItemClassName += itemClassName ? ` ${itemClassName}` : ''
+    const {hover} = options
+    let letHover = 'nav-link__item'
+    letHover += hover ? ` ${hover}` : ''
 
   .nav-link
     ul.nav-link__list
-      li(class= letItemClassName)
+      li(class= letHover)
         a.nav-link__link О нас
       li(class="nav-link__item js-nav-link__item")
         a.nav-link__link Услуги

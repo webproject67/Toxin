@@ -1,7 +1,7 @@
 .condition__list {
-  @include list-reset;
-
-  margin-left: 21px;
+  margin: 0 0 0 21px;
+	padding: 0;
+	list-style: none;
 }
 
 .condition__item {

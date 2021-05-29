@@ -1,6 +1,7 @@
 .colors-type {
-  @include display-top;
-
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin: 7px 10.4%;
 }
@@ -10,7 +11,9 @@
 }
 
 .colors-type__list {
-  @include list-reset;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .colors-type__item {
@@ -60,17 +63,17 @@
   line-height: 28px;
   color: $color;
 
-  &--fontWeight {
+  &_weight_normal {
     margin: 0;
     display: block;
     font-weight: normal;
   }
 
-  &--margin {
+  &_margin_top {
     margin: 31px 0 36px;
   }
  
-  &--width {
+  &_width_maximum {
     max-width: 315px;
     margin-top: 31px;
   }

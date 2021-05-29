@@ -12,14 +12,13 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 10px;
 
-  &--number {
+  &_font_another {
     padding-left: 6px;
     font-family: 'Montserrat';
-    font-size: 10px;
     line-height: 12px;
   }
 
-  &--active {
+  &_active {
     color: $color-purple;
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     background-origin: border-box;
@@ -55,21 +54,21 @@
   transition: all 0.4s ease;
 
   &:hover,
-  &--hover {
+  &_hovering {
     opacity: 0.5;
   }  
 
-  &--border {
+  &_bordered {
     color: $color-purple;
     box-shadow: 2px 1000px 1px #fff inset;
   }
 
-  &--width1 {
+  &_narrow {
     width: 87px;
     height: 34px;
   }
   
-  &--width2 {
+  &_wide {
     width: 196px;
     height: 34px;
   }
@@ -80,7 +79,7 @@
   transition: all 0.4s ease;
 
   &:hover,
-  &--hover {
+  &_hovering {
     color: $color-50;
   }  
 }
