@@ -2,7 +2,7 @@ interface JQuery {
   flexslider({}): JQuery;
 }
 
-const $flexslider: JQuery<HTMLElement> = $('.js-flexslider');
+const $flexslider = $('.js-flexslider');
 $flexslider.flexslider({
   animation: 'slide',
 });

@@ -1,7 +1,7 @@
 import { getNumSlider } from '../../../scripts/utils';
 
-const $slide: JQuery<HTMLElement> = $('.js-slide__slide');
-const $slideText: JQuery<HTMLElement> = $('.js-slide__text');
+const $slide = $('.js-slide__slide');
+const $slideText = $('.js-slide__text');
 $slide.slider({
   range: true,
   min: 0,

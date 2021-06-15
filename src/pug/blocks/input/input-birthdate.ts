@@ -1,7 +1,7 @@
 import { getBoolBirthdate } from '../../../scripts/utils';
 
 const handleInputChange = function (this: HTMLElement) {
-  const $value: string = <string>$(this).val();
+  const $value = String($(this).val());
   if (!getBoolBirthdate($value)) {
     $(this).css('border', '1px solid red');
   } else {
@@ -9,5 +9,5 @@ const handleInputChange = function (this: HTMLElement) {
   }
 };
 
-const $birthdate: JQuery<HTMLElement> = $('#birthdate');
+const $birthdate = $('#birthdate');
 $birthdate.on('change', handleInputChange);
