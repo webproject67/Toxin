@@ -2,7 +2,7 @@ interface JQuery {
   datepicker({}): JQuery;
 }
 
-const getOptionsDatepicker = (input: JQuery<HTMLElement>): void => {
+const getOptionsDatepicker = (input: JQuery<HTMLElement>) => {
   input
     .datepicker({
       range: true,
@@ -32,7 +32,7 @@ $('.js-datepick1').each(function () {
     )
     .addClass('-current-');
   let width: number;
-  ($('body').width() as number) <= 348 ? (width = 288) : (width = 318);
+  Number($('body').width()) <= 348 ? (width = 288) : (width = 318);
   $('.js-datepicker').width(width);
 });
 
@@ -41,7 +41,7 @@ $('.js-datepick2').each(function () {
   $(this)
     .datepicker({
       onSelect: (date) => {
-        const dates: string[] = date.split(',');
+        const dates = date.split(',');
         $('#date1').val(dates[0]);
         $('#date2').val(dates[1]);
       },
@@ -62,7 +62,7 @@ $('.js-datepick3').each(function () {
   $(this)
     .datepicker({
       onSelect: (date) => {
-        const dates: string[] = date.split(',');
+        const dates = date.split(',');
         $('#date3').val(dates[0]);
         $('#date4').val(dates[1]);
       },
@@ -84,7 +84,7 @@ $('.js-datepick4').each(function () {
   $(this)
     .datepicker({
       onSelect: (date) => {
-        const dates: string[] = date.split(',');
+        const dates = date.split(',');
         let date1: string;
         dates[0] === '08.08.2019' ? (date1 = 'ДД.ММ.ГГГГ') : (date1 = dates[0]);
         $('#date1').val(date1);
@@ -102,12 +102,12 @@ $('.js-datepick4').each(function () {
     .find('#date2')
     .on('click', handleBlockClick);
   let width: number;
-  ($('body').width() as number) <= 348 ? (width = 288) : (width = 318);
+  Number($('body').width()) <= 348 ? (width = 288) : (width = 318);
   $('.js-datepicker').width(width);
 });
 
 $('.js-datepick5').each(function () {
-  const getMonthString = (month: string): string => {
+  const getMonthString = (month: string) => {
     switch (month) {
       case '01':
         return 'янв';
@@ -141,11 +141,11 @@ $('.js-datepick5').each(function () {
   $(this)
     .datepicker({
       onSelect: (date) => {
-        const dates: string[] = date.split(',');
-        const date1: string[] = dates[0].split('.');
-        let value: string = `${date1[0]} ${getMonthString(date1[1])}`;
+        const dates = date.split(',');
+        const date1 = dates[0].split('.');
+        let value = `${date1[0]} ${getMonthString(date1[1])}`;
         if (dates[1]) {
-          const date2: string[] = dates[1].split('.');
+          const date2 = dates[1].split('.');
           value += ` - ${date2[0]} ${getMonthString(date2[1])}`;
         }
         let date1Value: string;

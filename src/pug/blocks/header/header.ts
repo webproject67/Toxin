@@ -5,5 +5,5 @@ const handleHamburgerClick = function (this: HTMLElement) {
   $(this).siblings('.main-nav').find('.nav-reg__name').slideToggle(300);
 };
 
-const $hamburger: JQuery<HTMLElement> = $('.js-page-header__hamburger');
+const $hamburger = $('.js-page-header__hamburger');
 $hamburger.on('click', handleHamburgerClick);

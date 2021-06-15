@@ -2,7 +2,7 @@ interface JQuery {
   pagination({}): JQuery;
 }
 
-const $pagination: JQuery<HTMLElement> = $('.js-pagination__nav');
+const $pagination = $('.js-pagination__nav');
 $pagination.pagination({
   items: 15,
   itemsOnPage: 1,

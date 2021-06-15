@@ -3,23 +3,21 @@ const Value = {
   ROOM: 'спальни',
 };
 
-const $inputDropdown: JQuery<HTMLElement> = $('.js-input-dropdown');
+const $inputDropdown = $('.js-input-dropdown');
 $inputDropdown.each(function () {
-  const setInputValue = (): void => {
-    let counts: number[] = [0, 0, 0];
-    const $inputNumber: JQuery<HTMLElement> = $input.find('.input__number');
+  const setInputValue = () => {
+    let counts = [0, 0, 0];
+    const $inputNumber = $input.find('.input__number');
     $inputNumber.map(function (i) {
-      counts[i] = +$(this).text();
+      counts[i] = Number($(this).text());
     });
 
-    const $inputOptionFirst: string = $input
-      .find('.input__option:first')
-      .text();
+    const $inputOptionFirst = $input.find('.input__option:first').text();
     if ($inputOptionFirst === Value.AGE) {
-      const count1: number = counts[0] + counts[1];
-      const count2: number = counts[2];
+      const count1 = counts[0] + counts[1];
+      const count2 = counts[2];
 
-      let value1: string = '';
+      let value1: string;
       if (count1 === 0) {
         value1 = 'Сколько гостей';
       } else if (count1 === 1) {
@@ -30,7 +28,7 @@ $inputDropdown.each(function () {
         value1 = 'гостей';
       }
 
-      let value2: string = '';
+      let value2: string;
       if (count2 === 1) {
         value2 = 'младенец';
       } else if (count2 >= 2 && count2 <= 4) {
@@ -51,7 +49,7 @@ $inputDropdown.each(function () {
           .val(`${count1} ${value1}, ${count2} ${value2}`);
       }
     } else if ($inputOptionFirst === Value.ROOM) {
-      let value1: string = '';
+      let value1: string;
       if (counts[0] === 0) {
         value1 = 'Сколько спален';
       } else if (counts[0] === 1) {
@@ -62,7 +60,7 @@ $inputDropdown.each(function () {
         value1 = 'спален';
       }
 
-      let value2: string = '';
+      let value2: string;
       if (counts[1] === 1) {
         value2 = 'кровать';
       } else if (counts[1] >= 2 && counts[1] <= 4) {
@@ -85,7 +83,7 @@ $inputDropdown.each(function () {
     }
   };
 
-  const $input: JQuery<HTMLElement> = $(this);
+  const $input = $(this);
 
   const handleInputClick = function (this: HTMLElement) {
     $(this).toggleClass('input__input_bordered');
@@ -102,7 +100,7 @@ $inputDropdown.each(function () {
   $input.find('.button-link2__link:last').on('click', handleLink1Click);
 
   const handleBtn3Click = function (this: HTMLElement) {
-    let $value: number = +$(this).siblings('.input__number').text();
+    let $value = Number($(this).siblings('.input__number').text());
     $value++;
     $(this).siblings('.input__number').text($value);
     $(this).siblings('.input__btn').removeClass('input__btn_opaque');
@@ -114,7 +112,7 @@ $inputDropdown.each(function () {
   $input.find('.input__btn:nth-child(3)').on('click', handleBtn3Click);
 
   const handleBtn1Click = function (this: HTMLElement) {
-    let $value: number = +$(this).siblings('.input__number').text();
+    let $value = Number($(this).siblings('.input__number').text());
     $value--;
     if ($value <= 0) {
       $value = 0;
@@ -122,9 +120,9 @@ $inputDropdown.each(function () {
     }
     $(this).siblings('.input__number').text($value);
 
-    let $total: number = 0;
+    let $total = 0;
     $input.find('.input__number').map(function () {
-      $total += +$(this).text();
+      $total += Number($(this).text());
     });
     if ($total === 0) {
       $input.find('.button-link2__link:first').text('');

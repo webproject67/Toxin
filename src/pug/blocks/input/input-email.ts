@@ -2,8 +2,8 @@ import { getBoolEmail } from '../../../scripts/utils';
 
 const handleFormSubmit = (evt: JQuery.SubmitEvent<HTMLElement>) => {
   evt.preventDefault();
-  const $input: JQuery<HTMLElement> = $('#email');
-  const $value: string = <string>$input.val();
+  const $input = $('#email');
+  const $value = String($input.val());
   if (!getBoolEmail($value)) {
     $input.css('border', '1px solid red');
   } else {
@@ -12,5 +12,5 @@ const handleFormSubmit = (evt: JQuery.SubmitEvent<HTMLElement>) => {
   }
 };
 
-const $form: JQuery<HTMLElement> = $('.js-input__form');
+const $form = $('.js-input__form');
 $form.on('submit', handleFormSubmit);
