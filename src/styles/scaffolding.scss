@@ -1,47 +1,47 @@
 body {
-	min-width: 320px;
-	max-width: 1920px;
-	margin: 0 auto;
-	font-family: Montserrat, Arial, sans-serif;
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
+  font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
-	font-size: 14px;
+  font-size: 14px;
   line-height: 24px;
   color: $color-75;
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-label, 
+label,
 input,
-a, 
-button, 
-select { 
-  cursor: pointer; 
+a,
+button,
+select {
+  cursor: pointer;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 h1,
-h2, 
+h2,
 h3 {
-	font-weight: inherit;
+  font-weight: inherit;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -59,36 +59,36 @@ h3 {
 }
 
 .font-h1 {
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 29px;
-	color: $color;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: $color;
 }
 
 .font-h2 {
-	font-weight: bold;
-	font-size: 19px;
-	line-height: 23px;
-	color: $color;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  color: $color;
 }
 
 .font-h3 {
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	color: $color;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
 }
 
 .font-icon {
-	font-family: MaterialIcons;
+  font-family: MaterialIcons;
   font-size: 24px;
   line-height: 24px;
   color: $color-50;
 }
 
 .font-lg {
-	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

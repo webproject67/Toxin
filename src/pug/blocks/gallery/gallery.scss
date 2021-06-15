@@ -3,8 +3,8 @@
   grid-template-columns: 68% 32%;
   grid-template-rows: 50%;
   margin: 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .gallery__item {
@@ -40,7 +40,7 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: 61%;
   }
-  
+
   .gallery__item:first-child {
     grid-column-end: 3;
     grid-row-end: 2;

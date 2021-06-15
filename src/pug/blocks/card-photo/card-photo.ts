@@ -1,8 +1,8 @@
 interface JQuery {
-  flexslider({}): JQuery
+  flexslider({}): JQuery;
 }
 
 const $flexslider: JQuery<HTMLElement> = $('.js-flexslider');
 $flexslider.flexslider({
-  animation: 'slide'
+  animation: 'slide',
 });

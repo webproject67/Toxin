@@ -7,12 +7,16 @@ mixin checkbox(options)
     letColor += color ? ` ${color}` : ''
 
   .checkbox
-    ul(class= letListClassName) 
+    ul(class=letListClassName) 
       each val in checkboxs
-        li(class= val.width ? `checkbox__item ${val.width}` : 'checkbox__item')
+        li(class=val.width ? `checkbox__item ${val.width}` : 'checkbox__item')
           span.checkbox__figure 
-          input(class="checkbox__checkbox visually-hidden_focusable" type="checkbox" id= val.id checked= val.checked)
-          label(class= letColor for= val.id)= val.label
+          input.checkbox__checkbox.visually-hidden_focusable(
+            type="checkbox",
+            id=val.id,
+            checked=val.checked
+          )
+          label(class=letColor, for=val.id)= val.label
             if val.text
               span.checkbox__label_colored2= val.text
 
@@ -21,8 +25,12 @@ mixin checkbox-toggle(options)
     const {id, checked} = options
 
   .checkbox-toggle
-    input(class="checkbox-toggle__checkbox visually-hidden_focusable" type="checkbox" id= id checked= checked)
-    label(class="checkbox-toggle__label" for= id) Получать спецпредложения
+    input.checkbox-toggle__checkbox.visually-hidden_focusable(
+      type="checkbox",
+      id=id,
+      checked=checked
+    )
+    label.checkbox-toggle__label(for=id) Получать спецпредложения
 
 mixin checkbox-list(options)
   -
@@ -31,11 +39,8 @@ mixin checkbox-list(options)
     letTransform += transform ? ` ${transform}` : ''
 
   .checkbox-list
-    div(class="checkbox-list__btn js-checkbox-list__btn")
-      input(class="font-h3 checkbox-list__button" type="button" value= text)
-      label(class="checkbox-list__label") 
-        span(class= letTransform) expand_more
-    +checkbox({
-      listClassName: unreflected,
-      checkboxs: checkboxs
-    })
+    .checkbox-list__btn.js-checkbox-list__btn
+      input.font-h3.checkbox-list__button(type="button", value=text)
+      label.checkbox-list__label 
+        span(class=letTransform) expand_more
+    +checkbox({ listClassName: unreflected, checkboxs: checkboxs })

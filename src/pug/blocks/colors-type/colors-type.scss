@@ -23,27 +23,27 @@
   &:first-child .colors-type__color {
     background: $color;
   }
-  
+
   &:nth-child(2) .colors-type__color {
     background: $color-75;
   }
-  
+
   &:nth-child(3) .colors-type__color {
     background: $color-50;
   }
-  
+
   &:nth-child(4) .colors-type__color {
     background: $color-25;
   }
-  
+
   &:nth-child(5) .colors-type__color {
     background: $color-5;
   }
-  
+
   &:nth-child(6) .colors-type__color {
     background: $color-purple;
   }
-  
+
   &:last-child .colors-type__color {
     background: $color-green;
   }
@@ -72,7 +72,7 @@
   &_margin_top {
     margin: 31px 0 36px;
   }
- 
+
   &_width_maximum {
     max-width: 315px;
     margin-top: 31px;

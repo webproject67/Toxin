@@ -25,8 +25,8 @@
   top: 48px;
   left: 165px;
   margin: 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .chart__item {
@@ -34,7 +34,7 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     top: 7px;
     left: -15px;
     width: 10px;
@@ -43,19 +43,19 @@
   }
 
   &:first-child::before {
-    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
   }
-  
+
   &:nth-child(2)::before {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   }
-  
+
   &:nth-child(3)::before {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   }
-  
+
   &:last-child::before {
-    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
   }
 }
 

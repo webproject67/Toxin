@@ -4,20 +4,12 @@ mixin nav-reg(options)
   -
     const {name} = options
 
-  if name 
-    a(class="nav-reg__name")= name 
+  if name
+    a.nav-reg__name= name
   else
     .nav-reg 
       ul.nav-reg__list 
         li.nav-reg__item
-          +button-link({
-            text: 'Войти', 
-            href: 'sign-in.html',
-            linkClassName: 'button-link__link button-link__link_bordered button-link__link_narrow'
-          })
+          +button-link({ text: 'Войти', href: 'sign-in.html', linkClassName: 'button-link__link button-link__link_bordered button-link__link_narrow' })
         li.nav-reg__item
-          +button-link({
-            text: 'Зарегистрироваться', 
-            href: 'registration.html',
-            linkClassName: 'button-link__link button-link__link_wide'
-          })
+          +button-link({ text: 'Зарегистрироваться', href: 'registration.html', linkClassName: 'button-link__link button-link__link_wide' })

@@ -1,7 +1,7 @@
 .card-photo__list {
   margin: 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 
   &_displayed {
     display: flex;
@@ -21,7 +21,7 @@
   &_margin_bottom1 {
     margin-bottom: 40px;
   }
-  
+
   &_margin_common2 {
     margin-bottom: 21px;
   }
@@ -48,8 +48,8 @@
 
 .card-photo__block-price {
   display: flex;
-	align-items: baseline;
-	justify-content: space-between;
+  align-items: baseline;
+  justify-content: space-between;
   padding-left: 2px;
 }
 
@@ -89,8 +89,8 @@
 
 .card-photo__block-estimations {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   width: 98%;
   margin: 0 auto;
   border-top: 1px solid rgba(31, 32, 65, 0.1);
@@ -110,7 +110,7 @@
   margin: 0;
   border: none;
   overflow: hidden;
-  
+
   &_hovering .flex-prev,
   &:hover .flex-prev {
     left: 0;
@@ -137,13 +137,13 @@
   width: 7px;
   height: 7px;
   background: none;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   box-shadow: none;
   filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
 }
 
 .card-photo .flex-control-nav .flex-active {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
 }
 
@@ -152,15 +152,20 @@
   top: 20px;
   height: 100%;
   font-size: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+  );
   transform: matrix(-1, 0, 0, 1, 0, 0);
-  
+
   &::before {
     content: 'expand_more';
     font-family: MaterialIcons;
     font-size: 24px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-shadow: none;
     transform: rotate(90deg) translate(63px, -10px);
   }

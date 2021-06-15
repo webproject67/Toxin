@@ -6,8 +6,8 @@
 
 .input__texts {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .input__text {
@@ -65,7 +65,7 @@
   display: none;
   width: 100%;
   padding: 0 7px 6px 13px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 2px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -79,8 +79,8 @@
 .input__btns,
 .input__buttons {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .input__option,

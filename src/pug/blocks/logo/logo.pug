@@ -1,14 +1,18 @@
-mixin logo()
+mixin logo
   .logo
-    a(class="logo__link" href="index.html" title="На главную") главная страница
-      img(class="logo__img" src="../../blocks/logo/img/svg/Logo.svg", alt="logo")
+    a.logo__link(href="index.html", title="На главную") главная страница
+      img.logo__img(src="../../blocks/logo/img/svg/Logo.svg", alt="logo")
 
 mixin logotype(options)
   -
     const {displayed} = options
     let letDisplayed = 'logotype__img'
     letDisplayed += displayed ? ` ${displayed}` : ''
-    
+
   .logotype
-    a(class="logotype__link" href="index.html" title="На главную") главная страница 
-      img(class= letDisplayed src="../../blocks/logo/img/svg/Logotype.svg", alt="logo") 
+    a.logotype__link(href="index.html", title="На главную") главная страница
+      img(
+        class=letDisplayed,
+        src="../../blocks/logo/img/svg/Logotype.svg",
+        alt="logo"
+      ) 

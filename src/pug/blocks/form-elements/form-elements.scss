@@ -1,7 +1,7 @@
 .form-elements {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
 
   flex-wrap: wrap;
   margin: 23px 9.8%;
@@ -14,8 +14,8 @@
 
 .form-elements__texts {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .form-elements__text {
@@ -38,8 +38,8 @@
 
 .form-elements__block:nth-child(5) {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   margin-top: 40px;
 }
 
@@ -55,15 +55,15 @@
   & .form-elements__block:nth-child(2) {
     margin-top: 42px;
   }
-  
+
   & .form-elements__block:nth-child(3) {
     margin-top: 40px;
   }
-  
+
   & .form-elements__block:nth-child(4) {
     margin-top: 44px;
   }
-  
+
   & .form-elements__block:nth-child(5) {
     display: block;
     margin-bottom: 40px;
@@ -84,16 +84,16 @@
 
 .form-elements__block-like {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 90px;
   margin-top: 11px;
 }
 
 .form-elements__block-rate {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 260px;
   margin-top: 11px;
 }
@@ -108,7 +108,7 @@
   & .form-elements__block:nth-child(2) {
     margin-top: 43px;
   }
-  
+
   & .form-elements__block:nth-child(3) {
     margin: 41px 0;
   }
@@ -116,8 +116,8 @@
 
 .form-elements__block-link-bg {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 218px;
   margin-top: 11px;
 
@@ -128,8 +128,8 @@
 
 .form-elements__block-link {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 143px;
   margin-top: 26px;
 }
