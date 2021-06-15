@@ -1,7 +1,7 @@
 .slide__texts {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .slide__text {
@@ -20,15 +20,15 @@
 }
 
 .slide__slide .ui-widget-header {
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 }
 
 .slide__slide .ui-state-default {
   top: -6px;
   width: 16px;
   height: 16px;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border: 2px solid #FFFFFF;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  border: 2px solid #ffffff;
   border-radius: 10px;
   cursor: pointer;
 }

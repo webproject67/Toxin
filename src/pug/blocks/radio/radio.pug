@@ -1,8 +1,15 @@
 .radio
   ul.radio__list 
     li.radio__item 
-      input(class="radio__radio visually-hidden_focusable" type="radio" id="man" name="man-woman" checked)
-      label(class="radio__label" for="man") Мужчина
+      input#man.radio__radio.visually-hidden_focusable(
+        type="radio",
+        name="man-woman",
+        checked
+      )
+      label.radio__label(for="man") Мужчина
     li.radio__item
-      input(class="radio__radio visually-hidden_focusable" type="radio" id="woman" name="man-woman") 
-      label(class="radio__label" for="woman") Женщина
+      input#woman.radio__radio.visually-hidden_focusable(
+        type="radio",
+        name="man-woman"
+      ) 
+      label.radio__label(for="woman") Женщина

@@ -1,10 +1,10 @@
 .nav-reg__list {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
-	list-style: none;
+  list-style: none;
 }
 
 .nav-reg__item:last-child {
@@ -19,7 +19,7 @@
   border-left: 1px solid rgba(31, 32, 65, 0.1);
 
   &:hover {
-    text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+    text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
   }
 }
 
@@ -37,7 +37,7 @@
     z-index: 4;
     top: 190px;
     right: 0;
-    display: none; 
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 236px;

@@ -1,16 +1,16 @@
 mixin input(options)
-  - 
+  -
     const {types, placeholder, hover, id, text} = options
     let letHover = 'input__input'
     letHover += hover ? ` ${hover}` : ''
 
   .input
-    if text 
-      h3(class="font-h3 input__text")= text
-    input(class= letHover id= id type= types placeholder= placeholder)
+    if text
+      h3.font-h3.input__text= text
+    input(class=letHover, id=id, type=types, placeholder=placeholder)
 
 mixin input-dropdown(options)
-  - 
+  -
     const {value, id, dropdown, inputClassName, display, datepicker, option, textLeft, textRight, text, text2} = options
     let letDropdown = 'input'
     letDropdown += dropdown ? ` ${dropdown}` : ''
@@ -19,42 +19,42 @@ mixin input-dropdown(options)
     let letDisplay = 'input__select-options'
     letDisplay += display ? ` ${display}` : ''
     let letDatepicker = datepicker ? ` ${datepicker}` : ''
-  
-  div(class= letDropdown)
-    if text 
+
+  div(class=letDropdown)
+    if text
       .input__texts
-        h3(class="font-h3 input__text")= text
-        p(class="font-h3 input__text input__text_colored")= text2
-    input(class= letInputClassName id= id type="text" value= value readonly)
-    label(class="input__label" for= id) 
-      span(class="font-icon input__icon") expand_more
-    div(class= letDatepicker)
+        h3.font-h3.input__text= text
+        p.font-h3.input__text.input__text_colored= text2
+    input(class=letInputClassName, id=id, type="text", value=value, readonly)
+    label.input__label(for=id) 
+      span.font-icon.input__icon expand_more
+    div(class=letDatepicker)
     if option
-      div(class= letDisplay)
+      div(class=letDisplay)
         each val in option
           -
             let letOpacityClassName = 'input__btn'
             letOpacityClassName += val.opacity ? ` ${val.opacity}` : ''
 
           .input__select-option
-            h3(class="font-h3 input__option")= val.text
+            h3.font-h3.input__option= val.text
             .input__btns 
-              input(class= letOpacityClassName type="button" value="-")
-              h3(class="font-h3 input__number")= val.number
-              input(class="input__btn" type="button" value="+")
+              input(class=letOpacityClassName, type="button", value="-")
+              h3.font-h3.input__number= val.number
+              input.input__btn(type="button", value="+")
         if textRight
           .input__buttons
-            +button-link({
-              text: textLeft, 
-              linkClassName: 'button-link2__link'
-            })
-            +button-link({
-              text: textRight, 
-              linkClassName: 'button-link2__link'
-            })
+            +button-link({ text: textLeft, linkClassName: 'button-link2__link' })
+            +button-link({ text: textRight, linkClassName: 'button-link2__link' })
 
-mixin input-email()
+mixin input-email
   .input 
-    form(class="input__form js-input__form")
-      input(class="input__input input__input_padding_common" id="email" type="email" placeholder="Email")
-      input(class="font-icon font-lg input__submit" type="submit" value="arrow_forward")
+    form.input__form.js-input__form
+      input#email.input__input.input__input_padding_common(
+        type="email",
+        placeholder="Email"
+      )
+      input.font-icon.font-lg.input__submit(
+        type="submit",
+        value="arrow_forward"
+      )

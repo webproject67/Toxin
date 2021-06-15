@@ -1,8 +1,8 @@
 .checkbox__list {
   width: 230px;
   margin: 8px 0 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 
   &_unreflected {
     display: none;
@@ -20,7 +20,7 @@
     width: 230px;
     margin-bottom: 8px;
   }
-  
+
   &_wide2 {
     width: 260px;
   }
@@ -35,7 +35,7 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     width: 20px;
@@ -48,7 +48,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 18px;
-    color:$color-75;
+    color: $color-75;
   }
 
   &_colored2 {
@@ -63,17 +63,17 @@
 
 .checkbox__checkbox:checked + .checkbox__label {
   &::before {
-    border: 1px solid #BC9CFF;
+    border: 1px solid #bc9cff;
   }
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     top: 5px;
     left: 7px;
     width: 6px;
     height: 8px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     transform: rotate(45deg);
   }
 }
@@ -85,7 +85,7 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     top: 3px;
     left: 6px;
     z-index: 1;
@@ -107,7 +107,7 @@
   &::before,
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     transition: all 0.4s ease;
   }
 
@@ -119,7 +119,7 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 10px;
   }
-  
+
   &::after {
     top: 4px;
     left: 4px;
@@ -132,19 +132,19 @@
 
 .checkbox-toggle__checkbox:checked + .checkbox-toggle__label {
   &::before {
-    border: 1px solid #BC9CFF;
+    border: 1px solid #bc9cff;
   }
 
   &::after {
     left: 24px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   }
 }
 
 .checkbox-list__btn {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
 }
 

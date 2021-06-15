@@ -8,8 +8,8 @@
 
 .form__inputs {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   margin-top: 22px;
 
   &_margin_top {
@@ -28,11 +28,11 @@
   &_margin_top1 {
     margin-top: 6px;
   }
-  
+
   &_margin_top2 {
     margin-top: 23px;
   }
-  
+
   &_margin_top3 {
     margin-top: 20px;
   }
@@ -40,8 +40,8 @@
 
 .form__block-price {
   display: flex;
-	align-items: baseline;
-	justify-content: space-between;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .form__symbol {
@@ -80,21 +80,21 @@
 
 .form__list {
   margin: 17px 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .form__item {
   display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-  margin-bottom: 10px
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .form__text-price {
   display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   margin: 0;
   line-height: 18px;
@@ -128,14 +128,14 @@
   text-align: right;
 
   &_narrow {
-   width: 31%;
+    width: 31%;
   }
 }
 
 .form__amount {
   display: flex;
-	align-items: baseline;
-	justify-content: space-between;
+  align-items: baseline;
+  justify-content: space-between;
 
   &_margin_top {
     margin-top: 31px;
@@ -180,8 +180,8 @@
 
 .form__reg {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 30px;
   color: #000000;
 }

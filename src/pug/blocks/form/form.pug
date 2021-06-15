@@ -2,49 +2,14 @@ include ../input/input
 include ../button/button
 include ../checkbox/checkbox
 
-mixin form-search()
-  form(class="form js-form js-form-search")
-    h1(class="font-h1 form__title") Найдём номера под ваши пожелания
+mixin form-search
+  form.form.js-form.js-form-search
+    h1.font-h1.form__title Найдём номера под ваши пожелания
     .form__inputs 
-      +input-dropdown({
-        value: 'ДД.ММ.ГГГГ',
-        id: 'date1',
-        inputClassName: 'input__input_width_maximum',
-        text: 'прибытие',
-        datepicker: 'js-datepick2'
-      })
-      +input-dropdown({
-        value: 'ДД.ММ.ГГГГ',
-        id: 'date2',
-        inputClassName: 'input__input_width_maximum',
-        text: 'выезд'
-      })
+      +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'input__input_width_maximum', text: 'прибытие', datepicker: 'js-datepick2' })
+      +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date2', inputClassName: 'input__input_width_maximum', text: 'выезд' })
     .form__guests 
-      +input-dropdown({
-        dropdown: 'js-input-dropdown',
-        value: 'Сколько гостей',
-        id: 'guest1',
-        option: [
-          {
-            text: 'взрослые', 
-            number: 0, 
-            opacity: 'input__btn_opaque'
-          }, 
-          {
-            text: 'дети', 
-            number: 0, 
-            opacity: 'input__btn_opaque'
-          }, 
-          {
-            text: 'младенцы', 
-            number: 0, 
-            opacity: 'input__btn_opaque'
-          }
-        ],
-        textLeft: '', 
-        textRight: 'применить',
-        text: 'гости'
-      })
+      +input-dropdown({ dropdown: 'js-input-dropdown', value: 'Сколько гостей', id: 'guest1', option: [ { text: 'взрослые', number: 0, opacity: 'input__btn_opaque' }, { text: 'дети', number: 0, opacity: 'input__btn_opaque' }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: '', textRight: 'применить', text: 'гости' })
     .form__submit 
       +button-submit({text: 'подобрать номер'})
 
@@ -66,68 +31,35 @@ mixin form-room(options)
     let letWidth = 'form__number-price'
     letWidth += width ? ` ${width}` : ''
 
-  form(class="form js-form")
+  form.form.js-form
     .form__block-price
-      p.form__symbol № 
+      p.form__symbol №
         span.form__symbol_size_large 888
-          span(class= letPadding) Люкс
-      p.form__number 9 990₽ 
+          span(class=letPadding) Люкс
+      p.form__number 9 990₽
         span.form__number_size_small в сутки
-    div(class= letMarginInputs) 
-      +input-dropdown({
-        value: '19.08.2019',
-        id: 'date3',
-        inputClassName: 'input__input_width_maximum',
-        text: 'прибытие',
-        datepicker: 'js-datepick3'
-      })
-      +input-dropdown({
-        value: '23.08.2019',
-        id: 'date4',
-        inputClassName: 'input__input_width_maximum',
-        text: 'выезд'
-      })
+    div(class=letMarginInputs) 
+      +input-dropdown({ value: '19.08.2019', id: 'date3', inputClassName: 'input__input_width_maximum', text: 'прибытие', datepicker: 'js-datepick3' })
+      +input-dropdown({ value: '23.08.2019', id: 'date4', inputClassName: 'input__input_width_maximum', text: 'выезд' })
     .form__guests 
-      +input-dropdown({
-        dropdown: 'js-input-dropdown',
-        value: '3 гостя',
-        id: 'guest2',
-        option: [
-          {
-            text: 'взрослые', 
-            number: 2
-          }, 
-          {
-            text: 'дети', 
-            number: 1
-          }, 
-          {
-            text: 'младенцы', 
-            number: 0, 
-            opacity: 'input__btn_opaque'
-          }
-        ],
-        textLeft: 'очистить', 
-        textRight: 'применить',
-        text: 'гости'
-      })
+      +input-dropdown({ dropdown: 'js-input-dropdown', value: '3 гостя', id: 'guest2', option: [ { text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: 'очистить', textRight: 'применить', text: 'гости' })
     .form__block-prices 
       ul.form__list 
         li.form__item 
-          p(class= letDisplay) 9 990₽ х 4 суток
-          p(class= letWidth) 39 960₽
+          p(class=letDisplay) 9 990₽ х 4 суток
+          p(class=letWidth) 39 960₽
         li.form__item 
-          p(class= letDisplay) Сбор за услуги: скидка 2 179₽
-            span(class= letMarginIcon) i
-          p(class= letWidth) 0₽
+          p(class=letDisplay) Сбор за услуги: скидка 2 179₽
+            span(class=letMarginIcon) i
+          p(class=letWidth) 0₽
         li.form__item 
-          p(class= letDisplay)= textItem
-            span(class= letMarginIcon) i
-          p(class= letWidth) 300₽
-    div(class= letMarginAmount) 
+          p(class=letDisplay)= textItem
+            span(class=letMarginIcon) i
+          p(class=letWidth) 300₽
+    div(class=letMarginAmount) 
       p.form__total Итого
       p.form__ellipsis
-      p(class= letTransformed) 38 081₽
+      p(class=letTransformed) 38 081₽
     .form__submit_margin_top1
       +button-submit({text: 'забронировать'})
 
@@ -135,8 +67,8 @@ mixin form-registration(options)
   -
     const {textSubmit} = options
 
-  form(class="form js-form")
-    h1(class="font-h1 form__title") Регистрация аккаунта
+  form.form.js-form
+    h1.font-h1.form__title Регистрация аккаунта
     .form__name 
       +input({placeholder: 'Имя'})
     .form__surname 
@@ -144,56 +76,28 @@ mixin form-registration(options)
     .form__radio
       include ../radio/radio
     .form__birthdate
-      +input({
-        placeholder: 'ДД.ММ.ГГГГ',
-        text: 'дата рождения',
-        id: 'birthdate'
-      })
+      +input({ placeholder: 'ДД.ММ.ГГГГ', text: 'дата рождения', id: 'birthdate' })
     .form__email
-      +input({
-        placeholder: 'Email',
-        types: 'email',
-        text: 'данные для входа в сервис'
-      })
+      +input({ placeholder: 'Email', types: 'email', text: 'данные для входа в сервис' })
     .form__password
-      +input({
-        types: 'password',
-        placeholder: 'Пароль'
-      })
+      +input({ types: 'password', placeholder: 'Пароль' })
     .form__checkbox
-      +checkbox-toggle({
-        id: 'checkbox', 
-        checked: false
-      })
+      +checkbox-toggle({ id: 'checkbox', checked: false })
     .form__submit_margin_top2
       +button-submit({text: textSubmit})
     .form__reg 
       p.form__text-reg Уже есть аккаунт на Toxin
-      +button-link({
-        text: 'ВОЙТИ', 
-        href: 'sign-in.html',
-        linkClassName: 'button-link__link button-link__link_bordered'
-      })
+      +button-link({ text: 'ВОЙТИ', href: 'sign-in.html', linkClassName: 'button-link__link button-link__link_bordered' })
 
-mixin form-sign-in()
-  form(class="form js-form")
-    h1(class="font-h1 form__title") Войти
+mixin form-sign-in
+  form.form.js-form
+    h1.font-h1.form__title Войти
     .form__email
-      +input({
-        placeholder: 'Email',
-        types: 'email'
-      })
+      +input({ placeholder: 'Email', types: 'email' })
     .form__password
-      +input({
-        types: 'password',
-        placeholder: 'Пароль'
-      })
+      +input({ types: 'password', placeholder: 'Пароль' })
     .form__submit_margin_top3
       +button-submit({text: 'войти'})
     .form__reg 
       p.form__text-reg Нет аккаунта на Toxin?
-      +button-link({
-        text: 'СОЗДАТЬ', 
-        href: 'registration.html',
-        linkClassName: 'button-link__link button-link__link_bordered'
-      })
+      +button-link({ text: 'СОЗДАТЬ', href: 'registration.html', linkClassName: 'button-link__link button-link__link_bordered' })

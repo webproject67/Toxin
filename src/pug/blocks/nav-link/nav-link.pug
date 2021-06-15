@@ -6,11 +6,11 @@ mixin nav-link(options)
 
   .nav-link
     ul.nav-link__list
-      li(class= letHover)
+      li(class=letHover)
         a.nav-link__link О нас
-      li(class="nav-link__item js-nav-link__item")
+      li.nav-link__item.js-nav-link__item
         a.nav-link__link Услуги
-        span(class="font-icon nav-link__icon") expand_more
+        span.font-icon.nav-link__icon expand_more
         ul.nav-link__options 
           li.nav-link__option
             a.nav-link__link О сервисе
@@ -22,9 +22,9 @@ mixin nav-link(options)
         a.nav-link__link Вакансии
       li.nav-link__item
         a.nav-link__link Новости
-      li(class="nav-link__item js-nav-link__item")
+      li.nav-link__item.js-nav-link__item
         a.nav-link__link Соглашения
-        span(class="font-icon nav-link__icon") expand_more
+        span.font-icon.nav-link__icon expand_more
         ul.nav-link__options 
           li.nav-link__option
             a.nav-link__link Служба поддержки

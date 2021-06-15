@@ -9,24 +9,29 @@ mixin card-photo(options)
     letPadding += padding ? ` ${padding}` : ''
 
   .card-photo
-    ul(class= letDisplay)
+    ul(class=letDisplay)
       each val in photos
-        li(class= letMargin)
+        li(class=letMargin)
           .card-photo__block-img
-            div(class= val.hover ? `flexslider js-flexslider ${val.hover}` : 'flexslider js-flexslider')
+            div(
+              class=val.hover ? `flexslider js-flexslider ${val.hover}` : 'flexslider js-flexslider'
+            )
               ul.slides
                 each img in val.imgs
                   li
-                    a(class="card-photo__link" href="room-details.html")
-                      img(class="card-photo__img" src=`../../blocks/card-photo/img/${img}`, alt="photo")
+                    a.card-photo__link(href="room-details.html")
+                      img.card-photo__img(
+                        src=`../../blocks/card-photo/img/${img}`,
+                        alt="photo"
+                      )
           .card-photo__details
             .card-photo__block-price
-              p.card-photo__symbol № 
+              p.card-photo__symbol №
                 span.card-photo__symbol_size_large= val.number
-                  span(class= letPadding)=  val.luxe 
-              p.card-photo__number= `${val.price}₽ ` 
+                  span(class=letPadding)= val.luxe
+              p.card-photo__number= `${val.price}₽ `
                 span.card-photo__number_size_small в сутки
             .card-photo__block-estimations
               +button-rate({count: val.count})
-              p.card-photo__text-review= val.review  
-                span.card-photo__text-review_weight_normal  Отзывов
+              p.card-photo__text-review= val.review
+                span.card-photo__text-review_weight_normal Отзывов

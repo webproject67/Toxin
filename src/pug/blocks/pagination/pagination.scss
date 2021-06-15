@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-.pagination__nav.light-theme a, 
+.pagination__nav.light-theme a,
 .pagination__nav.light-theme span {
   display: flex;
   align-items: center;
@@ -25,16 +25,16 @@
 
   &:hover {
     font-weight: bold;
-    color: #FFFFFF;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #ffffff;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     border-radius: 22px;
   }
 }
 
 .pagination__nav.light-theme span:not(.ellipse) {
   font-weight: bold;
-  color: #FFFFFF;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: #ffffff;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border-radius: 22px;
 }
 
@@ -42,7 +42,7 @@
   font-weight: normal;
 
   &:hover {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   }
 }
 
@@ -50,8 +50,8 @@
 .pagination .light-theme li:last-child span {
   font-size: 24px;
   line-height: 24px;
-	color: #FFFFFF;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  color: #ffffff;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   border-radius: 22px;
 }
 

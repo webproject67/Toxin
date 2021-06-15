@@ -6,16 +6,15 @@ mixin reviews(options)
     let letMarginItem = 'reviews__item'
     letMarginItem += marginItem ? ` ${marginItem}` : ''
 
-  ul(class= letMarginList)
+  ul(class=letMarginList)
     each val in reviews
-      li(class= letMarginItem)
+      li(class=letMarginItem)
         .reviews__block-avatar 
-          img(class="reviews__avatar" src=`../../blocks/reviews/img/${val.image}.jpg`, alt="avatar")
-          +button-like({
-            text: val.buttonText, 
-            number: val.buttonNumber,
-            active: val.active
-          })
+          img.reviews__avatar(
+            src=`../../blocks/reviews/img/${val.image}.jpg`,
+            alt="avatar"
+          )
+          +button-like({ text: val.buttonText, number: val.buttonNumber, active: val.active })
         .reviews__block-review 
           p.reviews__name= val.name
           p.reviews__date= val.date

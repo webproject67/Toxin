@@ -37,11 +37,11 @@
   &:nth-child(2) {
     margin-right: 5%;
   }
-  
+
   &:nth-child(3) {
     margin-right: 8%;
   }
-  
+
   &:nth-child(4) {
     margin-right: auto;
   }
@@ -53,8 +53,8 @@
 
 .page-footer__list {
   margin: 22px 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .page-footer__item {
@@ -64,7 +64,7 @@
   transition: all 0.4s ease;
 
   &:hover {
-    text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+    text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
   }
 }
 
@@ -72,15 +72,15 @@
   width: 260px;
 }
 
-.page-footer__center  {
+.page-footer__center {
   height: 1px;
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 }
 
 .page-footer__bottom {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   margin: 24px 9.7% 13px;
 
   &_displayed {
@@ -96,12 +96,12 @@
 
 .page-footer__socials {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   width: 112px;
   margin: 0;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 
   &_margin_common {
     margin: 23px 0 98px;
@@ -131,7 +131,7 @@
   .page-footer__block-logo {
     margin-right: 0;
   }
-  
+
   .page-footer__block-nav {
     &:nth-child(2),
     &:nth-child(3),
@@ -150,7 +150,7 @@
   .page-footer__block-logo {
     margin-right: 20px;
   }
-  
+
   .page-footer__block-nav {
     &:nth-child(2),
     &:nth-child(3),

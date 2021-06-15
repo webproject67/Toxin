@@ -1,6 +1,6 @@
 const webpackConfig = require('./webpack.config');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -8,12 +8,12 @@ module.exports = function(config) {
     exclude: [],
     preprocessors: {
       'test/**/*.ts': ['webpack'],
-      'test/**/*.js': ['webpack']
+      'test/**/*.js': ['webpack'],
     },
     webpack: {
       module: webpackConfig.module,
       resolve: webpackConfig.resolve,
-      devtool: 'inline-source-map'
+      devtool: 'inline-source-map',
     },
     reporters: ['spec'],
     port: 9876,
@@ -22,6 +22,6 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
   });
 };

@@ -8,18 +8,39 @@ mixin footer-bottom(options)
     let letMargin = 'page-footer__socials'
     letMargin += margin ? ` ${margin}` : ''
 
-  div(class= letDisplay) 
+  div(class=letDisplay) 
     p.page-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-    ul(class= letMargin) 
+    ul(class=letMargin) 
       li.page-footer__social 
-        a(class="page-footer__link-social" href="https://twitter.com/?lang=ru" target="_blank" rel="noopener noreferrer")
-          img(class="page-footer__img" src="../../blocks/footer/img/svg/twitter.svg", alt="logo")
+        a.page-footer__link-social(
+          href="https://twitter.com/?lang=ru",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          img.page-footer__img(
+            src="../../blocks/footer/img/svg/twitter.svg",
+            alt="logo"
+          )
       li.page-footer__social
-        a(class="page-footer__link-social" href="https://ru-ru.facebook.com/" target="_blank" rel="noopener noreferrer")
-          img(class="page-footer__img" src="../../blocks/footer/img/svg/facebook.svg", alt="logo")
+        a.page-footer__link-social(
+          href="https://ru-ru.facebook.com/",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          img.page-footer__img(
+            src="../../blocks/footer/img/svg/facebook.svg",
+            alt="logo"
+          )
       li.page-footer__social
-        a(class="page-footer__link-social" href="https://www.instagram.com/?hl=ru" target="_blank" rel="noopener noreferrer")
-          img(class="page-footer__img" src="../../blocks/footer/img/svg/instagram.svg", alt="logo")
+        a.page-footer__link-social(
+          href="https://www.instagram.com/?hl=ru",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          img.page-footer__img(
+            src="../../blocks/footer/img/svg/instagram.svg",
+            alt="logo"
+          )
 
 mixin footer(options)
   -
@@ -27,38 +48,38 @@ mixin footer(options)
     let letBorder = 'page-footer'
     letBorder += border ? ` ${border}` : ''
 
-  footer(class= letBorder)
+  footer(class=letBorder)
     .page-footer__logo
-        +logotype({displayed: 'logotype__img_displayed'})
+      +logotype({displayed: 'logotype__img_displayed'})
     .page-footer__top
       .page-footer__block-logo 
         +logotype(options)
         p.page-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       .page-footer__block-nav 
-        h3(class="font-h3 page-footer__links") навигация
-        ul.page-footer__list  
+        h3.font-h3.page-footer__links навигация
+        ul.page-footer__list 
           li.page-footer__item 
-            a.page-footer__link О нас  
+            a.page-footer__link О нас
           li.page-footer__item 
             a.page-footer__link Новости
           li.page-footer__item 
-            a.page-footer__link Служба поддержки 
+            a.page-footer__link Служба поддержки
           li.page-footer__item 
             a.page-footer__link Услуги
       .page-footer__block-nav 
-        h3(class="font-h3 page-footer__links") о нас
-        ul.page-footer__list  
+        h3.font-h3.page-footer__links о нас
+        ul.page-footer__list 
           li.page-footer__item 
-            a.page-footer__link О сервисе 
+            a.page-footer__link О сервисе
           li.page-footer__item 
             a.page-footer__link Наша команда
           li.page-footer__item 
-            a.page-footer__link Вакансии 
+            a.page-footer__link Вакансии
           li.page-footer__item 
             a.page-footer__link Инвесторы
       .page-footer__block-nav 
-        h3(class="font-h3 page-footer__links") служба поддержки
-        ul.page-footer__list  
+        h3.font-h3.page-footer__links служба поддержки
+        ul.page-footer__list 
           li.page-footer__item 
             a.page-footer__link Соглашения
           li.page-footer__item 
@@ -66,14 +87,14 @@ mixin footer(options)
           li.page-footer__item 
             a.page-footer__link Связь с нами
       .page-footer__block-subscription
-        h3(class="font-h3 page-footer__links") Подписка
-        p(class="page-footer__text page-footer__text_margin_common") Получайте специальные предложения и новости сервиса
+        h3.font-h3.page-footer__links Подписка
+        p.page-footer__text.page-footer__text_margin_common Получайте специальные предложения и новости сервиса
         .page-footer__block-submit 
           +input-email
     .page-footer__center
     +footer-bottom({})
 
 mixin footer-reduction(options)
-  footer(class="page-footer page-footer_displayed")
+  footer.page-footer.page-footer_displayed
     +logotype(options)
     +footer-bottom(options)

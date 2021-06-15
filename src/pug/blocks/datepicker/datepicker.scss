@@ -3,7 +3,7 @@
   width: 318px;
   margin-top: 6px;
   padding-bottom: 11px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
@@ -59,7 +59,8 @@
   padding-top: 9px;
 }
 
-.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+.datepicker--cell-day.-other-month-,
+.datepicker--cell-year.-other-decade- {
   color: $color-25;
 }
 
@@ -75,8 +76,8 @@
 .datepicker--cell.-current-,
 .datepicker--cell.-selected- {
   font-weight: bold;
-  color: #FFFFFF;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  color: #ffffff;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   border-radius: 22px;
 }
 
@@ -84,11 +85,11 @@
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   border-radius: 22px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 }
 
 .datepicker--cell.-selected-.-current- {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .datepicker--cell.-range-from- {
@@ -97,19 +98,27 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     z-index: -1;
     top: 0;
     right: 0;
     width: 20px;
     height: 40px;
-    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+    background: linear-gradient(
+      180deg,
+      rgba(188, 156, 255, 0.25),
+      rgba(139, 164, 249, 0.25)
+    );
   }
 }
 
 .datepicker--cell.-in-range- {
   color: $color-50;
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+  background: linear-gradient(
+    180deg,
+    rgba(188, 156, 255, 0.25),
+    rgba(139, 164, 249, 0.25)
+  );
 }
 
 .datepicker--cell.-range-to- {
@@ -118,13 +127,17 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     z-index: -1;
     top: 0;
     left: 0;
     width: 20px;
     height: 40px;
-    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+    background: linear-gradient(
+      180deg,
+      rgba(188, 156, 255, 0.25),
+      rgba(139, 164, 249, 0.25)
+    );
   }
 }
 
@@ -135,7 +148,7 @@
   border-top: none;
 }
 
-.datepicker--button, 
+.datepicker--button,
 .datepicker--btn {
   flex: 0;
   font-family: Montserrat;
