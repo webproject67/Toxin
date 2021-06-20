@@ -22,7 +22,7 @@ include ../reviews/reviews
     form.form-elements__block
       .form-elements__texts
         h3.font-h3.form-elements__text masked text field
-      +input({ placeholder: 'ДД.ММ.ГГГГ', id: 'birthdate' })
+      +input({ placeholder: 'ДД.ММ.ГГГГ', id: 'birthdate', length: 10, autocomplete: 'off' })
     form.form-elements__block
       .form-elements__block-left
         +input-dropdown({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'input__input_width_maximum', datepicker: 'js-datepick4' })

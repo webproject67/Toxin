@@ -161,3 +161,19 @@ $('.js-datepick5').each(function () {
   $(this).find('.datepicker').width(264);
   $(this).find('.datepicker--content').css('padding', '0');
 });
+
+const handleDocumentClick = function (evt: any) {
+  const clickOnAClass = () =>
+    $(evt.target).closest('.js-datepicker').length ||
+    $(evt.target).closest('.input__input').length ||
+    $(evt.target).closest('.datepicker--cell').length;
+
+  if (clickOnAClass()) return;
+  $('.js-datepick1').hide();
+  $('.js-datepick2').hide();
+  $('.js-datepick3').hide();
+  $('.js-datepick4').hide();
+  $('.js-datepick5').hide();
+};
+
+$(document).on('click', handleDocumentClick);

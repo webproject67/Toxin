@@ -1,13 +1,20 @@
 mixin input(options)
   -
-    const {types, placeholder, hover, id, text} = options
+    const {types, placeholder, hover, id, text, length, autocomplete} = options
     let letHover = 'input__input'
     letHover += hover ? ` ${hover}` : ''
 
   .input
     if text
       h3.font-h3.input__text= text
-    input(class=letHover, id=id, type=types, placeholder=placeholder)
+    input(
+      class=letHover,
+      id=id,
+      type=types,
+      placeholder=placeholder,
+      maxlength=length,
+      autocomplete=autocomplete
+    )
 
 mixin input-dropdown(options)
   -

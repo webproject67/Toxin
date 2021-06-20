@@ -1,6 +1,6 @@
 .checkbox__list {
   width: 230px;
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   padding: 0;
   list-style: none;
 
@@ -14,11 +14,10 @@
 }
 
 .checkbox__item {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 
   &_wide1 {
     width: 230px;
-    margin-bottom: 8px;
   }
 
   &_wide2 {
@@ -29,7 +28,7 @@
 .checkbox__label {
   position: relative;
   padding-left: 30px;
-  display: block;
+  display: inline-flex;
   line-height: 18px;
   color: $color-50;
 
@@ -45,6 +44,7 @@
   }
 
   &_colored1 {
+    display: inline;
     font-weight: bold;
     font-size: 14px;
     line-height: 18px;
@@ -52,8 +52,7 @@
   }
 
   &_colored2 {
-    display: block;
-    margin: 7px 0 0;
+    margin: 4px 0 0 30px;
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
@@ -86,7 +85,7 @@
   &::before {
     position: absolute;
     content: '';
-    top: 3px;
+    top: 6px;
     left: 6px;
     z-index: 1;
     width: 7px;
@@ -145,7 +144,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 .checkbox-list__button {
@@ -153,6 +151,7 @@
   text-align: start;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .checkbox-list__label {
