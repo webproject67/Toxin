@@ -1,13 +1,25 @@
-import { getBoolBirthdate } from '../../../scripts/utils';
+const handleInputKeydown = function (evt: any) {
+  const additionalKeysAllowed = () =>
+    evt.keyCode == 46 ||
+    evt.keyCode == 8 ||
+    evt.keyCode == 9 ||
+    evt.keyCode == 27 ||
+    (evt.keyCode == 65 && evt.ctrlKey === true) ||
+    (evt.keyCode >= 35 && evt.keyCode <= 39);
+  const onlyNumbersAreAllowed = () =>
+    (evt.keyCode < 48 || evt.keyCode > 57) &&
+    (evt.keyCode < 96 || evt.keyCode > 105);
+  const putsAPoint = () =>
+    evt.currentTarget.value.length === 2 ||
+    evt.currentTarget.value.length === 5;
 
-const handleInputChange = function (this: HTMLElement) {
-  const $value = String($(this).val());
-  if (!getBoolBirthdate($value)) {
-    $(this).css('border', '1px solid red');
+  if (additionalKeysAllowed()) {
+    return;
   } else {
-    $(this).css('border', '1px solid rgba(31, 32, 65, 0.25)');
+    if (onlyNumbersAreAllowed()) evt.preventDefault();
   }
+  if (putsAPoint()) evt.currentTarget.value += '.';
 };
 
 const $birthdate = $('#birthdate');
-$birthdate.on('change', handleInputChange);
+$birthdate.on('keydown', handleInputKeydown);

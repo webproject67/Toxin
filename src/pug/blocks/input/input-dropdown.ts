@@ -86,11 +86,21 @@ $inputDropdown.each(function () {
   const $input = $(this);
 
   const handleInputClick = function (this: HTMLElement) {
-    $(this).toggleClass('input__input_bordered');
+    $input.find('.input__input').toggleClass('input__input_bordered');
     $input.find('.input__select-options').slideToggle(300);
   };
 
-  $(this).find('.input__input').on('click', handleInputClick);
+  $input.find('.input__input').on('click', handleInputClick);
+
+  const handleDocumentClick = function (evt: any) {
+    if ($(evt.target).closest('.input').length) return;
+    if ($input.find('.input__input_bordered').length) {
+      $input.find('.input__input').toggleClass('input__input_bordered');
+      $input.find('.input__select-options').slideToggle(300);
+    }
+  };
+
+  $(document).on('click', handleDocumentClick);
 
   const handleLink1Click = function () {
     $input.find('.input__input').toggleClass('input__input_bordered');

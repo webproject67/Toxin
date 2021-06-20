@@ -76,7 +76,7 @@ mixin form-registration(options)
     .form__radio
       include ../radio/radio
     .form__birthdate
-      +input({ placeholder: 'ДД.ММ.ГГГГ', text: 'дата рождения', id: 'birthdate' })
+      +input({ placeholder: 'ДД.ММ.ГГГГ', text: 'дата рождения', id: 'birthdate', length: 10, autocomplete: 'off' })
     .form__email
       +input({ placeholder: 'Email', types: 'email', text: 'данные для входа в сервис' })
     .form__password
