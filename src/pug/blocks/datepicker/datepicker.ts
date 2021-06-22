@@ -166,7 +166,9 @@ const handleDocumentClick = function (evt: any) {
   const clickOnAClass = () =>
     $(evt.target).closest('.js-datepicker').length ||
     $(evt.target).closest('.input__input').length ||
-    $(evt.target).closest('.datepicker--cell').length;
+    $(evt.target).closest('.datepicker--cell').length ||
+    $(evt.target).closest('.datepicker--nav-title').length ||
+    $(evt.target).closest('.datepicker--nav-action').length;
 
   if (clickOnAClass()) return;
   $('.js-datepick1').hide();

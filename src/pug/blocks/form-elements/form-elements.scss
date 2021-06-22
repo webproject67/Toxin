@@ -52,10 +52,7 @@
 .form-elements__block2 {
   width: 266px;
 
-  & .form-elements__block:nth-child(2) {
-    margin-top: 42px;
-  }
-
+  & .form-elements__block:nth-child(2),
   & .form-elements__block:nth-child(3) {
     margin-top: 40px;
   }
@@ -70,7 +67,10 @@
   }
 }
 
-.form-elements__block-checkbox,
+.form-elements__block-checkbox {
+  margin-top: 12px;
+}
+
 .form-elements__block-radio {
   margin-top: 8px;
 }
@@ -128,10 +128,11 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 143px;
-  margin-top: 26px;
+  margin-top: 28px;
 }
 
 .form-elements__block-link-submit {
+  display: grid;
   margin-top: 26px;
 }
 

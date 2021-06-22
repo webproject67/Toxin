@@ -19,6 +19,11 @@
   }
 }
 
+.input__input[pattern]:invalid {
+  color: red;
+  border: 1px solid red;
+}
+
 .input__input {
   width: 100%;
   height: 44px;
@@ -27,6 +32,10 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   transition: all 0.4s ease;
+
+  &_cursory {
+    cursor: pointer;
+  }
 
   &_padding_common {
     padding: 13px 35px 13px 14px;
@@ -49,6 +58,7 @@
 
   &_width_maximum {
     max-width: 150px;
+    cursor: pointer;
   }
 
   &_bordered {

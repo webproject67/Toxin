@@ -18,18 +18,18 @@ include ../reviews/reviews
         h3.font-h3.form-elements__text.form-elements__text_colored Hover / Focus
       +input({ placeholder: 'This is pretty awesome', hover: 'input__input_hovering' })
     form.form-elements__block
-      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', value: 'Сколько гостей', id: 'guest1', option: [ { text: 'взрослые', number: 0, opacity: 'input__btn_opaque' }, { text: 'дети', number: 0, opacity: 'input__btn_opaque' }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: '', textRight: 'применить' })
+      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', value: 'Сколько гостей', inputClassName: 'input__input_cursory', id: 'guest1', option: [ { text: 'взрослые', number: 0, opacity: 'input__btn_opaque' }, { text: 'дети', number: 0, opacity: 'input__btn_opaque' }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: '', textRight: 'применить' })
     form.form-elements__block
       .form-elements__texts
         h3.font-h3.form-elements__text masked text field
-      +input({ placeholder: 'ДД.ММ.ГГГГ', id: 'birthdate', length: 10, autocomplete: 'off' })
+      +input({ placeholder: 'ДД.ММ.ГГГГ', id: 'birthdate', length: 10, autocomplete: 'off', pattern:'(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}' })
     form.form-elements__block
       .form-elements__block-left
         +input-dropdown({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'input__input_width_maximum', datepicker: 'js-datepick4' })
       .form-elements__block-right
         +input-dropdown({ text: 'date dropdown', value: '19.08.2019', id: 'date2', inputClassName: 'input__input_width_maximum' })
     form.form-elements__block
-      +input-dropdown({ text: 'filter date dropdown', value: '19 авг - 23 авг', id: 'date', datepicker: 'js-datepick5' })
+      +input-dropdown({ text: 'filter date dropdown', value: '19 авг - 23 авг', inputClassName: 'input__input_cursory', id: 'date', datepicker: 'js-datepick5' })
     .form-elements__block
       .form-elements__texts
         h3.font-h3.form-elements__text subscription text field
@@ -87,15 +87,15 @@ include ../reviews/reviews
         include ../pagination/pagination
   .form-elements__block4
     .form-elements__block
-      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', text2: 'default', value: '2 спальни, 2 кровати...', id: 'rooms1', option: [ { text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' } ] })
+      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', text2: 'default', value: '2 спальни, 2 кровати...', inputClassName: 'input__input_cursory', id: 'rooms1', option: [ { text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' } ] })
     .form-elements__block
-      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', text2: 'expanded', value: '2 спальни, 2 кровати...', id: 'rooms2', inputClassName: 'input__input_bordered', display: 'input__select-options_displayed', option: [ { text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' } ] })
+      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', text2: 'expanded', value: '2 спальни, 2 кровати...', id: 'rooms2', inputClassName: 'input__input_cursory input__input_bordered', display: 'input__select-options_displayed', option: [ { text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' } ] })
   .form-elements__block5
     .form-elements__block
-      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', value: 'Сколько гостей', id: 'guest2', inputClassName: 'input__input_bordered', display: 'input__select-options_displayed', option: [ { text: 'взрослые', number: 0, opacity: 'input__btn_opaque' }, { text: 'дети', number: 0, opacity: 'input__btn_opaque' }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: '', textRight: 'применить' })
+      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', value: 'Сколько гостей', id: 'guest2', inputClassName: 'input__input_cursory input__input_bordered', display: 'input__select-options_displayed', option: [ { text: 'взрослые', number: 0, opacity: 'input__btn_opaque' }, { text: 'дети', number: 0, opacity: 'input__btn_opaque' }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: '', textRight: 'применить' })
   .form-elements__block6
     .form-elements__block
-      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', value: '3 гостя', id: 'guest3', inputClassName: 'input__input_bordered', display: 'input__select-options_displayed', option: [ { text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: 'очистить', textRight: 'применить' })
+      +input-dropdown({ dropdown: 'js-input-dropdown', text: 'dropdown', value: '3 гостя', id: 'guest3', inputClassName: 'input__input_cursory input__input_bordered', display: 'input__select-options_displayed', option: [ { text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' } ], textLeft: 'очистить', textRight: 'применить' })
   form.form-elements__block7
     .form-elements__block
       +checkbox-list({ text: 'expandable checkbox list', unreflected: 'checkbox__list_unreflected', checkboxs: [ { label: 'Завтрак', id: 'breakfast1', checked: false }, { label: 'Письменный стол', id: 'desk1', checked: true }, { label: 'Стул для кормления', id: 'chair1', checked: true }, { label: 'Кроватка', id: 'Crib1', checked: true }, { label: 'Телевизор', id: 'TV1', checked: false }, { label: 'Шампунь', id: 'shampoo1', checked: false } ] })

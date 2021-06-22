@@ -23,17 +23,21 @@
 }
 
 .form__submit {
+  display: grid;
   margin-top: 31px;
 
   &_margin_top1 {
+    display: grid;
     margin-top: 6px;
   }
 
   &_margin_top2 {
+    display: grid;
     margin-top: 23px;
   }
 
   &_margin_top3 {
+    display: grid;
     margin-top: 20px;
   }
 }
