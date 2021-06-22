@@ -1,6 +1,6 @@
 .checkbox__list {
-  width: 230px;
-  margin: 6px 0 0;
+  width: 215px;
+  margin: 8px 0 0 30px;
   padding: 0;
   list-style: none;
 
@@ -9,26 +9,27 @@
   }
 
   &_margin_common {
-    margin: 17px 0 0;
+    margin: 17px 0 0 30px;
   }
 }
 
 .checkbox__item {
-  margin-bottom: 6px;
+  margin-bottom: 11px;
+  line-height: 19px;
 
   &_wide1 {
-    width: 230px;
+    width: 205px;
+    margin-bottom: 5px;
   }
 
   &_wide2 {
-    width: 260px;
+    width: 230px;
   }
 }
 
 .checkbox__label {
   position: relative;
-  padding-left: 30px;
-  display: inline-flex;
+  display: inline;
   line-height: 18px;
   color: $color-50;
 
@@ -36,7 +37,7 @@
     position: absolute;
     content: '';
     top: 0;
-    left: 0;
+    left: -30px;
     width: 20px;
     height: 20px;
     border: 1px solid rgba(31, 32, 65, 0.25);
@@ -44,18 +45,15 @@
   }
 
   &_colored1 {
-    display: inline;
     font-weight: bold;
     font-size: 14px;
-    line-height: 18px;
     color: $color-75;
   }
 
   &_colored2 {
-    margin: 4px 0 0 30px;
+    margin: 4px 0 0 0;
     font-weight: normal;
     font-size: 12px;
-    line-height: 14px;
     color: $color-50;
   }
 }
@@ -69,7 +67,7 @@
     position: absolute;
     content: '';
     top: 5px;
-    left: 7px;
+    left: -23px;
     width: 6px;
     height: 8px;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -85,8 +83,8 @@
   &::before {
     position: absolute;
     content: '';
-    top: 6px;
-    left: 6px;
+    top: 3px;
+    left: -24px;
     z-index: 1;
     width: 7px;
     height: 7px;

@@ -47,9 +47,9 @@ mixin main-search-room
   main.page-main.page-main_displayed
     form.page-main__filters
       .page-main__filter-block1
-        +input-dropdown({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', id: 'date', datepicker: 'js-datepick5' })
+        +input-dropdown({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', inputClassName: 'input__input_cursory', id: 'date', datepicker: 'js-datepick5' })
       .page-main__filter-block2
-        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'гости', value: '3 гостя, 1 младенец', id: 'guest', option: [ { text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 1 } ], textLeft: 'очистить', textRight: 'применить' })
+        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'гости', value: '3 гостя, 1 младенец', inputClassName: 'input__input_cursory', id: 'guest', option: [ { text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 1 } ], textLeft: 'очистить', textRight: 'применить' })
       .page-main__filter-block3
         +slide({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере' })
       .page-main__filter-block4
@@ -59,7 +59,7 @@ mixin main-search-room
         h3.font-h3.page-main__text-filter доступность
         +checkbox({ color: 'checkbox__label_colored1', listClassName: 'checkbox__list_margin_common', checkboxs: [ { label: 'Широкий коридор', id: 'hallway', checked: false, text: 'Ширина коридоров в номере не менее 91 см.', width: 'checkbox__item_wide1' }, { label: 'Помощник для инвалидов', id: 'invalid', checked: false, text: 'На 1 этаже вас встретит специалист и проводит до номера.', width: 'checkbox__item_wide2' } ] })
       .page-main__filter-block6
-        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'удобства номера', value: '2 спальни, 2 кровати...', id: 'rooms', option: [ { text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' } ] })
+        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'input__input_cursory', id: 'rooms', option: [ { text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' } ] })
       .page-main__filter-block7
         +checkbox-list({ text: 'дополнительные удобства', unreflected: 'checkbox__list_unreflected', checkboxs: [ { label: 'Завтрак', id: 'breakfast', checked: false }, { label: 'Письменный стол', id: 'desk', checked: true }, { label: 'Стул для кормления', id: 'chair', checked: true }, { label: 'Кроватка', id: 'Crib', checked: true }, { label: 'Телевизор', id: 'TV', checked: false }, { label: 'Шампунь', id: 'shampoo', checked: false } ] })
     section.page-main__rooms

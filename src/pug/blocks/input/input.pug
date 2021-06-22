@@ -1,6 +1,6 @@
 mixin input(options)
   -
-    const {types, placeholder, hover, id, text, length, autocomplete} = options
+    const {types, placeholder, hover, id, text, length, autocomplete, pattern} = options
     let letHover = 'input__input'
     letHover += hover ? ` ${hover}` : ''
 
@@ -13,7 +13,8 @@ mixin input(options)
       type=types,
       placeholder=placeholder,
       maxlength=length,
-      autocomplete=autocomplete
+      autocomplete=autocomplete,
+      pattern=pattern
     )
 
 mixin input-dropdown(options)
