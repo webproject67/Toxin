@@ -1,0 +1,10 @@
+mixin logotype(options)
+  - const { displayed = '' } = options;
+
+  .logotype
+    a.logotype__link(href="index.html", title="На главную") главная страница
+      img(
+        class=`logotype__img ${displayed}`,
+        src="../../blocks/logo/img/svg/Logotype.svg",
+        alt="logo"
+      ) 

@@ -1,56 +1,12 @@
-include ../input/input
-
-mixin footer-bottom(options)
-  -
-    const {display, margin} = options
-    let letDisplay = 'page-footer__bottom'
-    letDisplay += display ? ` ${display}` : ''
-    let letMargin = 'page-footer__socials'
-    letMargin += margin ? ` ${margin}` : ''
-
-  div(class=letDisplay) 
-    p.page-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-    ul(class=letMargin) 
-      li.page-footer__social 
-        a.page-footer__link-social(
-          href="https://twitter.com/?lang=ru",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-          img.page-footer__img(
-            src="../../blocks/footer/img/svg/twitter.svg",
-            alt="logo"
-          )
-      li.page-footer__social
-        a.page-footer__link-social(
-          href="https://ru-ru.facebook.com/",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-          img.page-footer__img(
-            src="../../blocks/footer/img/svg/facebook.svg",
-            alt="logo"
-          )
-      li.page-footer__social
-        a.page-footer__link-social(
-          href="https://www.instagram.com/?hl=ru",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-          img.page-footer__img(
-            src="../../blocks/footer/img/svg/instagram.svg",
-            alt="logo"
-          )
+include ../input-email/input-email
+include ../footer-bottom/footer-bottom
 
 mixin footer(options)
-  -
-    const {border} = options
-    let letBorder = 'page-footer'
-    letBorder += border ? ` ${border}` : ''
+  - const { border = '' } = options;
 
-  footer(class=letBorder)
+  footer(class=`page-footer ${border}`)
     .page-footer__logo
-      +logotype({displayed: 'logotype__img_displayed'})
+      +logotype({ displayed: 'logotype__img_displayed' })
     .page-footer__top
       .page-footer__block-logo 
         +logotype(options)
@@ -93,8 +49,3 @@ mixin footer(options)
           +input-email
     .page-footer__center
     +footer-bottom({})
-
-mixin footer-reduction(options)
-  footer.page-footer.page-footer_displayed
-    +logotype(options)
-    +footer-bottom(options)

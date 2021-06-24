@@ -1,0 +1,36 @@
+mixin footer-bottom(options)
+  - const { display = '', margin = '' } = options;
+
+  div(class=`page-footer__bottom ${display}`) 
+    p.page-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+    ul(class=`page-footer__socials ${margin}`) 
+      li.page-footer__social 
+        a.page-footer__link-social(
+          href="https://twitter.com/?lang=ru",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          img.page-footer__img(
+            src="../../blocks/footer-bottom/img/svg/twitter.svg",
+            alt="logo"
+          )
+      li.page-footer__social
+        a.page-footer__link-social(
+          href="https://ru-ru.facebook.com/",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          img.page-footer__img(
+            src="../../blocks/footer-bottom/img/svg/facebook.svg",
+            alt="logo"
+          )
+      li.page-footer__social
+        a.page-footer__link-social(
+          href="https://www.instagram.com/?hl=ru",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          img.page-footer__img(
+            src="../../blocks/footer-bottom/img/svg/instagram.svg",
+            alt="logo"
+          )

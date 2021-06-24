@@ -1,0 +1,9 @@
+mixin button-like(options)
+  - const { text, number, active = '' } = options;
+
+  .button-like 
+    button(
+      class=`button-like__button js-button-like__button ${active}`,
+      type="button"
+    )= text
+      span.button-like__button_font_another= number

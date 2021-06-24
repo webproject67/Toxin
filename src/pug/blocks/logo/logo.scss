@@ -1,5 +1,4 @@
-.logo__link,
-.logotype__link {
+.logo__link {
   display: inline-block;
   font-size: 0;
   transition: all 0.4s ease;
@@ -11,19 +10,4 @@
 
 .logo {
   padding: 30px;
-}
-
-.logotype,
-.logotype__link {
-  display: flex;
-}
-
-.logotype__img_displayed {
-  display: none;
-}
-
-@media (max-width: $mobile-width-only) {
-  .logotype__img_displayed {
-    display: block;
-  }
 }

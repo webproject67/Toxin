@@ -1,13 +1,8 @@
 mixin checkbox(options)
-  -
-    const {checkboxs, listClassName, color} = options
-    let letListClassName = 'checkbox__list'
-    letListClassName += listClassName ? ` ${listClassName}` : ''
-    let letColor = 'checkbox__label'
-    letColor += color ? ` ${color}` : ''
+  - const { checkboxs, listClassName = '', color = '' } = options;
 
   .checkbox
-    ul(class=letListClassName) 
+    ul(class=`checkbox__list ${listClassName}`) 
       each val in checkboxs
         li(class=val.width ? `checkbox__item ${val.width}` : 'checkbox__item')
           span.checkbox__figure 
@@ -16,32 +11,7 @@ mixin checkbox(options)
             id=val.id,
             checked=val.checked
           )
-          label(class=letColor, for=val.id)= val.label
+          label(class=`checkbox__label ${color}`, for=val.id)= val.label
             if val.text
               br
               span.checkbox__label_colored2= val.text
-
-mixin checkbox-toggle(options)
-  -
-    const {id, checked} = options
-
-  .checkbox-toggle
-    input.checkbox-toggle__checkbox.visually-hidden_focusable(
-      type="checkbox",
-      id=id,
-      checked=checked
-    )
-    label.checkbox-toggle__label(for=id) Получать спецпредложения
-
-mixin checkbox-list(options)
-  -
-    const {text, unreflected, transform, checkboxs} = options
-    let letTransform = 'font-icon checkbox-list__icon'
-    letTransform += transform ? ` ${transform}` : ''
-
-  .checkbox-list
-    .checkbox-list__btn.js-checkbox-list__btn
-      input.font-h3.checkbox-list__button(type="button", value=text)
-      label.checkbox-list__label 
-        span(class=letTransform) expand_more
-    +checkbox({ listClassName: unreflected, checkboxs: checkboxs })

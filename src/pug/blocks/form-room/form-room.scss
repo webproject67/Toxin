@@ -1,51 +1,14 @@
-.form {
-  padding: 23px 29px 30px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-}
-
 .form__inputs {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 22px;
-
   &_margin_top {
     margin-top: 20px;
   }
 }
 
-.form__guests,
-.form__name {
-  margin-top: 21px;
-}
-
 .form__submit {
-  display: grid;
-  margin-top: 31px;
-
   &_margin_top1 {
     display: grid;
     margin-top: 6px;
   }
-
-  &_margin_top2 {
-    display: grid;
-    margin-top: 23px;
-  }
-
-  &_margin_top3 {
-    display: grid;
-    margin-top: 20px;
-  }
-}
-
-.form__block-price {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
 }
 
 .form__symbol {
@@ -162,44 +125,4 @@
 .form__ellipsis {
   width: 46.7%;
   border-top: 1px dotted rgba(31, 32, 65, 0.25);
-}
-
-.form__surname,
-.form__password {
-  margin-top: 10px;
-}
-
-.form__radio,
-.form__checkbox {
-  margin-top: 7px;
-}
-
-.form__birthdate {
-  margin-top: 23px;
-}
-
-.form__email {
-  margin-top: 20px;
-}
-
-.form__reg {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  color: #000000;
-}
-
-.form__text-reg {
-  margin: 0;
-}
-
-@media (max-width: $mobile-width-only) {
-  .form {
-    padding: 15px;
-  }
-
-  .form__title {
-    font-size: 20px;
-  }
 }
