@@ -1,0 +1,40 @@
+.form {
+  padding: 23px 29px 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form__inputs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 22px;
+}
+
+.form__guests,
+.form__name {
+  margin-top: 21px;
+}
+
+.form__submit {
+  display: grid;
+  margin-top: 31px;
+}
+
+.form__block-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+@media (max-width: $mobile-width-only) {
+  .form {
+    padding: 15px;
+  }
+
+  .form__title {
+    font-size: 20px;
+  }
+}

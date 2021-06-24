@@ -1,17 +1,12 @@
+include ../button-rate/button-rate
+
 mixin card-photo(options)
-  -
-    const {display, margin, padding, photos} = options
-    let letMargin = 'card-photo__item'
-    letMargin += margin ? ` ${margin}` : ''
-    let letDisplay = 'card-photo__list'
-    letDisplay += display ? ` ${display}` : ''
-    let letPadding = 'font-h3 card-photo__symbol_colored'
-    letPadding += padding ? ` ${padding}` : ''
+  - const { display = '', margin = '', padding = '', photos } = options;
 
   .card-photo
-    ul(class=letDisplay)
+    ul(class=`card-photo__list ${display}`)
       each val in photos
-        li(class=letMargin)
+        li(class=`card-photo__item ${margin}`)
           .card-photo__block-img
             div(
               class=val.hover ? `flexslider js-flexslider ${val.hover}` : 'flexslider js-flexslider'
@@ -28,10 +23,10 @@ mixin card-photo(options)
             .card-photo__block-price
               p.card-photo__symbol №
                 span.card-photo__symbol_size_large= val.number
-                  span(class=letPadding)= val.luxe
+                  span(class=`font-h3 card-photo__symbol_colored ${padding}`)= val.luxe
               p.card-photo__number= `${val.price}₽ `
                 span.card-photo__number_size_small в сутки
             .card-photo__block-estimations
-              +button-rate({count: val.count})
+              +button-rate({ count: val.count })
               p.card-photo__text-review= val.review
                 span.card-photo__text-review_weight_normal Отзывов

@@ -1,0 +1,5 @@
+mixin button-link(options)
+  - const { text, href, linkClassName = '' } = options;
+
+  .button-link
+    a(class=`font-h3 ${linkClassName}`, href=href)= text

@@ -1,9 +1,17 @@
 extends ../../layouts/layout
 include ../../blocks/header/header
-include ../../blocks/main/main
+include ../../blocks/form-sign-in/form-sign-in
 include ../../blocks/footer/footer
 
 block body
   +header({})
-  +main-sign-in
+  main.page-main.js-page-main_image3
+    .js-slider
+      .slItems
+        .page-main__form.page-main__form_margin_common2
+          +form-sign-in
+        .slItem.page-main_background4(style="background-position: center 98%")
+        .slItem.page-main_background3(style="background-position: center 98%")
+        .slItem.page-main_background1(style="background-position: center 98%")
+        .slItem.page-main_background2(style="background-position: center 98%")
   +footer({})

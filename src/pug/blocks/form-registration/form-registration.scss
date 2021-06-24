@@ -1,0 +1,36 @@
+.form__submit {
+  &_margin_top2 {
+    display: grid;
+    margin-top: 23px;
+  }
+}
+
+.form__surname,
+.form__password {
+  margin-top: 10px;
+}
+
+.form__radio,
+.form__checkbox {
+  margin-top: 7px;
+}
+
+.form__birthdate {
+  margin-top: 23px;
+}
+
+.form__email {
+  margin-top: 20px;
+}
+
+.form__reg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: #000000;
+}
+
+.form__text-reg {
+  margin: 0;
+}

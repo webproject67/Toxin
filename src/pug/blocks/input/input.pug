@@ -1,14 +1,11 @@
 mixin input(options)
-  -
-    const {types, placeholder, hover, id, text, length, autocomplete, pattern} = options
-    let letHover = 'input__input'
-    letHover += hover ? ` ${hover}` : ''
+  - const { types, placeholder, hover = '', id, text, length, autocomplete, pattern } = options;
 
   .input
     if text
       h3.font-h3.input__text= text
     input(
-      class=letHover,
+      class=`input__input ${hover}`,
       id=id,
       type=types,
       placeholder=placeholder,
@@ -16,53 +13,3 @@ mixin input(options)
       autocomplete=autocomplete,
       pattern=pattern
     )
-
-mixin input-dropdown(options)
-  -
-    const {value, id, dropdown, inputClassName, display, datepicker, option, textLeft, textRight, text, text2} = options
-    let letDropdown = 'input'
-    letDropdown += dropdown ? ` ${dropdown}` : ''
-    let letInputClassName = 'input__input'
-    letInputClassName += inputClassName ? ` ${inputClassName}` : ''
-    let letDisplay = 'input__select-options'
-    letDisplay += display ? ` ${display}` : ''
-    let letDatepicker = datepicker ? ` ${datepicker}` : ''
-
-  div(class=letDropdown)
-    if text
-      .input__texts
-        h3.font-h3.input__text= text
-        p.font-h3.input__text.input__text_colored= text2
-    input(class=letInputClassName, id=id, type="text", value=value, readonly)
-    label.input__label(for=id) 
-      span.font-icon.input__icon expand_more
-    div(class=letDatepicker)
-    if option
-      div(class=letDisplay)
-        each val in option
-          -
-            let letOpacityClassName = 'input__btn'
-            letOpacityClassName += val.opacity ? ` ${val.opacity}` : ''
-
-          .input__select-option
-            h3.font-h3.input__option= val.text
-            .input__btns 
-              input(class=letOpacityClassName, type="button", value="-")
-              h3.font-h3.input__number= val.number
-              input.input__btn(type="button", value="+")
-        if textRight
-          .input__buttons
-            +button-link({ text: textLeft, linkClassName: 'button-link2__link' })
-            +button-link({ text: textRight, linkClassName: 'button-link2__link' })
-
-mixin input-email
-  .input 
-    form.input__form.js-input__form
-      input#email.input__input.input__input_padding_common(
-        type="email",
-        placeholder="Email"
-      )
-      input.font-icon.font-lg.input__submit(
-        type="submit",
-        value="arrow_forward"
-      )

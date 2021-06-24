@@ -1,0 +1,15 @@
+include ../input/input
+include ../button-submit/button-submit
+
+mixin form-sign-in
+  form.form.js-form
+    h1.font-h1.form__title Войти
+    .form__email
+      +input({ placeholder: 'Email', types: 'email' })
+    .form__password
+      +input({ types: 'password', placeholder: 'Пароль' })
+    .form__submit_margin_top3
+      +button-submit({ text: 'войти' })
+    .form__reg 
+      p.form__text-reg Нет аккаунта на Toxin?
+      +button-link({ text: 'СОЗДАТЬ', href: 'registration.html', linkClassName: 'button-link__link button-link__link_bordered' })

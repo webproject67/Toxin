@@ -1,0 +1,33 @@
+mixin input-dropdown(options)
+  - const { value, id, dropdown = '', inputClassName = '', display = '', datepicker = '', option, textLeft, textRight, text, text2 } = options;
+
+  div(class=`input ${dropdown}`)
+    if text
+      .input__texts
+        h3.font-h3.input__text= text
+        p.font-h3.input__text.input__text_colored= text2
+    input(
+      class=`input__input ${inputClassName}`,
+      id=id,
+      type="text",
+      value=value,
+      readonly
+    )
+    label.input__label(for=id) 
+      span.font-icon.input__icon expand_more
+    div(class=`${datepicker}`)
+    if option
+      div(class=`input__select-options ${display}`)
+        each val in option
+          -
+
+          .input__select-option
+            h3.font-h3.input__option= val.text
+            .input__btns 
+              input(class=`input__btn ${val.opacity}`, type="button", value="-")
+              h3.font-h3.input__number= val.number
+              input.input__btn(type="button", value="+")
+        if textRight
+          .input__buttons
+            +button-link({ text: textLeft, linkClassName: 'button-link2__link' })
+            +button-link({ text: textRight, linkClassName: 'button-link2__link' })

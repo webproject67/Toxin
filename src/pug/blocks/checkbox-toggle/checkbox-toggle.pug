@@ -1,0 +1,10 @@
+mixin checkbox-toggle(options)
+  - const { id, checked } = options;
+
+  .checkbox-toggle
+    input.checkbox-toggle__checkbox.visually-hidden_focusable(
+      type="checkbox",
+      id=id,
+      checked=checked
+    )
+    label.checkbox-toggle__label(for=id) Получать спецпредложения

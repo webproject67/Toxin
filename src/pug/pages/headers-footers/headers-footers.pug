@@ -1,7 +1,18 @@
 extends ../../layouts/layout
 include ../../blocks/logo/logo
+include ../../blocks/header/header
+include ../../blocks/footer/footer
+include ../../blocks/footer-reduction/footer-reduction
 
 block body
   h1.visually-hidden Headers & Footers
   +logo
-  include ../../blocks/headers-footers/headers-footers
+  .headers-footers
+    .headers-footers__block1 
+      +header({ hover: 'nav-link__item_hovering' })
+    .headers-footers__block2
+      +header({ hover: 'nav-link__item_hovering', name: 'Юлий Цезарь' })
+    .headers-footers__block3
+      +footer({})
+    .headers-footers__block4
+      +footer-reduction({ display: 'page-footer__bottom_displayed', margin: 'page-footer__socials_margin_common', })

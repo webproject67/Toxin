@@ -1,0 +1,27 @@
+.checkbox-list__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-list__button {
+  padding: 10px 60px 10px 0;
+  text-align: start;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.checkbox-list__label {
+  position: relative;
+}
+
+.checkbox-list__icon {
+  position: absolute;
+  top: -12px;
+  right: 10px;
+
+  &_transformed {
+    transform: rotate(180deg);
+  }
+}

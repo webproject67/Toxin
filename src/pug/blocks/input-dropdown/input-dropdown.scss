@@ -1,0 +1,73 @@
+.input__input {
+  &_width_maximum {
+    max-width: 150px;
+    cursor: pointer;
+  }
+
+  &_bordered {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 2px;
+  }
+}
+
+.input__select-options {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  z-index: 3;
+  display: none;
+  width: 100%;
+  padding: 0 7px 6px 13px;
+  background: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 2px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  &_displayed {
+    display: block;
+  }
+}
+
+.input__select-option,
+.input__btns,
+.input__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input__option,
+.input__number {
+  margin: 12px 0 10px;
+}
+
+.input__btns {
+  width: 92px;
+}
+
+.input__btn {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color-50;
+  background: transparent;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 22px;
+  cursor: pointer;
+
+  &_opaque {
+    opacity: 0.38;
+    cursor: default;
+  }
+}
+
+.input__buttons {
+  padding: 14px 0 2px;
+}
+
+.input__icon {
+  position: absolute;
+  top: -3px;
+  right: 10px;
+}
