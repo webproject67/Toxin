@@ -28,11 +28,18 @@ $('.js-datepick1').each(function () {
     .selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
   $(this)
     .find(
-      '.datepicker--cell-day[data-year="2019"][data-month="7"][data-date="8"]'
+      '.datepicker--cell-day[data-year="2019"][data-month="7"][data-date="8"]',
     )
     .addClass('-current-');
+
   let width: number;
-  Number($('body').width()) <= 348 ? (width = 288) : (width = 318);
+
+  if (Number($('body').width()) <= 348) {
+    width = 288;
+  } else {
+    width = 318;
+  }
+
   $('.js-datepicker').width(width);
 });
 
@@ -85,8 +92,15 @@ $('.js-datepick4').each(function () {
     .datepicker({
       onSelect: (date) => {
         const dates = date.split(',');
+        const [dateOne] = dates;
         let date1: string;
-        dates[0] === '08.08.2019' ? (date1 = 'ДД.ММ.ГГГГ') : (date1 = dates[0]);
+
+        if (dates[0] === '08.08.2019') {
+          date1 = 'ДД.ММ.ГГГГ';
+        } else {
+          date1 = dateOne;
+        }
+
         $('#date1').val(date1);
         $('#date2').val(dates[1]);
       },
@@ -101,8 +115,15 @@ $('.js-datepick4').each(function () {
     .closest('.form-elements__block')
     .find('#date2')
     .on('click', handleBlockClick);
+
   let width: number;
-  Number($('body').width()) <= 348 ? (width = 288) : (width = 318);
+
+  if (Number($('body').width()) <= 348) {
+    width = 288;
+  } else {
+    width = 318;
+  }
+
   $('.js-datepicker').width(width);
 });
 
@@ -148,8 +169,15 @@ $('.js-datepick5').each(function () {
           const date2 = dates[1].split('.');
           value += ` - ${date2[0]} ${getMonthString(date2[1])}`;
         }
+
         let date1Value: string;
-        dates[0] === '' ? (date1Value = '') : (date1Value = value);
+
+        if (dates[0] === '') {
+          date1Value = '';
+        } else {
+          date1Value = value;
+        }
+
         $('#date').val(date1Value);
       },
     })
@@ -163,12 +191,11 @@ $('.js-datepick5').each(function () {
 });
 
 const handleDocumentClick = function (evt: any) {
-  const clickOnAClass = () =>
-    $(evt.target).closest('.js-datepicker').length ||
-    $(evt.target).closest('.input__input').length ||
-    $(evt.target).closest('.datepicker--cell').length ||
-    $(evt.target).closest('.datepicker--nav-title').length ||
-    $(evt.target).closest('.datepicker--nav-action').length;
+  const clickOnAClass = () => $(evt.target).closest('.js-datepicker').length
+    || $(evt.target).closest('.input__input').length
+    || $(evt.target).closest('.datepicker--cell').length
+    || $(evt.target).closest('.datepicker--nav-title').length
+    || $(evt.target).closest('.datepicker--nav-action').length;
 
   if (clickOnAClass()) return;
   $('.js-datepick1').hide();

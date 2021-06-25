@@ -8,19 +8,23 @@ const $slider = $('.js-slider');
 const setHeightMain = (
   main: JQuery<HTMLElement>,
   heightDesktop: number,
-  heightMobile: number
+  heightMobile: number,
 ) => {
   let height: number;
-  Number($body.width()) >= 768
-    ? (height = heightDesktop)
-    : (height = heightMobile);
+
+  if (Number($body.width()) >= 768) {
+    height = heightDesktop;
+  } else {
+    height = heightMobile;
+  }
+
   $slider.height(height);
 };
 
 const setupOptions = (
   main: JQuery<HTMLElement>,
   heightDesktop: number,
-  heightMobile: number
+  heightMobile: number,
 ) => {
   main.rbtSlider({
     auto: 5,

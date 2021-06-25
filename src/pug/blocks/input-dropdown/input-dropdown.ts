@@ -5,11 +5,14 @@ const Value = {
 
 const $inputDropdown = $('.js-input-dropdown');
 $inputDropdown.each(function () {
+  const $input = $(this);
+
   const setInputValue = () => {
-    let counts = [0, 0, 0];
+    const counts = [0, 0, 0];
     const $inputNumber = $input.find('.input__number');
     $inputNumber.map(function (i) {
       counts[i] = Number($(this).text());
+      return counts;
     });
 
     const $inputOptionFirst = $input.find('.input__option:first').text();
@@ -83,8 +86,6 @@ $inputDropdown.each(function () {
     }
   };
 
-  const $input = $(this);
-
   const handleInputClick = function (this: HTMLElement) {
     $input.find('.input__input').toggleClass('input__input_bordered');
     $input.find('.input__select-options').slideToggle(300);
@@ -110,8 +111,7 @@ $inputDropdown.each(function () {
   $input.find('.button-link2__link:last').on('click', handleLink1Click);
 
   const handleBtn3Click = function (this: HTMLElement) {
-    let $value = Number($(this).siblings('.input__number').text());
-    $value++;
+    const $value = Number($(this).siblings('.input__number').text()) + 1;
     $(this).siblings('.input__number').text($value);
     $(this).siblings('.input__btn').removeClass('input__btn_opaque');
     $input.find('.button-link2__link:first').text('очистить');
@@ -122,8 +122,7 @@ $inputDropdown.each(function () {
   $input.find('.input__btn:nth-child(3)').on('click', handleBtn3Click);
 
   const handleBtn1Click = function (this: HTMLElement) {
-    let $value = Number($(this).siblings('.input__number').text());
-    $value--;
+    let $value = Number($(this).siblings('.input__number').text()) - 1;
     if ($value <= 0) {
       $value = 0;
       $(this).addClass('input__btn_opaque');
@@ -133,6 +132,7 @@ $inputDropdown.each(function () {
     let $total = 0;
     $input.find('.input__number').map(function () {
       $total += Number($(this).text());
+      return $total;
     });
     if ($total === 0) {
       $input.find('.button-link2__link:first').text('');
@@ -146,6 +146,7 @@ $inputDropdown.each(function () {
   const handleLink2Click = function (this: HTMLElement) {
     $input.find('.input__number').map(function () {
       $(this).text(0);
+      return $(this);
     });
     $(this).text('');
     $input.find('.input__btn:nth-child(1)').addClass('input__btn_opaque');

@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
     "test": "karma start karma.conf.js",
-    "eslint": "eslint --ext .ts src/",
+    "eslint": "eslint --ext .ts src/ --fix",
     "prettier": "prettier --write src/pug/blocks/**/*.{scss,ts}"
   },
   "repository": {
