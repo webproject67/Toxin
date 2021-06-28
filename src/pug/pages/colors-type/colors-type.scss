@@ -19,34 +19,6 @@
 .colors-type__item {
   display: flex;
   margin: 18px 0;
-
-  &:first-child .colors-type__color {
-    background: $color;
-  }
-
-  &:nth-child(2) .colors-type__color {
-    background: $color-75;
-  }
-
-  &:nth-child(3) .colors-type__color {
-    background: $color-50;
-  }
-
-  &:nth-child(4) .colors-type__color {
-    background: $color-25;
-  }
-
-  &:nth-child(5) .colors-type__color {
-    background: $color-5;
-  }
-
-  &:nth-child(6) .colors-type__color {
-    background: $color-purple;
-  }
-
-  &:last-child .colors-type__color {
-    background: $color-green;
-  }
 }
 
 .colors-type__color {
@@ -54,6 +26,34 @@
   height: 70px;
   margin-right: 40px;
   border-radius: 6px;
+
+  &_gray100 {
+    background: $color;
+  }
+
+  &_gray75 {
+    background: $color-75;
+  }
+
+  &_gray50 {
+    background: $color-50;
+  }
+
+  &_gray25 {
+    background: $color-25;
+  }
+
+  &_gray5 {
+    background: $color-5;
+  }
+
+  &_purple {
+    background: $color-purple;
+  }
+
+  &_green {
+    background: $color-green;
+  }
 }
 
 .colors-type__text {
