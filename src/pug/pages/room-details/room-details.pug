@@ -7,6 +7,46 @@ include ../../blocks/button-submit/button-submit
 include ../../blocks/footer/footer
 
 block body
+  -
+    const advantages = [
+      {
+        icon: 'insert_emoticon', 
+        text: 'Комфорт', 
+        span: 'Шумопоглощающие стены'
+      },
+      {
+        icon: 'location_city', 
+        text: 'Удобство', 
+        span: 'Окно в каждой из спален'
+      },
+      {
+        icon: 'whatshot', 
+        text: 'Уют', 
+        span: 'Номер оснащён камином'
+      }
+    ]; 
+
+    const reviews = [
+      {
+        image: 'image16', 
+        buttonText: 'favorite', 
+        buttonNumber: 12,
+        active: 'button-like__button_active',
+        name: 'Мурад Сарафанов', 
+        date: '5 дней назад',
+        reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+      },
+      {
+        image: 'image17', 
+        buttonText: 'favorite_border', 
+        buttonNumber: 2,
+        active: 'button-like__button',
+        name: 'Патрисия Стёклышкова', 
+        date: 'Неделю назад',
+        reviewText: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+      }
+    ];
+
   +header({})
   main.page-main.page-main_no_padding
     section.page-main__gallery
@@ -16,14 +56,14 @@ block body
         .page-main__conveniences
           .page-main__convenience
             h2.font-h2.page-main__subtitle Сведения о номере
-            +advantage({ texts: [{ icon: 'insert_emoticon', text: 'Комфорт', span: 'Шумопоглощающие стены' }, { icon: 'location_city', text: 'Удобство', span: 'Окно в каждой из спален' }, { icon: 'whatshot', text: 'Уют', span: 'Номер оснащён камином' }] })
+            +advantage({ texts: advantages })
           .page-main__experience
             h2.font-h2.page-main__subtitle Впечатления от номера
             include ../../blocks/chart/chart
         .page-main__reviews
           h2.font-h2.page-main__subtitle.page-main__subtitle_margin_top1 Отзывы посетителей номера
             span.page-main__subtitle_colored 2 отзыва
-          +reviews({ marginList: 'reviews__list_margin_top', marginItem: 'reviews__item_margin_top', reviews: [{ image: 'image16', buttonText: 'favorite', buttonNumber: 12, active: 'button-like__button_active', name: 'Мурад Сарафанов', date: '5 дней назад', reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' }, { image: 'image17', buttonText: 'favorite_border', buttonNumber: 2, active: 'button-like__button', name: 'Патрисия Стёклышкова', date: 'Неделю назад', reviewText: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент' }] })
+          +reviews({ marginList: 'reviews__list_margin_top', marginItem: 'reviews__item_margin_top', reviews: reviews })
         .page-main__conditions
           .page-main__condition
             h2.font-h2.page-main__subtitle.page-main__subtitle_margin_top2.page-main__subtitle_padding_left Правила
