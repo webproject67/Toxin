@@ -8,28 +8,228 @@ include ../../blocks/card-photo/card-photo
 include ../../blocks/footer/footer
 
 block body
+  -
+    const guests = [
+      {
+        text: 'взрослые', 
+        number: 2
+      }, 
+      {
+        text: 'дети', 
+        number: 1
+      }, 
+      {
+        text: 'младенцы', 
+        number: 1
+      }
+    ];
+
+    const rules = [
+      {
+        label: 'Можно курить', 
+        id: 'smoke', 
+        checked: false
+      },
+      {
+        label: 'Можно с питомцами', 
+        id: 'pets', 
+        checked: true
+      },
+      {
+        label: 'Можно пригласить гостей (до 10 человек)', 
+        id: 'guests', 
+        checked: true
+      }
+    ];
+
+    const available = [
+      {
+        label: 'Широкий коридор', 
+        id: 'hallway', 
+        checked: false,
+        text: 'Ширина коридоров в номере не менее 91 см.',
+        width: 'checkbox__item_wide1'
+      },
+      {
+        label: 'Помощник для инвалидов', 
+        id: 'invalid', 
+        checked: false,
+        text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+        width: 'checkbox__item_wide2'
+      }
+    ];
+
+    const numbers = [
+      {
+        text: 'спальни', 
+        number: 2
+      }, 
+      {
+        text: 'кровати', 
+        number: 2
+      }, 
+      {
+        text: 'ванные комнаты', 
+        number: 0, 
+        opacity: 'input__btn_opaque'
+      }
+    ];
+
+    const conveniences = [
+      {
+        label: 'Завтрак', 
+        id: 'breakfast', 
+        checked: false
+      },
+      {
+        label: 'Письменный стол', 
+        id: 'desk', 
+        checked: true
+      },
+      {
+        label: 'Стул для кормления', 
+        id: 'chair', 
+        checked: true
+      },
+      {
+        label: 'Кроватка', 
+        id: 'Crib', 
+        checked: true
+      },
+      {
+        label: 'Телевизор', 
+        id: 'TV', 
+        checked: false
+      },
+      {
+        label: 'Шампунь', 
+        id: 'shampoo', 
+        checked: false
+      }
+    ];
+
+    const cards = [
+      {
+        number: 888,
+        luxe: ' Люкс',
+        price: '9 990',
+        count: 5,
+        review: 145,
+        imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
+        hover: 'flexslider_hovering',
+      },
+      {
+        number: 840,
+        luxe: '',
+        price: '9 900',
+        count: 4,
+        review: 65,
+        imgs: ['image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg'],
+      },
+      {
+        number: 980,
+        luxe: ' Люкс',
+        price: '8 500',
+        count: 3,
+        review: 35,
+        imgs: ['image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg'],
+      },
+      {
+        number: 856,
+        luxe: '',
+        price: '7 300',
+        count: 5,
+        review: 19,
+        imgs: ['image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg'],
+      },
+      {
+        number: 740,
+        luxe: '',
+        price: '6 000',
+        count: 4,
+        review: 44,
+        imgs: ['image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg'],
+      },
+      {
+        number: 982,
+        luxe: '',
+        price: '5 800',
+        count: 3,
+        review: 56,
+        imgs: ['image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg'],
+      },
+      {
+        number: 678,
+        luxe: '',
+        price: '5 500',
+        count: 5,
+        review: 45,
+        imgs: ['image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg'],
+      },
+      {
+        number: 450,
+        luxe: '',
+        price: '5 300',
+        count: 4,
+        review: 39,
+        imgs: ['image8.jpg', 'image9.jpg', 'image10.jpg', 'image11.jpg'],
+      },
+      {
+        number: 350,
+        luxe: '',
+        price: '5 000',
+        count: 3,
+        review: 77,
+        imgs: ['image9.jpg', 'image10.jpg', 'image11.jpg', 'image12.jpg'],
+      },
+      {
+        number: 666,
+        luxe: '',
+        price: '5 000',
+        count: 5,
+        review: 25,
+        imgs: ['image10.jpg', 'image11.jpg', 'image12.jpg', 'image1.jpg'],
+      },
+      {
+        number: 444,
+        luxe: '',
+        price: '5 000',
+        count: 3,
+        review: 15,
+        imgs: ['image11.jpg', 'image12.jpg', 'image1.jpg', 'image2.jpg'],
+      },
+      {
+        number: 352,
+        luxe: '',
+        price: '5 000',
+        count: 3,
+        review: 55,
+        imgs: ['image12.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg'],
+      },
+    ];
+
   +header({})
   main.page-main.page-main_displayed
     form.page-main__filters
       .page-main__filter-block1
         +input-dropdown({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', inputClassName: 'input__input_cursory', id: 'date', datepicker: 'js-datepick5' })
       .page-main__filter-block2
-        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'гости', value: '3 гостя, 1 младенец', inputClassName: 'input__input_cursory', id: 'guest', option: [{ text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 1 }], textLeft: 'очистить', textRight: 'применить' })
+        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'гости', value: '3 гостя, 1 младенец', inputClassName: 'input__input_cursory', id: 'guest', option: guests, textLeft: 'очистить', textRight: 'применить' })
       .page-main__filter-block3
         +slide({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере' })
       .page-main__filter-block4
         h3.font-h3.page-main__text-filter правила дома
-        +checkbox({ listClassName: 'checkbox__list_margin_common', checkboxs: [{ label: 'Можно курить', id: 'smoke', checked: false }, { label: 'Можно с питомцами', id: 'pets', checked: true }, { label: 'Можно пригласить гостей (до 10 человек)', id: 'guests', checked: true }] })
+        +checkbox({ listClassName: 'checkbox__list_margin_common', checkboxs: rules })
       .page-main__filter-block5
         h3.font-h3.page-main__text-filter доступность
-        +checkbox({ color: 'checkbox__label_colored1', listClassName: 'checkbox__list_margin_common', checkboxs: [{ label: 'Широкий коридор', id: 'hallway', checked: false, text: 'Ширина коридоров в номере не менее 91 см.', width: 'checkbox__item_wide1' }, { label: 'Помощник для инвалидов', id: 'invalid', checked: false, text: 'На 1 этаже вас встретит специалист и проводит до номера.', width: 'checkbox__item_wide2' }] })
+        +checkbox({ color: 'checkbox__label_colored1', listClassName: 'checkbox__list_margin_common', checkboxs: available })
       .page-main__filter-block6
-        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'input__input_cursory', id: 'rooms', option: [{ text: 'спальни', number: 2 }, { text: 'кровати', number: 2 }, { text: 'ванные комнаты', number: 0, opacity: 'input__btn_opaque' }] })
+        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'input__input_cursory', id: 'rooms', option: numbers })
       .page-main__filter-block7
-        +checkbox-list({ text: 'дополнительные удобства', unreflected: 'checkbox__list_unreflected', checkboxs: [{ label: 'Завтрак', id: 'breakfast', checked: false }, { label: 'Письменный стол', id: 'desk', checked: true }, { label: 'Стул для кормления', id: 'chair', checked: true }, { label: 'Кроватка', id: 'Crib', checked: true }, { label: 'Телевизор', id: 'TV', checked: false }, { label: 'Шампунь', id: 'shampoo', checked: false }] })
+        +checkbox-list({ text: 'дополнительные удобства', unreflected: 'checkbox__list_unreflected', checkboxs: conveniences })
     section.page-main__rooms
       h1.font-h1.page-main__title Номера, которые мы для вас подобрали
-      +card-photo({ display: 'card-photo__list_displayed', margin: 'card-photo__item_margin_common2', padding: 'card-photo__symbol_padding_left', photos: [{ number: 888, luxe: ' Люкс', price: '9 990', count: 5, review: 145, imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'], hover: 'flexslider_hovering' }, { number: 840, luxe: '', price: '9 900', count: 4, review: 65, imgs: ['image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg'] }, { number: 980, luxe: ' Люкс', price: '8 500', count: 3, review: 35, imgs: ['image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg'] }, { number: 856, luxe: '', price: '7 300', count: 5, review: 19, imgs: ['image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg'] }, { number: 740, luxe: '', price: '6 000', count: 4, review: 44, imgs: ['image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg'] }, { number: 982, luxe: '', price: '5 800', count: 3, review: 56, imgs: ['image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg'] }, { number: 678, luxe: '', price: '5 500', count: 5, review: 45, imgs: ['image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg'] }, { number: 450, luxe: '', price: '5 300', count: 4, review: 39, imgs: ['image8.jpg', 'image9.jpg', 'image10.jpg', 'image11.jpg'] }, { number: 350, luxe: '', price: '5 000', count: 3, review: 77, imgs: ['image9.jpg', 'image10.jpg', 'image11.jpg', 'image12.jpg'] }, { number: 666, luxe: '', price: '5 000', count: 5, review: 25, imgs: ['image10.jpg', 'image11.jpg', 'image12.jpg', 'image1.jpg'] }, { number: 444, luxe: '', price: '5 000', count: 3, review: 15, imgs: ['image11.jpg', 'image12.jpg', 'image1.jpg', 'image2.jpg'] }, { number: 352, luxe: '', price: '5 000', count: 3, review: 55, imgs: ['image12.jpg', 'image1.jpg', 'image2.jpg', 'image3.jpg'] }] })
+      +card-photo({ display: 'card-photo__list_displayed', margin: 'card-photo__item_margin_common2', padding: 'card-photo__symbol_padding_left', photos: cards })
       .page-main__pagination
         include ../../blocks/pagination/pagination
   +footer({ border: 'page-footer_bordered' })

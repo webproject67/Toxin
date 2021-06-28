@@ -1,7 +1,24 @@
 include ../input-dropdown/input-dropdown
 
 mixin form-room(options)
-  - const { textItem, transformed = '', padding = '', marginInputs = '', marginAmount = '', display = '', marginIcon = '', width = '' } = options;
+  - 
+    const { textItem, transformed = '', padding = '', marginInputs = '', marginAmount = '', display = '', marginIcon = '', width = '' } = options;
+
+    const guests = [
+      {
+        text: 'взрослые', 
+        number: 2
+      }, 
+      {
+        text: 'дети', 
+        number: 1
+      }, 
+      {
+        text: 'младенцы', 
+        number: 0, 
+        opacity: 'input__btn_opaque'
+      }
+    ];
 
   form.form.js-form
     .form__block-price
@@ -14,7 +31,7 @@ mixin form-room(options)
       +input-dropdown({ value: '19.08.2019', id: 'date3', inputClassName: 'input__input_width_maximum', text: 'прибытие', datepicker: 'js-datepick3' })
       +input-dropdown({ value: '23.08.2019', id: 'date4', inputClassName: 'input__input_width_maximum', text: 'выезд' })
     .form__guests 
-      +input-dropdown({ dropdown: 'js-input-dropdown', value: '3 гостя', inputClassName: 'input__input_cursory', id: 'guest2', option: [{ text: 'взрослые', number: 2 }, { text: 'дети', number: 1 }, { text: 'младенцы', number: 0, opacity: 'input__btn_opaque' }], textLeft: 'очистить', textRight: 'применить', text: 'гости' })
+      +input-dropdown({ dropdown: 'js-input-dropdown', value: '3 гостя', inputClassName: 'input__input_cursory', id: 'guest2', option: guests, textLeft: 'очистить', textRight: 'применить', text: 'гости' })
     .form__block-prices 
       ul.form__list 
         li.form__item 

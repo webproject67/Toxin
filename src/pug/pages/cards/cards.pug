@@ -7,6 +7,27 @@ include ../../blocks/form-sign-in/form-sign-in
 include ../../blocks/card-photo/card-photo
 
 block body
+  -
+    const cards = [
+      {
+        number: 888,
+        luxe: ' Люкс',
+        price: '9 990',
+        count: 5,
+        review: 145,
+        imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
+        hover: 'flexslider_hovering' 
+      },
+      {
+        number: 840,
+        luxe: '',
+        price: '9 900',
+        count: 4,
+        review: 65,
+        imgs: ['image2.jpg', 'image1.jpg', 'image4.jpg', 'image3.jpg']
+      }
+    ];
+
   +logo
   .cards
     .cards__block1
@@ -20,4 +41,4 @@ block body
     .cards__block5
       +form-sign-in
     .cards__block6
-      +card-photo({ margin: 'card-photo__item_margin_bottom1', photos: [{ number: 888, luxe: ' Люкс', price: '9 990', count: 5, review: 145, imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'], hover: 'flexslider_hovering' }, { number: 840, luxe: '', price: '9 900', count: 4, review: 65, imgs: ['image2.jpg', 'image1.jpg', 'image4.jpg', 'image3.jpg'] }] })
+      +card-photo({ margin: 'card-photo__item_margin_bottom1', photos: cards })
