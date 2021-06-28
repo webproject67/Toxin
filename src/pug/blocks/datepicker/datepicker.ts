@@ -187,7 +187,6 @@ $('.js-datepick5').each(function () {
   const handleDateClick = () => $('.js-datepick5').toggle();
   $(this).siblings('#date').on('click', handleDateClick);
   $(this).find('.datepicker').width(264);
-  $(this).find('.datepicker--content').css('padding', '0');
 });
 
 const handleDocumentClick = function (evt: any) {
