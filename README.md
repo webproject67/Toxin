@@ -1,10 +1,10 @@
 # Toxin
-## Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды».
+Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды».
 
 ## Резиновая верстка
 
 ## Demo
-### https://webproject67.github.io/Toxin/
+[online](https://webproject67.github.io/Toxin/)
 
 ## Используемые библиотеки
 - [jquery datepicker](https://github.com/t1m0n/air-datepicker)
@@ -15,10 +15,10 @@
 - [jquery carousel](https://github.com/vshovkovych/carousel)
 
 ## Команды запуска
-### npm i - установка
-### npm run test - тест
-### npm run build - компиляция
-### npm run start - запуск
+- npm i - установка
+- npm run test - тест
+- npm run build - компиляция
+- npm run start - запуск
 
 ## Структура папок и файлов:
 - **docs/..** - Директория с подготовленными на production файлами

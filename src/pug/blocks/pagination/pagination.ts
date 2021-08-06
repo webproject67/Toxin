@@ -1,5 +1,5 @@
 interface JQuery {
-  pagination({}): JQuery;
+  pagination: Function;
 }
 
 const $pagination = $('.js-pagination__nav');

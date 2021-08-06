@@ -1,5 +1,5 @@
 interface JQuery {
-  flexslider({}): JQuery;
+  flexslider: Function;
 }
 
 const $flexslider = $('.js-flexslider');

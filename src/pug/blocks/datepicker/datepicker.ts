@@ -1,5 +1,5 @@
 interface JQuery {
-  datepicker({}): JQuery;
+  datepicker(arg0: Object): JQuery;
 }
 
 const getOptionsDatepicker = (input: JQuery<HTMLElement>) => {
@@ -28,7 +28,7 @@ $('.js-datepick1').each(function () {
     .selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
   $(this)
     .find(
-      '.datepicker--cell-day[data-year="2019"][data-month="7"][data-date="8"]',
+      '.datepicker--cell-day[data-year="2019"][data-month="7"][data-date="8"]'
     )
     .addClass('-current-');
 
@@ -189,12 +189,13 @@ $('.js-datepick5').each(function () {
   $(this).find('.datepicker').width(264);
 });
 
-const handleDocumentClick = function (evt: any) {
-  const clickOnAClass = () => $(evt.target).closest('.js-datepicker').length
-    || $(evt.target).closest('.input__input').length
-    || $(evt.target).closest('.datepicker--cell').length
-    || $(evt.target).closest('.datepicker--nav-title').length
-    || $(evt.target).closest('.datepicker--nav-action').length;
+const handleDocumentClick = function (evt: Event) {
+  const clickOnAClass = () =>
+    $(evt.target!).closest('.js-datepicker').length ||
+    $(evt.target!).closest('.input__input').length ||
+    $(evt.target!).closest('.datepicker--cell').length ||
+    $(evt.target!).closest('.datepicker--nav-title').length ||
+    $(evt.target!).closest('.datepicker--nav-action').length;
 
   if (clickOnAClass()) return;
   $('.js-datepick1').hide();
