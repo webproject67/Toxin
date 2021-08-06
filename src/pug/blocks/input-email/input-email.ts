@@ -1,6 +1,6 @@
 import { getBoolEmail } from '../../../scripts/utils';
 
-const handleFormSubmit = (evt: JQuery.SubmitEvent<HTMLElement>) => {
+const handleFormSubmit = (evt: Event) => {
   evt.preventDefault();
   const $input = $('#email');
   const $value = String($input.val());

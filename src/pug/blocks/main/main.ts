@@ -1,5 +1,5 @@
 interface JQuery {
-  rbtSlider({}): JQuery;
+  rbtSlider: Function;
 }
 
 const $body = $('body');
@@ -8,7 +8,7 @@ const $slider = $('.js-slider');
 const setHeightMain = (
   main: JQuery<HTMLElement>,
   heightDesktop: number,
-  heightMobile: number,
+  heightMobile: number
 ) => {
   let height: number;
 
@@ -24,7 +24,7 @@ const setHeightMain = (
 const setupOptions = (
   main: JQuery<HTMLElement>,
   heightDesktop: number,
-  heightMobile: number,
+  heightMobile: number
 ) => {
   main.rbtSlider({
     auto: 5,

@@ -1,4 +1,4 @@
-const handleFormSubmit = (evt: JQuery.SubmitEvent<HTMLElement>) => evt.preventDefault();
+const handleFormSubmit = (evt: Event) => evt.preventDefault();
 const $form = $('.js-form');
 $form.on('submit', handleFormSubmit);
 

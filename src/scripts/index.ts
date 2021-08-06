@@ -1,6 +1,4 @@
 import '../styles/style.scss';
-
-import $ from 'jquery';
 import '../pug/blocks/input-dropdown/input-dropdown';
 import '../pug/blocks/input/input-birthdate';
 import '../pug/blocks/datepicker/datepicker-library';

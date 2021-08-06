@@ -1,5 +1,5 @@
 interface JQuery {
-  addRating({}): JQuery;
+  addRating: Function;
 }
 
 const $buttonRate = $('.js-button-rate');
