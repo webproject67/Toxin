@@ -1,9 +1,8 @@
 include ../input-dropdown/input-dropdown
 
 mixin form-room(options)
+  - const { textItem, transformed = '', padding = '', marginInputs = '', marginAmount = '', display = '', marginIcon = '', width = '' } = options;
   -
-    const { textItem, transformed = '', padding = '', marginInputs = '', marginAmount = '', display = '', marginIcon = '', width = '' } = options;
-
     const guests = [
       {
         text: 'взрослые', 

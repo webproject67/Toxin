@@ -1,23 +1,21 @@
 extends ../../layouts/layout
 
 block body
+  -
+    const links = [
+    { href: 'colors-type.html', text: 'Colors & Type' }, 
+    { href: 'form-elements.html', text: 'Form elements' }, 
+    { href: 'cards.html', text: 'Cards' }, 
+    { href: 'headers-footers.html', text: 'Headers & Footers' }, 
+    { href: 'landing-page.html', text: 'Landing page' }, 
+    { href: 'registration.html', text: 'Registration' }, 
+    { href: 'sign-in.html', text: 'Sign in' }, 
+    { href: 'search-room.html', text: 'Search room' }, 
+    { href: 'room-details.html', text: 'Room details' }
+    ]; 
+
   h1.visually-hidden Список сайтов
   ul 
-    li
-      a(href="colors-type.html") Colors & Type
-    li
-      a(href="form-elements.html") Form elements
-    li
-      a(href="cards.html") Cards
-    li
-      a(href="headers-footers.html") Headers & Footers
-    li 
-      a(href="landing-page.html") Landing page
-    li 
-      a(href="registration.html") Registration
-    li 
-      a(href="sign-in.html") Sign in
-    li 
-      a(href="search-room.html") Search room
-    li
-      a(href="room-details.html") Room details
+    each val in links
+      li
+        a(href=val.href)= val.text

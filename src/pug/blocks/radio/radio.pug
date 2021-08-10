@@ -1,15 +1,17 @@
+-
+  const genders = [
+  { id: 'man', gender: 'Мужчина', checked: 'checked' }, 
+  { id: 'woman', gender: 'Женщина' }
+  ];
+
 .radio
   ul.radio__list 
-    li.radio__item 
-      input#man.radio__radio.visually-hidden_focusable(
-        type="radio",
-        name="man-woman",
-        checked
-      )
-      label.radio__label(for="man") Мужчина
-    li.radio__item
-      input#woman.radio__radio.visually-hidden_focusable(
-        type="radio",
-        name="man-woman"
-      ) 
-      label.radio__label(for="woman") Женщина
+    each val in genders
+      li.radio__item 
+        input.radio__radio.visually-hidden_focusable(
+          id=val.id,
+          type="radio",
+          name="man-woman",
+          checked=val.checked
+        )
+        label.radio__label(for=val.id)= val.gender

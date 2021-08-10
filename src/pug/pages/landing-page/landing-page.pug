@@ -11,13 +11,9 @@ block body
         .page-main__form
           +form-search
         p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-        .slItem.page-main_background3(
-          style="background-position: center bottom"
-        )
-        .slItem.page-main_background1(
-          style="background-position: center bottom"
-        )
-        .slItem.page-main_background2(
-          style="background-position: center bottom"
-        )
+        each val in [3, 1, 2]
+          div(
+            class=`slItem page-main_background${val}`,
+            style="background-position: center bottom"
+          )
   +footer({})

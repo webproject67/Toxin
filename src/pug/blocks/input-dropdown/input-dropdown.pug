@@ -6,21 +6,13 @@ mixin input-dropdown(options)
       .input__texts
         h3.font-h3.input__text= text
         p.font-h3.input__text.input__text_colored= text2
-    input(
-      class=`input__input ${inputClassName}`,
-      id=id,
-      type="text",
-      value=value,
-      readonly
-    )
+    input(class=`input__input ${inputClassName}`, id=id, type="text", value=value, readonly)
     label.input__label(for=id) 
       span.font-icon.input__icon expand_more
     div(class=`${datepicker}`)
     if option
       div(class=`input__select-options ${display}`)
         each val in option
-          -
-
           .input__select-option
             h3.font-h3.input__option= val.text
             .input__btns 

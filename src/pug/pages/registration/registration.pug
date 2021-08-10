@@ -10,8 +10,9 @@ block body
       .slItems
         .page-main__form.page-main__form_margin_common1
           +form-registration({ textSubmit: 'зарегистрироваться' })
-        .slItem.page-main_background4(style="background-position: center 79%")
-        .slItem.page-main_background3(style="background-position: center 79%")
-        .slItem.page-main_background1(style="background-position: center 79%")
-        .slItem.page-main_background2(style="background-position: center 79%")
+        each val in [4, 3, 1, 2]
+          div(
+            class=`slItem page-main_background${val}`,
+            style="background-position: center 79%"
+          )
   +footer({})

@@ -1,9 +1,13 @@
+-
+  const img = [
+  '../../blocks/gallery/img/image13.jpg', 
+  '../../blocks/gallery/img/image14.jpg', 
+  '../../blocks/gallery/img/image15.jpg'
+  ];
+
 .gallery
   h2.visually-hidden Галерея
   ul.gallery__list
-    li.gallery__item 
-      img.gallery__img(src="../../blocks/gallery/img/image13.jpg", alt="room")
-    li.gallery__item 
-      img.gallery__img(src="../../blocks/gallery/img/image14.jpg", alt="room")
-    li.gallery__item 
-      img.gallery__img(src="../../blocks/gallery/img/image15.jpg", alt="room")
+    each val in img
+      li.gallery__item 
+        img.gallery__img(src=val, alt="room")
