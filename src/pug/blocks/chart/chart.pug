@@ -1,58 +1,41 @@
+-
+  const gradients = [
+  { min: '#FFE39C', max: '#FFBA9C' }, 
+  { min: '#BC9CFF', max: '#8BA4F9' }, 
+  { min: '#6FCF97', max: '#66D2EA' }
+  ];
+
+-
+  const circles = [
+  { fill: '#fff' }, 
+  { fill: 'transparent', stroke: '#ffffff', strokeWidth: '1' }, 
+  { fill: 'transparent', stroke: 'url(#Gradient1)', strokeWidth: '1', strokeDasharray: '49 51', strokeDashoffset: '74.5' }, 
+  { fill: 'transparent', stroke: 'url(#Gradient2)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '124.5' }, 
+  { fill: 'transparent', stroke: 'url(#Gradient3)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '199.5' }
+  ];
+
+- const estimation = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'];
+
 .chart 
   svg.chart__svg(width="155px", height="155px", viewBox="0 0 42 42")
     defs
-      linearGradient#Gradient1
-        stop(offset="0%", stop-color="#FFE39C")
-        stop(offset="100%", stop-color="#FFBA9C")
-      linearGradient#Gradient2
-        stop(offset="0%", stop-color="#BC9CFF")
-        stop(offset="100%", stop-color="#8BA4F9")
-      linearGradient#Gradient3
-        stop(offset="0%", stop-color="#6FCF97")
-        stop(offset="100%", stop-color="#66D2EA")
-    circle(cx="21", cy="21", r="15.91549430918954", fill="#fff")
-    circle(
-      cx="21",
-      cy="21",
-      r="15.91549430918954",
-      fill="transparent",
-      stroke="#ffffff",
-      stroke-width="1"
-    )
-    circle(
-      cx="21",
-      cy="21",
-      r="15.91549430918954",
-      fill="transparent",
-      stroke="url(#Gradient1)",
-      stroke-width="1",
-      stroke-dasharray="49 51",
-      stroke-dashoffset="74.5"
-    )
-    circle(
-      cx="21",
-      cy="21",
-      r="15.91549430918954",
-      fill="transparent",
-      stroke="url(#Gradient2)",
-      stroke-width="1",
-      stroke-dasharray="24 76",
-      stroke-dashoffset="124.5"
-    )
-    circle(
-      cx="21",
-      cy="21",
-      r="15.91549430918954",
-      fill="transparent",
-      stroke="url(#Gradient3)",
-      stroke-width="1",
-      stroke-dasharray="24 76",
-      stroke-dashoffset="199.5"
-    )
+      each val, index in gradients
+        linearGradient(id='Gradient' + (index + 1))
+          stop(offset="0%", stop-color=val.min)
+          stop(offset="100%", stop-color=val.max)
+    each val in circles
+      circle(
+        cx="21",
+        cy="21",
+        r="15.91549430918954",
+        fill=val.fill,
+        stroke=val.stroke,
+        stroke-width=val.strokeWidth,
+        stroke-dasharray=val.strokeDasharray,
+        stroke-dashoffset=val.strokeDashoffset
+      )
   p.font-h1.chart__number 260
   p.font-h3.chart__text голосов
   ul.chart__list
-    li.chart__item Великолепно
-    li.chart__item Хорошо
-    li.chart__item Удовлетворительно
-    li.chart__item Разочарован
+    each val in estimation
+      li.chart__item= val

@@ -1,5 +1,7 @@
 mixin nav-link(options)
   - const { hover = '' } = options;
+  - const links1 = ['О сервисе', 'Инвесторы', 'Сообщества'];
+  - const links2 = ['Служба поддержки', 'Наша команда', 'Связь с нами'];
 
   .nav-link
     ul.nav-link__list
@@ -9,12 +11,9 @@ mixin nav-link(options)
         a.nav-link__link Услуги
         span.font-icon.nav-link__icon expand_more
         ul.nav-link__options 
-          li.nav-link__option
-            a.nav-link__link О сервисе
-          li.nav-link__option
-            a.nav-link__link Инвесторы
-          li.nav-link__option
-            a.nav-link__link Сообщества
+          each val in links1
+            li.nav-link__option
+              a.nav-link__link= val
       li.nav-link__item
         a.nav-link__link Вакансии
       li.nav-link__item
@@ -23,9 +22,6 @@ mixin nav-link(options)
         a.nav-link__link Соглашения
         span.font-icon.nav-link__icon expand_more
         ul.nav-link__options 
-          li.nav-link__option
-            a.nav-link__link Служба поддержки
-          li.nav-link__option
-            a.nav-link__link Наша команда
-          li.nav-link__option
-            a.nav-link__link Связь с нами
+          each val in links2
+            li.nav-link__option
+              a.nav-link__link= val

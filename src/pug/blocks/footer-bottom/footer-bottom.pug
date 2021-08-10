@@ -1,36 +1,20 @@
 mixin footer-bottom(options)
   - const { display = '', margin = '' } = options;
+  -
+    const links = [
+      { href: 'https://twitter.com/?lang=ru', src: '../../blocks/footer-bottom/img/svg/twitter.svg' }, 
+      { href: 'https://ru-ru.facebook.com/', src: '../../blocks/footer-bottom/img/svg/facebook.svg' }, 
+      { href: 'https://www.instagram.com/?hl=ru', src: '../../blocks/footer-bottom/img/svg/instagram.svg' }
+    ];
 
   div(class=`page-footer__bottom ${display}`) 
     p.page-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
     ul(class=`page-footer__socials ${margin}`) 
-      li.page-footer__social 
-        a.page-footer__link-social(
-          href="https://twitter.com/?lang=ru",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-          img.page-footer__img(
-            src="../../blocks/footer-bottom/img/svg/twitter.svg",
-            alt="logo"
+      each val in links
+        li.page-footer__social 
+          a.page-footer__link-social(
+            href=val.href,
+            target="_blank",
+            rel="noopener noreferrer"
           )
-      li.page-footer__social
-        a.page-footer__link-social(
-          href="https://ru-ru.facebook.com/",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-          img.page-footer__img(
-            src="../../blocks/footer-bottom/img/svg/facebook.svg",
-            alt="logo"
-          )
-      li.page-footer__social
-        a.page-footer__link-social(
-          href="https://www.instagram.com/?hl=ru",
-          target="_blank",
-          rel="noopener noreferrer"
-        )
-          img.page-footer__img(
-            src="../../blocks/footer-bottom/img/svg/instagram.svg",
-            alt="logo"
-          )
+            img.page-footer__img(src=val.src, alt="logo")
