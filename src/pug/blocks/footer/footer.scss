@@ -53,6 +53,10 @@
   margin-top: 21px;
   line-height: 17px;
   color: $color-50;
+}
+
+.page-footer__link {
+  cursor: pointer;
   transition: all 0.4s ease;
 
   &:hover {

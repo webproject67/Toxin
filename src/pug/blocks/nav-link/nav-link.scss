@@ -19,12 +19,8 @@
 }
 
 .nav-link__link {
+  cursor: pointer;
   transition: all 0.4s ease;
-
-  &:hover,
-  &:hover + .nav-link__icon {
-    text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
-  }
 }
 
 .nav-link__icon {

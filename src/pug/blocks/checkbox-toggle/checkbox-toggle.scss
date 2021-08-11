@@ -5,6 +5,7 @@
 .checkbox-toggle__label {
   position: relative;
   padding-left: 49px;
+  cursor: pointer;
 
   &::before,
   &::after {

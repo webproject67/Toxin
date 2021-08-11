@@ -22,11 +22,11 @@ mixin card-photo(options)
           .card-photo__details
             .card-photo__block-price
               p.card-photo__symbol №
-                span.card-photo__symbol_size_large= val.number
+                span.card-photo__symbol_size_large= ` ${val.number}`
                   span(class=`font-h3 card-photo__symbol_colored ${padding}`)= val.luxe
               p.card-photo__number= `${val.price}₽ `
                 span.card-photo__number_size_small в сутки
             .card-photo__block-estimations
               +button-rate({ count: val.count })
-              p.card-photo__text-review= val.review
+              p.card-photo__text-review= `${val.review} `
                 span.card-photo__text-review_weight_normal Отзывов
