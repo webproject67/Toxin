@@ -15,8 +15,10 @@
   margin: 0;
   padding-left: 21px;
   color: $color-50;
+  text-decoration: none;
   line-height: 30px;
   border-left: 1px solid rgba(31, 32, 65, 0.1);
+  cursor: pointer;
 }
 
 @media (max-width: $desktop-width) {

@@ -23,7 +23,7 @@ mixin footer(options)
           ul.page-footer__list 
             each link in val.links
               li.page-footer__item 
-                a.page-footer__link= link
+                a.page-footer__link(href='/mock-address')= link
       .page-footer__block-subscription
         h3.font-h3.page-footer__links Подписка
         p.page-footer__text.page-footer__text_margin_common Получайте специальные предложения и новости сервиса

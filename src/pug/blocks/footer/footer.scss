@@ -52,10 +52,11 @@
 .page-footer__item {
   margin-top: 21px;
   line-height: 17px;
-  color: $color-50;
 }
 
 .page-footer__link {
+  color: $color-50;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.4s ease;
 
