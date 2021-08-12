@@ -31,7 +31,7 @@ block body
         image: 'image16', 
         buttonText: 'favorite', 
         buttonNumber: 12,
-        active: 'button-like__button_active',
+        active: true,
         name: 'Мурад Сарафанов', 
         date: '5 дней назад',
         reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
@@ -40,7 +40,6 @@ block body
         image: 'image17', 
         buttonText: 'favorite_border', 
         buttonNumber: 2,
-        active: 'button-like__button',
         name: 'Патрисия Стёклышкова', 
         date: 'Неделю назад',
         reviewText: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
@@ -63,7 +62,7 @@ block body
         .page-main__reviews
           h2.font-h2.page-main__subtitle.page-main__subtitle_margin_top1 Отзывы посетителей номера
             span.page-main__subtitle_colored 2 отзыва
-          +reviews({ marginList: 'reviews__list_margin_top', marginItem: 'reviews__item_margin_top', reviews: reviews })
+          +reviews({ marginList: true, marginItem: true, reviews: reviews })
         .page-main__conditions
           .page-main__condition
             h2.font-h2.page-main__subtitle.page-main__subtitle_margin_top2.page-main__subtitle_padding_left Правила
@@ -72,5 +71,5 @@ block body
             h2.font-h2.page-main__subtitle.page-main__subtitle_margin_top2 Отмена
             p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       section.page-main__form.page-main__form_margin_common3
-        +form-room({ textItem: 'Сбор за доп. услуги', padding: 'form__symbol_padding_left', marginInputs: 'form__inputs_margin_top', marginAmount: 'form__amount_margin_top', display: 'form__text-price_justify_contented', marginIcon: 'form__icon-price_margin_left', width: 'form__number-price_narrow' })
-  +footer({ border: 'page-footer_bordered' })
+        +form-room({ textItem: 'Сбор за доп. услуги', padding: true, marginInputs: true, marginAmount: true, display: true, marginIcon: true, width: true })
+  +footer({ border: true })

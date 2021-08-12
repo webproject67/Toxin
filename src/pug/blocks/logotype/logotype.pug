@@ -1,10 +1,11 @@
 mixin logotype(options)
-  - const { displayed = '' } = options;
+  - const { displayed } = options;
+  - const classNameDisplayed = displayed ? 'logotype__img_displayed' : '';
 
   .logotype
     a.logotype__link(href="index.html", title="На главную") главная страница
       img(
-        class=`logotype__img ${displayed}`,
+        class=`logotype__img ${classNameDisplayed}`,
         src="../../blocks/logo/img/svg/Logotype.svg",
         alt="logo"
       ) 
