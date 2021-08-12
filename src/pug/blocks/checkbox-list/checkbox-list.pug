@@ -1,9 +1,10 @@
 mixin checkbox-list(options)
-  - const { text, unreflected, transform = '', checkboxs } = options;
+  - const { text, unreflected, transform, checkboxs } = options;
+  - const classNameTransform = transform ? 'checkbox-list__icon_transformed' : '';
 
   .checkbox-list
     .checkbox-list__btn.js-checkbox-list__btn
       input.font-h3.checkbox-list__button(type="button", value=text)
       label.checkbox-list__label 
-        span(class=`font-icon checkbox-list__icon ${transform}`) expand_more
+        span(class=`font-icon checkbox-list__icon ${classNameTransform}`) expand_more
     +checkbox({ listClassName: unreflected, checkboxs: checkboxs })

@@ -1,7 +1,14 @@
 include ../input-dropdown/input-dropdown
 
 mixin form-room(options)
-  - const { textItem, transformed = '', padding = '', marginInputs = '', marginAmount = '', display = '', marginIcon = '', width = '' } = options;
+  - const { textItem, transformed, padding, marginInputs, marginAmount, display, marginIcon, width } = options;
+  - const classNameTransform = transformed ? 'form__total-number_transformed' : '';
+  - const classNamePadding = padding ? 'form__symbol_padding_left' : '';
+  - const classNameMarginInputs = marginInputs ? 'form__inputs_margin_top' : '';
+  - const classNameMarginAmount = marginAmount ? 'form__amount_margin_top' : '';
+  - const classNameDisplay = display ? 'form__text-price_justify_contented' : '';
+  - const classNameMarginIcon = marginIcon ? 'form__icon-price_margin_left' : '';
+  - const classNameWidth = width ? 'form__number-price_narrow' : '';
   -
     const guests = [
       {
@@ -15,38 +22,38 @@ mixin form-room(options)
       {
         text: 'младенцы', 
         number: 0, 
-        opacity: 'input__btn_opaque'
+        opacity: true
       }
     ];
 
-  form.form.js-form
+  form.form.js-form.js-form-mock-address
     .form__block-price
       p.form__symbol №
         span.form__symbol_size_large= ' 888'
-          span(class=`font-h3 form__symbol_colored ${padding}`) Люкс
+          span(class=`font-h3 form__symbol_colored ${classNamePadding}`) Люкс
       p.form__number 9 990₽
         span.form__number_size_small= ' в сутки'
-    div(class=`form__inputs ${marginInputs}`) 
-      +input-dropdown({ value: '19.08.2019', id: 'date3', inputClassName: 'input__input_width_maximum', text: 'прибытие', datepicker: 'js-datepick3' })
-      +input-dropdown({ value: '23.08.2019', id: 'date4', inputClassName: 'input__input_width_maximum', text: 'выезд' })
+    div(class=`form__inputs ${classNameMarginInputs}`) 
+      +input-dropdown({ value: '19.08.2019', id: 'date3', inputClassName: 'width', text: 'прибытие', datepicker: 'datepicker3' })
+      +input-dropdown({ value: '23.08.2019', id: 'date4', inputClassName: 'width', text: 'выезд' })
     .form__guests 
-      +input-dropdown({ dropdown: 'js-input-dropdown', value: '3 гостя', inputClassName: 'input__input_cursory', id: 'guest2', option: guests, textLeft: 'очистить', textRight: 'применить', text: 'гости' })
+      +input-dropdown({ dropdown: true, value: '3 гостя', inputClassName: 'cursor', id: 'guest2', option: guests, textLeft: 'очистить', textRight: 'применить', text: 'гости' })
     .form__block-prices 
       ul.form__list 
         li.form__item 
-          p(class=`form__text-price ${display}`) 9 990₽ х 4 суток
-          p(class=`form__number-price ${width}`) 39 960₽
+          p(class=`form__text-price ${classNameDisplay}`) 9 990₽ х 4 суток
+          p(class=`form__number-price ${classNameWidth}`) 39 960₽
         li.form__item 
-          p(class=`form__text-price ${display}`) Сбор за услуги: скидка 2 179₽
-            span(class=`form__icon-price ${marginIcon}`) i
-          p(class=`form__number-price ${width}`) 0₽
+          p(class=`form__text-price ${classNameDisplay}`) Сбор за услуги: скидка 2 179₽
+            span(class=`form__icon-price ${classNameMarginIcon}`) i
+          p(class=`form__number-price ${classNameWidth}`) 0₽
         li.form__item 
-          p(class=`form__text-price ${display}`)= textItem
-            span(class=`form__icon-price ${marginIcon}`) i
-          p(class=`form__number-price ${width}`) 300₽
-    div(class=`form__amount ${marginAmount}`) 
+          p(class=`form__text-price ${classNameDisplay}`)= textItem
+            span(class=`form__icon-price ${classNameMarginIcon}`) i
+          p(class=`form__number-price ${classNameWidth}`) 300₽
+    div(class=`form__amount ${classNameMarginAmount}`) 
       p.form__total Итого
       p.form__ellipsis
-      p(class=`form__total-number ${transformed}`) 38 081₽
+      p(class=`form__total-number ${classNameTransform}`) 38 081₽
     .form__submit_margin_top1
       +button-submit({ text: 'забронировать' })

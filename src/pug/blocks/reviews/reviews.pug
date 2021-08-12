@@ -1,11 +1,13 @@
 include ../button-like/button-like
 
 mixin reviews(options)
-  - const { reviews, marginList = '', marginItem = '' } = options;
+  - const { reviews, marginList, marginItem } = options;
+  - const classNameMarginList = marginList ? 'reviews__list_margin_top' : '';
+  - const classNameMarginItem = marginItem ? 'reviews__item_margin_top' : '';
 
-  ul(class=`reviews__list ${marginList}`)
+  ul(class=`reviews__list ${classNameMarginList}`)
     each val in reviews
-      li(class=`reviews__item ${marginItem}`)
+      li(class=`reviews__item ${classNameMarginItem}`)
         .reviews__block-avatar 
           img.reviews__avatar(
             src=`../../blocks/reviews/img/${val.image}.jpg`,

@@ -1,25 +1,31 @@
 mixin input-dropdown(options)
-  - const { value, id, dropdown = '', inputClassName = '', display = '', datepicker = '', option, textLeft, textRight, text, text2 } = options;
+  - const { value, id, dropdown, inputClassName, display, datepicker, option, textLeft, textRight, text, text2 } = options;
+  - const classNameJs = dropdown ? 'js-input-dropdown' : '';
+  - const classNameDisplay = display ? 'input__select-options_displayed' : '';
+  - const classNameInput = inputClassName === 'cursor' ? 'input__input_cursory' : inputClassName === 'width' ? 'input__input_width_maximum' : inputClassName === 'border' ? 'input__input_cursory input__input_bordered' : '';
+  - const classNameDatepicker = datepicker === 'datepicker2' ? 'js-datepick2' : datepicker === 'datepicker3' ? 'js-datepick3' : datepicker === 'datepicker4' ? 'js-datepick4' : datepicker === 'datepicker5' ? 'js-datepick5' : '';
 
-  div(class=`input ${dropdown}`)
+  div(class=`input ${classNameJs}`)
     if text
       .input__texts
         h3.font-h3.input__text= text
         p.font-h3.input__text.input__text_colored= text2
-    input(class=`input__input ${inputClassName}`, id=id, type="text", value=value, readonly)
+    input(class=`input__input ${classNameInput}`, id=id, type="text", value=value, readonly)
     label.input__label(for=id) 
       span.font-icon.input__icon expand_more
-    div(class=`${datepicker}`)
+    div(class=classNameDatepicker)
     if option
-      div(class=`input__select-options ${display}`)
+      div(class=`input__select-options ${classNameDisplay}`)
         each val in option
+          - const classNameOpacity = val.opacity ? 'input__btn input__btn_opaque' : 'input__btn';
+
           .input__select-option
             h3.font-h3.input__option= val.text
             .input__btns 
-              input(class=`input__btn ${val.opacity}`, type="button", value="-")
+              input(class=classNameOpacity, type="button", value="-")
               h3.font-h3.input__number= val.number
               input.input__btn(type="button", value="+")
         if textRight
           .input__buttons
-            +button-link({ text: textLeft, linkClassName: 'button-link2__link' })
-            +button-link({ text: textRight, linkClassName: 'button-link2__link' })
+            +button-link({ text: textLeft, linkClassName: 'color' })
+            +button-link({ text: textRight, linkClassName: 'color' })

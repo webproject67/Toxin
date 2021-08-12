@@ -11,7 +11,6 @@
   position: relative;
   display: flex;
   margin-right: 1.4vw;
-  color: $color-50;
 
   &_hovering {
     text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
@@ -19,6 +18,8 @@
 }
 
 .nav-link__link {
+  color: $color-50;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.4s ease;
 }

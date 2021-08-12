@@ -48,14 +48,14 @@ block body
         id: 'hallway', 
         checked: false,
         text: 'Ширина коридоров в номере не менее 91 см.',
-        width: 'checkbox__item_wide1'
+        width: 'wide1'
       },
       {
         label: 'Помощник для инвалидов', 
         id: 'invalid', 
         checked: false,
         text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-        width: 'checkbox__item_wide2'
+        width: 'wide2'
       }
     ];
 
@@ -71,7 +71,7 @@ block body
       {
         text: 'ванные комнаты', 
         number: 0, 
-        opacity: 'input__btn_opaque'
+        opacity: true
       }
     ];
 
@@ -116,7 +116,7 @@ block body
         count: 5,
         review: 145,
         imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
-        hover: 'flexslider_hovering',
+        hover: true,
       },
       {
         number: 840,
@@ -212,24 +212,24 @@ block body
   main.page-main.page-main_displayed
     form.page-main__filters
       .page-main__filter-block1
-        +input-dropdown({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', inputClassName: 'input__input_cursory', id: 'date', datepicker: 'js-datepick5' })
+        +input-dropdown({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', inputClassName: 'cursor', id: 'date', datepicker: 'datepicker5' })
       .page-main__filter-block2
-        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'гости', value: '3 гостя, 1 младенец', inputClassName: 'input__input_cursory', id: 'guest', option: guests, textLeft: 'очистить', textRight: 'применить' })
+        +input-dropdown({ dropdown: true, text: 'гости', value: '3 гостя, 1 младенец', inputClassName: 'cursor', id: 'guest', option: guests, textLeft: 'очистить', textRight: 'применить' })
       .page-main__filter-block3
         +slide({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере' })
       .page-main__filter-block4
         h3.font-h3.page-main__text-filter правила дома
-        +checkbox({ listClassName: 'checkbox__list_margin_common', checkboxs: rules })
+        +checkbox({ listClassName: 'common', checkboxs: rules })
       .page-main__filter-block5
         h3.font-h3.page-main__text-filter доступность
-        +checkbox({ color: 'checkbox__label_colored1', listClassName: 'checkbox__list_margin_common', checkboxs: available })
+        +checkbox({ color: 'color', listClassName: 'common', checkboxs: available })
       .page-main__filter-block6
-        +input-dropdown({ dropdown: 'js-input-dropdown', text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'input__input_cursory', id: 'rooms', option: numbers })
+        +input-dropdown({ dropdown: true, text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'cursor', id: 'rooms', option: numbers })
       .page-main__filter-block7
-        +checkbox-list({ text: 'дополнительные удобства', unreflected: 'checkbox__list_unreflected', checkboxs: conveniences })
+        +checkbox-list({ text: 'дополнительные удобства', unreflected: 'unreflected', checkboxs: conveniences })
     section.page-main__rooms
       h1.font-h1.page-main__title Номера, которые мы для вас подобрали
-      +card-photo({ display: 'card-photo__list_displayed', margin: 'card-photo__item_margin_common2', padding: 'card-photo__symbol_padding_left', photos: cards })
+      +card-photo({ display: true, margin: 'common', padding: true, photos: cards })
       .page-main__pagination
         include ../../blocks/pagination/pagination
-  +footer({ border: 'page-footer_bordered' })
+  +footer({ border: true })

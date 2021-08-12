@@ -7,3 +7,9 @@ const handleFormSearchSubmit = () => {
 };
 const $formSearch = $('.js-form-search');
 $formSearch.on('submit', handleFormSearchSubmit);
+
+const handleFormMockSubmit = () => {
+  window.location.href = '/mock-address';
+};
+const $formMock = $('.js-form-mock-address');
+$formMock.on('submit', handleFormMockSubmit);

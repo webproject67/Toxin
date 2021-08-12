@@ -1,27 +1,28 @@
 mixin nav-link(options)
-  - const { hover = '' } = options;
+  - const { hover } = options;
+  - const classNameHover = hover ? 'nav-link__item_hovering' : '';
   - const links1 = ['О сервисе', 'Инвесторы', 'Сообщества'];
   - const links2 = ['Служба поддержки', 'Наша команда', 'Связь с нами'];
 
   .nav-link
     ul.nav-link__list
-      li(class=`nav-link__item ${hover}`)
-        a.nav-link__link О нас
+      li(class=`nav-link__item ${classNameHover}`)
+        a.nav-link__link(href="/mock-address") О нас
       li.nav-link__item.js-nav-link__item
         a.nav-link__link Услуги
         span.font-icon.nav-link__icon expand_more
         ul.nav-link__options 
           each val in links1
             li.nav-link__option
-              a.nav-link__link= val
+              a.nav-link__link(href="/mock-address")= val
       li.nav-link__item
-        a.nav-link__link Вакансии
+        a.nav-link__link(href="/mock-address") Вакансии
       li.nav-link__item
-        a.nav-link__link Новости
+        a.nav-link__link(href="/mock-address") Новости
       li.nav-link__item.js-nav-link__item
         a.nav-link__link Соглашения
         span.font-icon.nav-link__icon expand_more
         ul.nav-link__options 
           each val in links2
             li.nav-link__option
-              a.nav-link__link= val
+              a.nav-link__link(href="/mock-address")= val

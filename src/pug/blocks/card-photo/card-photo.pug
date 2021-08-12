@@ -1,16 +1,19 @@
 include ../button-rate/button-rate
 
 mixin card-photo(options)
-  - const { display = '', margin = '', padding = '', photos } = options;
+  - const { display, margin, padding, photos } = options;
+  - const classNameDisplay = display ? 'card-photo__list_displayed' : '';
+  - const classNamePadding = padding ? 'card-photo__symbol_padding_left' : '';
+  - const classNameMargin = margin === 'bottom' ? 'card-photo__item_margin_bottom1' : margin === 'common' ? 'card-photo__item_margin_common2' : '';
 
   .card-photo
-    ul(class=`card-photo__list ${display}`)
+    ul(class=`card-photo__list ${classNameDisplay}`)
       each val in photos
-        li(class=`card-photo__item ${margin}`)
+        - const classNameHover = val.hover ? 'flexslider js-flexslider flexslider_hovering' : 'flexslider js-flexslider';
+
+        li(class=`card-photo__item ${classNameMargin}`)
           .card-photo__block-img
-            div(
-              class=val.hover ? `flexslider js-flexslider ${val.hover}` : 'flexslider js-flexslider'
-            )
+            div(class=classNameHover)
               ul.slides
                 each img in val.imgs
                   li
@@ -23,7 +26,7 @@ mixin card-photo(options)
             .card-photo__block-price
               p.card-photo__symbol №
                 span.card-photo__symbol_size_large= ` ${val.number}`
-                  span(class=`font-h3 card-photo__symbol_colored ${padding}`)= val.luxe
+                  span(class=`font-h3 card-photo__symbol_colored ${classNamePadding}`)= val.luxe
               p.card-photo__number= `${val.price}₽ `
                 span.card-photo__number_size_small в сутки
             .card-photo__block-estimations
