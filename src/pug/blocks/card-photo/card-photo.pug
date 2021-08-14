@@ -26,7 +26,7 @@ mixin card-photo(options)
             .card-photo__block-price
               p.card-photo__symbol №
                 span.card-photo__symbol_size_large= ` ${val.number}`
-                  span(class=`font-h3 card-photo__symbol_colored ${classNamePadding}`)= val.luxe
+                  span(class=`card-photo__symbol_colored ${classNamePadding}`)= val.luxe
               p.card-photo__number= `${val.price}₽ `
                 span.card-photo__number_size_small в сутки
             .card-photo__block-estimations

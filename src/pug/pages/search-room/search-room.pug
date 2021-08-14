@@ -218,17 +218,17 @@ block body
       .page-main__filter-block3
         +slide({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере' })
       .page-main__filter-block4
-        h3.font-h3.page-main__text-filter правила дома
+        h3.page-main__text-filter правила дома
         +checkbox({ listClassName: 'common', checkboxs: rules })
       .page-main__filter-block5
-        h3.font-h3.page-main__text-filter доступность
+        h3.page-main__text-filter доступность
         +checkbox({ color: 'color', listClassName: 'common', checkboxs: available })
       .page-main__filter-block6
         +input-dropdown({ dropdown: true, text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'cursor', id: 'rooms', option: numbers })
       .page-main__filter-block7
         +checkbox-list({ text: 'дополнительные удобства', unreflected: 'unreflected', checkboxs: conveniences })
     section.page-main__rooms
-      h1.font-h1.page-main__title Номера, которые мы для вас подобрали
+      h1.page-main__title Номера, которые мы для вас подобрали
       +card-photo({ display: true, margin: 'common', padding: true, photos: cards })
       .page-main__pagination
         include ../../blocks/pagination/pagination

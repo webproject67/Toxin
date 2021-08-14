@@ -1,10 +1,14 @@
-.button-link__link1,
 .button-link__link2 {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px 18px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
   text-decoration: none;
+  text-transform: uppercase;
+  color: $color-purple;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0)
@@ -14,6 +18,7 @@
   background-clip: content-box, border-box;
   border: 2px solid transparent;
   border-radius: 22px;
+  box-shadow: 2px 1000px 1px #fff inset;
   cursor: pointer;
   transition: all 0.4s ease;
 
@@ -24,26 +29,5 @@
 
   &_padding {
     padding: 7px 18px;
-  }
-}
-
-.button-link__link1 {
-  color: #ffffff;
-  box-shadow: none;
-}
-
-.button-link__link2 {
-  color: $color-purple;
-  box-shadow: 2px 1000px 1px #fff inset;
-}
-
-.button-link2__link {
-  color: $color-purple;
-  cursor: pointer;
-  transition: all 0.4s ease;
-
-  &:hover,
-  &_hovering {
-    color: $color-50;
   }
 }

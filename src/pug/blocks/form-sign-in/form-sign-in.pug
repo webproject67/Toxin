@@ -3,7 +3,7 @@ include ../button-submit/button-submit
 
 mixin form-sign-in
   form.form.js-form.js-form-mock-address
-    h1.font-h1.form__title Войти
+    h1.form__title Войти
     .form__email
       +input({ placeholder: 'Email', types: 'email' })
     .form__password
@@ -12,4 +12,4 @@ mixin form-sign-in
       +button-submit({ text: 'войти' })
     .form__reg 
       p.form__text-reg Нет аккаунта на Toxin?
-      +button-link({ text: 'СОЗДАТЬ', href: 'registration.html', linkClassName: 'border' })
+      +button-link-border({ text: 'СОЗДАТЬ', href: 'registration.html' })

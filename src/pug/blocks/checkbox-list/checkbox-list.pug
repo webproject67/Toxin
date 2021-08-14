@@ -4,7 +4,7 @@ mixin checkbox-list(options)
 
   .checkbox-list
     .checkbox-list__btn.js-checkbox-list__btn
-      input.font-h3.checkbox-list__button(type="button", value=text)
+      input.checkbox-list__button(type="button", value=text)
       label.checkbox-list__label 
-        span(class=`font-icon checkbox-list__icon ${classNameTransform}`) expand_more
+        span(class=`checkbox-list__icon ${classNameTransform}`) expand_more
     +checkbox({ listClassName: unreflected, checkboxs: checkboxs })

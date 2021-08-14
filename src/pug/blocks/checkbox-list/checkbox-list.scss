@@ -7,6 +7,11 @@
 .checkbox-list__button {
   padding: 10px 60px 10px 0;
   text-align: start;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -20,6 +25,10 @@
   position: absolute;
   top: -12px;
   right: 10px;
+  font-family: MaterialIcons;
+  font-size: 24px;
+  line-height: 24px;
+  color: $color-50;
   cursor: pointer;
 
   &_transformed {

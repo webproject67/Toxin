@@ -91,6 +91,28 @@
   vertical-align: baseline;
 }
 
+.colors-type__h1 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: $color;
+}
+
+.colors-type__h2 {
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  color: $color;
+}
+
+.colors-type__h3 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
+}
+
 .colors-type__tag {
   margin-right: 27px;
   font-weight: normal;

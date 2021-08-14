@@ -6,7 +6,7 @@ mixin form-registration(options)
   - const { textSubmit } = options;
 
   form.form.js-form.js-form-mock-address
-    h1.font-h1.form__title Регистрация аккаунта
+    h1.form__title Регистрация аккаунта
     .form__name 
       +input({ placeholder: 'Имя' })
     .form__surname 
@@ -25,4 +25,4 @@ mixin form-registration(options)
       +button-submit({ text: textSubmit })
     .form__reg 
       p.form__text-reg Уже есть аккаунт на Toxin
-      +button-link({ text: 'ВОЙТИ', href: 'sign-in.html', linkClassName: 'border' })
+      +button-link-border({ text: 'ВОЙТИ', href: 'sign-in.html' })

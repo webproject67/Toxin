@@ -1,5 +1,5 @@
 include ../input-dropdown/input-dropdown
-include ../button-link/button-link
+include ../button-link-border/button-link-border
 include ../button-submit/button-submit
 include ../checkbox-toggle/checkbox-toggle
 
@@ -24,7 +24,7 @@ mixin form-search
     ];
 
   form.form.js-form.js-form-search
-    h1.font-h1.form__title Найдём номера под ваши пожелания
+    h1.form__title Найдём номера под ваши пожелания
     .form__inputs 
       +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'width', text: 'прибытие', datepicker: 'datepicker2' })
       +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date2', inputClassName: 'width', text: 'выезд' })

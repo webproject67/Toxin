@@ -39,6 +39,11 @@
 .input__option,
 .input__number {
   margin: 12px 0 10px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
 }
 
 .input__btns {
@@ -70,4 +75,8 @@
   position: absolute;
   top: -3px;
   right: 10px;
+  font-family: MaterialIcons;
+  font-size: 24px;
+  line-height: 24px;
+  color: $color-50;
 }
