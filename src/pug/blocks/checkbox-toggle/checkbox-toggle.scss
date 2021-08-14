@@ -33,6 +33,19 @@
   }
 }
 
+.checkbox-toggle__checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(100%);
+}
+
 .checkbox-toggle__checkbox:checked + .checkbox-toggle__label {
   &::before {
     border: 1px solid #bc9cff;

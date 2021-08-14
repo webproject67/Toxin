@@ -41,6 +41,11 @@
 
 .page-footer__links {
   margin: 4px 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
 }
 
 .page-footer__list {

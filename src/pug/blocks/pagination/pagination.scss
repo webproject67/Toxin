@@ -32,6 +32,10 @@
   }
 }
 
+.pagination__nav .next {
+  font-family: MaterialIcons;
+}
+
 .pagination__nav.light-theme span:not(.ellipse) {
   font-weight: bold;
   color: #ffffff;

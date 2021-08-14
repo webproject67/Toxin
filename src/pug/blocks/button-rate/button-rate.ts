@@ -8,5 +8,5 @@ $buttonRate.each(function () {
   $(this)
     .find('i')
     .removeClass('material-icons')
-    .addClass('font-icon font-lg button-rate__icon');
+    .addClass('button-rate__icon');
 });

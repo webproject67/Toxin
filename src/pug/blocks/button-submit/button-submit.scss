@@ -6,6 +6,10 @@
 
 .button-submit__input {
   padding: 14px 35px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
   color: #ffffff;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border: none;
@@ -22,6 +26,9 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  font-family: MaterialIcons;
+  font-size: 24px;
+  line-height: 24px;
   color: #ffffff;
   cursor: pointer;
 }

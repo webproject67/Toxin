@@ -8,11 +8,11 @@ mixin input-dropdown(options)
   div(class=`input ${classNameJs}`)
     if text
       .input__texts
-        h3.font-h3.input__text= text
-        p.font-h3.input__text.input__text_colored= text2
+        h3.input__text= text
+        p.input__text.input__text_colored= text2
     input(class=`input__input ${classNameInput}`, id=id, type="text", value=value, readonly)
     label.input__label(for=id) 
-      span.font-icon.input__icon expand_more
+      span.input__icon expand_more
     div(class=classNameDatepicker)
     if option
       div(class=`input__select-options ${classNameDisplay}`)
@@ -20,10 +20,10 @@ mixin input-dropdown(options)
           - const classNameOpacity = val.opacity ? 'input__btn input__btn_opaque' : 'input__btn';
 
           .input__select-option
-            h3.font-h3.input__option= val.text
+            h3.input__option= val.text
             .input__btns 
               input(class=classNameOpacity, type="button", value="-")
-              h3.font-h3.input__number= val.number
+              h3.input__number= val.number
               input.input__btn(type="button", value="+")
         if textRight
           .input__buttons

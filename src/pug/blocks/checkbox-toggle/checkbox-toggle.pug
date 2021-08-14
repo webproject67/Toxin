@@ -2,7 +2,7 @@ mixin checkbox-toggle(options)
   - const { id, checked } = options;
 
   .checkbox-toggle
-    input.checkbox-toggle__checkbox.visually-hidden_focusable(
+    input.checkbox-toggle__checkbox(
       type="checkbox",
       id=id,
       checked=checked

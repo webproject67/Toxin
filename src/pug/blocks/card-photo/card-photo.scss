@@ -66,6 +66,10 @@
   }
 
   &_colored {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
     color: $color-purple;
   }
 

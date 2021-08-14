@@ -192,25 +192,25 @@ block body
       }
     ];
 
-  h1.visually-hidden Form Elements
+  h1.form-elements__title Form Elements
   +logo
   .form-elements 
     .form-elements__block1
       form.form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text Text Field
-          h3.font-h3.form-elements__text.form-elements__text_colored default
+          h3.form-elements__text Text Field
+          h3.form-elements__text.form-elements__text_colored default
         +input({ placeholder: 'Email', types: 'email' })
       form.form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text Text Field
-          h3.font-h3.form-elements__text.form-elements__text_colored Hover / Focus
+          h3.form-elements__text Text Field
+          h3.form-elements__text.form-elements__text_colored Hover / Focus
         +input({ placeholder: 'This is pretty awesome', hover: true })
       form.form-elements__block
         +input-dropdown({ dropdown: true, text: 'dropdown', value: 'Сколько гостей', inputClassName: 'cursor', id: 'guest1', option: guests1, textLeft: '', textRight: 'применить' })
       form.form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text masked text field
+          h3.form-elements__text masked text field
         +input({ placeholder: 'ДД.ММ.ГГГГ', id: 'birthday', length: 10, autocomplete: 'off', pattern: true })
       form.form-elements__block
         .form-elements__block-left
@@ -221,34 +221,34 @@ block body
         +input-dropdown({ text: 'filter date dropdown', value: '19 авг - 23 авг', inputClassName: 'cursor', id: 'date', datepicker: 'datepicker5' })
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text subscription text field
+          h3.form-elements__text subscription text field
         +input-email
     form.form-elements__block2
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text Checkbox Buttons
+          h3.form-elements__text Checkbox Buttons
         .form-elements__block-checkbox
           +checkbox({ checkboxs: rules })
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text Radio Buttons
+          h3.form-elements__text Radio Buttons
         .form-elements__block-radio
           include ../../blocks/radio/radio
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text Toggle
+          h3.form-elements__text Toggle
         .form-elements__block-toggle
           +checkbox-toggle({ id: 'checkboxOn', checked: true })
           +checkbox-toggle({ id: 'checkboxOff', checked: false })
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text like button
+          h3.form-elements__text like button
         .form-elements__block-like
           +button-like({ text: 'favorite_border', number: 2 })
           +button-like({ text: 'favorite', number: 12, active: true })
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text rate button
+          h3.form-elements__text rate button
         .form-elements__block-rate
           +button-rate({ count: 4 })
           +button-rate({ count: 5 })
@@ -257,7 +257,7 @@ block body
         +slide({ text: 'Range Slider' })
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text buttons
+          h3.form-elements__text buttons
         .form-elements__block-link-bg 
           +button-link({ text: 'click me', linkClassName: 'background' })
           +button-link({ text: 'click me', linkClassName: 'background', hover: true })
@@ -271,7 +271,7 @@ block body
           +button-submit({ text: 'перейти к оплате' })
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text pagination
+          h3.form-elements__text pagination
         .form-elements__block-pagination
           include ../../blocks/pagination/pagination
     .form-elements__block4
@@ -293,13 +293,13 @@ block body
     form.form-elements__block8
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text rich Checkbox Buttons
+          h3.form-elements__text rich Checkbox Buttons
         .form-elements__block-checkbox
           +checkbox({ color: true, checkboxs: available })
     .form-elements__block9
       .form-elements__block
         .form-elements__texts
-          h3.font-h3.form-elements__text bullet list
+          h3.form-elements__text bullet list
         .form-elements__block-condition
           include ../../blocks/condition/condition
     .form-elements__block10
