@@ -1,3 +1,5 @@
+include ../../blocks/button-link-color/button-link-color
+
 mixin input-dropdown(options)
   - const { value, id, dropdown, inputClassName, display, datepicker, option, textLeft, textRight, text, text2 } = options;
   - const classNameJs = dropdown ? 'js-input-dropdown' : '';
@@ -27,5 +29,5 @@ mixin input-dropdown(options)
               input.input__btn(type="button", value="+")
         if textRight
           .input__buttons
-            +button-link({ text: textLeft, linkClassName: 'color' })
-            +button-link({ text: textRight, linkClassName: 'color' })
+            +button-link-color({ text: textLeft })
+            +button-link-color({ text: textRight })

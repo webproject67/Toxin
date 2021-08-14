@@ -7,7 +7,9 @@ include ../../blocks/checkbox/checkbox
 include ../../blocks/checkbox-toggle/checkbox-toggle
 include ../../blocks/checkbox-list/checkbox-list
 include ../../blocks/button-like/button-like
-include ../../blocks/button-link/button-link
+include ../../blocks/button-link-bk/button-link-bk
+include ../../blocks/button-link-border/button-link-border
+include ../../blocks/button-link-color/button-link-color
 include ../../blocks/button-rate/button-rate
 include ../../blocks/button-submit/button-submit
 include ../../blocks/slide/slide
@@ -259,14 +261,14 @@ block body
         .form-elements__texts
           h3.form-elements__text buttons
         .form-elements__block-link-bg 
-          +button-link({ text: 'click me', linkClassName: 'background' })
-          +button-link({ text: 'click me', linkClassName: 'background', hover: true })
+          +button-link-bk({ text: 'click me' })
+          +button-link-bk({ text: 'click me', hover: true })
         .form-elements__block-link-bg.form-elements__block-link-bg_margin_top
-          +button-link({ text: 'click me', linkClassName: 'border' })
-          +button-link({ text: 'click me', linkClassName: 'border', hover: true })
+          +button-link-border({ text: 'click me' })
+          +button-link-border({ text: 'click me', hover: true })
         .form-elements__block-link 
-          +button-link({ text: 'click me', linkClassName: 'color' })
-          +button-link({ text: 'click me', linkClassName: 'color', hover: true })
+          +button-link-color({ text: 'click me' })
+          +button-link-color({ text: 'click me', hover: true })
         .form-elements__block-link-submit
           +button-submit({ text: 'перейти к оплате' })
       .form-elements__block

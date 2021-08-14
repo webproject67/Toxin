@@ -1,0 +1,6 @@
+mixin button-link-color(options)
+  - const { text, href, hover } = options;
+  - const classNameHover = hover ? 'button-link2__link_hovering' : '';
+
+  .button-link
+    a(class=`button-link2__link ${classNameHover}`, href=href)= text

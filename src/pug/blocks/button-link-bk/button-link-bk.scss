@@ -1,0 +1,33 @@
+.button-link__link1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  &:hover,
+  &_hovering {
+    opacity: 0.5;
+  }
+
+  &_padding {
+    padding: 7px 18px;
+  }
+}

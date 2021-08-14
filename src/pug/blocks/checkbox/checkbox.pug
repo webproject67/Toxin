@@ -10,11 +10,7 @@ mixin checkbox(options)
 
         li(class=classNameItem)
           span.checkbox__figure 
-          input.checkbox__checkbox(
-            type="checkbox",
-            id=val.id,
-            checked=val.checked
-          )
+          input.checkbox__checkbox(type="checkbox", id=val.id, checked=val.checked)
           label(class=`checkbox__label ${classNameColor}`, for=val.id)= val.label
             if val.text
               br
