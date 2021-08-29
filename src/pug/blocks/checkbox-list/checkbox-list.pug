@@ -2,9 +2,8 @@ mixin checkbox-list(options)
   - const { text, unreflected, transform, checkboxs } = options;
   - const classNameTransform = transform ? 'checkbox-list__icon_transformed' : '';
 
-  .checkbox-list
-    .checkbox-list__btn.js-checkbox-list__btn
-      input.checkbox-list__button(type="button", value=text)
-      label.checkbox-list__label 
-        span(class=`checkbox-list__icon ${classNameTransform}`) expand_more
-    +checkbox({ listClassName: unreflected, checkboxs: checkboxs })
+  .checkbox-list__btn.js-checkbox-list__btn
+    input.checkbox-list__button(type="button", value=text)
+    label.checkbox-list__label 
+      span(class=`checkbox-list__icon ${classNameTransform}`) expand_more
+  +checkbox({ listClassName: unreflected, checkboxs: checkboxs })

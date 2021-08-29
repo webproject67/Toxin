@@ -4,14 +4,13 @@
   { id: 'woman', gender: 'Женщина' }
   ];
 
-.radio
-  ul.radio__list 
-    each val in genders
-      li.radio__item 
-        input.radio__radio(
-          id=val.id,
-          type="radio",
-          name="man-woman",
-          checked=val.checked
-        )
-        label.radio__label(for=val.id)= val.gender
+ul.radio__list 
+  each val in genders
+    li.radio__item 
+      input.radio__radio(
+        id=val.id,
+        type="radio",
+        name="man-woman",
+        checked=val.checked
+      )
+      label.radio__label(for=val.id)= val.gender
