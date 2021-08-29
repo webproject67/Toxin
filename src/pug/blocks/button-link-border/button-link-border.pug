@@ -3,5 +3,4 @@ mixin button-link-border(options)
   - const classNameHover = hover ? 'button-link__link2_hovering' : '';
   - const classNamePadding = padding ? 'button-link__link2_padding' : '';
 
-  .button-link
-    a(class=`button-link__link2 ${classNameHover} ${classNamePadding}`, href=href)= text
+  a(class=`button-link__link2 ${classNameHover} ${classNamePadding}`, href=href)= text

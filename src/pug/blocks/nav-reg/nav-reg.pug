@@ -7,9 +7,8 @@ mixin nav-reg(options)
   if name
     a.nav-reg__name(href="/mock-address")= name
   else
-    .nav-reg 
-      ul.nav-reg__list 
-        li.nav-reg__item
-          +button-link-border({ text: 'Войти', href: 'sign-in.html', padding: true })
-        li.nav-reg__item
-          +button-link-bk({ text: 'Зарегистрироваться', href: 'registration.html', padding: true })
+    ul.nav-reg__list 
+      li.nav-reg__item
+        +button-link-border({ text: 'Войти', href: 'sign-in.html', padding: true })
+      li.nav-reg__item
+        +button-link-bk({ text: 'Зарегистрироваться', href: 'registration.html', padding: true })

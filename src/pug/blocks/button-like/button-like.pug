@@ -2,9 +2,8 @@ mixin button-like(options)
   - const { text, number, active } = options;
   - const classNameActive = active ? 'button-like__button_active' : '';
 
-  .button-like 
-    button(
-      class=`button-like__button js-button-like__button ${classNameActive}`,
-      type="button"
-    )= text
-      span.button-like__button_font_another= number
+  button(
+    class=`button-like__button js-button-like__button ${classNameActive}`,
+    type="button"
+  )= text
+    span.button-like__button_font_another= number
