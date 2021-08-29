@@ -10,7 +10,7 @@
 @import '../pug/blocks/input/input';
 @import '../pug/blocks/input-dropdown/input-dropdown';
 @import '../pug/blocks/input-email/input-email';
-@import '../pug/blocks/datepicker/datepicker-library';
+@import '../assets/lib/datepicker/datepicker-library';
 @import '../pug/blocks/datepicker/datepicker';
 @import '../pug/blocks/checkbox/checkbox';
 @import '../pug/blocks/checkbox-list/checkbox-list';
@@ -22,9 +22,9 @@
 @import '../pug/blocks/button-link-color/button-link-color';
 @import '../pug/blocks/button-rate/button-rate';
 @import '../pug/blocks/button-submit/button-submit';
-@import '../pug/blocks/slide/jquery-ui';
+@import '../assets/lib/ui-slider/jquery-ui';
 @import '../pug/blocks/slide/slide';
-@import '../pug/blocks/pagination/simplePagination';
+@import '../assets/lib/pagination/simplePagination';
 @import '../pug/blocks/pagination/pagination';
 @import '../pug/blocks/condition/condition';
 @import '../pug/blocks/advantage/advantage';
@@ -34,7 +34,7 @@
 @import '../pug/blocks/form-room/form-room';
 @import '../pug/blocks/form-registration/form-registration';
 @import '../pug/blocks/form-sign-in/form-sign-in';
-@import '../pug/blocks/card-photo/flexslider';
+@import '../assets/lib/flexslider/flexslider';
 @import '../pug/blocks/card-photo/card-photo';
 @import '../pug/pages/headers-footers/headers-footers';
 @import '../pug/blocks/header/header';
@@ -44,7 +44,7 @@
 @import '../pug/blocks/footer/footer';
 @import '../pug/blocks/footer-bottom/footer-bottom';
 @import '../pug/blocks/footer-reduction/footer-reduction';
-@import '../pug/blocks/main/slider';
+@import '../assets/lib/slider/slider';
 @import '../pug/blocks/main/main';
 @import '../pug/blocks/gallery/gallery';
 @import '../pug/blocks/chart/chart';
