@@ -126,13 +126,13 @@ $inputDropdown.each(function () {
     $input.find('.input__select-options').slideToggle(300);
   };
 
-  $input.find('.button-link2__link:last').on('click', handleLink1Click);
+  $input.find('.button-link2:last').on('click', handleLink1Click);
 
   const handleBtn3Click = function (this: HTMLElement) {
     const $value = Number($(this).siblings('.input__number').text()) + 1;
     $(this).siblings('.input__number').text($value);
     $(this).siblings('.input__btn').removeClass('input__btn_opaque');
-    $input.find('.button-link2__link:first').text('очистить');
+    $input.find('.button-link2:first').text('очистить');
 
     setInputValue();
   };
@@ -153,7 +153,7 @@ $inputDropdown.each(function () {
       return $total;
     });
     if ($total === 0) {
-      $input.find('.button-link2__link:first').text('');
+      $input.find('.button-link2:first').text('');
     }
 
     setInputValue();
@@ -171,5 +171,5 @@ $inputDropdown.each(function () {
     $input.find('.input__input').val('Сколько гостей');
   };
 
-  $input.find('.button-link2__link:first').on('click', handleLink2Click);
+  $input.find('.button-link2:first').on('click', handleLink2Click);
 });
