@@ -4,6 +4,7 @@ import '../pug/blocks/input/input-birthdate';
 import '../assets/lib/datepicker/datepicker-library';
 import '../pug/blocks/datepicker/datepicker';
 import '../pug/blocks/input-email/input-email';
+import '../assets/lib/like/like';
 import '../pug/blocks/button-like/button-like';
 import '../assets/lib/rate/jquery.star.rating';
 import '../pug/blocks/button-rate/button-rate';
