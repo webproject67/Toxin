@@ -1,4 +1,4 @@
-.nav-reg__list {
+.nav-reg {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +29,7 @@
 }
 
 @media (max-width: $mobile-width-only) {
-  .nav-reg__list,
+  .nav-reg,
   .nav-reg__name {
     position: absolute;
     z-index: 4;

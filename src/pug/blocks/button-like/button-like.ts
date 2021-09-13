@@ -1,9 +1,9 @@
 const handleButtonClick = function (this: HTMLElement) {
-  $(this).toggleClass('button-like__button_active');
-  const $button = $(this).children('.button-like__button_font_another');
+  $(this).toggleClass('button-like_active');
+  const $button = $(this).children('.button-like_font_another');
   let $value = Number($button.html());
 
-  if ($(this).hasClass('button-like__button_active')) {
+  if ($(this).hasClass('button-like_active')) {
     $button.html(String(($value += 1)));
     $(this).contents()[0].nodeValue = 'favorite';
   } else {
@@ -12,7 +12,7 @@ const handleButtonClick = function (this: HTMLElement) {
   }
 };
 
-const $buttonLike = $('.js-button-like__button');
+const $buttonLike = $('.js-button-like');
 $buttonLike.each(function () {
   $(this).on('click', handleButtonClick);
 });

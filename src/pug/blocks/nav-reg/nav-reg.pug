@@ -6,7 +6,7 @@ mixin nav-reg(options)
   if name
     a.nav-reg__name(href="/mock-address")= name
   else
-    ul.nav-reg__list 
+    ul.nav-reg 
       li.nav-reg__item
         +button-link({ type: 'link', text: 'Войти', href: 'sign-in.html', theme: 'bg', color: 'colorPurple', padding: 'padding' })
       li.nav-reg__item

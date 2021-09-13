@@ -1,4 +1,4 @@
-.card-photo__list {
+.card-photo {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -109,7 +109,7 @@
   }
 }
 
-.card-photo__list .flexslider {
+.card-photo .flexslider {
   width: 100%;
   margin: 0;
   border: none;
@@ -128,16 +128,16 @@
   }
 }
 
-.card-photo__list .flex-control-nav {
+.card-photo .flex-control-nav {
   bottom: -3px;
   right: -100px;
 }
 
-.card-photo__list .flex-control-nav li {
+.card-photo .flex-control-nav li {
   margin: 0 2px;
 }
 
-.card-photo__list .flex-control-nav a {
+.card-photo .flex-control-nav a {
   width: 7px;
   height: 7px;
   background: none;
@@ -146,13 +146,13 @@
   filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
 }
 
-.card-photo__list .flex-control-nav .flex-active {
+.card-photo .flex-control-nav .flex-active {
   background: #ffffff;
   box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
 }
 
-.card-photo__list .flex-prev,
-.card-photo__list a.flex-next {
+.card-photo .flex-prev,
+.card-photo a.flex-next {
   top: 20px;
   height: 100%;
   font-size: 0;
@@ -175,16 +175,16 @@
   }
 }
 
-.card-photo__list a.flex-next::before {
+.card-photo a.flex-next::before {
   transform: rotate(90deg) translate(63px, 6px);
 }
 
-.card-photo__list .flex-prev {
+.card-photo .flex-prev {
   transform: revert;
 }
 
 @media (max-width: $desktop-width) {
-  .card-photo__list_displayed {
+  .card-photo_displayed {
     justify-content: center;
   }
 
