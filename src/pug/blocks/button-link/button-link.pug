@@ -1,0 +1,34 @@
+mixin button-link(options)
+  - 
+    const { text, href, type, theme, color, hover, padding } = options;
+
+    const themeModifiers = {
+      bg: 'button-link',
+      text: 'button-link2',
+    };
+
+    const colorModifiers = {
+      colorWhite: 'button-link_color-white',
+      colorPurple: 'button-link_color-purple',
+    };
+  
+    const hoverModifiers = {
+      hovering: 'button-link_hovering',
+      hovering2: 'button-link2_hovering',
+    };
+  
+    const paddingModifiers = {
+      padding: 'button-link_padding',
+    };
+
+    const classes = [
+      themeModifiers[theme], 
+      colorModifiers[color], 
+      hoverModifiers[hover],
+      paddingModifiers[padding],
+    ];
+
+  - const tag = (type === 'link') ? 'a' : 'button';
+  - const buttonType = type === 'link' && type;
+
+  #{tag}(type=buttonType class=classes href=href)=text

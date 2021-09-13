@@ -1,6 +1,0 @@
-mixin button-link-border(options)
-  - const { text, href, hover, padding } = options;
-  - const classNameHover = hover ? 'button-link__link2_hovering' : '';
-  - const classNamePadding = padding ? 'button-link__link2_padding' : '';
-
-  a(class=`button-link__link2 ${classNameHover} ${classNamePadding}`, href=href)= text

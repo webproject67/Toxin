@@ -1,6 +1,0 @@
-mixin button-link-bk(options)
-  - const { text, href, hover, padding } = options;
-  - const classNameHover = hover ? 'button-link__link1_hovering' : '';
-  - const classNamePadding = padding ? 'button-link__link1_padding' : '';
-
-  a(class=`button-link__link1 ${classNameHover} ${classNamePadding}`, href=href)= text
