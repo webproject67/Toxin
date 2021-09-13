@@ -5,5 +5,5 @@ const handleBtnClick = function (this: HTMLElement) {
   $(this).siblings('.checkbox').find('.checkbox__list').slideToggle(300);
 };
 
-const $checkboxList = $('.js-checkbox-list__btn');
+const $checkboxList = $('.js-checkbox-list');
 $checkboxList.on('click', handleBtnClick);

@@ -2,15 +2,15 @@ mixin checkbox(options)
   - const { checkboxs, listClassName, color } = options;
   - const classNameColor = color ? 'checkbox__label_colored1' : '';
   - const classNameList = listClassName === 'common' ? 'checkbox__list_margin_common' : listClassName === 'unreflected' ? 'checkbox__list_unreflected' : '';
+  .checkbox
+    ul(class=`checkbox__list ${classNameList}`) 
+      each val in checkboxs
+        - const classNameItem = val.width === 'wide1' ? 'checkbox__item checkbox__item_wide1' : val.width === 'wide2' ? 'checkbox__item checkbox__item_wide2' : 'checkbox__item';
 
-  ul(class=`checkbox__list ${classNameList}`) 
-    each val in checkboxs
-      - const classNameItem = val.width === 'wide1' ? 'checkbox__item checkbox__item_wide1' : val.width === 'wide2' ? 'checkbox__item checkbox__item_wide2' : 'checkbox__item';
-
-      li(class=classNameItem)
-        span.checkbox__figure 
-        input.checkbox__checkbox(type="checkbox", id=val.id, checked=val.checked)
-        label(class=`checkbox__label ${classNameColor}`, for=val.id)= val.label
-          if val.text
-            br
-            span.checkbox__label_colored2= val.text
+        li(class=classNameItem)
+          span.checkbox__figure 
+          input.checkbox__checkbox(type="checkbox", id=val.id, checked=val.checked)
+          label(class=`checkbox__label ${classNameColor}`, for=val.id)= val.label
+            if val.text
+              br
+              span.checkbox__label_colored2= val.text

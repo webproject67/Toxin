@@ -2,11 +2,11 @@ include ../button-rate/button-rate
 
 mixin card-photo(options)
   - const { display, margin, padding, photos } = options;
-  - const classNameDisplay = display ? 'card-photo__list_displayed' : '';
+  - const classNameDisplay = display ? 'card-photo_displayed' : '';
   - const classNamePadding = padding ? 'card-photo__symbol_padding_left' : '';
   - const classNameMargin = margin === 'bottom' ? 'card-photo__item_margin_bottom1' : margin === 'common' ? 'card-photo__item_margin_common2' : '';
 
-  ul(class=`card-photo__list ${classNameDisplay}`)
+  ul(class=`card-photo ${classNameDisplay}`)
     each val in photos
       - const classNameHover = val.hover ? 'flexslider js-flexslider flexslider_hovering' : 'flexslider js-flexslider';
 
