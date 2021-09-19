@@ -1,15 +1,14 @@
 include ../input/input
-include ../button-submit/button-submit
 
 mixin form-sign-in
-  form.form.js-form.js-form-mock-address
+  form.form
     h1.form__title Войти
     .form__email
       +input({ placeholder: 'Email', types: 'email' })
     .form__password
       +input({ types: 'password', placeholder: 'Пароль' })
     .form__submit_margin_top3
-      +button-submit({ text: 'войти' })
+      +button-link({ text: 'ВОЙТИ', type: 'button', theme: 'submit', color: 'colorWhite' })
     .form__reg 
       p.form__text-reg Нет аккаунта на Toxin?
-      +button-link({ type: 'link', text: 'СОЗДАТЬ', href: 'registration.html', theme: 'bg', color: 'colorPurple' })
+      +button-link({ text: 'СОЗДАТЬ', type: 'link', href: 'registration.html', theme: 'bg', color: 'colorPurple' })

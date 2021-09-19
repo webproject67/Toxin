@@ -1,5 +1,3 @@
-include ../button-like/button-like
-
 mixin reviews(options)
   - const { reviews, marginList, marginItem } = options;
   - const classNameMarginList = marginList ? 'reviews__list_margin_top' : '';
@@ -13,7 +11,7 @@ mixin reviews(options)
             src=`../../blocks/reviews/img/${val.image}.jpg`,
             alt="avatar"
           )
-          +button-like({ text: val.buttonText, number: val.buttonNumber, active: val.active })
+          +button-link({ text: val.buttonNumber, type: 'button', theme: 'like', active: val.active })
         .reviews__block-review 
           p.reviews__name= val.name
           p.reviews__date= val.date

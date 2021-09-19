@@ -1,4 +1,4 @@
-include ../button-link/button-link
+include ../button/button
 
 mixin nav-reg(options)
   - const { name } = options;
@@ -8,6 +8,6 @@ mixin nav-reg(options)
   else
     ul.nav-reg 
       li.nav-reg__item
-        +button-link({ type: 'link', text: 'Войти', href: 'sign-in.html', theme: 'bg', color: 'colorPurple', padding: 'padding' })
+        +button-link({ text: 'ВОЙТИ', type: 'link', href: 'sign-in.html', theme: 'bg', color: 'colorPurple', padding: 'padding' })
       li.nav-reg__item
-        +button-link({ type: 'link', text: 'Зарегистрироваться', href: 'registration.html', theme: 'bg', color: 'colorWhite', padding: 'padding' })
+        +button-link({ text: 'ЗАРЕГИСТРИРОВАТЬСЯ', type: 'link', href: 'registration.html', theme: 'bg', color: 'colorWhite', padding: 'padding' })

@@ -1,22 +1,32 @@
 mixin button-link(options)
-  - 
-    const { text, href, type, theme, color, hover, padding } = options;
+  -
+    const { text, href, type, theme, color, active, padding, count } = options;
+
+    const tag = {
+      link: 'a',
+      button: 'button',
+      div: 'div',
+    }
 
     const themeModifiers = {
+      submit: 'button-submit',
       bg: 'button-link',
       text: 'button-link2',
+      like: 'button-like js-button-like',
+      rate: 'button-rate js-button-rate',
     };
 
     const colorModifiers = {
       colorWhite: 'button-link_color-white',
       colorPurple: 'button-link_color-purple',
     };
-  
-    const hoverModifiers = {
+
+    const activeModifiers = {
       hovering: 'button-link_hovering',
       hovering2: 'button-link2_hovering',
+      active: 'button-like_active',
     };
-  
+
     const paddingModifiers = {
       padding: 'button-link_padding',
     };
@@ -24,11 +34,10 @@ mixin button-link(options)
     const classes = [
       themeModifiers[theme], 
       colorModifiers[color], 
-      hoverModifiers[hover],
+      activeModifiers[active],
       paddingModifiers[padding],
     ];
 
-  - const tag = (type === 'link') ? 'a' : 'button';
-  - const buttonType = type === 'link' && type;
+    const buttonType = type === 'div' ? undefined : type;
 
-  #{tag}(type=buttonType class=classes href=href)=text
+  #{tag[type]}(type=buttonType, class=classes, href=href, data-count=count)= text

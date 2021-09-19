@@ -12,12 +12,14 @@
   display: flex;
   margin-right: 1.4vw;
 
+  &:hover,
   &_hovering {
     text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
   }
 }
 
 .nav-link__link {
+  display: flex;
   color: $color-50;
   text-decoration: none;
   cursor: pointer;
@@ -30,7 +32,6 @@
   line-height: 24px;
   color: $color-50;
   cursor: pointer;
-  transition: all 0.4s ease;
 }
 
 .nav-link__options {

@@ -3,7 +3,6 @@
     const config = $.extend(
       {
         active: 'button-like_active',
-        text: '.button-like_font_another',
       },
       options
     );
@@ -12,15 +11,12 @@
       e.click(function () {
         $(this).toggleClass(config.active);
 
-        const $button = $(this).children(config.text);
-        let $value = Number($button.html());
+        let $value = Number($(this).html());
 
         if ($(this).hasClass(config.active)) {
-          $button.html(String(($value += 1)));
-          $(this).contents()[0].nodeValue = 'favorite';
+          $(this).html(String(($value += 1)));
         } else {
-          $button.html(String(($value -= 1)));
-          $(this).contents()[0].nodeValue = 'favorite_border';
+          $(this).html(String(($value -= 1)));
         }
       });
     }

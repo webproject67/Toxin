@@ -6,10 +6,7 @@ include ../../blocks/input-email/input-email
 include ../../blocks/checkbox/checkbox
 include ../../blocks/checkbox-toggle/checkbox-toggle
 include ../../blocks/checkbox-list/checkbox-list
-include ../../blocks/button-like/button-like
-include ../../blocks/button-link/button-link
-include ../../blocks/button-rate/button-rate
-include ../../blocks/button-submit/button-submit
+include ../../blocks/button/button
 include ../../blocks/slide/slide
 include ../../blocks/advantage/advantage
 include ../../blocks/reviews/reviews
@@ -183,9 +180,8 @@ block body
     const reviews = [
       {
         image: 'image16', 
-        buttonText: 'favorite', 
         buttonNumber: 12,
-        active: true,
+        active: 'active',
         name: 'Мурад Сарафанов', 
         date: '5 дней назад',
         reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
@@ -244,14 +240,14 @@ block body
         .form-elements__texts
           h3.form-elements__text like button
         .form-elements__block-like
-          +button-like({ text: 'favorite_border', number: 2 })
-          +button-like({ text: 'favorite', number: 12, active: true })
+          +button-link({ text: 2, type: 'button', theme: 'like' })
+          +button-link({ text: 12, type: 'button', theme: 'like', active: 'active' })
       .form-elements__block
         .form-elements__texts
           h3.form-elements__text rate button
         .form-elements__block-rate
-          +button-rate({ count: 4 })
-          +button-rate({ count: 5 })
+          +button-link({ type: 'div', theme: 'rate', count: 4 })
+          +button-link({ type: 'div', theme: 'rate', count: 5 })
     form.form-elements__block3 
       .form-elements__block
         +slide({ text: 'Range Slider' })
@@ -259,16 +255,16 @@ block body
         .form-elements__texts
           h3.form-elements__text buttons
         .form-elements__block-link-bg 
-          +button-link({ text: 'click me', theme: 'bg', color: 'colorWhite' })
-          +button-link({ text: 'click me', theme: 'bg', color: 'colorWhite', hover: 'hovering' })
+          +button-link({ text: 'CLICK ME', type: 'button', theme: 'bg', color: 'colorWhite' })
+          +button-link({ text: 'CLICK ME', type: 'button', theme: 'bg', color: 'colorWhite', active: 'hovering' })
         .form-elements__block-link-bg.form-elements__block-link-bg_margin_top
-          +button-link({ text: 'click me', theme: 'bg', color: 'colorPurple' })
-          +button-link({ text: 'click me', theme: 'bg', color: 'colorPurple', hover: 'hovering' })
+          +button-link({ text: 'CLICK ME', type: 'button', theme: 'bg', color: 'colorPurple' })
+          +button-link({ text: 'CLICK ME', type: 'button', theme: 'bg', color: 'colorPurple', active: 'hovering' })
         .form-elements__block-link 
-          +button-link({ text: 'click me', theme: 'text' })
-          +button-link({ text: 'click me', theme: 'text', hover: 'hovering2' })
+          +button-link({ text: 'CLICK ME', type: 'button', theme: 'text' })
+          +button-link({ text: 'CLICK ME', type: 'button', theme: 'text', active: 'hovering2' })
         .form-elements__block-link-submit
-          +button-submit({ text: 'перейти к оплате' })
+          +button-link({ text: 'ПЕРЕЙТИ К ОПЛАТЕ', type: 'button', theme: 'submit', color: 'colorWhite' })
       .form-elements__block
         .form-elements__texts
           h3.form-elements__text pagination
