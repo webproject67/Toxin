@@ -1,5 +1,3 @@
-include ../button-rate/button-rate
-
 mixin card-photo(options)
   - const { display, margin, padding, photos } = options;
   - const classNameDisplay = display ? 'card-photo_displayed' : '';
@@ -29,6 +27,6 @@ mixin card-photo(options)
             p.card-photo__number= `${val.price}₽ `
               span.card-photo__number_size_small в сутки
           .card-photo__block-estimations
-            +button-rate({ count: val.count })
+            +button-link({ type: 'div', theme: 'rate', count: val.count })
             p.card-photo__text-review= `${val.review} `
               span.card-photo__text-review_weight_normal Отзывов

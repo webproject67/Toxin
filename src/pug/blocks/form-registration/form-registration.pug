@@ -1,11 +1,10 @@
 include ../input/input
-include ../button-submit/button-submit
 include ../checkbox-toggle/checkbox-toggle
 
 mixin form-registration(options)
   - const { textSubmit } = options;
 
-  form.form.js-form.js-form-mock-address
+  form.form
     h1.form__title Регистрация аккаунта
     .form__name 
       +input({ placeholder: 'Имя' })
@@ -22,7 +21,7 @@ mixin form-registration(options)
     .form__checkbox
       +checkbox-toggle({ id: 'checkbox', checked: false })
     .form__submit_margin_top2
-      +button-submit({ text: textSubmit })
+      +button-link({ text: textSubmit, type: 'button', theme: 'submit', color: 'colorWhite' })
     .form__reg 
       p.form__text-reg Уже есть аккаунт на Toxin
-      +button-link({ type: 'link', text: 'ВОЙТИ', href: 'sign-in.html', theme: 'bg', color: 'colorPurple' })
+      +button-link({ text: 'ВОЙТИ', type: 'link', href: 'sign-in.html', theme: 'bg', color: 'colorPurple' })

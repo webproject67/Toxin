@@ -1,27 +1,36 @@
-mixin nav-link(options)
-  - const { hover } = options;
-  - const classNameHover = hover ? 'nav-link__item_hovering' : '';
-  - const links1 = ['О сервисе', 'Инвесторы', 'Сообщества'];
-  - const links2 = ['Служба поддержки', 'Наша команда', 'Связь с нами'];
+mixin nav-link
+  -
+    const items = [
+      {
+        active: true,
+        text: 'О нас',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Услуги',
+        arrow: true
+      },
+      {
+        active: false,
+        text: 'Вакансии',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Новости',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Соглашения',
+        arrow: true
+      },
+    ]
 
   ul.nav-link
-    li(class=`nav-link__item ${classNameHover}`)
-      a.nav-link__link(href="/mock-address") О нас
-    li.nav-link__item.js-nav-link__item
-      a.nav-link__link Услуги
-      span.nav-link__icon expand_more
-      ul.nav-link__options 
-        each val in links1
-          li.nav-link__option
-            a.nav-link__link(href="/mock-address")= val
-    li.nav-link__item
-      a.nav-link__link(href="/mock-address") Вакансии
-    li.nav-link__item
-      a.nav-link__link(href="/mock-address") Новости
-    li.nav-link__item.js-nav-link__item
-      a.nav-link__link Соглашения
-      span.nav-link__icon expand_more
-      ul.nav-link__options 
-        each val in links2
-          li.nav-link__option
-            a.nav-link__link(href="/mock-address")= val
+    each val in items
+      li(class=`nav-link__item ${val.active ? 'nav-link__item_hovering' : ''}`)
+        a.nav-link__link= val.text
+          if val.arrow
+            span.nav-link__icon expand_more
