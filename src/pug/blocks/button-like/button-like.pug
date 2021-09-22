@@ -1,0 +1,5 @@
+mixin button-like(options)
+  - const { text, active } = options;
+  - const classNameActive = active ? 'button-like_active' : '';
+
+  button(class=`button-like js-button-like ${classNameActive}`, type="button")= text

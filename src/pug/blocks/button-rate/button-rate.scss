@@ -1,0 +1,16 @@
+.button-rate {
+  display: flex;
+}
+
+.button-rate__icon {
+  display: inline-block;
+  font-family: MaterialIcons;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 24px;
+  color: $color-50;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}

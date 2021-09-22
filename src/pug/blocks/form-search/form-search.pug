@@ -22,7 +22,7 @@ mixin form-search
       }
     ];
 
-  form.form
+  form.form(action="search-room.html")
     h1.form__title Найдём номера под ваши пожелания
     .form__inputs 
       +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'width', text: 'прибытие', datepicker: 'datepicker2' })
@@ -30,4 +30,4 @@ mixin form-search
     .form__guests 
       +input-dropdown({ dropdown: true, value: 'Сколько гостей', inputClassName: 'cursor', id: 'guest1', option: guests, textLeft: '', textRight: 'применить', text: 'гости' })
     .form__submit 
-      +button-link({ text: 'ПОДОБРАТЬ НОМЕР', type: 'link', href: 'search-room.html', theme: 'submit', color: 'colorWhite' })
+      +button({ text: 'подобрать номер', type: 'button', theme: 'filled' })

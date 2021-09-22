@@ -1,10 +1,6 @@
 interface JQuery {
-  like: Function;
   addRating: Function;
 }
-
-const $buttonLike = $('.js-button-like');
-$buttonLike.like();
 
 const $buttonRate = $('.js-button-rate');
 $buttonRate.each(function () {

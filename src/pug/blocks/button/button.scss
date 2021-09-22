@@ -1,66 +1,13 @@
-.button-link,
-.button-submit {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-decoration: none;
-  color: $color;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0)
-    ),
-    linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  border: 2px solid transparent;
-  border-radius: 22px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-
-  &_color-white {
-    color: #ffffff;
-    box-shadow: none;
-  }
-
-  &_color-purple {
-    color: $color-purple;
-    box-shadow: 2px 1000px 1px #fff inset;
-  }
-
-  &:hover,
-  &_hovering {
-    opacity: 0.5;
-  }
-
-  &_padding {
-    padding: 7px 18px;
-  }
-}
-
-.button-submit {
-  position: relative;
-
-  &::after {
-    position: absolute;
-    right: 10px;
-    content: 'arrow_forward';
-    font-family: 'MaterialIcons';
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 24px;
-  }
-}
-
-.button-link2 {
   padding: 0;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
+  text-decoration: none;
   color: $color-purple;
   background: transparent;
   border: none;
@@ -71,61 +18,64 @@
   &_hovering {
     color: $color-50;
   }
-}
 
-.button-like {
-  display: flex;
-  align-items: center;
-  height: 20px;
-  padding: 0 12px 0 4px;
-  font-family: 'Montserrat';
-  font-size: 10px;
-  line-height: 12px;
-  color: $color-25;
-  background: #ffffff;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 10px;
-  cursor: pointer;
+  &_theme {
+    &_bordered,
+    &_filled {
+      padding: 12px 18px;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      border: 2px solid transparent;
+      border-radius: 22px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+  
+      &:hover,
+      &_opaque {
+        opacity: 0.5;
+      }
+    }
 
-  &::before {
-    content: 'favorite_border';
-    padding-right: 6px;
-    font-family: 'MaterialIcons';
-  }
-
-  &_active {
-    color: $color-purple;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0)
-      ),
-      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    border: 1px solid transparent;
-    box-shadow: 1px 1000px 1px #fff inset;
-
-    &::before {
-      content: 'favorite';
-      padding-right: 6px;
-      font-family: 'MaterialIcons';
+    &_bordered {
+      box-shadow: 2px 1000px 1px #fff inset;
+    }
+    
+    &_filled {
+      color: #ffffff;
+      box-shadow: none;
+  
+      &:hover,
+      &_opaque {
+        color: #ffffff;
+      }
     }
   }
-}
 
-.button-rate {
-  display: flex;
-}
+  &_size {
+    &_compact {
+      padding: 7px 18px;
+    }
+  }
 
-.button-rate__icon {
-  display: inline-block;
-  font-family: MaterialIcons;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 24px;
-  color: $color-50;
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
+  &_icon {
+    &_arrow {
+      position: relative;
+      text-transform: none;
+  
+      &::after {
+        position: absolute;
+        right: 10px;
+        content: 'arrow_forward';
+        font-family: 'MaterialIcons';
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
 }
