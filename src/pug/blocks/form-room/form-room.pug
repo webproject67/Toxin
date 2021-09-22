@@ -26,7 +26,7 @@ mixin form-room(options)
       }
     ];
 
-  form.form
+  form.form(action="mock-address")
     .form__block-price
       p.form__symbol №
         span.form__symbol_size_large= ' 888'
@@ -56,4 +56,4 @@ mixin form-room(options)
       p.form__ellipsis
       p(class=`form__total-number ${classNameTransform}`) 38 081₽
     .form__submit_margin_top1
-      +button-link({ text: 'ЗАБРОНИРОВАТЬ', type: 'button', theme: 'submit', color: 'colorWhite' })
+      +button({ text: 'забронировать', type: 'button', theme: 'filled' })

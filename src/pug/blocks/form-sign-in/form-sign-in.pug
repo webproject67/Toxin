@@ -1,14 +1,14 @@
 include ../input/input
 
 mixin form-sign-in
-  form.form
+  form.form(action="mock-address")
     h1.form__title Войти
     .form__email
       +input({ placeholder: 'Email', types: 'email' })
     .form__password
       +input({ types: 'password', placeholder: 'Пароль' })
     .form__submit_margin_top3
-      +button-link({ text: 'ВОЙТИ', type: 'button', theme: 'submit', color: 'colorWhite' })
+      +button({ text: 'войти', type: 'button', theme: 'filled' })
     .form__reg 
       p.form__text-reg Нет аккаунта на Toxin?
-      +button-link({ text: 'СОЗДАТЬ', type: 'link', href: 'registration.html', theme: 'bg', color: 'colorPurple' })
+      +button({ text: 'создать', type: 'link', href: 'registration.html', theme: 'bordered' })

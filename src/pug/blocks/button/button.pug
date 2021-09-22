@@ -1,43 +1,35 @@
-mixin button-link(options)
+mixin button(options)
   -
-    const { text, href, type, theme, color, active, padding, count } = options;
+    const { text, href, type, theme, icon, state, size } = options;
 
     const tag = {
       link: 'a',
       button: 'button',
-      div: 'div',
     }
 
     const themeModifiers = {
-      submit: 'button-submit',
-      bg: 'button-link',
-      text: 'button-link2',
-      like: 'button-like js-button-like',
-      rate: 'button-rate js-button-rate',
+      bordered: 'button_theme_bordered',
+      filled: 'button_theme_filled',
     };
 
-    const colorModifiers = {
-      colorWhite: 'button-link_color-white',
-      colorPurple: 'button-link_color-purple',
+    const iconModifiers = {
+      arrow: 'button_icon_arrow',
     };
 
-    const activeModifiers = {
-      hovering: 'button-link_hovering',
-      hovering2: 'button-link2_hovering',
-      active: 'button-like_active',
+    const stateModifiers = {
+      hovering: 'button_hovering',
+      opaque: 'button_theme_bordered_opaque',
     };
 
-    const paddingModifiers = {
-      padding: 'button-link_padding',
+    const sizeModifiers = {
+      compact: 'button_size_compact',
     };
 
     const classes = [
       themeModifiers[theme], 
-      colorModifiers[color], 
-      activeModifiers[active],
-      paddingModifiers[padding],
+      iconModifiers[icon], 
+      stateModifiers[state],
+      sizeModifiers[size],
     ];
 
-    const buttonType = type === 'div' ? undefined : type;
-
-  #{tag[type]}(type=buttonType, class=classes, href=href, data-count=count)= text
+  #{tag[type]}.button(class=classes, href=href)= text
