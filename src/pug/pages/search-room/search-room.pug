@@ -1,11 +1,15 @@
 extends ../../layouts/layout
-include ../../blocks/header/header
 include ../../blocks/input-dropdown/input-dropdown
 include ../../blocks/slide/slide
 include ../../blocks/checkbox-list/checkbox-list
 include ../../blocks/checkbox/checkbox
 include ../../blocks/card-photo/card-photo
-include ../../blocks/footer/footer
+
+block head
+  - const title = 'Search room';
+
+block footer
+  - const underline = true;
 
 block body
   -
@@ -208,7 +212,6 @@ block body
       },
     ];
 
-  +header({})
   main.page-main.page-main_displayed
     .page-main__filters
       .page-main__filter-block1
@@ -232,4 +235,3 @@ block body
       +card-photo({ display: true, margin: 'common', padding: true, photos: cards })
       .page-main__pagination
         include ../../blocks/pagination/pagination
-  +footer({ border: true })

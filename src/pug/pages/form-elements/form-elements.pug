@@ -1,4 +1,4 @@
-extends ../../layouts/layout
+extends ../../layouts/ui-kit-layout
 include ../../blocks/logo/logo
 include ../../blocks/input/input
 include ../../blocks/input-dropdown/input-dropdown
@@ -12,6 +12,9 @@ include ../../blocks/button-rate/button-rate
 include ../../blocks/slide/slide
 include ../../blocks/advantage/advantage
 include ../../blocks/reviews/reviews
+
+block head
+  - const title = 'Form elements';
 
 block body
   -

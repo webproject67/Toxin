@@ -2,8 +2,6 @@ include ../input-email/input-email
 include ../footer-bottom/footer-bottom
 
 mixin footer(options)
-  - const { border } = options;
-  - const classNameFooter = border ? 'page-footer_bordered' : '';
   -
     const linksText = [
     { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
@@ -11,7 +9,11 @@ mixin footer(options)
     { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
     ];
 
-  footer(class=`page-footer ${classNameFooter}`)
+  block footer
+  - let footerClass = 'page-footer';
+  if underline
+    - footerClass = `${footerClass} page-footer_bordered`;
+  footer(class=footerClass)
     .page-footer__logo
       +logotype({ displayed: true })
     .page-footer__top

@@ -1,9 +1,13 @@
 extends ../../layouts/layout
-include ../../blocks/header/header
 include ../../blocks/advantage/advantage
 include ../../blocks/reviews/reviews
 include ../../blocks/form-room/form-room
-include ../../blocks/footer/footer
+
+block head
+  - const title = 'Room details';
+
+block footer
+  - const underline = true;
 
 block body
   -
@@ -43,7 +47,6 @@ block body
       }
     ];
 
-  +header({})
   main.page-main.page-main_no_padding
     section.page-main__gallery
       include ../../blocks/gallery/gallery
@@ -69,4 +72,3 @@ block body
             p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       section.page-main__form.page-main__form_margin_common3
         +form-room({ textItem: 'Сбор за доп. услуги', padding: true, marginInputs: true, marginAmount: true, display: true, marginIcon: true, width: true })
-  +footer({ border: true })
