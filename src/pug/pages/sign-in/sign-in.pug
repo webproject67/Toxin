@@ -1,10 +1,10 @@
 extends ../../layouts/layout
-include ../../blocks/header/header
 include ../../blocks/form-sign-in/form-sign-in
-include ../../blocks/footer/footer
+
+block head
+  - const title = 'Sign in';
 
 block body
-  +header({})
   main.page-main.js-page-main_image3
     .js-slider
       .slItems
@@ -15,4 +15,3 @@ block body
             class=`slItem page-main_background${val}`,
             style="background-position: center 98%"
           )
-  +footer({})

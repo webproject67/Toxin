@@ -1,10 +1,13 @@
-extends ../../layouts/layout
+extends ../../layouts/ui-kit-layout
 include ../../blocks/logo/logo
 include ../../blocks/form-search/form-search
 include ../../blocks/form-room/form-room
 include ../../blocks/form-registration/form-registration
 include ../../blocks/form-sign-in/form-sign-in
 include ../../blocks/card-photo/card-photo
+
+block head
+  - const title = 'Cards';
 
 block body
   -

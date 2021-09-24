@@ -1,8 +1,11 @@
-extends ../../layouts/layout
+extends ../../layouts/ui-kit-layout
 include ../../blocks/logo/logo
 include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/footer-reduction/footer-reduction
+
+block head
+  - const title = 'Headers & footers';
 
 block body
   h1.headers-footers__title Headers & Footers
