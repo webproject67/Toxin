@@ -10,6 +10,7 @@ import '../pug/blocks/input-email/init';
 import '../pug/blocks/button-like/like';
 import '../pug/blocks/button-like/init';
 import '../assets/lib/rate/jquery.star.rating';
+import '../pug/blocks/button-rate/rate';
 import '../pug/blocks/button-rate/init';
 import '../assets/lib/ui-slider/jquery-ui.min';
 import '../assets/lib/ui-slider/jquery.ui.touch-punch.min';
