@@ -1,7 +1,7 @@
 mixin footer-bottom(options)
   - const { display, margin } = options;
-  - const classNameDisplay = display ? 'page-footer__bottom_displayed' : '';
-  - const classNameMargin = margin ? 'page-footer__socials_margin_common' : '';
+  - const classNameDisplay = display ? 'footer-bottom_displayed' : '';
+  - const classNameMargin = margin ? 'footer-bottom__socials_margin_common' : '';
   -
     const links = [
       { href: 'https://twitter.com/?lang=ru', src: '../../blocks/footer-bottom/img/svg/twitter.svg' }, 
@@ -9,14 +9,14 @@ mixin footer-bottom(options)
       { href: 'https://www.instagram.com/?hl=ru', src: '../../blocks/footer-bottom/img/svg/instagram.svg' }
     ];
 
-  div(class=`page-footer__bottom ${classNameDisplay}`) 
-    p.page-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-    ul(class=`page-footer__socials ${classNameMargin}`) 
+  div(class=`footer-bottom ${classNameDisplay}`) 
+    p.footer-bottom__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+    ul(class=`footer-bottom__socials ${classNameMargin}`) 
       each val in links
-        li.page-footer__social 
-          a.page-footer__link-social(
+        li.footer-bottom__social 
+          a.footer-bottom__link-social(
             href=val.href,
             target="_blank",
             rel="noopener noreferrer"
           )
-            img.page-footer__img(src=val.src, alt="logo")
+            img.footer-bottom__img(src=val.src, alt="logo")
