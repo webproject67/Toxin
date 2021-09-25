@@ -1,3 +1,7 @@
+.headers-footers {
+  margin: 20px 0;
+}
+
 .headers-footers__title {
   position: absolute;
   overflow: hidden;
@@ -11,12 +15,6 @@
   clip-path: inset(100%);
 }
 
-.headers-footers {
-  margin: 20px 0;
-}
-
-.headers-footers__block2,
-.headers-footers__block3,
-.headers-footers__block4 {
+.headers-footers_compact {
   margin-top: 40px;
 }

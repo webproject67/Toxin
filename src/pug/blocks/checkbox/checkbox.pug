@@ -2,6 +2,7 @@ mixin checkbox(options)
   - const { checkboxs, listClassName, color } = options;
   - const classNameColor = color ? 'checkbox__label_colored1' : '';
   - const classNameList = listClassName === 'common' ? 'checkbox__list_margin_common' : listClassName === 'unreflected' ? 'checkbox__list_unreflected' : '';
+  
   .checkbox
     ul(class=`checkbox__list ${classNameList}`) 
       each val in checkboxs

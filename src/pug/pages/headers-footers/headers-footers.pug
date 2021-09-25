@@ -8,14 +8,13 @@ block head
   - const title = 'Headers & footers';
 
 block body
-  h1.headers-footers__title Headers & Footers
   +logo
   .headers-footers
-    .headers-footers__block1 
-      +header({})
-    .headers-footers__block2
+    h1.headers-footers__title Headers & Footers
+    +header({})
+    .headers-footers_compact
       +header({ name: 'Юлий Цезарь' })
-    .headers-footers__block3
+    .headers-footers_compact
       +footer({})
-    .headers-footers__block4
+    .headers-footers_compact
       +footer-reduction({ display: true, margin: true, })
