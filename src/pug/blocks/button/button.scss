@@ -34,7 +34,7 @@
       border-radius: 22px;
       cursor: pointer;
       transition: all 0.4s ease;
-  
+
       &:hover {
         opacity: 0.5;
       }
@@ -43,11 +43,11 @@
     &_bordered {
       box-shadow: 2px 1000px 1px #fff inset;
     }
-    
+
     &_filled {
       color: #ffffff;
       box-shadow: none;
-  
+
       &:hover {
         color: #ffffff;
       }
@@ -73,7 +73,7 @@
     &_arrow {
       position: relative;
       text-transform: none;
-  
+
       &::after {
         position: absolute;
         right: 10px;

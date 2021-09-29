@@ -3,7 +3,7 @@ import { getBoolEmail } from '../../../scripts/utils';
 (function ($) {
   $.fn.onClick = function () {
     function main(e) {
-      e.click(function () {
+      e.click(() => {
         const $input = $('#email');
         const $value = String($input.val());
         if (!getBoolEmail($value)) {

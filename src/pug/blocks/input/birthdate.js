@@ -1,7 +1,7 @@
 (function ($) {
   $.fn.keydowns = function () {
     function main(e) {
-      e.keydown(function (evt) {
+      e.keydown((evt) => {
         const additionalKeysAllowed = () =>
           evt.keyCode === 46 ||
           evt.keyCode === 8 ||
