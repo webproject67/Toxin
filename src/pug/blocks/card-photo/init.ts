@@ -1,8 +1,6 @@
 interface JQuery {
-  flexslider: Function;
+  roller: Function;
 }
 
 const $flexslider = $('.js-flexslider');
-$flexslider.flexslider({
-  animation: 'slide',
-});
+$flexslider.roller();
