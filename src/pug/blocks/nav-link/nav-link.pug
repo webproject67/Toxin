@@ -1,8 +1,10 @@
-mixin nav-link
+mixin nav-link(options)
+  - const { hovering } = options;
+
   -
     const items = [
       {
-        active: true,
+        active: `${hovering ? true : ''}`,
         text: 'О нас',
         arrow: false
       },

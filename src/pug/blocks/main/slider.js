@@ -19,10 +19,10 @@
         auto: 5,
       });
 
-      setHeightMain($(this).children(), 830, 690);
+      setHeightMain($(this).children(), 830, 710);
 
       const handleWindowResize = function () {
-        setHeightMain($(this).children(), 830, 690);
+        setHeightMain($(this).children(), 830, 710);
       };
 
       $(window).on('resize', handleWindowResize);
@@ -36,10 +36,10 @@
         auto: 5,
       });
 
-      setHeightMain($(this).children(), 683, 661);
+      setHeightMain($(this).children(), 683, 690);
 
       const handleWindowResize = function () {
-        setHeightMain($(this).children(), 683, 661);
+        setHeightMain($(this).children(), 683, 690);
       };
 
       $(window).on('resize', handleWindowResize);

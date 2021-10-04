@@ -21,7 +21,7 @@ mixin form-registration(options)
     .form__checkbox
       +checkbox-toggle({ id: 'checkbox', checked: false })
     .form__submit_margin_top2
-      +button({ text: textSubmit, type: 'button', theme: 'filled' })
+      +button({ text: textSubmit, type: 'button', theme: 'filled', icon: 'arrow' })
     .form__reg 
       p.form__text-reg Уже есть аккаунт на Toxin
       +button({ text: 'войти', type: 'link', href: 'sign-in.html', theme: 'bordered' })

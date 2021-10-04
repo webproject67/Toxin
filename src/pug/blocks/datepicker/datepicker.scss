@@ -66,11 +66,17 @@
 
 .datepicker--cell {
   max-width: 39.7px;
-  height: 40px;
+  height: 25%;
   font-family: Montserrat;
   font-size: 12px;
   line-height: 15px;
   color: $color-50;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
 }
 
 .datepicker--cell.-current-,
@@ -92,23 +98,36 @@
   color: #ffffff;
 }
 
-.datepicker--cell.-range-from- {
+.datepicker--cell.-range-from-,
+.datepicker--cell.-range-to- {
   position: relative;
   border: none;
 
   &::before {
+    content: "";
     position: absolute;
-    content: '';
     z-index: -1;
     top: 0;
-    right: 0;
+    display: block;
     width: 20px;
-    height: 40px;
+    padding-top: 100%;
     background: linear-gradient(
       180deg,
       rgba(188, 156, 255, 0.25),
       rgba(139, 164, 249, 0.25)
     );
+  }
+}
+
+.datepicker--cell.-range-from- {
+  &::before {
+    right: 0;
+  }
+}
+
+.datepicker--cell.-range-to- {
+  &::before {
+    left: 0;
   }
 }
 
@@ -119,26 +138,6 @@
     rgba(188, 156, 255, 0.25),
     rgba(139, 164, 249, 0.25)
   );
-}
-
-.datepicker--cell.-range-to- {
-  position: relative;
-  border: none;
-
-  &::before {
-    position: absolute;
-    content: '';
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 40px;
-    background: linear-gradient(
-      180deg,
-      rgba(188, 156, 255, 0.25),
-      rgba(139, 164, 249, 0.25)
-    );
-  }
 }
 
 .datepicker--buttons {
