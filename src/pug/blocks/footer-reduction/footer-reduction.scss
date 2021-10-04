@@ -1,9 +1,13 @@
-.page-footer {
-  &_displayed {
+.page-footer_displayed {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 23.3%;
     padding: 120px 0 10px;
+}
+
+@media (max-width: $mobile-width-only) {
+  .page-footer_displayed {
+    margin: 0 auto;
   }
 }

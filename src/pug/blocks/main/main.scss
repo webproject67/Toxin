@@ -1,4 +1,6 @@
 .page-main {
+  flex-grow: 1;
+  
   &_background1 {
     background: url('../pug/blocks/main/img/img1.jpg') no-repeat;
     background-size: cover;
@@ -111,7 +113,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 53px 9.7% 63px;
+  max-width: 1160px;
+  margin: 53px auto 63px;
 }
 
 .page-main__details {
@@ -190,6 +193,7 @@
 
   .page-main__wrapper {
     flex-direction: column-reverse;
+    margin:53px 9.7% 63px;
   }
 
   .page-main__form_margin_common3 {

@@ -36,18 +36,6 @@
   width: 100%;
 }
 
-@media (min-width: 1441px) {
-  .gallery {
-    display: flex;
-    justify-content: center;
-  }
-
-  .gallery__list {
-    grid-template-columns: 981px 459px;
-    grid-template-rows: 243px;
-  }
-}
-
 @media (max-width: $mobile-width-only) {
   .gallery__list {
     grid-template-columns: 50% 50%;
