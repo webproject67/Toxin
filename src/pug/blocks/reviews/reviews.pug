@@ -10,7 +10,7 @@ mixin reviews(options)
       li(class=`reviews__item ${classNameMarginItem}`)
         .reviews__block-avatar 
           img.reviews__avatar(
-            src=`../../blocks/reviews/img/${val.image}.jpg`,
+            src=`../../../assets/img/avatars/${val.image}.jpg`,
             alt="avatar"
           )
           +button-like({ text: val.buttonNumber, active: val.active })
