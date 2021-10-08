@@ -103,6 +103,13 @@
   color: $color;
 }
 
+.page-main__cards {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .page-main__pagination {
   margin: 21px auto;
   text-align: center;
@@ -189,6 +196,10 @@
 @media (max-width: $desktop-width) {
   .page-main__title {
     text-align: center;
+  }
+
+  .page-main__cards {
+    justify-content: center;
   }
 
   .page-main__wrapper {

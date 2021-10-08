@@ -14,20 +14,20 @@ block body
     const cards = [
       {
         number: 888,
-        luxe: ' Люкс',
+        category: 'Люкс',
         price: '9 990',
         count: 5,
         review: 145,
-        imgs: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
-        hover: true
+        images: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
+        state: 'hovering'
       },
       {
         number: 840,
-        luxe: '',
+        category: '',
         price: '9 900',
         count: 4,
         review: 65,
-        imgs: ['image2.jpg', 'image1.jpg', 'image4.jpg', 'image3.jpg']
+        images: ['image2.jpg', 'image1.jpg', 'image4.jpg', 'image3.jpg']
       }
     ];
 
@@ -44,4 +44,6 @@ block body
     .cards__block5
       +form-sign-in
     .cards__block6
-      +card-photo({ margin: 'bottom', photos: cards })
+      each card in cards
+        .cards__card-photo
+          +card-photo(card)
