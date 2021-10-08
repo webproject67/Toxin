@@ -1,34 +1,36 @@
 include ../button-rate/button-rate
 
 mixin card-photo(options)
-  - const { display, margin, padding, photos } = options;
-  - const classNameDisplay = display ? 'card-photo_displayed' : '';
-  - const classNamePadding = padding ? 'card-photo__symbol_padding_left' : '';
-  - const classNameMargin = margin === 'bottom' ? 'card-photo__item_margin_bottom1' : margin === 'common' ? 'card-photo__item_margin_common2' : '';
+  -
+    const { state, images, number, category, price, count, review } = options;
 
-  ul(class=`card-photo ${classNameDisplay}`)
-    each val in photos
-      - const classNameHover = val.hover ? 'flexslider js-flexslider flexslider_hovering' : 'flexslider js-flexslider';
+    const stateModifiers = {
+      hovering: 'flexslider_hovering',
+    };
 
-      li(class=`card-photo__item ${classNameMargin}`)
-        .card-photo__block-img
-          div(class=classNameHover)
-            ul.slides
-              each img in val.imgs
-                li
-                  a.card-photo__link(href="room-details.html")
-                    img.card-photo__img(
-                      src=`../../../assets/img/rooms/${img}`,
-                      alt="photo"
-                    )
-        .card-photo__details
-          .card-photo__block-price
-            p.card-photo__symbol №
-              span.card-photo__symbol_size_large= ` ${val.number}`
-                span(class=`card-photo__symbol_colored ${classNamePadding}`)= val.luxe
-            p.card-photo__number= `${val.price}₽ `
-              span.card-photo__number_size_small в сутки
-          .card-photo__block-estimations
-            +button-rate({ count: val.count })
-            p.card-photo__text-review= `${val.review} `
-              span.card-photo__text-review_weight_normal Отзывов
+    const classes = [
+      stateModifiers[state],
+    ];
+
+  .card-photo
+    .card-photo__block-img
+      div.flexslider.js-flexslider(class=classes)
+        ul.slides
+          each img in images
+            li
+              a.card-photo__link(href="room-details.html")
+                img.card-photo__img(
+                  src=`../../../assets/img/rooms/${img}`,
+                  alt="photo"
+                )
+    .card-photo__details
+      .card-photo__block-price
+        p.card-photo__symbol №
+          span.card-photo__number= ` ${number}`
+            span.card-photo__category= ` ${category}`
+        p.card-photo__price= `${price}₽ `
+          span.card-photo__day в сутки
+      .card-photo__block-estimations
+        +button-rate({ count: count })
+        p.card-photo__text-review= `${review} `
+          span.card-photo__feedback Отзывов
