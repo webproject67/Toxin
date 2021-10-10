@@ -1,29 +1,30 @@
-.form__inputs {
-  &_margin_top {
-    margin-top: 20px;
+.form-room {
+  padding: 23px 29px 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  &__block-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
   }
-}
 
-.form__submit {
-  &_margin_top1 {
-    display: grid;
-    margin-top: 6px;
+  &__symbol {
+    margin: 16px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color;
   }
-}
 
-.form__symbol {
-  margin: 16px 0 0;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  color: $color;
-
-  &_size_large {
+  &__number {
     font-size: 24px;
     line-height: 29px;
   }
 
-  &_colored {
+  &__category {
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
@@ -31,102 +32,102 @@
     color: $color-purple;
   }
 
-  &_padding_left {
-    padding-left: 9px;
+  &__price {
+    margin: 16px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-50;
   }
-}
 
-.form__number {
-  margin: 16px 0 0;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  color: $color-50;
-
-  &_size_small {
+  &__day {
     font-weight: normal;
     font-size: 12px;
   }
-}
 
-.form__list {
-  margin: 17px 0;
-  padding: 0;
-  list-style: none;
-}
-
-.form__item {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.form__text-price {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  line-height: 18px;
-
-  &_justify_contented {
-    justify-content: flex-start;
+  &__inputs {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
   }
-}
 
-.form__icon-price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  color: $color-25;
-  min-width: 20px;
-  height: 20px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 50px;
-
-  &_margin_left {
-    margin-left: 10px;
+  &__guests {
+    margin-top: 21px;
   }
-}
 
-.form__number-price {
-  width: 33%;
-  margin: 0;
-  text-align: right;
-
-  &_narrow {
-    width: 31%;
+  &__list {
+    margin: 17px 0;
+    padding: 0;
+    list-style: none;
   }
-}
+  
+  &__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
 
-.form__amount {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  &__text-price {
+    position: relative;
+    margin: 0;
 
-  &_margin_top {
+    &_state_information::before {
+      position: absolute;
+      content: 'i';
+      right: -30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-25;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 50px;
+    }
+  }
+
+  &__number-price {
+    margin: 0;
+  }
+
+  &__amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     margin-top: 31px;
   }
-}
 
-.form__total,
-.form__total-number {
-  margin: 14px 0;
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 23px;
-  color: $color;
+  &__total,
+  &__total-number {
+    margin: 14px 0;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: $color;
+  }
 
-  &_transformed {
-    transform: translateX(9px);
+  &__ellipsis {
+    width: 46.7%;
+    border-top: 1px dotted rgba(31, 32, 65, 0.25);
+  }
+
+  &__submit {
+    display: grid;
+    margin-top: 8px;
   }
 }
 
-.form__ellipsis {
-  width: 46.7%;
-  border-top: 1px dotted rgba(31, 32, 65, 0.25);
+@media (max-width: $mobile-width-only) {
+  .form-room {
+    padding: 15px;
+
+    &__text-price_state_information::before {
+      right: -22px;
+    }
+  }
 }
