@@ -70,32 +70,32 @@ block body
 
     const conveniences1 = [
       {
-        label: 'Завтрак', 
+        value: 'Завтрак', 
         id: 'breakfast1', 
         checked: false
       },
       {
-        label: 'Письменный стол', 
+        value: 'Письменный стол', 
         id: 'desk1', 
         checked: true
       },
       {
-        label: 'Стул для кормления', 
+        value: 'Стул для кормления', 
         id: 'chair1', 
         checked: true
       },
       {
-        label: 'Кроватка', 
+        value: 'Кроватка', 
         id: 'Crib1', 
         checked: true
       },
       {
-        label: 'Телевизор', 
+        value: 'Телевизор', 
         id: 'TV1', 
         checked: false
       },
       {
-        label: 'Шампунь', 
+        value: 'Шампунь', 
         id: 'shampoo1', 
         checked: false
       }
@@ -103,32 +103,32 @@ block body
 
     const conveniences2 = [
       {
-        label: 'Завтрак', 
+        value: 'Завтрак', 
         id: 'breakfast2', 
         checked: false
       },
       {
-        label: 'Письменный стол', 
+        value: 'Письменный стол', 
         id: 'desk2', 
         checked: true
       },
       {
-        label: 'Стул для кормления', 
+        value: 'Стул для кормления', 
         id: 'chair2', 
         checked: true
       },
       {
-        label: 'Кроватка', 
+        value: 'Кроватка', 
         id: 'Crib2', 
         checked: true
       },
       {
-        label: 'Телевизор', 
+        value: 'Телевизор', 
         id: 'TV2', 
         checked: false
       },
       {
-        label: 'Шампунь', 
+        value: 'Шампунь', 
         id: 'shampoo2', 
         checked: false
       }
@@ -136,36 +136,38 @@ block body
 
     const rules = [
       {
-        label: 'Можно курить', 
+        value: 'Можно курить', 
         id: 'smoke', 
         checked: false
       },
       {
-        label: 'Можно с питомцами', 
+        value: 'Можно с питомцами', 
         id: 'pets', 
         checked: true
       },
       {
-        label: 'Можно пригласить гостей (до 10 человек)', 
+        value: 'Можно пригласить гостей (до 10 человек)', 
         id: 'guests', 
         checked: true
       }
     ];
 
-    const available = [
+    const accessibility = [
       {
-        label: 'Широкий коридор', 
+        value: 'Широкий коридор', 
         id: 'hallway', 
         checked: false,
-        text: 'Ширина коридоров в номере не менее 91 см.',
-        width: 'wide1'
+        details: 'Ширина коридоров в номере не менее 91 см.',
+        size: 'narrow',
+        font: 'fw'
       },
       {
-        label: 'Помощник для инвалидов', 
+        value: 'Помощник для инвалидов', 
         id: 'invalid', 
         checked: false,
-        text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-        width: 'wide2'
+        details: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+        size: 'wide',
+        font: 'fw'
       }
     ];
 
@@ -229,7 +231,8 @@ block body
         .form-elements__texts
           h3.form-elements__text Checkbox Buttons
         .form-elements__block-checkbox
-          +checkbox({ checkboxs: rules })
+          each rule in rules
+            +checkbox(rule)
       .form-elements__block
         .form-elements__texts
           h3.form-elements__text Radio Buttons
@@ -288,15 +291,16 @@ block body
         +input-dropdown({ dropdown: true, text: 'dropdown', value: '3 гостя', id: 'guest3', inputClassName: 'border', display: true, option: guests2, textLeft: 'очистить', textRight: 'применить' })
     .form-elements__block7
       .form-elements__block
-        +checkbox-list({ text: 'expandable checkbox list', unreflected: 'unreflected', checkboxs: conveniences1 })
+        +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', checkboxes: conveniences1 })
       .form-elements__block
-        +checkbox-list({ text: 'expandable checkbox list', transform: true, checkboxs: conveniences2 })
+        +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', state: 'active', checkboxes: conveniences2 })
     .form-elements__block8
       .form-elements__block
         .form-elements__texts
           h3.form-elements__text rich Checkbox Buttons
         .form-elements__block-checkbox
-          +checkbox({ color: true, checkboxs: available })
+          each access in accessibility
+            +checkbox(access)
     .form-elements__block9
       .form-elements__block
         .form-elements__texts

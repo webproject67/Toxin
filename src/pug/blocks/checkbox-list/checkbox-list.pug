@@ -1,9 +1,13 @@
 mixin checkbox-list(options)
-  - const { text, unreflected, transform, checkboxs } = options;
-  - const classNameTransform = transform ? 'checkbox-list__icon_transformed' : '';
+  - 
+    const { value, state, checkboxes } = options;
 
-  .checkbox-list.js-checkbox-list
-    input.checkbox-list__button(type="button", value=text)
-    label.checkbox-list__label 
-      span(class=`checkbox-list__icon ${classNameTransform}`) expand_more
-  +checkbox({ listClassName: unreflected, checkboxs: checkboxs })
+    const stateModifiers = {
+      active: 'checkbox-list_state_active',
+    };
+
+  .checkbox-list.js-checkbox-list(class= stateModifiers[state])
+    button.checkbox-list__button(type="button")= value
+    .checkbox-list__checkboxes
+      each checkbox in checkboxes
+        +checkbox(checkbox)
