@@ -30,36 +30,38 @@ block body
 
     const rules = [
       {
-        label: 'Можно курить', 
+        value: 'Можно курить', 
         id: 'smoke', 
-        checked: false
+        checked: false,
       },
       {
-        label: 'Можно с питомцами', 
+        value: 'Можно с питомцами', 
         id: 'pets', 
-        checked: true
+        checked: true,
       },
       {
-        label: 'Можно пригласить гостей (до 10 человек)', 
+        value: 'Можно пригласить гостей (до 10 человек)', 
         id: 'guests', 
-        checked: true
+        checked: true,
       }
     ];
 
-    const available = [
+    const accessibility = [
       {
-        label: 'Широкий коридор', 
+        value: 'Широкий коридор', 
         id: 'hallway', 
         checked: false,
-        text: 'Ширина коридоров в номере не менее 91 см.',
-        width: 'wide1'
+        details: 'Ширина коридоров в номере не менее 91 см.',
+        size: 'narrow',
+        font: 'fw'
       },
       {
-        label: 'Помощник для инвалидов', 
+        value: 'Помощник для инвалидов', 
         id: 'invalid', 
         checked: false,
-        text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-        width: 'wide2'
+        details: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+        size: 'wide',
+        font: 'fw'
       }
     ];
 
@@ -81,32 +83,32 @@ block body
 
     const conveniences = [
       {
-        label: 'Завтрак', 
+        value: 'Завтрак', 
         id: 'breakfast', 
         checked: false
       },
       {
-        label: 'Письменный стол', 
+        value: 'Письменный стол', 
         id: 'desk', 
         checked: true
       },
       {
-        label: 'Стул для кормления', 
+        value: 'Стул для кормления', 
         id: 'chair', 
         checked: true
       },
       {
-        label: 'Кроватка', 
+        value: 'Кроватка', 
         id: 'Crib', 
         checked: true
       },
       {
-        label: 'Телевизор', 
+        value: 'Телевизор', 
         id: 'TV', 
         checked: false
       },
       {
-        label: 'Шампунь', 
+        value: 'Шампунь', 
         id: 'shampoo', 
         checked: false
       }
@@ -222,14 +224,18 @@ block body
         +slide({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере' })
       .page-main__filter-block4
         h3.page-main__text-filter правила дома
-        +checkbox({ listClassName: 'common', checkboxs: rules })
+        .page-main__checkbox-rules
+          each rule in rules
+            +checkbox(rule)
       .page-main__filter-block5
         h3.page-main__text-filter доступность
-        +checkbox({ color: 'color', listClassName: 'common', checkboxs: available })
+        .page-main__checkbox-access
+          each access in accessibility
+            +checkbox(access)
       .page-main__filter-block6
         +input-dropdown({ dropdown: true, text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'cursor', id: 'rooms', option: numbers })
       .page-main__filter-block7
-        +checkbox-list({ text: 'дополнительные удобства', unreflected: 'unreflected', checkboxs: conveniences })
+        +checkbox-list({ value: 'ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА', state: 'active', checkboxes: conveniences })
     section.page-main__rooms
       h1.page-main__title Номера, которые мы для вас подобрали
       .page-main__cards

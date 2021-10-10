@@ -1,58 +1,58 @@
 .checkbox-toggle {
   margin-bottom: 10px;
-}
 
-.checkbox-toggle__label {
-  position: relative;
-  padding-left: 49px;
-  cursor: pointer;
+  &__label {
+    position: relative;
+    padding-left: 49px;
+    cursor: pointer;
+  
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      transition: all 0.4s ease;
+    }
+  
+    &::before {
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 20px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 10px;
+    }
+  
+    &::after {
+      top: 4px;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(180deg, $color-25);
+      border-radius: 10px;
+    }
+  }
 
-  &::before,
-  &::after {
+  &__input {
     position: absolute;
-    content: '';
-    transition: all 0.4s ease;
-  }
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    white-space: nowrap;
+    border: 0;
+    clip-path: inset(100%);
 
-  &::before {
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 20px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 10px;
-  }
-
-  &::after {
-    top: 4px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(180deg, $color-25);
-    border-radius: 10px;
-  }
-}
-
-.checkbox-toggle__checkbox {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  white-space: nowrap;
-  border: 0;
-  clip-path: inset(100%);
-}
-
-.checkbox-toggle__checkbox:checked + .checkbox-toggle__label {
-  &::before {
-    border: 1px solid #bc9cff;
-  }
-
-  &::after {
-    left: 24px;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    &:checked + .checkbox-toggle__label {
+      &::before {
+        border: 1px solid #bc9cff;
+      }
+    
+      &::after {
+        left: 24px;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      }
+    }
   }
 }

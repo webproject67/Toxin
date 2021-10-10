@@ -1,37 +1,37 @@
 .checkbox-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  &__button {
+    position: relative;
+    width: 100%;
+    margin-bottom: 9px;
+    padding: 11px 0;
+    text-align: start;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  
+    &::before {
+      position: absolute;
+      content: 'expand_more';
+      top: 11px;
+      right: 11px;
+      font-family: MaterialIcons;
+      font-size: 20px;
+    }
+  }
 
-.checkbox-list__button {
-  padding: 10px 60px 10px 0;
-  text-align: start;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $color;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.checkbox-list__label {
-  position: relative;
-}
-
-.checkbox-list__icon {
-  position: absolute;
-  top: -12px;
-  right: 10px;
-  font-family: MaterialIcons;
-  font-size: 24px;
-  line-height: 24px;
-  color: $color-50;
-  cursor: pointer;
-
-  &_transformed {
+  &_state_active #{&}__button::before {
     transform: rotate(180deg);
+  }
+
+  &_state_active #{&}__checkboxes {
+    display: block;
+  }
+
+  &__checkboxes {
+    display: none;
   }
 }
