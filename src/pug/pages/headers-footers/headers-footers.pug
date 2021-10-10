@@ -2,12 +2,25 @@ extends ../../layouts/ui-kit-layout
 include ../../blocks/logo/logo
 include ../../blocks/header/header
 include ../../blocks/footer/footer
-include ../../blocks/footer-reduction/footer-reduction
+include ../../blocks/footer-narrow/footer-narrow
 
 block head
   - const title = 'Headers & footers';
 
 block body
+  - 
+    const links = [
+      { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
+      { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
+      { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
+    ];
+
+    const socials = [
+      { href: 'https://twitter.com/?lang=ru', src: '../../../assets/img/socials/twitter.svg' }, 
+      { href: 'https://ru-ru.facebook.com/', src: '../../../assets/img/socials/facebook.svg' }, 
+      { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
+    ];
+
   +logo
   .headers-footers
     h1.headers-footers__title Headers & Footers
@@ -15,6 +28,6 @@ block body
     .headers-footers_compact
       +header({ name: 'Юлий Цезарь', hovering: true })
     .headers-footers_compact
-      +footer({})
+      +footer({ links: links, socials: socials })
     .headers-footers_compact
-      +footer-reduction({ display: true, margin: true, })
+      +footer-narrow({ socials: socials })
