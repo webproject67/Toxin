@@ -60,6 +60,39 @@ block body
       }
     ];
 
+    const guests = [
+      {
+        text: 'взрослые', 
+        number: 2
+      }, 
+      {
+        text: 'дети', 
+        number: 1
+      }, 
+      {
+        text: 'младенцы', 
+        number: 0, 
+        opacity: true
+      }
+    ];
+
+    const prices = [
+      {
+        text: '9 990₽ х 4 суток',
+        number: '39 960₽',
+      },
+      {
+        text: 'Сбор за услуги: скидка 2 179₽',
+        number: '0₽',
+        state: 'information'
+      },
+      {
+        text: 'Сбор за доп. услуги',
+        number: '300₽',
+        state: 'information'
+      }
+    ];
+
   main.page-main.page-main_no_padding
     section.page-main__gallery
       include ../../blocks/gallery/gallery
@@ -84,4 +117,4 @@ block body
             h2.page-main__subtitle.page-main__subtitle_margin_top2 Отмена
             p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       section.page-main__form.page-main__form_margin_common3
-        +form-room({ textItem: 'Сбор за доп. услуги', padding: true, marginInputs: true, marginAmount: true, display: true, marginIcon: true, width: true })
+        +form-room({ prices: prices, guests: guests })
