@@ -9,7 +9,20 @@ block head
   - const title = 'Search room';
 
 block footer
-  - const underline = true;
+  - 
+    const border = 'bordered';
+
+    const links = [
+      { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
+      { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
+      { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
+    ];
+
+    const socials = [
+      { href: 'https://twitter.com/?lang=ru', src: '../../../assets/img/socials/twitter.svg' }, 
+      { href: 'https://ru-ru.facebook.com/', src: '../../../assets/img/socials/facebook.svg' }, 
+      { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
+    ];
 
 block body
   -
