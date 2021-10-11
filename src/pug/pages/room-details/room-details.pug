@@ -2,7 +2,7 @@ extends ../../layouts/layout
 include ../../blocks/gallery/gallery
 include ../../blocks/advantage/advantage
 include ../../blocks/chart/chart
-include ../../blocks/reviews/reviews
+include ../../blocks/review/review
 include ../../blocks/condition/condition
 include ../../blocks/form-room/form-room
 
@@ -100,18 +100,18 @@ block body
     const reviews = [
       {
         image: 'image16', 
-        buttonNumber: 12,
+        quantity: 12,
         active: true,
         name: 'Мурад Сарафанов', 
         date: '5 дней назад',
-        reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
       },
       {
         image: 'image17', 
-        buttonNumber: 2,
+        quantity: 2,
         name: 'Патрисия Стёклышкова', 
         date: 'Неделю назад',
-        reviewText: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+        text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
       }
     ];
 
@@ -169,7 +169,9 @@ block body
         .page-main__reviews
           h2.page-main__subtitle.page-main__subtitle_margin_top1 Отзывы посетителей номера
             span.page-main__subtitle_colored 2 отзыва
-          +reviews({ marginList: true, marginItem: true, reviews: reviews })
+          each review in reviews
+            .page-main__review
+              +review({ review })
         .page-main__conditions
           .page-main__condition
             h2.page-main__subtitle.page-main__subtitle_margin_top2.page-main__subtitle_padding_left Правила

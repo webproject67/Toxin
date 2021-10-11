@@ -1,0 +1,29 @@
+.review {
+  display: flex;
+
+  &__block-avatar {
+    min-width: 45px;
+    margin-right: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__avatar {
+    margin-bottom: 12px;
+  }
+
+  &__name,
+  &__date,
+  &__text {
+    margin: 0;
+  }
+  
+  &__text {
+    margin-top: 10px;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+}
