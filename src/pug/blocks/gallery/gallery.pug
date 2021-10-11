@@ -1,13 +1,8 @@
--
-  const img = [
-  '../../../assets/img/gallery/image13.jpg', 
-  '../../../assets/img/gallery/image14.jpg', 
-  '../../../assets/img/gallery/image15.jpg'
-  ];
+mixin gallery(options)
 
-.gallery
-  h2.gallery__title Галерея
-  ul.gallery__list
-    each val in img
-      li.gallery__item 
-        img.gallery__img(src=val, alt="room")
+  .gallery
+    h2.gallery__title Галерея
+    ul.gallery__list
+      each val in options
+        li.gallery__item 
+          img.gallery__img(src=val, alt="room")

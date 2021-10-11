@@ -4,12 +4,15 @@ include ../../blocks/input/input
 include ../../blocks/input-dropdown/input-dropdown
 include ../../blocks/input-email/input-email
 include ../../blocks/checkbox/checkbox
+include ../../blocks/radio/radio
 include ../../blocks/checkbox-toggle/checkbox-toggle
 include ../../blocks/checkbox-list/checkbox-list
 include ../../blocks/button/button
 include ../../blocks/button-like/button-like
 include ../../blocks/button-rate/button-rate
+include ../../blocks/pagination/pagination
 include ../../blocks/slide/slide
+include ../../blocks/condition/condition
 include ../../blocks/advantage/advantage
 include ../../blocks/reviews/reviews
 
@@ -195,6 +198,17 @@ block body
       }
     ];
 
+    const conditions = [
+      'Нельзя с питомцами', 
+      'Без вечеринок и мероприятий', 
+      'Время прибытия — после 13:00, а выезд до 12:00'
+    ];
+
+    const genders = [
+      { id: 'man', gender: 'Мужчина', checked: 'checked' }, 
+      { id: 'woman', gender: 'Женщина' }
+    ];
+
   +logo
   .form-elements 
     h1.form-elements__title Form Elements
@@ -237,7 +251,7 @@ block body
         .form-elements__texts
           h3.form-elements__text Radio Buttons
         .form-elements__block-radio
-          include ../../blocks/radio/radio
+          +radio(genders)
       .form-elements__block
         .form-elements__texts
           h3.form-elements__text Toggle
@@ -277,7 +291,7 @@ block body
         .form-elements__texts
           h3.form-elements__text pagination
         .form-elements__block-pagination
-          include ../../blocks/pagination/pagination
+          +pagination()
     .form-elements__block4
       .form-elements__block
         +input-dropdown({ dropdown: true, text: 'dropdown', text2: 'default', value: '2 спальни, 2 кровати...', inputClassName: 'cursor', id: 'rooms1', option: numbers })
@@ -306,7 +320,7 @@ block body
         .form-elements__texts
           h3.form-elements__text bullet list
         .form-elements__block-condition
-          include ../../blocks/condition/condition
+          +condition(conditions)
     .form-elements__block10
       .form-elements__block
         +advantage({ texts: advantages })

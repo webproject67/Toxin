@@ -2,25 +2,7 @@ include ../input-dropdown/input-dropdown
 include ../button/button
 include ../checkbox-toggle/checkbox-toggle
 
-mixin form-search
-  -
-    const guests = [
-      {
-        text: 'взрослые', 
-        number: 0, 
-        opacity: true
-      }, 
-      {
-        text: 'дети', 
-        number: 0, 
-        opacity: true
-      }, 
-      {
-        text: 'младенцы', 
-        number: 0, 
-        opacity: true
-      }
-    ];
+mixin form-search(options)
 
   form.form(action="search-room.html")
     h1.form__title Найдём номера под ваши пожелания
@@ -28,6 +10,6 @@ mixin form-search
       +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'width', text: 'прибытие', datepicker: 'datepicker2' })
       +input-dropdown({ value: 'ДД.ММ.ГГГГ', id: 'date2', inputClassName: 'width', text: 'выезд' })
     .form__guests 
-      +input-dropdown({ dropdown: true, value: 'Сколько гостей', inputClassName: 'cursor', id: 'guest1', option: guests, textLeft: '', textRight: 'применить', text: 'гости' })
+      +input-dropdown({ dropdown: true, value: 'Сколько гостей', inputClassName: 'cursor', id: 'guest1', option: options, textLeft: '', textRight: 'применить', text: 'гости' })
     .form__submit 
       +button({ text: 'ПОДОБРАТЬ НОМЕР', type: 'button', theme: 'filled', icon: 'arrow' })

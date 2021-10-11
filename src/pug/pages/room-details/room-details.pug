@@ -1,6 +1,9 @@
 extends ../../layouts/layout
+include ../../blocks/gallery/gallery
 include ../../blocks/advantage/advantage
+include ../../blocks/chart/chart
 include ../../blocks/reviews/reviews
+include ../../blocks/condition/condition
 include ../../blocks/form-room/form-room
 
 block head
@@ -22,8 +25,44 @@ block footer
       { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
     ];
 
+block header 
+  -
+    const navigators = [
+      {
+        active: false,
+        text: 'О нас',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Услуги',
+        arrow: true
+      },
+      {
+        active: false,
+        text: 'Вакансии',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Новости',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Соглашения',
+        arrow: true
+      },
+    ];
+
 block body
   -
+    const galleries = [
+      '../../../assets/img/gallery/image13.jpg', 
+      '../../../assets/img/gallery/image14.jpg', 
+      '../../../assets/img/gallery/image15.jpg'
+    ];
+
     const advantages = [
       {
         icon: 'insert_emoticon', 
@@ -42,6 +81,22 @@ block body
       }
     ]; 
 
+    const gradients = [
+      { min: '#FFE39C', max: '#FFBA9C' }, 
+      { min: '#BC9CFF', max: '#8BA4F9' }, 
+      { min: '#6FCF97', max: '#66D2EA' }
+    ];
+
+    const circles = [
+      { fill: '#fff' }, 
+      { fill: 'transparent', stroke: '#ffffff', strokeWidth: '1' }, 
+      { fill: 'transparent', stroke: 'url(#Gradient1)', strokeWidth: '1', strokeDasharray: '49 51', strokeDashoffset: '74.5' }, 
+      { fill: 'transparent', stroke: 'url(#Gradient2)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '124.5' }, 
+      { fill: 'transparent', stroke: 'url(#Gradient3)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '199.5' }
+    ];
+
+    const estimations = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'];
+
     const reviews = [
       {
         image: 'image16', 
@@ -58,6 +113,12 @@ block body
         date: 'Неделю назад',
         reviewText: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
       }
+    ];
+
+    const conditions = [
+      'Нельзя с питомцами', 
+      'Без вечеринок и мероприятий', 
+      'Время прибытия — после 13:00, а выезд до 12:00'
     ];
 
     const guests = [
@@ -95,7 +156,7 @@ block body
 
   main.page-main.page-main_no_padding
     section.page-main__gallery
-      include ../../blocks/gallery/gallery
+      +gallery(galleries)
     .page-main__wrapper
       section.page-main__details
         .page-main__conveniences
@@ -104,7 +165,7 @@ block body
             +advantage({ texts: advantages })
           .page-main__experience
             h2.page-main__subtitle Впечатления от номера
-            include ../../blocks/chart/chart
+            +chart({ gradients, circles, estimations })
         .page-main__reviews
           h2.page-main__subtitle.page-main__subtitle_margin_top1 Отзывы посетителей номера
             span.page-main__subtitle_colored 2 отзыва
@@ -112,7 +173,7 @@ block body
         .page-main__conditions
           .page-main__condition
             h2.page-main__subtitle.page-main__subtitle_margin_top2.page-main__subtitle_padding_left Правила
-            include ../../blocks/condition/condition
+            +condition(conditions)
           .page-main__cancel
             h2.page-main__subtitle.page-main__subtitle_margin_top2 Отмена
             p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

@@ -11,7 +11,25 @@ block head
 
 block body
   -
-    const guests = [
+    const guestsSearch = [
+      {
+        text: 'взрослые', 
+        number: 0, 
+        opacity: true
+      }, 
+      {
+        text: 'дети', 
+        number: 0, 
+        opacity: true
+      }, 
+      {
+        text: 'младенцы', 
+        number: 0, 
+        opacity: true
+      }
+    ];
+
+    const guestsRoom = [
       {
         text: 'взрослые', 
         number: 2
@@ -44,6 +62,11 @@ block body
       }
     ];
 
+    const genders = [
+      { id: 'man', gender: 'Мужчина', checked: 'checked' }, 
+      { id: 'woman', gender: 'Женщина' }
+    ];
+
     const cards = [
       {
         number: 888,
@@ -67,13 +90,13 @@ block body
   +logo
   .cards
     .cards__block1
-      +form-search
+      +form-search(guestsSearch)
     .cards__block2
-      +form-room({ prices: prices, guests: guests })
+      +form-room({ prices: prices, guests: guestsRoom })
     .cards__block3
       .js-datepick1
     .cards__block4
-      +form-registration({ textSubmit: 'ПЕРЕЙТИ К ОПЛАТЕ' })
+      +form-registration({ genders: genders, textSubmit: 'ПЕРЕЙТИ К ОПЛАТЕ' })
     .cards__block5
       +form-sign-in
     .cards__block6

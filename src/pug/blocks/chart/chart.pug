@@ -1,41 +1,26 @@
--
-  const gradients = [
-  { min: '#FFE39C', max: '#FFBA9C' }, 
-  { min: '#BC9CFF', max: '#8BA4F9' }, 
-  { min: '#6FCF97', max: '#66D2EA' }
-  ];
+mixin chart(options)
+  - const { gradients, circles, estimations } = options;
 
--
-  const circles = [
-  { fill: '#fff' }, 
-  { fill: 'transparent', stroke: '#ffffff', strokeWidth: '1' }, 
-  { fill: 'transparent', stroke: 'url(#Gradient1)', strokeWidth: '1', strokeDasharray: '49 51', strokeDashoffset: '74.5' }, 
-  { fill: 'transparent', stroke: 'url(#Gradient2)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '124.5' }, 
-  { fill: 'transparent', stroke: 'url(#Gradient3)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '199.5' }
-  ];
-
-- const estimation = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'];
-
-.chart 
-  svg.chart__svg(width="155px", height="155px", viewBox="0 0 42 42")
-    defs
-      each val, index in gradients
-        linearGradient(id='Gradient' + (index + 1))
-          stop(offset="0%", stop-color=val.min)
-          stop(offset="100%", stop-color=val.max)
-    each val in circles
-      circle(
-        cx="21",
-        cy="21",
-        r="15.91549430918954",
-        fill=val.fill,
-        stroke=val.stroke,
-        stroke-width=val.strokeWidth,
-        stroke-dasharray=val.strokeDasharray,
-        stroke-dashoffset=val.strokeDashoffset
-      )
-  p.chart__number 260
-  p.chart__text голосов
-  ul.chart__list
-    each val in estimation
-      li.chart__item= val
+  .chart 
+    svg.chart__svg(width="155px", height="155px", viewBox="0 0 42 42")
+      defs
+        each val, index in gradients
+          linearGradient(id='Gradient' + (index + 1))
+            stop(offset="0%", stop-color=val.min)
+            stop(offset="100%", stop-color=val.max)
+      each val in circles
+        circle(
+          cx="21",
+          cy="21",
+          r="15.91549430918954",
+          fill=val.fill,
+          stroke=val.stroke,
+          stroke-width=val.strokeWidth,
+          stroke-dasharray=val.strokeDasharray,
+          stroke-dashoffset=val.strokeDashoffset
+        )
+    p.chart__number 260
+    p.chart__text голосов
+    ul.chart__list
+      each val in estimations
+        li.chart__item= val

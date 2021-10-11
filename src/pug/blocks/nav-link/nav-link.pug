@@ -1,38 +1,9 @@
 mixin nav-link(options)
-  - const { hovering } = options;
-
-  -
-    const items = [
-      {
-        active: `${hovering ? true : ''}`,
-        text: 'О нас',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Услуги',
-        arrow: true
-      },
-      {
-        active: false,
-        text: 'Вакансии',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Новости',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Соглашения',
-        arrow: true
-      },
-    ]
+  - const { navigators } = options;
 
   ul.nav-link
-    each val in items
-      li(class=`nav-link__item ${val.active ? 'nav-link__item_hovering' : ''}`)
-        a.nav-link__link= val.text
-          if val.arrow
+    each navigator in navigators
+      li(class=`nav-link__item ${navigator.active ? 'nav-link__item_hovering' : ''}`)
+        a.nav-link__link= navigator.text
+          if navigator.arrow
             span.nav-link__icon expand_more
