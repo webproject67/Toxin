@@ -18,12 +18,61 @@ block footer
       { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
     ];
 
+block header 
+  -
+    const navigators = [
+      {
+        active: false,
+        text: 'О нас',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Услуги',
+        arrow: true
+      },
+      {
+        active: false,
+        text: 'Вакансии',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Новости',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Соглашения',
+        arrow: true
+      },
+    ];
+
 block body
+  -
+    const guests = [
+      {
+        text: 'взрослые', 
+        number: 0, 
+        opacity: true
+      }, 
+      {
+        text: 'дети', 
+        number: 0, 
+        opacity: true
+      }, 
+      {
+        text: 'младенцы', 
+        number: 0, 
+        opacity: true
+      }
+    ];
+
   main.page-main.js-page-main_image1
     .js-slider
       .slItems
         .page-main__form
-          +form-search
+          +form-search(guests)
         p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
         each val in [3, 1, 2]
           div(

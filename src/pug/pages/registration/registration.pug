@@ -18,12 +18,48 @@ block footer
       { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
     ];
 
+block header 
+  -
+    const navigators = [
+      {
+        active: false,
+        text: 'О нас',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Услуги',
+        arrow: true
+      },
+      {
+        active: false,
+        text: 'Вакансии',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Новости',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Соглашения',
+        arrow: true
+      },
+    ];
+
 block body
+  -
+    const genders = [
+      { id: 'man', gender: 'Мужчина', checked: 'checked' }, 
+      { id: 'woman', gender: 'Женщина' }
+    ];
+    
   main.page-main.js-page-main_image2
     .js-slider
       .slItems
         .page-main__form.page-main__form_margin_common1
-          +form-registration({ textSubmit: 'ЗАРЕГИСТРИРОВАТЬСЯ' })
+          +form-registration({ genders: genders, textSubmit: 'ЗАРЕГИСТРИРОВАТЬСЯ' })
         each val in [4, 3, 1, 2]
           div(
             class=`slItem page-main_background${val}`,

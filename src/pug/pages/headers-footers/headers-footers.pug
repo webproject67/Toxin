@@ -9,6 +9,34 @@ block head
 
 block body
   - 
+    const navigators = [
+      {
+        active: true,
+        text: 'О нас',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Услуги',
+        arrow: true
+      },
+      {
+        active: false,
+        text: 'Вакансии',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Новости',
+        arrow: false
+      },
+      {
+        active: false,
+        text: 'Соглашения',
+        arrow: true
+      },
+    ];
+
     const links = [
       { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
       { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
@@ -24,9 +52,9 @@ block body
   +logo
   .headers-footers
     h1.headers-footers__title Headers & Footers
-    +header({hovering: true})
+    +header({ navigators: navigators })
     .headers-footers_compact
-      +header({ name: 'Юлий Цезарь', hovering: true })
+      +header({ navigators: navigators, name: 'Юлий Цезарь' })
     .headers-footers_compact
       +footer({ links: links, socials: socials })
     .headers-footers_compact

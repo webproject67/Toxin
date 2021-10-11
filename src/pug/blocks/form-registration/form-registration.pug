@@ -1,8 +1,9 @@
 include ../input/input
+include ../radio/radio
 include ../checkbox-toggle/checkbox-toggle
 
 mixin form-registration(options)
-  - const { textSubmit } = options;
+  - const { genders, textSubmit } = options;
 
   form.form(action="mock-address")
     h1.form__title Регистрация аккаунта
@@ -11,7 +12,7 @@ mixin form-registration(options)
     .form__surname 
       +input({ placeholder: 'Фамилия' })
     .form__radio
-      include ../radio/radio
+      +radio(genders)
     .form__birthday
       +input({ placeholder: 'ДД.ММ.ГГГГ', text: 'дата рождения', id: 'birthday', length: 10, autocomplete: 'off', pattern: true })
     .form__email

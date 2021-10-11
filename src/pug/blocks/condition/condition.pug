@@ -1,11 +1,6 @@
--
-  const texts = [
-  'Нельзя с питомцами', 
-  'Без вечеринок и мероприятий', 
-  'Время прибытия — после 13:00, а выезд до 12:00'
-  ];
+mixin condition(options)
 
-ul.condition
-  each val in texts
-    li.condition__item
-      p.condition__text= val
+  ul.condition
+    each val in options
+      li.condition__item
+        p.condition__text= val
