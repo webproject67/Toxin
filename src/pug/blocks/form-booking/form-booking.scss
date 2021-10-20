@@ -1,0 +1,147 @@
+.form-booking {
+  max-width: 380px;
+  padding: 23px 29px 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  &__block-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__symbol {
+    margin: 16px 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color;
+  }
+
+  &__number {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__category {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $color-purple;
+  }
+
+  &__price {
+    margin: 16px 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-50;
+  }
+
+  &__day {
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  &__dates {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0 20px;
+  }
+
+  &__date {
+    max-width: 150px;
+  }
+
+  &__subtitle {
+    margin-bottom: 5px;
+  }
+
+  &__list {
+    margin: 17px 0 30px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__text-price {
+    position: relative;
+    margin: 0;
+
+    &_state_information::before {
+      position: absolute;
+      content: 'i';
+      right: -30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-25;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 50px;
+    }
+  }
+
+  &__number-price {
+    margin: 0;
+  }
+
+  &__amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__total,
+  &__total-number {
+    margin: 14px 0;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: $color;
+  }
+
+  &__ellipsis {
+    width: 55%;
+    border-top: 1px dotted rgba(31, 32, 65, 0.25);
+  }
+
+  &__submit {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .form-booking {
+    padding: 15px;
+
+    &__text-price {
+      font-size: 10px;
+    }
+
+    &__number-price {
+      font-size: 10px;
+
+      &_state_information::before {
+        right: -22px;
+      }
+    }
+
+    &__ellipsis {
+      width: 38.7%;
+    }
+  }
+}

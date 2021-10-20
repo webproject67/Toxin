@@ -2,7 +2,7 @@
   &__button {
     position: relative;
     width: 100%;
-    margin-bottom: 9px;
+    margin-bottom: 6px;
     padding: 11px 0;
     text-align: start;
     font-weight: bold;
@@ -12,7 +12,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-  
+
     &::before {
       position: absolute;
       content: 'expand_more';
@@ -33,5 +33,10 @@
 
   &__checkboxes {
     display: none;
+  }
+
+  &__checkbox {
+    margin-left: 30px;
+    margin-bottom: 6px;
   }
 }

@@ -1,0 +1,13 @@
+mixin like(options)
+  -
+    const { value, state } = options;
+
+    const stateModifiers = {
+      active: 'like_active',
+    };
+
+    const classes = [
+      stateModifiers[state],
+    ];
+
+  button.like.js-like(class=classes, type="button")= value

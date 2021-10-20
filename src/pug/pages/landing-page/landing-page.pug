@@ -4,78 +4,88 @@ include ../../blocks/form-search/form-search
 block head
   - const title = 'Landing page';
 
+block header
+  -
+    const linksHeader = [
+      {
+        text: 'О нас',
+      },
+      {
+        text: 'Услуги',
+        icon: true
+      },
+      {
+        text: 'Вакансии',
+      },
+      {
+        text: 'Новости',
+      },
+      {
+        text: 'Соглашения',
+        icon: true
+      },
+    ];
+
 block footer
-  - 
-    const links = [
-      { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
-      { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
-      { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
+  -
+    const linksFooter = [
+      { 
+        title: 'навигация', 
+        links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] 
+      }, 
+      { 
+        title: 'о нас', 
+        links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] 
+      }, 
+      { 
+        title: 'служба поддержки', 
+        links: ['Соглашения', 'Сообщества', 'Связь с нами'] 
+      }
     ];
 
     const socials = [
-      { href: 'https://twitter.com/?lang=ru', src: '../../../assets/img/socials/twitter.svg' }, 
-      { href: 'https://ru-ru.facebook.com/', src: '../../../assets/img/socials/facebook.svg' }, 
-      { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
+      { 
+        href: 'https://twitter.com/?lang=ru', 
+        src: '../../../assets/img/socials/twitter.svg' 
+      }, 
+      { 
+        href: 'https://ru-ru.facebook.com/', 
+        src: '../../../assets/img/socials/facebook.svg' 
+      }, 
+      { 
+        href: 'https://www.instagram.com/?hl=ru', 
+        src: '../../../assets/img/socials/instagram.svg' 
+      }
     ];
 
-block header 
-  -
-    const navigators = [
-      {
-        active: false,
-        text: 'О нас',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Услуги',
-        arrow: true
-      },
-      {
-        active: false,
-        text: 'Вакансии',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Новости',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Соглашения',
-        arrow: true
-      },
-    ];
-
-block body
+block content
   -
     const guests = [
       {
         text: 'взрослые', 
         number: 0, 
-        opacity: true
+        translucent: true
       }, 
       {
         text: 'дети', 
         number: 0, 
-        opacity: true
+        translucent: true
       }, 
       {
         text: 'младенцы', 
         number: 0, 
-        opacity: true
+        translucent: true
       }
     ];
 
-  main.page-main.js-page-main_image1
+  main.landing-page.js-landing-page
     .js-slider
       .slItems
-        .page-main__form
+        .landing-page__form
           +form-search(guests)
-        p.page-main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
         each val in [3, 1, 2]
           div(
-            class=`slItem page-main_background${val}`,
+            class=`slItem landing-page__image${val}`,
             style="background-position: center bottom"
           )

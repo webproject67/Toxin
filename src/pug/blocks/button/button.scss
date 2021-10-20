@@ -15,7 +15,7 @@
   transition: all 0.4s ease;
 
   &:hover,
-  &_hovering {
+  &_state_hovering {
     color: $color-50;
   }
 
@@ -53,42 +53,35 @@
         color: #ffffff;
       }
     }
-  }
 
-  &_theme_bordered#{&}_hovering,
-  &_theme_filled#{&}_hovering {
-    opacity: 0.5;
-  }
-
-  &_theme_filled#{&}_hovering {
-    color: #ffffff;
-  }
-
-  &_size {
-    &_compact {
-      padding: 7px 18px;
+    &_bordered.button_state_hovering {
+      opacity: 0.5;
     }
-    
-    &_width {
-      min-width: auto;
-      padding: 7px 18px;
+
+    &_filled.button_state_hovering {
+      color: #ffffff;
+      opacity: 0.5;
     }
   }
 
-  &_icon {
-    &_arrow {
-      position: relative;
-      text-transform: none;
+  &_size_wide {
+    min-width: auto;
+    padding: 7px 18px;
+  }
 
-      &::after {
-        position: absolute;
-        right: 10px;
-        content: 'arrow_forward';
-        font-family: 'MaterialIcons';
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 24px;
-      }
+  &_icon_arrow {
+    position: relative;
+    width: 100%;
+    text-transform: none;
+
+    &::after {
+      position: absolute;
+      right: 10px;
+      content: 'arrow_forward';
+      font-family: 'MaterialIcons';
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 24px;
     }
   }
 }

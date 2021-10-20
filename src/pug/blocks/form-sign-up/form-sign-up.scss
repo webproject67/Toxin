@@ -1,0 +1,54 @@
+.form-sign-up {
+  max-width: 380px;
+  padding: 23px 29px 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    font-size: 24px;
+    line-height: 29px;
+    color: $color;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    &__title {
+      font-size: 18px;
+    }
+  }
+
+  &__name,
+  &__email {
+    margin: 20px 0 10px;
+  }
+
+  &__radio {
+    display: flex;
+    justify-content: space-between;
+    max-width: 219px;
+    margin: 8px 0 23px;
+  }
+
+  &__subtitle {
+    margin-bottom: 5px;
+  }
+
+  &__checkbox {
+    margin: 6px 0 24px;
+  }
+
+  &__reg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 26px;
+    color: #000000;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .form-sign-up {
+    padding: 15px;
+  }
+}

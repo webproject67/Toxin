@@ -1,160 +1,153 @@
 extends ../../layouts/layout
-include ../../blocks/input-dropdown/input-dropdown
-include ../../blocks/slide/slide
-include ../../blocks/checkbox-list/checkbox-list
+include ../../blocks/subtitle/subtitle
+include ../../blocks/dropdown-date/dropdown-date
+include ../../blocks/dropdown-list/dropdown-list
+include ../../blocks/range/range
 include ../../blocks/checkbox/checkbox
-include ../../blocks/card-photo/card-photo
+include ../../blocks/checkbox-list/checkbox-list
+include ../../blocks/card-room/card-room
 include ../../blocks/pagination/pagination
 
 block head
   - const title = 'Search room';
 
+block header
+  -
+    const linksHeader = [
+      {
+        text: 'О нас',
+      },
+      {
+        text: 'Услуги',
+        icon: true
+      },
+      {
+        text: 'Вакансии',
+      },
+      {
+        text: 'Новости',
+      },
+      {
+        text: 'Соглашения',
+        icon: true
+      },
+    ];
+
 block footer
-  - 
+  -
     const border = 'bordered';
 
-    const links = [
-      { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
-      { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
-      { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
+    const linksFooter = [
+      { 
+        title: 'навигация', 
+        links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] 
+      }, 
+      { 
+        title: 'о нас', 
+        links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] 
+      }, 
+      { 
+        title: 'служба поддержки', 
+        links: ['Соглашения', 'Сообщества', 'Связь с нами'] 
+      }
     ];
 
     const socials = [
-      { href: 'https://twitter.com/?lang=ru', src: '../../../assets/img/socials/twitter.svg' }, 
-      { href: 'https://ru-ru.facebook.com/', src: '../../../assets/img/socials/facebook.svg' }, 
-      { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
+      { 
+        href: 'https://twitter.com/?lang=ru', 
+        src: '../../../assets/img/socials/twitter.svg' 
+      }, 
+      { 
+        href: 'https://ru-ru.facebook.com/', 
+        src: '../../../assets/img/socials/facebook.svg' 
+      }, 
+      { 
+        href: 'https://www.instagram.com/?hl=ru', 
+        src: '../../../assets/img/socials/instagram.svg' 
+      }
     ];
 
-block header 
-  -
-    const navigators = [
-      {
-        active: false,
-        text: 'О нас',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Услуги',
-        arrow: true
-      },
-      {
-        active: false,
-        text: 'Вакансии',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Новости',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Соглашения',
-        arrow: true
-      },
-    ];
-
-block body
+block content
   -
     const guests = [
       {
         text: 'взрослые', 
-        number: 2
+        number: 2, 
       }, 
       {
         text: 'дети', 
-        number: 1
+        number: 1, 
       }, 
       {
         text: 'младенцы', 
-        number: 1
+        number: 1, 
       }
     ];
 
     const rules = [
       {
         value: 'Можно курить', 
-        id: 'smoke', 
-        checked: false,
       },
       {
         value: 'Можно с питомцами', 
-        id: 'pets', 
-        checked: true,
+        checked: true
       },
       {
-        value: 'Можно пригласить гостей (до 10 человек)', 
-        id: 'guests', 
-        checked: true,
+        value: 'Можно пригласить гостей\n (до 10 человек)', 
+        checked: true
       }
     ];
 
     const accessibility = [
       {
         value: 'Широкий коридор', 
-        id: 'hallway', 
-        checked: false,
-        details: 'Ширина коридоров в номере не менее 91 см.',
-        size: 'narrow',
-        font: 'fw'
+        details: 'Ширина коридоров в номере\n не менее 91 см.',
+        fw: 'bold'
       },
       {
         value: 'Помощник для инвалидов', 
-        id: 'invalid', 
-        checked: false,
-        details: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-        size: 'wide',
-        font: 'fw'
+        details: 'На 1 этаже вас встретит специалист\n и проводит до номера.',
+        fw: 'bold'
       }
     ];
 
-    const numbers = [
+    const rooms = [
       {
         text: 'спальни', 
-        number: 2
+        number: 2, 
       }, 
       {
         text: 'кровати', 
-        number: 2
+        number: 2, 
       }, 
       {
         text: 'ванные комнаты', 
         number: 0, 
-        opacity: true
+        translucent: true
       }
     ];
 
     const conveniences = [
       {
         value: 'Завтрак', 
-        id: 'breakfast', 
-        checked: false
       },
       {
         value: 'Письменный стол', 
-        id: 'desk', 
         checked: true
       },
       {
         value: 'Стул для кормления', 
-        id: 'chair', 
         checked: true
       },
       {
         value: 'Кроватка', 
-        id: 'Crib', 
         checked: true
       },
       {
         value: 'Телевизор', 
-        id: 'TV', 
-        checked: false
       },
       {
         value: 'Шампунь', 
-        id: 'shampoo', 
-        checked: false
       }
     ];
 
@@ -166,15 +159,14 @@ block body
         count: 5,
         review: 145,
         images: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
-        state: 'hovering',
+        state: 'hovering'
       },
       {
         number: 840,
-        category: '',
         price: '9 900',
         count: 4,
         review: 65,
-        images: ['image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg'],
+        images: ['image2.jpg', 'image1.jpg', 'image4.jpg', 'image3.jpg']
       },
       {
         number: 980,
@@ -186,7 +178,6 @@ block body
       },
       {
         number: 856,
-        category: '',
         price: '7 300',
         count: 5,
         review: 19,
@@ -194,7 +185,6 @@ block body
       },
       {
         number: 740,
-        category: '',
         price: '6 000',
         count: 4,
         review: 44,
@@ -202,7 +192,6 @@ block body
       },
       {
         number: 982,
-        category: '',
         price: '5 800',
         count: 3,
         review: 56,
@@ -210,7 +199,6 @@ block body
       },
       {
         number: 678,
-        category: '',
         price: '5 500',
         count: 5,
         review: 45,
@@ -218,7 +206,6 @@ block body
       },
       {
         number: 450,
-        category: '',
         price: '5 300',
         count: 4,
         review: 39,
@@ -226,7 +213,6 @@ block body
       },
       {
         number: 350,
-        category: '',
         price: '5 000',
         count: 3,
         review: 77,
@@ -234,7 +220,6 @@ block body
       },
       {
         number: 666,
-        category: '',
         price: '5 000',
         count: 5,
         review: 25,
@@ -242,7 +227,6 @@ block body
       },
       {
         number: 444,
-        category: '',
         price: '5 000',
         count: 3,
         review: 15,
@@ -250,7 +234,6 @@ block body
       },
       {
         number: 352,
-        category: '',
         price: '5 000',
         count: 3,
         review: 55,
@@ -258,32 +241,41 @@ block body
       },
     ];
 
-  main.page-main.page-main_displayed
-    .page-main__filters
-      .page-main__filter-block1
-        +input-dropdown({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', inputClassName: 'cursor', id: 'date', datepicker: 'datepicker5' })
-      .page-main__filter-block2
-        +input-dropdown({ dropdown: true, text: 'гости', value: '3 гостя, 1 младенец', inputClassName: 'cursor', id: 'guest', option: guests, textLeft: 'очистить', textRight: 'применить' })
-      .page-main__filter-block3
-        +slide({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере' })
-      .page-main__filter-block4
-        h3.page-main__text-filter правила дома
-        .page-main__checkbox-rules
-          each rule in rules
-            +checkbox(rule)
-      .page-main__filter-block5
-        h3.page-main__text-filter доступность
-        .page-main__checkbox-access
-          each access in accessibility
-            +checkbox(access)
-      .page-main__filter-block6
-        +input-dropdown({ dropdown: true, text: 'удобства номера', value: '2 спальни, 2 кровати...', inputClassName: 'cursor', id: 'rooms', option: numbers })
-      .page-main__filter-block7
-        +checkbox-list({ value: 'ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА', state: 'active', checkboxes: conveniences })
-    section.page-main__rooms
-      h1.page-main__title Номера, которые мы для вас подобрали
-      .page-main__cards
-        each card in cards
-          +card-photo(card)
-      .page-main__pagination
-        +pagination()
+  main.search-room
+    aside.search-room__filters
+      .search-room__item
+        .search-room__subtitle
+          +subtitle({ id: 'input7', text: 'даты пребывания в отеле', tag: 'label' })
+        +dropdown-date({ id: 'input7', value: '19 авг - 23 авг', js: 'calendar2' })
+      .search-room__item
+        .search-room__subtitle
+          +subtitle({ id: 'input12', text: 'гости', tag: 'label' })
+        +dropdown-list({ id: 'input12', value: '3 гостя, 1 младенец', list: guests, additionalButtons: true })
+      .search-room__item
+        +range({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере', selected: '5 000₽ - 10 000₽' })
+      .search-room__item
+        .search-room__subtitle
+          +subtitle({ text: 'правила дома' })
+        each val in rules
+          .search-room__checkbox
+            +checkbox(val)
+      .search-room__item
+        .search-room__subtitle
+          +subtitle({ text: 'доступность' })
+        each val in accessibility
+          .search-room__checkbox-access
+            +checkbox(val)
+      .search-room__item
+        .search-room__subtitle
+          +subtitle({ id: 'input9', text: 'удобства номера', tag: 'label' })
+        +dropdown-list({ id: 'input9', value: '2 спальни, 2 кровати...', list: rooms })
+      .search-room__item
+        +checkbox-list({ value: 'ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА', checkboxes: conveniences })
+    section.search-room__rooms
+      h1.search-room__title Номера, которые мы для вас подобрали
+      .search-room__cards
+        each val in cards
+          .search-room__card
+            +card-room(val)
+      .search-room__pagination
+        +pagination

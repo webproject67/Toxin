@@ -1,19 +1,17 @@
 mixin checkbox(options)
-  - 
-    const { id, checked, value, details, size, font } = options;
+  -
+    const { checked, value, details, fw } = options;
 
-    const sizeModifiers = {
-      narrow: 'checkbox_size_narrow',
-      wide: 'checkbox_size_wide',
+    const fwModifiers = {
+      bold: 'checkbox_fw_bold',
     };
 
-    const fontModifiers = {
-      fw: 'checkbox__label_font_fw',
-    };
+    const classes = [
+      fwModifiers[fw],
+    ];
 
-  .checkbox(class= sizeModifiers[size])
-    input.checkbox__input(type="checkbox", id= id, name= id, value= value, checked= checked)
-    label.checkbox__label(class= fontModifiers[font], for= id)= value
-      if details
-        br
-        span.checkbox__details= details
+  label.checkbox(class=classes)= value
+    input.checkbox__input(type="checkbox", value=value, checked=checked)
+    .checkbox__icons
+    if details
+      p.checkbox__desc= details

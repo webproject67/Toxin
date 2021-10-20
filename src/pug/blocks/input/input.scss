@@ -1,44 +1,24 @@
-.input,
-.input__label {
+.input {
   position: relative;
-}
-
-.input__texts {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.input__text {
-  margin: 0 0 5px;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $color;
-
-  &_colored {
-    font-weight: normal;
-    color: $color-50;
-  }
-}
-
-.input__input[pattern]:invalid {
-  color: red;
-  border: 1px solid red;
-}
-
-.input__input {
+  z-index: 3;
   width: 100%;
-  height: 44px;
-  padding: 13px 14px;
-  color: $color-75;
+  padding: 13px;
+  background: transparent;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   transition: all 0.4s ease;
 
-  &_cursory {
+  &_cursor_pointer {
     cursor: pointer;
+  }
+
+  &_size_indentation {
+    padding-right: 44px;
+  }
+
+  &_theme_bordered {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 2px;
   }
 
   &::placeholder {
@@ -48,15 +28,16 @@
 
   &:hover,
   &:focus,
-  &_hovering {
+  &_state_hovering {
     border: 1px solid rgba(31, 32, 65, 0.5);
 
     &::placeholder {
       color: $color-75;
     }
   }
-}
 
-.input__label {
-  cursor: pointer;
+  &[pattern]:invalid {
+    color: red;
+    border: 1px solid red;
+  }
 }

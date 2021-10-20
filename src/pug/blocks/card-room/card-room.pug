@@ -1,0 +1,37 @@
+include ../rate/rate
+
+mixin card-room(options)
+  -
+    const { state, images, number, category, price, count, review } = options;
+
+    const stateModifiers = {
+      hovering: 'flexslider_state_hovering',
+    };
+
+    const classes = [
+      stateModifiers[state],
+    ];
+
+  .card-room
+    .card-room__block-img
+      .flexslider.js-flexslider(class=classes)
+        ul.slides
+          each val in images
+            li
+              a.card-room__link(href="room-details.html")
+                img.card-room__img(
+                  src=`../../../assets/img/rooms/${val}`,
+                  alt="photo"
+                )
+    .card-room__details
+      .card-room__block-price
+        p.card-room__symbol №
+          span.card-room__number= ` ${number}`
+            if category
+              span.card-room__category= ` ${category}`
+        p.card-room__price= `${price}₽ `
+          span.card-room__day в сутки
+      .card-room__block-estimations
+        +rate({ count })
+        p.card-room__text-review= `${review} `
+          span.card-room__feedback Отзывов

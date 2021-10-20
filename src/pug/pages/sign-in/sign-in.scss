@@ -1,0 +1,36 @@
+.sign-in {
+  flex-grow: 1;
+
+  &__image1 {
+    background: url('../assets/img/slider/img1.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__image2 {
+    background: url('../assets/img/slider/img2.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__image3 {
+    background: url('../assets/img/slider/img3.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__image4 {
+    background: url('../assets/img/slider/img4.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 1;
+    max-width: 380px;
+    margin: 172px auto;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    &__form {
+      padding: 0 15px;
+    }
+  }
+}

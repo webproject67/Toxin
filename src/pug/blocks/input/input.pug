@@ -1,17 +1,43 @@
 mixin input(options)
-  - const { types, placeholder, hover, id, text, length, autocomplete, pattern } = options;
-  - const classNameHover = hover ? 'input__input_hovering' : '';
-  - const pattern1 = pattern ? '(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}' : false;
+  -
+    const { type = 'text', id, value, placeholder, readonly, state, size, theme, cursor, js, maxlength, pattern } = options;
 
-  .input
-    if text
-      h3.input__text= text
-    input(
-      class=`input__input ${classNameHover}`,
-      id=id,
-      type=types,
-      placeholder=placeholder,
-      maxlength=length,
-      autocomplete=autocomplete,
-      pattern=pattern1
-    )
+    const stateModifiers = {
+      hovering: 'input_state_hovering',
+    };
+
+    const sizeModifiers = {
+      indentation: 'input_size_indentation',
+    };
+
+    const themeModifiers = {
+      bordered: 'input_theme_bordered',
+    };
+
+    const cursorModifiers = {
+      pointer: 'input_cursor_pointer',
+    };
+
+    const jsClass = {
+      birthDate: 'js-input-birthDate',
+    };
+
+    const classes = [
+      stateModifiers[state],
+      sizeModifiers[size],
+      themeModifiers[theme],
+      cursorModifiers[cursor],
+      jsClass[js],
+    ];
+
+  input.input(
+    class=classes,
+    type=type,
+    id=id,
+    value=value,
+    placeholder=placeholder,
+    autocomplete="off",
+    maxlength=maxlength,
+    pattern=pattern,
+    readonly=readonly
+  )

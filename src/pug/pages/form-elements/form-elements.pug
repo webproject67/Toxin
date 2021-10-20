@@ -1,327 +1,333 @@
 extends ../../layouts/ui-kit-layout
-include ../../blocks/logo/logo
+include ../../blocks/logo-ui-kit/logo-ui-kit
+include ../../blocks/subtitle/subtitle
 include ../../blocks/input/input
-include ../../blocks/input-dropdown/input-dropdown
-include ../../blocks/input-email/input-email
+include ../../blocks/dropdown-list/dropdown-list
+include ../../blocks/button/button
+include ../../blocks/dropdown-date/dropdown-date
+include ../../blocks/subscription/subscription
 include ../../blocks/checkbox/checkbox
 include ../../blocks/radio/radio
-include ../../blocks/checkbox-toggle/checkbox-toggle
-include ../../blocks/checkbox-list/checkbox-list
-include ../../blocks/button/button
-include ../../blocks/button-like/button-like
-include ../../blocks/button-rate/button-rate
+include ../../blocks/toggle/toggle
+include ../../blocks/like/like
+include ../../blocks/rate/rate
+include ../../blocks/range/range
 include ../../blocks/pagination/pagination
-include ../../blocks/slide/slide
-include ../../blocks/condition/condition
+include ../../blocks/checkbox-list/checkbox-list
+include ../../blocks/bullet-list/bullet-list
 include ../../blocks/advantage/advantage
-include ../../blocks/review/review
+include ../../blocks/feedback/feedback
 
 block head
   - const title = 'Form elements';
 
 block body
   -
-    const numbers = [
-      {
-        text: 'спальни', 
-        number: 2
-      }, 
-      {
-        text: 'кровати', 
-        number: 2
-      }, 
-      {
-        text: 'ванные комнаты', 
-        number: 0, 
-        opacity: true
-      }
-    ];
+    const dateFormat = '(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}';
 
     const guests1 = [
       {
         text: 'взрослые', 
         number: 0, 
-        opacity: true
+        translucent: true
       }, 
       {
         text: 'дети', 
         number: 0, 
-        opacity: true
+        translucent: true
       }, 
       {
         text: 'младенцы', 
         number: 0, 
-        opacity: true
+        translucent: true
       }
     ];
 
     const guests2 = [
       {
         text: 'взрослые', 
-        number: 2
+        number: 2, 
       }, 
       {
         text: 'дети', 
-        number: 1
+        number: 1, 
       }, 
       {
         text: 'младенцы', 
         number: 0, 
-        opacity: true
+        translucent: true
       }
     ];
 
-    const conveniences1 = [
+    const rooms = [
       {
-        value: 'Завтрак', 
-        id: 'breakfast1', 
-        checked: false
-      },
+        text: 'спальни', 
+        number: 2, 
+      }, 
       {
-        value: 'Письменный стол', 
-        id: 'desk1', 
-        checked: true
-      },
+        text: 'кровати', 
+        number: 2, 
+      }, 
       {
-        value: 'Стул для кормления', 
-        id: 'chair1', 
-        checked: true
-      },
-      {
-        value: 'Кроватка', 
-        id: 'Crib1', 
-        checked: true
-      },
-      {
-        value: 'Телевизор', 
-        id: 'TV1', 
-        checked: false
-      },
-      {
-        value: 'Шампунь', 
-        id: 'shampoo1', 
-        checked: false
-      }
-    ];
-
-    const conveniences2 = [
-      {
-        value: 'Завтрак', 
-        id: 'breakfast2', 
-        checked: false
-      },
-      {
-        value: 'Письменный стол', 
-        id: 'desk2', 
-        checked: true
-      },
-      {
-        value: 'Стул для кормления', 
-        id: 'chair2', 
-        checked: true
-      },
-      {
-        value: 'Кроватка', 
-        id: 'Crib2', 
-        checked: true
-      },
-      {
-        value: 'Телевизор', 
-        id: 'TV2', 
-        checked: false
-      },
-      {
-        value: 'Шампунь', 
-        id: 'shampoo2', 
-        checked: false
+        text: 'ванные комнаты', 
+        number: 0, 
+        translucent: true
       }
     ];
 
     const rules = [
       {
         value: 'Можно курить', 
-        id: 'smoke', 
-        checked: false
       },
       {
         value: 'Можно с питомцами', 
-        id: 'pets', 
         checked: true
       },
       {
-        value: 'Можно пригласить гостей (до 10 человек)', 
-        id: 'guests', 
+        value: 'Можно пригласить гостей\n (до 10 человек)', 
         checked: true
+      }
+    ];
+
+    const conveniences = [
+      {
+        value: 'Завтрак', 
+      },
+      {
+        value: 'Письменный стол', 
+        checked: true
+      },
+      {
+        value: 'Стул для кормления', 
+        checked: true
+      },
+      {
+        value: 'Кроватка', 
+        checked: true
+      },
+      {
+        value: 'Телевизор', 
+      },
+      {
+        value: 'Шампунь', 
       }
     ];
 
     const accessibility = [
       {
         value: 'Широкий коридор', 
-        id: 'hallway', 
-        checked: false,
-        details: 'Ширина коридоров в номере не менее 91 см.',
-        size: 'narrow',
-        font: 'fw'
+        details: 'Ширина коридоров в номере\n не менее 91 см.',
+        fw: 'bold'
       },
       {
         value: 'Помощник для инвалидов', 
-        id: 'invalid', 
-        checked: false,
-        details: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-        size: 'wide',
-        font: 'fw'
+        details: 'На 1 этаже вас встретит специалист\n и проводит до номера.',
+        fw: 'bold'
       }
+    ];
+
+    const genders = [
+      { 
+        value: 'Мужчина',
+        name: 'gender', 
+        checked: true 
+      }, 
+      { 
+        value: 'Женщина',
+        name: 'gender', 
+      }
+    ];
+
+    const specialOffers = [
+      {
+        value: 'Получать спецпредложения', 
+        checked: true
+      },
+      {
+        value: 'Получать спецпредложения', 
+      },
+    ];
+
+    const likes = [
+      {
+        value: 2,
+      },
+      {
+        value: 12,
+        state: 'active'
+      },
+    ];
+
+    const rates = [
+      {
+        count: 4
+      },
+      {
+        count: 5
+      },
+    ];
+
+    const bulletLists = [
+      'Нельзя с питомцами', 
+      'Без вечеринок и мероприятий', 
+      'Время прибытия — после 13:00,\n а выезд до 12:00'
     ];
 
     const advantages = [
       {
         icon: 'insert_emoticon', 
-        text: 'Комфорт', 
-        span: 'Шумопоглощающие стены'
+        title: 'Комфорт', 
+        text: 'Шумопоглощающие стены'
       },
       {
         icon: 'location_city', 
-        text: 'Удобство', 
-        span: 'Окно в каждой из спален'
+        title: 'Удобство', 
+        text: 'Окно в каждой из спален'
       }
     ];
 
-    const review = {
+    const feedbacks = {
       image: 'image16', 
-      quantity: 12,
-      active: true,
+      value: 12,
+      state: 'active',
       name: 'Мурад Сарафанов', 
       date: '5 дней назад',
       text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
     };
 
-    const conditions = [
-      'Нельзя с питомцами', 
-      'Без вечеринок и мероприятий', 
-      'Время прибытия — после 13:00, а выезд до 12:00'
-    ];
-
-    const genders = [
-      { id: 'man', gender: 'Мужчина', checked: 'checked' }, 
-      { id: 'woman', gender: 'Женщина' }
-    ];
-
-  +logo
   .form-elements 
-    h1.form-elements__title Form Elements
-    .form-elements__block1
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text Text Field
-          h3.form-elements__text.form-elements__text_colored default
-        +input({ placeholder: 'Email', types: 'email' })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text Text Field
-          h3.form-elements__text.form-elements__text_colored Hover / Focus
-        +input({ placeholder: 'This is pretty awesome', hover: true })
-      .form-elements__block
-        +input-dropdown({ dropdown: true, text: 'dropdown', value: 'Сколько гостей', inputClassName: 'cursor', id: 'guest1', option: guests1, textLeft: '', textRight: 'применить' })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text masked text field
-        +input({ placeholder: 'ДД.ММ.ГГГГ', id: 'birthday', length: 10, autocomplete: 'off', pattern: true })
-      .form-elements__block
-        .form-elements__block-left
-          +input-dropdown({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ', id: 'date1', inputClassName: 'width', datepicker: 'datepicker4' })
-        .form-elements__block-right
-          +input-dropdown({ text: 'date dropdown', value: '19.08.2019', id: 'date2', inputClassName: 'width' })
-      .form-elements__block
-        +input-dropdown({ text: 'filter date dropdown', value: '19 авг - 23 авг', inputClassName: 'cursor', id: 'date', datepicker: 'datepicker5' })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text subscription text field
-        +input-email
-    .form-elements__block2
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text Checkbox Buttons
-        .form-elements__block-checkbox
-          each rule in rules
-            +checkbox(rule)
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text Radio Buttons
-        .form-elements__block-radio
-          +radio(genders)
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text Toggle
-        .form-elements__block-toggle
-          +checkbox-toggle({ id: 'checkboxOn', checked: true })
-          +checkbox-toggle({ id: 'checkboxOff', checked: false })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text like button
-        .form-elements__block-like
-          +button-like({ text: 2 })
-          +button-like({ text: 12, active: true })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text rate button
-        .form-elements__block-rate
-          +button-rate({ count: 4 })
-          +button-rate({ count: 5 })
-    .form-elements__block3 
-      .form-elements__block
-        +slide({ text: 'Range Slider' })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text buttons
-        .form-elements__block-link-bg 
-          +button({ text: 'click me', type: 'button', theme: 'filled' })
-          +button({ text: 'click me', type: 'button', theme: 'filled', state: 'hovering' })
-        .form-elements__block-link-bg.form-elements__block-link-bg_margin_top
-          +button({ text: 'click me', type: 'button', theme: 'bordered' })
-          +button({ text: 'click me', type: 'button', theme: 'bordered', state: 'hovering' })
-        .form-elements__block-link 
-          +button({ text: 'click me', type: 'button' })
-          +button({ text: 'click me', type: 'button', state : 'hovering' })
-        .form-elements__block-link-submit
-          +button({ text: 'ПЕРЕЙТИ К ОПЛАТЕ', type: 'button', theme: 'filled', icon: 'arrow' })
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text pagination
-        .form-elements__block-pagination
-          +pagination()
-    .form-elements__block4
-      .form-elements__block
-        +input-dropdown({ dropdown: true, text: 'dropdown', text2: 'default', value: '2 спальни, 2 кровати...', inputClassName: 'cursor', id: 'rooms1', option: numbers })
-      .form-elements__block
-        +input-dropdown({ dropdown: true, text: 'dropdown', text2: 'expanded', value: '2 спальни, 2 кровати...', id: 'rooms2', inputClassName: 'border', display: true, option: numbers })
-    .form-elements__block5
-      .form-elements__block
-        +input-dropdown({ dropdown: true, text: 'dropdown', value: 'Сколько гостей', id: 'guest2', inputClassName: 'border', display: true, option: guests1, textLeft: '', textRight: 'применить' })
-    .form-elements__block6
-      .form-elements__block
-        +input-dropdown({ dropdown: true, text: 'dropdown', value: '3 гостя', id: 'guest3', inputClassName: 'border', display: true, option: guests2, textLeft: 'очистить', textRight: 'применить' })
-    .form-elements__block7
-      .form-elements__block
-        +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', checkboxes: conveniences1 })
-      .form-elements__block
-        +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', state: 'active', checkboxes: conveniences2 })
-    .form-elements__block8
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text rich Checkbox Buttons
-        .form-elements__block-checkbox
-          each access in accessibility
-            +checkbox(access)
-    .form-elements__block9
-      .form-elements__block
-        .form-elements__texts
-          h3.form-elements__text bullet list
-        .form-elements__block-condition
-          +condition(conditions)
-    .form-elements__block10
-      .form-elements__block
-        +advantage({ texts: advantages })
-    .form-elements__block11
-      .form-elements__block
-        +review({ review })
+    .form-elements__logo 
+      +logo-ui-kit
+    .form-elements__content
+      h1.form-elements__title Form Elements
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input1', text: 'Text Field', desc: 'default', tag: 'label' })
+          +input({ id: 'input1', placeholder: 'Email' })
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input2', text: 'Text Field', desc: 'Hover / Focus', tag: 'label' })
+          +input({ state: 'hovering', id: 'input2', placeholder: 'This is pretty awesome' })
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input3', text: 'dropdown', tag: 'label' })
+          +dropdown-list({ id: 'input3', value: 'Сколько гостей', list: guests1, additionalButtons: true })
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input4', text: 'masked text field', tag: 'label' })
+          +input({ id: 'input4', placeholder: 'ДД.ММ.ГГГГ', js: 'birthDate', maxlength: 10, pattern: dateFormat })
+        .form-elements__item.form-elements__item_size_displayed
+          .form-elements__item-date
+            .form-elements__subtitle
+              +subtitle({ id: 'input5', text: 'date dropdown', tag: 'label' })
+            +dropdown-date({ id: 'input5', value: 'ДД.ММ.ГГГГ', js: 'calendar1' })
+          .form-elements__item-date
+            .form-elements__subtitle
+              +subtitle({ id: 'input6', text: 'date dropdown', tag: 'label' })
+            +dropdown-date({ id: 'input6', value: 'ДД.ММ.ГГГГ' })
+        .form-elements__item.form-elements__item_size_narrow
+          .form-elements__subtitle
+            +subtitle({ id: 'input7', text: 'filter date dropdown', tag: 'label' })
+          +dropdown-date({ id: 'input7', value: '19 авг - 23 авг', js: 'calendar2' })
+        .form-elements__item.form-elements__item_size_narrow
+          .form-elements__subtitle
+            +subtitle({ id: 'input8', text: 'subscription text field', tag: 'label' })
+          +subscription({ id: 'input8', placeholder: 'Email' })
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'Checkbox Buttons' })
+          each val in rules
+            .form-elements__checkbox
+              +checkbox(val)
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'Radio Buttons' })
+          .form-elements__radio
+            each val in genders
+              +radio(val) 
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'Toggle' })
+          each val in specialOffers
+            .form-elements__toggle
+              +toggle(val) 
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'Like button' })
+          .form-elements__like
+            each val in likes
+              +like(val) 
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'Rate button' })
+          .form-elements__rate
+            each val in rates
+              +rate(val) 
+      .form-elements__list
+        .form-elements__item.form-elements__item_size_narrow
+          +range({ text: 'Range Slider', selected: '5 000₽ - 10 000₽' })
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'buttons' })
+          .form-elements__buttons-filled
+            +button({ text: 'click me', type: 'button', theme: 'filled' })
+            +button({ text: 'click me', type: 'button', theme: 'filled', state: 'hovering' })
+          .form-elements__buttons-bordered
+            +button({ text: 'click me', type: 'button', theme: 'bordered' })
+            +button({ text: 'click me', type: 'button', theme: 'bordered', state: 'hovering' })
+          .form-elements__buttons
+            +button({ text: 'click me', type: 'button' })
+            +button({ text: 'click me', type: 'button', state : 'hovering' })
+          .form-elements__button
+            +button({ text: 'ПЕРЕЙТИ К ОПЛАТЕ', type: 'button', theme: 'filled', icon: 'arrow' })
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'pagination' })
+          .form-elements__pagination
+            +pagination
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input9', text: 'dropdown', desc: 'default', tag: 'label' })
+          +dropdown-list({ id: 'input9', value: '2 спальни, 2 кровати...', list: rooms })
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input10', text: 'dropdown', desc: 'expanded', tag: 'label' })
+          +dropdown-list({ id: 'input10', value: '2 спальни, 2 кровати...', list: rooms, state: 'displayed', theme: 'bordered' })
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input11', text: 'dropdown', tag: 'label' })
+          +dropdown-list({ id: 'input11', value: 'Сколько гостей', list: guests1, additionalButtons: true, state: 'displayed', theme: 'bordered' })
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ id: 'input12', text: 'dropdown', tag: 'label' })
+          +dropdown-list({ id: 'input12', value: '3 гостя', list: guests2, additionalButtons: true, state: 'displayed', theme: 'bordered' })
+      .form-elements__list
+        .form-elements__item
+          +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', checkboxes: conveniences })
+        .form-elements__item
+          +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', checkboxes: conveniences, state: 'active' })
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'rich Checkbox Buttons' })
+          each val in accessibility
+            .form-elements__checkbox-access
+              +checkbox(val)
+      .form-elements__list
+        .form-elements__item
+          .form-elements__subtitle
+            +subtitle({ text: 'bullet list' })
+          +bullet-list(bulletLists)
+      .form-elements__list
+        .form-elements__item
+          each val in advantages
+            .form-elements__advantage
+              +advantage(val)
+      .form-elements__list
+        .form-elements__item
+          +feedback(feedbacks)

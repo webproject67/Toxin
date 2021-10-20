@@ -1,61 +1,69 @@
 extends ../../layouts/layout
-include ../../blocks/gallery/gallery
 include ../../blocks/advantage/advantage
-include ../../blocks/chart/chart
-include ../../blocks/review/review
-include ../../blocks/condition/condition
-include ../../blocks/form-room/form-room
+include ../../blocks/feedback/feedback
+include ../../blocks/bullet-list/bullet-list
+include ../../blocks/form-booking/form-booking
 
 block head
   - const title = 'Room details';
 
+block header
+  -
+    const linksHeader = [
+      {
+        text: 'О нас',
+      },
+      {
+        text: 'Услуги',
+        icon: true
+      },
+      {
+        text: 'Вакансии',
+      },
+      {
+        text: 'Новости',
+      },
+      {
+        text: 'Соглашения',
+        icon: true
+      },
+    ];
+
 block footer
-  - 
+  -
     const border = 'bordered';
 
-    const links = [
-      { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
-      { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
-      { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
+    const linksFooter = [
+      { 
+        title: 'навигация', 
+        links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] 
+      }, 
+      { 
+        title: 'о нас', 
+        links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] 
+      }, 
+      { 
+        title: 'служба поддержки', 
+        links: ['Соглашения', 'Сообщества', 'Связь с нами'] 
+      }
     ];
 
     const socials = [
-      { href: 'https://twitter.com/?lang=ru', src: '../../../assets/img/socials/twitter.svg' }, 
-      { href: 'https://ru-ru.facebook.com/', src: '../../../assets/img/socials/facebook.svg' }, 
-      { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
+      { 
+        href: 'https://twitter.com/?lang=ru', 
+        src: '../../../assets/img/socials/twitter.svg' 
+      }, 
+      { 
+        href: 'https://ru-ru.facebook.com/', 
+        src: '../../../assets/img/socials/facebook.svg' 
+      }, 
+      { 
+        href: 'https://www.instagram.com/?hl=ru', 
+        src: '../../../assets/img/socials/instagram.svg' 
+      }
     ];
 
-block header 
-  -
-    const navigators = [
-      {
-        active: false,
-        text: 'О нас',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Услуги',
-        arrow: true
-      },
-      {
-        active: false,
-        text: 'Вакансии',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Новости',
-        arrow: false
-      },
-      {
-        active: false,
-        text: 'Соглашения',
-        arrow: true
-      },
-    ];
-
-block body
+block content
   -
     const galleries = [
       '../../../assets/img/gallery/image13.jpg', 
@@ -66,118 +74,200 @@ block body
     const advantages = [
       {
         icon: 'insert_emoticon', 
-        text: 'Комфорт', 
-        span: 'Шумопоглощающие стены'
+        title: 'Комфорт', 
+        text: 'Шумопоглощающие стены'
       },
       {
         icon: 'location_city', 
-        text: 'Удобство', 
-        span: 'Окно в каждой из спален'
+        title: 'Удобство', 
+        text: 'Окно в каждой из спален'
       },
       {
         icon: 'whatshot', 
-        text: 'Уют', 
-        span: 'Номер оснащён камином'
-      }
-    ]; 
+        title: 'Уют', 
+        text: 'Номер оснащён камином'
+      },
+    ];
 
     const gradients = [
-      { min: '#FFE39C', max: '#FFBA9C' }, 
-      { min: '#BC9CFF', max: '#8BA4F9' }, 
-      { min: '#6FCF97', max: '#66D2EA' }
+      { 
+        min: '#FFE39C', 
+        max: '#FFBA9C' 
+      }, 
+      { 
+        min: '#BC9CFF', 
+        max: '#8BA4F9' 
+      }, 
+      {
+        min: '#6FCF97', 
+        max: '#66D2EA' 
+      }
     ];
 
     const circles = [
-      { fill: '#fff' }, 
-      { fill: 'transparent', stroke: '#ffffff', strokeWidth: '1' }, 
-      { fill: 'transparent', stroke: 'url(#Gradient1)', strokeWidth: '1', strokeDasharray: '49 51', strokeDashoffset: '74.5' }, 
-      { fill: 'transparent', stroke: 'url(#Gradient2)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '124.5' }, 
-      { fill: 'transparent', stroke: 'url(#Gradient3)', strokeWidth: '1', strokeDasharray: '24 76', strokeDashoffset: '199.5' }
+      { 
+        fill: '#fff' 
+      }, 
+      { 
+        fill: 'transparent', 
+        stroke: '#ffffff', 
+        strokeWidth: '1' 
+      }, 
+      { 
+        fill: 'transparent', 
+        stroke: 'url(#Gradient1)', 
+        strokeWidth: '1', 
+        strokeDasharray: '49 51', 
+        strokeDashoffset: '74.5' 
+      }, 
+      { 
+        fill: 'transparent', 
+        stroke: 'url(#Gradient2)', 
+        strokeWidth: '1', 
+        strokeDasharray: '24 76', 
+        strokeDashoffset: '124.5' 
+      }, 
+      { 
+        fill: 'transparent', 
+        stroke: 'url(#Gradient3)', 
+        strokeWidth: '1', 
+        strokeDasharray: '24 76', 
+        strokeDashoffset: '199.5' 
+      }
     ];
 
-    const estimations = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'];
+    const estimations = [
+      {
+        text: 'Великолепно',
+        color: 'orange'
+      },
+      {
+        text: 'Хорошо',
+        color: 'green'
+      },
+      {
+        text: 'Удовлетворительно',
+        color: 'purple'
+      },
+      {
+        text: 'Разочарован',
+        color: 'black'
+      },
+    ];
 
-    const reviews = [
+    const feedbacks = [
       {
         image: 'image16', 
-        quantity: 12,
-        active: true,
+        value: 12,
+        state: 'active',
         name: 'Мурад Сарафанов', 
         date: '5 дней назад',
         text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
       },
       {
         image: 'image17', 
-        quantity: 2,
+        value: 2,
         name: 'Патрисия Стёклышкова', 
         date: 'Неделю назад',
         text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
       }
     ];
 
-    const conditions = [
+    const bulletLists = [
       'Нельзя с питомцами', 
       'Без вечеринок и мероприятий', 
-      'Время прибытия — после 13:00, а выезд до 12:00'
-    ];
-
-    const guests = [
-      {
-        text: 'взрослые', 
-        number: 2
-      }, 
-      {
-        text: 'дети', 
-        number: 1
-      }, 
-      {
-        text: 'младенцы', 
-        number: 0, 
-        opacity: true
-      }
+      'Время прибытия — после 13:00,\n а выезд до 12:00'
     ];
 
     const prices = [
       {
         text: '9 990₽ х 4 суток',
-        number: '39 960₽',
+        number: '39 960',
       },
       {
         text: 'Сбор за услуги: скидка 2 179₽',
-        number: '0₽',
-        state: 'information'
+        number: 0,
+        icon: true,
       },
       {
         text: 'Сбор за доп. услуги',
-        number: '300₽',
-        state: 'information'
+        number: 300,
+        icon: true,
+      },
+    ];
+
+    const guests = [
+      {
+        text: 'взрослые', 
+        number: 2, 
+      }, 
+      {
+        text: 'дети', 
+        number: 1, 
+      }, 
+      {
+        text: 'младенцы', 
+        number: 0, 
+        translucent: true
       }
     ];
 
-  main.page-main.page-main_no_padding
-    section.page-main__gallery
-      +gallery(galleries)
-    .page-main__wrapper
-      section.page-main__details
-        .page-main__conveniences
-          .page-main__convenience
-            h2.page-main__subtitle Сведения о номере
-            +advantage({ texts: advantages })
-          .page-main__experience
-            h2.page-main__subtitle Впечатления от номера
-            +chart({ gradients, circles, estimations })
-        .page-main__reviews
-          h2.page-main__subtitle.page-main__subtitle_margin_top1 Отзывы посетителей номера
-            span.page-main__subtitle_colored 2 отзыва
-          each review in reviews
-            .page-main__review
-              +review({ review })
-        .page-main__conditions
-          .page-main__condition
-            h2.page-main__subtitle.page-main__subtitle_margin_top2.page-main__subtitle_padding_left Правила
-            +condition(conditions)
-          .page-main__cancel
-            h2.page-main__subtitle.page-main__subtitle_margin_top2 Отмена
-            p.page-main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-      section.page-main__form.page-main__form_margin_common3
-        +form-room({ prices: prices, guests: guests })
+  main.room-details
+    section.room-details__gallery
+      each val in galleries
+        img.room-details__img(src=val, alt="room")
+    .room-details__wrapper
+      section.room-details__details
+        .room-details__conveniences
+          .room-details__convenience
+            h2.room-details__subtitle Сведения о номере
+            each val in advantages
+              .room-details__advantage
+                +advantage(val)
+          .room-details__experience
+            h2.room-details__subtitle Впечатления от номера
+            .room-details__chart 
+              svg.room-details__svg(
+                width="155px",
+                height="155px",
+                viewBox="0 0 42 42"
+              )
+                defs
+                  each val, index in gradients
+                    linearGradient(id='Gradient' + (index + 1))
+                      stop(offset="0%", stop-color=val.min)
+                      stop(offset="100%", stop-color=val.max)
+                each val in circles
+                  circle(
+                    cx="21",
+                    cy="21",
+                    r="15.91549430918954",
+                    fill=val.fill,
+                    stroke=val.stroke,
+                    stroke-width=val.strokeWidth,
+                    stroke-dasharray=val.strokeDasharray,
+                    stroke-dashoffset=val.strokeDashoffset
+                  )
+              p.room-details__number 260
+              p.room-details__text голосов
+              ul.room-details__list
+                each val in estimations
+                  li(
+                    class=`room-details__circle room-details__circle_color_${val.color}`
+                  )= val.text
+        .room-details__feedbacks
+          .room-details__texts
+            h2.room-details__subtitle Отзывы посетителей номера
+            p.room-details__num-feedback 2 отзыва
+          each val in feedbacks
+            .room-details__feedback
+              +feedback(val)
+        .room-details__conditions
+          .room-details__condition
+            h2.room-details__subtitle.room-details__subtitle_size_indent Правила
+            +bullet-list(bulletLists)
+          .room-details__cancel
+            h2.room-details__subtitle Отмена
+            p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      section.room-details__form
+        +form-booking({ prices, guests })

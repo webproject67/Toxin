@@ -1,10 +1,5 @@
 .logo {
-  padding: 30px;
-}
-
-.logo__link {
-  display: inline-block;
-  font-size: 0;
+  display: flex;
   transition: all 0.4s ease;
 
   &:hover {

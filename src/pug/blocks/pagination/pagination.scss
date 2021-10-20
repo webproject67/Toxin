@@ -1,66 +1,66 @@
 .pagination {
   display: inline-block;
   text-align: center;
-}
 
-.pagination__nav {
-  padding: 0;
-}
+  &__nav {
+    padding: 0;
+  }
 
-.pagination__nav.light-theme a,
-.pagination__nav.light-theme span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  font-size: 12px;
-  line-height: 15px;
-  color: $color-50;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  & .light-theme a,
+  & .light-theme span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-50;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 
-  &:hover {
+    &:hover {
+      font-weight: bold;
+      color: #ffffff;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
+    }
+  }
+
+  & .next {
+    font-family: MaterialIcons;
+  }
+
+  & .light-theme span:not(.ellipse) {
     font-weight: bold;
     color: #ffffff;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     border-radius: 22px;
   }
-}
 
-.pagination__nav .next {
-  font-family: MaterialIcons;
-}
+  & .light-theme li:not(.disabled):not(.active) span {
+    font-weight: normal;
 
-.pagination__nav.light-theme span:not(.ellipse) {
-  font-weight: bold;
-  color: #ffffff;
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  border-radius: 22px;
-}
-
-.pagination .light-theme li:not(.disabled):not(.active) span {
-  font-weight: normal;
-
-  &:hover {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    &:hover {
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    }
   }
-}
 
-.pagination .light-theme li:last-child a,
-.pagination .light-theme li:last-child span {
-  font-size: 24px;
-  line-height: 24px;
-  text-decoration: none;
-  color: #ffffff;
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  border-radius: 22px;
-}
+  & .light-theme li:last-child a,
+  & .light-theme li:last-child span {
+    font-size: 24px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border-radius: 22px;
+  }
 
-.pagination__text {
-  margin: 9px 0;
+  &__text {
+    margin: 9px 0;
+  }
 }
