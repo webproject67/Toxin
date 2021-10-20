@@ -1,0 +1,41 @@
+include ../subtitle/subtitle
+include ../dropdown-date/dropdown-date
+include ../dropdown-list/dropdown-list
+include ../button/button
+
+mixin form-booking(options)
+  - const { prices, guests } = options;
+
+  form.form-booking(action="mock-address")
+    .form-booking__block-price
+      p.form-booking__symbol №
+        span.form-booking__number= ' 888'
+          span.form-booking__category= ' Люкс'
+      p.form-booking__price 9 990₽
+        span.form-booking__day= ' в сутки'
+    .form-booking__dates
+      .form-booking__date
+        .form-booking__subtitle
+          +subtitle({ id: 'arrivalBooking', text: 'прибытие', tag: 'label' })
+        +dropdown-date({ id: 'arrivalBooking', value: '19.08.2019', js: 'calendar4' })
+      .form-booking__date
+        .form-booking__subtitle
+          +subtitle({ id: 'exitBooking', text: 'выезд', tag: 'label' })
+        +dropdown-date({ id: 'exitBooking', value: '23.08.2019' })
+    .form-booking__guests
+      .form-booking__subtitle
+        +subtitle({ id: 'guestsBooking', text: 'гости', tag: 'label' })
+      +dropdown-list({ id: 'guestsBooking', value: '3 гостя', list: guests, additionalButtons: true })
+    ul.form-booking__list 
+      each val in prices
+        li.form-booking__item 
+          p.form-booking__text-price(
+            class=val.icon ? 'form-booking__text-price_state_information' : false
+          )= val.text
+          p.form-booking__number-price= `${val.number}₽`
+    .form-booking__amount 
+      p.form-booking__total Итого
+      p.form-booking__ellipsis
+      p.form-booking__total-number 38 081₽
+    .form-booking__submit
+      +button({ text: 'ЗАБРОНИРОВАТЬ', type: 'button', theme: 'filled', icon: 'arrow' })

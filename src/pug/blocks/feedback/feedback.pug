@@ -1,0 +1,14 @@
+include ../like/like
+
+mixin feedback(options)
+  .feedback
+    .feedback__block-avatar 
+      img.feedback__avatar(
+        src=`../../../assets/img/avatars/${options.image}.jpg`,
+        alt="avatar"
+      )
+      +like(options)
+    .feedback__block-feedback 
+      p.feedback__name= options.name
+      p.feedback__date= options.date
+      p.feedback__text= options.text

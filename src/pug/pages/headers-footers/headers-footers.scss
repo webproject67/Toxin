@@ -1,20 +1,32 @@
 .headers-footers {
-  margin: 20px 0;
-}
+  &__logo {
+    display: flex;
+    margin: 30px;
+  }
 
-.headers-footers__title {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  white-space: nowrap;
-  border: 0;
-  clip-path: inset(100%);
-}
+  &__content {
+    margin-top: 62px;
+  }
 
-.headers-footers_compact {
-  margin-top: 40px;
+  &__title {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    white-space: nowrap;
+    border: 0;
+    clip-path: inset(100%);
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    &_size_narrow {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  }
 }

@@ -1,226 +1,170 @@
 .form-elements {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 23px 9.8%;
-}
-
-.form-elements__title {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  white-space: nowrap;
-  border: 0;
-  clip-path: inset(100%);
-}
-
-.form-elements__block1 {
-  width: 320px;
-  margin-bottom: 59px;
-}
-
-.form-elements__texts {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.form-elements__text {
-  margin: 0 0 5px;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $color;
-
-  &_colored {
-    font-weight: normal;
-    color: $color-50;
-  }
-}
-
-.form-elements__block:nth-child(2),
-.form-elements__block:nth-child(3) {
-  margin-top: 20px;
-}
-
-.form-elements__block:nth-child(4) {
-  margin-top: 23px;
-}
-
-.form-elements__block:nth-child(5) {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
-.form-elements__block:nth-child(6),
-.form-elements__block:nth-child(7) {
-  width: 266px;
-  margin: 41px 0;
-}
-
-.form-elements__block2 {
-  width: 266px;
-
-  & .form-elements__block:nth-child(2),
-  & .form-elements__block:nth-child(3) {
-    margin-top: 40px;
+  &__logo {
+    display: flex;
+    margin: 30px;
   }
 
-  & .form-elements__block:nth-child(4) {
-    margin-top: 44px;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 65px 9.8%;
   }
 
-  & .form-elements__block:nth-child(5) {
-    display: block;
-    margin-bottom: 40px;
-  }
-}
-
-.form-elements__block-checkbox {
-  width: 246px;
-  margin-top: 12px;
-}
-
-.form-elements__block-radio {
-  margin-top: 8px;
-}
-
-.form-elements__block-toggle {
-  margin-top: 7px;
-}
-
-.form-elements__block-like {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 90px;
-  margin-top: 11px;
-}
-
-.form-elements__block-rate {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 260px;
-  margin-top: 11px;
-}
-
-.form-elements__block3 {
-  width: 320px;
-
-  & .form-elements__block:nth-child(1) {
-    width: 266px;
+  &__title {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    white-space: nowrap;
+    border: 0;
+    clip-path: inset(100%);
   }
 
-  & .form-elements__block:nth-child(2) {
-    margin-top: 43px;
+  &__list {
+    width: 320px;
+
+    &:nth-child(2) {
+      margin-bottom: 55px;
+    }
+
+    &:nth-child(5) {
+      width: 265px;
+      margin-bottom: 141px;
+    }
+
+    &:nth-child(8) {
+      width: 266px;
+      margin-bottom: 59px;
+    }
+
+    &:nth-child(9),
+    &:nth-child(10) {
+      margin-top: 11px;
+    }
+
+    &:nth-child(11) {
+      width: 280px;
+    }
+
+    &:nth-child(12) {
+      width: 711px;
+      margin-top: 31px;
+    }
+
+    @media (min-width: $desktop-width) {
+      &:nth-child(3) {
+        transform: translateX(27px);
+      }
+
+      &:nth-child(6),
+      &:nth-child(9) {
+        transform: translateX(54px);
+      }
+    }
   }
 
-  & .form-elements__block:nth-child(3) {
-    margin: 41px 0;
-  }
-}
+  &__item {
+    margin-bottom: 20px;
 
-.form-elements__block-link-bg {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 218px;
-  margin-top: 11px;
+    &_size_displayed {
+      display: flex;
+      justify-content: space-between;
+      margin: 43px 0 41px;
+    }
 
-  &_margin_top {
-    margin-top: 30px;
-  }
-}
-
-.form-elements__block-link {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 143px;
-  margin-top: 33px;
-}
-
-.form-elements__block-link-submit {
-  display: grid;
-  margin-top: 30px;
-}
-
-.form-elements__block-pagination {
-  margin-top: 10px;
-}
-
-.form-elements__block4 {
-  width: 266px;
-  height: 300px;
-  margin-right: 9.3%;
-  margin-bottom: 10px;
-}
-
-.form-elements__block5,
-.form-elements__block6 {
-  width: 320px;
-  height: 266px;
-}
-
-.form-elements__block7 {
-  width: 266px;
-  margin-right: 9.3%;
-  margin-bottom: 71px;
-
-  & .form-elements__block:nth-child(2) {
-    margin-top: 17px;
-  }
-}
-
-.form-elements__block8,
-.form-elements__block9 {
-  width: 320px;
-  margin-top: 10px;
-}
-
-.form-elements__block9 {
-  padding-right: 56px;
-}
-
-.form-elements__block10 {
-  width: 320px;
-}
-
-.form-elements__block11 {
-  width: 710px;
-  margin-top: 30px;
-}
-
-@media (max-width: $desktop-width) {
-  .form-elements__block1 {
-    margin-bottom: 0;
+    &_size_narrow {
+      width: 266px;
+      margin-bottom: 43px;
+    }
   }
 
-  .form-elements__block4,
-  .form-elements__block7 {
-    margin-right: 0;
+  &__subtitle {
+    margin-bottom: 5px;
   }
 
-  .form-elements__block7 {
-    margin-bottom: 40px;
+  &__item-date {
+    max-width: 150px;
   }
 
-  .form-elements__block9 {
-    padding-right: 0;
-  }
-}
+  &__checkbox {
+    margin-top: 6px;
+    margin-left: 30px;
 
-@media (max-width: $mobile-width-only) {
-  .form-elements {
-    margin: 15px;
+    &:nth-child(2) {
+      margin-top: 14px;
+    }
+
+    &:last-child {
+      margin-bottom: 33px;
+    }
+  }
+
+  &__radio {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    margin: 14px 0 39px;
+  }
+
+  &__toggle {
+    margin: 12px 0;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__like {
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+    margin: 18px 0 40px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+    margin: 16px 0 40px;
+  }
+
+  &__buttons-filled,
+  &__buttons-bordered {
+    display: flex;
+    justify-content: space-between;
+    width: 218px;
+    margin: 17px 0 31px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 143px;
+  }
+
+  &__button {
+    margin: 31px 0 41px;
+  }
+
+  &__pagination {
+    margin-top: 15px;
+  }
+
+  &__checkbox-access {
+    margin-left: 30px;
+    line-height: 14px;
+
+    &:nth-child(2) {
+      margin-top: 19px;
+    }
+  }
+
+  &__advantage {
+    padding: 20px 0;
   }
 }

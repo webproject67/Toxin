@@ -1,9 +1,0 @@
-mixin nav-link(options)
-  - const { navigators } = options;
-
-  ul.nav-link
-    each navigator in navigators
-      li(class=`nav-link__item ${navigator.active ? 'nav-link__item_hovering' : ''}`)
-        a.nav-link__link= navigator.text
-          if navigator.arrow
-            span.nav-link__icon expand_more

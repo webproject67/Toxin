@@ -1,9 +1,6 @@
 mixin advantage(options)
-  - const { texts } = options;
-
-  ul.advantage 
-    each val in texts
-      li.advantage__item 
-        p.advantage__icon= val.icon
-        p.advantage__text= val.text
-          span.advantage__text_weight_normal= val.span
+  .advantage
+    p.advantage__icon= options.icon
+    .advantage__texts
+      p.advantage__title= options.title
+      p.advantage__text= options.text

@@ -1,0 +1,8 @@
+include ../input/input
+
+mixin subscription(options)
+  - const { id, placeholder } = options;
+
+  form.subscription
+    +input({ type: 'email', id, placeholder, size: 'indentation' })
+    button.subscription__submit(type="submit") arrow_forward

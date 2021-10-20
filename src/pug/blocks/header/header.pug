@@ -1,12 +1,26 @@
-include ../logotype/logotype
-include ../nav/nav
+include ../logo/logo
+include ../button/button
 
 mixin header(options)
-  header.page-header 
-    .page-header__wrapper
-      +logotype({})
-      +nav(options)
-      button.page-header__hamburger.js-page-header__hamburger
-        span.page-header__streak.page-header__streak_top
-        span.page-header__streak.page-header__streak_middle
-        span.page-header__streak.page-header__streak_bottom
+  - const { linksHeader, name } = options;
+
+  header.header 
+    .header__wrapper
+      +logo
+      .header__nav
+        ul.header__list
+          each val in linksHeader
+            li.header__item(class=val.state ? 'header__item_state_hovering' : false)
+              a.header__link(href=val.icon ? false : '/mock-address')= val.text
+                if val.icon
+                  span.header__icon expand_more
+        if name
+          a.header__link.header__link_state_bordered(href="/mock-address")= name
+        else
+          .header__links
+            +button({ text: 'войти', href: 'sign-in.html', type: 'link', theme: 'bordered', size: 'wide' })
+            +button({ text: 'зарегистрироваться', href: 'registration.html', type: 'link', theme: 'filled', size: 'wide' })
+      button.header__hamburger.js-header__hamburger
+        span.header__streak.header__streak_location_top
+        span.header__streak.header__streak_location_middle
+        span.header__streak.header__streak_location_bottom

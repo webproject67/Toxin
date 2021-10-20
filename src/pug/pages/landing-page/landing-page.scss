@@ -1,0 +1,47 @@
+.landing-page {
+  flex-grow: 1;
+
+  &__image1 {
+    background: url('../assets/img/slider/img1.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__image2 {
+    background: url('../assets/img/slider/img2.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__image3 {
+    background: url('../assets/img/slider/img3.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 1;
+    max-width: 380px;
+    margin: 69px 140px;
+  }
+
+  @media (max-width: $desktop-width) {
+    &__form {
+      margin: 69px auto 209px;
+      padding: 0 15px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    width: 297px;
+    margin: 317px 134px 21px auto;
+    text-align: right;
+  }
+
+  @media (max-width: $desktop-width) {
+    &__text {
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+  }
+}

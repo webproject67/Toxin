@@ -42,7 +42,7 @@ html(lang="ru")
     meta(name="theme-color", content="#ffffff")
   body
     block header
-    +header({ navigators: navigators })
-    block body
+    +header({ linksHeader })
+    block content
     block footer
-    +footer({ theme: border, links: links, socials: socials })
+    +footer({ linksFooter, socials, state: border })

@@ -1,0 +1,12 @@
+mixin subtitle(options)
+  -
+    const { id, text, desc, tag = 'subtitle' } = options;
+
+    const tags = {
+      label: 'label',
+      subtitle: 'h3',
+    }
+
+  #{tags[tag]}.subtitle(for=id)= text
+    if desc
+      span.subtitle__desc= desc

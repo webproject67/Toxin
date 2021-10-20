@@ -2,5 +2,5 @@ interface JQuery {
   keydowns: Function;
 }
 
-const $birthday = $('#birthday');
-$birthday.keydowns();
+const $birthDate = $('.js-input-birthDate');
+$birthDate.keydowns();

@@ -1,12 +1,6 @@
 mixin radio(options)
+  - const { checked, name, value } = options;
 
-  ul.radio 
-    each val in options
-      li.radio__item 
-        input.radio__radio(
-          id=val.id,
-          type="radio",
-          name="man-woman",
-          checked=val.checked
-        )
-        label.radio__label(for=val.id)= val.gender
+  label.radio= value
+    input.radio__input(type="radio", value=value, name=name, checked=checked)
+    .radio__icons

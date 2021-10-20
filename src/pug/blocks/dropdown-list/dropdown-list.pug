@@ -1,0 +1,29 @@
+mixin dropdown-list(options)
+  -
+    const { id, value, list, additionalButtons, state, theme } = options;
+
+    const stateModifiers = {
+      displayed: 'dropdown-list__select_state_displayed',
+    };
+    const classes = [
+      stateModifiers[state], 
+    ];
+
+  .dropdown-list.js-dropdown-list
+    +input({ id, value, readonly: 'readonly', cursor: 'pointer', theme })
+    .dropdown-list__select(class=classes)
+      each val in list
+        .dropdown-list__option
+          p.dropdown-list__text= val.text
+          .dropdown-list__buttons 
+            input.dropdown-list__btn(
+              class=val.translucent ? 'dropdown-list__btn_state_translucent' : '',
+              type="button",
+              value="-"
+            )
+            p.dropdown-list__number= val.number
+            input.dropdown-list__btn(type="button", value="+")
+      if additionalButtons
+        .dropdown-list__additional-buttons 
+          +button({ text: 'очистить', type: 'button' })
+          +button({ text: 'применить', type: 'button' })

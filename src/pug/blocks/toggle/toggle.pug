@@ -1,0 +1,6 @@
+mixin toggle(options)
+  - const { checked, value } = options;
+
+  label.toggle= value
+    input.toggle__input(type="checkbox", value=value, checked=checked)
+    .toggle__icons

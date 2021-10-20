@@ -1,5 +1,5 @@
 extends ../../layouts/ui-kit-layout
-include ../../blocks/logo/logo
+include ../../blocks/logo-ui-kit/logo-ui-kit
 
 block head
   - const title = 'Colors type';
@@ -7,43 +7,46 @@ block head
 block body
   -
     const colors = [
-    { className: 'gray100', text: 'Dark Shade 100%', color: '#1F2041' }, 
-    { className: 'gray75', text: 'Dark Shade 75%', color: '#1F2041' }, 
-    { className: 'gray50', text: 'Dark Shade 50%', color: '#1F2041' }, 
-    { className: 'gray25', text: 'Dark Shade 25%', color: '#1F2041' }, 
-    { className: 'gray5', text: 'Dark Shade 5%', color: '#1F2041' }, 
-    { className: 'purple', text: 'Purple', color: '#BC9CFF' }, 
-    { className: 'green', text: 'Green', color: '#6FCF97' }
+      { color: 'darkest-gray', text: 'Dark Shade 100%', hex: '#1F2041' }, 
+      { color: 'dark-gray', text: 'Dark Shade 75%', hex: '#1F2041' }, 
+      { color: 'gray', text: 'Dark Shade 50%', hex: '#1F2041' }, 
+      { color: 'light-gray', text: 'Dark Shade 25%', hex: '#1F2041' }, 
+      { color: 'lightest-gray', text: 'Dark Shade 5%', hex: '#1F2041' }, 
+      { color: 'purple', text: 'Purple', hex: '#BC9CFF' }, 
+      { color: 'green', text: 'Green', hex: '#6FCF97' },
     ];
 
-  +logo
   .colors-type 
-    .colors-type__block1 
-      ul.colors-type__list 
+    .colors-type__logo
+      +logo-ui-kit
+    .colors-type__content
+      ul.colors-type__colors 
         each val in colors
           li.colors-type__item
-            div(class=`colors-type__color colors-type__color_${val.className}`)
-            p.colors-type__text= val.text
-              span.colors-type__text_weight_normal= val.color
-    .colors-type__block2 
-      table.colors-type__table 
-        tr.colors-type__tr 
-          td.colors-type__td 
-            h1.colors-type__h1.colors-type__tag H1
-          td.colors-type__td 
-            h1.colors-type__h1 This one is the sub-section or widget title
-        tr.colors-type__tr 
-          td.colors-type__td 
-            h2.colors-type__h2.colors-type__tag H2
-          td.colors-type__td 
-            h2.colors-type__h2.colors-type__text_margin_top Next one is the item title inside widgets
-        tr.colors-type__tr 
-          td.colors-type__td 
-            h3.colors-type__h3.colors-type__tag H3
-          td.colors-type__td 
-            h3.colors-type__h3 This is a label or CTA text
-        tr.colors-type__tr 
-          td.colors-type__td 
+            div(class=`colors-type__square colors-type__square_color_${val.color}`)
+            .colors-type__texts 
+              p.colors-type__text= val.text
+              p.colors-type__hex= val.hex
+      table.colors-type__titles
+        tr.colors-type__item-title
+          td.colors-type__first-column
+            h1.colors-type__tag.colors-type__tag_size_big H1
+          td.colors-type__second-column
+            h1.colors-type__title.colors-type__title_size_big This one is the sub-section or widget title
+        tr.colors-type__item-title
+          td.colors-type__first-column
+            h2.colors-type__tag.colors-type__tag_size_medium H2
+          td.colors-type__second-column
+            h2.colors-type__title.colors-type__title_size_medium Next one is the item title inside widgets
+        tr.colors-type__item-title
+          td.colors-type__first-column
+            h3.colors-type__tag.colors-type__tag_size_small H3
+          td.colors-type__second-column
+            h3.colors-type__title.colors-type__title_size_small This is a label or CTA text
+        tr.colors-type__item-title
+          td.colors-type__first-column
             p.colors-type__tag Body
-          td.colors-type__td 
-            p.colors-type__text_width_maximum This is the body text which is used for most of the design, like paragraphs, lists, etc.
+          td.colors-type__second-column
+            p.colors-type__desc This is the body text which is used for most
+              br 
+              | of the design, like paragraphs, lists, etc.

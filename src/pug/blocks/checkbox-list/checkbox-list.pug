@@ -1,13 +1,18 @@
 mixin checkbox-list(options)
-  - 
+  -
     const { value, state, checkboxes } = options;
 
     const stateModifiers = {
       active: 'checkbox-list_state_active',
     };
 
-  .checkbox-list.js-checkbox-list(class= stateModifiers[state])
+    const classes = [
+      stateModifiers[state],
+    ];
+
+  .checkbox-list.js-checkbox-list(class=classes)
     button.checkbox-list__button(type="button")= value
     .checkbox-list__checkboxes
-      each checkbox in checkboxes
-        +checkbox(checkbox)
+      each val in checkboxes
+        .checkbox-list__checkbox
+          +checkbox(val)

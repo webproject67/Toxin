@@ -1,10 +1,10 @@
 extends ../../layouts/ui-kit-layout
-include ../../blocks/logo/logo
+include ../../blocks/logo-ui-kit/logo-ui-kit
 include ../../blocks/form-search/form-search
-include ../../blocks/form-room/form-room
-include ../../blocks/form-registration/form-registration
+include ../../blocks/form-booking/form-booking
+include ../../blocks/form-sign-up/form-sign-up
 include ../../blocks/form-sign-in/form-sign-in
-include ../../blocks/card-photo/card-photo
+include ../../blocks/card-room/card-room
 
 block head
   - const title = 'Cards';
@@ -15,56 +15,63 @@ block body
       {
         text: 'взрослые', 
         number: 0, 
-        opacity: true
+        translucent: true
       }, 
       {
         text: 'дети', 
         number: 0, 
-        opacity: true
+        translucent: true
       }, 
       {
         text: 'младенцы', 
         number: 0, 
-        opacity: true
+        translucent: true
       }
     ];
 
-    const guestsRoom = [
+    const guestsBooking = [
       {
         text: 'взрослые', 
-        number: 2
+        number: 2, 
       }, 
       {
         text: 'дети', 
-        number: 1
+        number: 1, 
       }, 
       {
         text: 'младенцы', 
         number: 0, 
-        opacity: true
+        translucent: true
       }
     ];
 
     const prices = [
       {
         text: '9 990₽ х 4 суток',
-        number: '39 960₽',
+        number: '39 960',
       },
       {
         text: 'Сбор за услуги: скидка 2 179₽',
-        number: '0₽',
-        state: 'information'
+        number: 0,
+        icon: true,
       },
       {
-        text: 'Сбор за дополнительные услуги',
-        number: '300₽',
-        state: 'information'
-      }
+        text: 'Сбор за доп. услуги',
+        number: 300,
+        icon: true,
+      },
     ];
 
     const genders = [
-      { id: 'man', gender: 'Мужчина', checked: 'checked' }, 
-      { id: 'woman', gender: 'Женщина' }
+      { 
+        value: 'Мужчина',
+        name: 'gender', 
+        checked: true 
+      }, 
+      { 
+        value: 'Женщина',
+        name: 'gender', 
+      }
     ];
 
     const cards = [
@@ -79,7 +86,6 @@ block body
       },
       {
         number: 840,
-        category: '',
         price: '9 900',
         count: 4,
         review: 65,
@@ -87,19 +93,21 @@ block body
       }
     ];
 
-  +logo
   .cards
-    .cards__block1
-      +form-search(guestsSearch)
-    .cards__block2
-      +form-room({ prices: prices, guests: guestsRoom })
-    .cards__block3
-      .js-datepick1
-    .cards__block4
-      +form-registration({ genders: genders, textSubmit: 'ПЕРЕЙТИ К ОПЛАТЕ' })
-    .cards__block5
-      +form-sign-in
-    .cards__block6
-      each card in cards
-        .cards__card-photo
-          +card-photo(card)
+    .cards__logo
+      +logo-ui-kit
+    .cards__content
+      .cards__list
+        +form-search(guestsSearch)
+      .cards__list
+        +form-booking({ prices, guests: guestsBooking })
+      .cards__list.cards__list_size_middle
+        .dropdown-date.dropdown-date_state_displayed.js-calendar5
+      .cards__list
+        +form-sign-up({ genders, textSubmit: 'ПЕРЕЙТИ К ОПЛАТЕ' })
+      .cards__list
+        +form-sign-in
+      .cards__list.cards__list_size_middle
+        each val in cards
+          .cards__card-room
+            +card-room(val)

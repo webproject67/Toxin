@@ -28,5 +28,6 @@ module.exports = {
     ],
     'func-names': ['error', 'never'],
     'no-unused-vars': 'off',
+    'no-param-reassign': 'off',
   },
 };

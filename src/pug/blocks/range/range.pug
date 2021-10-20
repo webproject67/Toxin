@@ -1,0 +1,10 @@
+mixin range(options)
+  - const { text, selected, desc } = options;
+
+  .range
+    .range__texts
+      h3.range__text= text
+      p.range__selected.js-range__selected= selected
+    .range__roller.js-range__roller
+    if desc
+      p.range__desc= desc

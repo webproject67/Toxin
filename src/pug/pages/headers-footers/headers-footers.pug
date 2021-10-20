@@ -1,61 +1,74 @@
 extends ../../layouts/ui-kit-layout
-include ../../blocks/logo/logo
+include ../../blocks/logo-ui-kit/logo-ui-kit
 include ../../blocks/header/header
 include ../../blocks/footer/footer
-include ../../blocks/footer-narrow/footer-narrow
 
 block head
   - const title = 'Headers & footers';
 
 block body
-  - 
-    const navigators = [
+  -
+    const linksHeader = [
       {
-        active: true,
+        state: true,
         text: 'О нас',
-        arrow: false
       },
       {
-        active: false,
         text: 'Услуги',
-        arrow: true
+        icon: true
       },
       {
-        active: false,
         text: 'Вакансии',
-        arrow: false
       },
       {
-        active: false,
         text: 'Новости',
-        arrow: false
       },
       {
-        active: false,
         text: 'Соглашения',
-        arrow: true
+        icon: true
       },
     ];
 
-    const links = [
-      { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, 
-      { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, 
-      { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] }
+    const linksFooter = [
+      { 
+        title: 'навигация', 
+        links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] 
+      }, 
+      { 
+        title: 'о нас', 
+        links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] 
+      }, 
+      { 
+        title: 'служба поддержки', 
+        links: ['Соглашения', 'Сообщества', 'Связь с нами'] 
+      }
     ];
 
     const socials = [
-      { href: 'https://twitter.com/?lang=ru', src: '../../../assets/img/socials/twitter.svg' }, 
-      { href: 'https://ru-ru.facebook.com/', src: '../../../assets/img/socials/facebook.svg' }, 
-      { href: 'https://www.instagram.com/?hl=ru', src: '../../../assets/img/socials/instagram.svg' }
+      { 
+        href: 'https://twitter.com/?lang=ru', 
+        src: '../../../assets/img/socials/twitter.svg' 
+      }, 
+      { 
+        href: 'https://ru-ru.facebook.com/', 
+        src: '../../../assets/img/socials/facebook.svg' 
+      }, 
+      { 
+        href: 'https://www.instagram.com/?hl=ru', 
+        src: '../../../assets/img/socials/instagram.svg' 
+      }
     ];
 
-  +logo
-  .headers-footers
-    h1.headers-footers__title Headers & Footers
-    +header({ navigators: navigators })
-    .headers-footers_compact
-      +header({ navigators: navigators, name: 'Юлий Цезарь' })
-    .headers-footers_compact
-      +footer({ links: links, socials: socials })
-    .headers-footers_compact
-      +footer-narrow({ socials: socials })
+  .headers-footers 
+    .headers-footers__logo
+      +logo-ui-kit
+    .headers-footers__content
+      h1.headers-footers__title Headers & Footers
+      .headers-footers__list
+        +header({ linksHeader })
+      .headers-footers__list
+        +header({ linksHeader, name: 'Юлий Цезарь' })
+      .headers-footers__list
+        +footer({ linksFooter, socials })
+      .headers-footers__list.headers-footers__list_size_narrow
+        +footer({ linksFooter, socials, state: 'displayed' })
