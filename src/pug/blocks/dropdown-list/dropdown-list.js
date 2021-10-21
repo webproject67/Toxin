@@ -1,8 +1,9 @@
 (function ($) {
   const upper = '.dropdown-list';
-  const result = '.input';
-  const border = 'input_theme_bordered';
-  const borderJS = '.input_theme_bordered';
+  const label = '.input';
+  const result = '.input__text-field';
+  const border = 'input__text-field_theme_bordered';
+  const borderJS = '.input__text-field_theme_bordered';
   const select = '.dropdown-list__select';
   const desc = '.dropdown-list__text:first';
   const btnMinus = '.dropdown-list__btn:nth-child(1)';
@@ -137,7 +138,7 @@
     function main(evt) {
       evt.click(() => {
         evt.toggleClass(border);
-        evt.siblings(select).slideToggle(300);
+        evt.parents(label).siblings(select).slideToggle(300);
       });
     }
 
@@ -237,7 +238,7 @@
         if (e.target.closest(upper)) return;
         if ($onPopup.length) {
           $onPopup.toggleClass(border);
-          $onPopup.siblings(select).slideToggle(300);
+          $onPopup.parents(label).siblings(select).slideToggle(300);
         }
       });
     }

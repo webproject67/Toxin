@@ -9,7 +9,7 @@ interface JQuery {
 }
 
 const $dropdown = $('.js-dropdown-list');
-$dropdown.find('.input').handleInputClick();
+$dropdown.find('.input__text-field').handleInputClick();
 $dropdown.find('.button:last').handleLinkRightClick();
 $dropdown.find('.button:first').handleLinkLeftClick();
 $dropdown.find('.dropdown-list__btn:nth-child(3)').handleBtnPlusClick();

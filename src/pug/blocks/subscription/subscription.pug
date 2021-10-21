@@ -1,8 +1,17 @@
 include ../input/input
 
 mixin subscription(options)
-  - const { id, placeholder } = options;
+  -
+    const { text, placeholder, state } = options;
+
+    const stateModifiers = {
+      up: 'subscription__submit_state_up',
+    };
+
+    const classes = [
+      stateModifiers[state],
+    ];
 
   form.subscription
-    +input({ type: 'email', id, placeholder, size: 'indentation' })
-    button.subscription__submit(type="submit") arrow_forward
+    +input({ type: 'email', text, placeholder, size: 'indentation' })
+    button.subscription__submit(class=classes, type="submit") arrow_forward

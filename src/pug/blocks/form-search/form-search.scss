@@ -21,15 +21,11 @@
   &__dates {
     display: flex;
     justify-content: space-between;
-    margin: 22px 0;
+    margin: 18px 0;
   }
 
   &__date {
     max-width: 150px;
-  }
-
-  &__subtitle {
-    margin-bottom: 5px;
   }
 
   &__submit {

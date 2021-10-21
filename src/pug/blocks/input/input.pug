@@ -1,25 +1,29 @@
 mixin input(options)
   -
-    const { type = 'text', id, value, placeholder, readonly, state, size, theme, cursor, js, maxlength, pattern } = options;
+    const { type = 'text', text, desc, value, placeholder, readonly, state, size, theme, cursor, icon, js, maxlength, pattern } = options;
 
     const stateModifiers = {
-      hovering: 'input_state_hovering',
+      hovering: 'input__text-field_state_hovering',
     };
 
     const sizeModifiers = {
-      indentation: 'input_size_indentation',
+      indentation: 'input__text-field_size_indentation',
     };
 
     const themeModifiers = {
-      bordered: 'input_theme_bordered',
+      bordered: 'input__text-field_theme_bordered',
     };
 
     const cursorModifiers = {
-      pointer: 'input_cursor_pointer',
+      pointer: 'input__text-field_cursor_pointer',
+    };
+
+    const iconModifiers = {
+      arrow: 'input_icon_arrow',
     };
 
     const jsClass = {
-      birthDate: 'js-input-birthDate',
+      birthDate: 'js-input__text-field-birthDate',
     };
 
     const classes = [
@@ -30,14 +34,20 @@ mixin input(options)
       jsClass[js],
     ];
 
-  input.input(
-    class=classes,
-    type=type,
-    id=id,
-    value=value,
-    placeholder=placeholder,
-    autocomplete="off",
-    maxlength=maxlength,
-    pattern=pattern,
-    readonly=readonly
-  )
+    const classesLabel = [
+      iconModifiers[icon],
+    ];
+
+  label.input(class=classesLabel)= text
+    if desc
+      span.input__desc= desc
+    input.input__text-field(
+      class=classes,
+      type=type,
+      value=value,
+      placeholder=placeholder,
+      autocomplete="off",
+      maxlength=maxlength,
+      pattern=pattern,
+      readonly=readonly
+    )

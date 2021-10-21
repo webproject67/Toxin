@@ -1,4 +1,3 @@
-include ../subtitle/subtitle
 include ../dropdown-date/dropdown-date
 include ../dropdown-list/dropdown-list
 include ../button/button
@@ -15,17 +14,11 @@ mixin form-booking(options)
         span.form-booking__day= ' в сутки'
     .form-booking__dates
       .form-booking__date
-        .form-booking__subtitle
-          +subtitle({ id: 'arrivalBooking', text: 'прибытие', tag: 'label' })
-        +dropdown-date({ id: 'arrivalBooking', value: '19.08.2019', js: 'calendar4' })
+        +dropdown-date({ text: 'прибытие', value: '19.08.2019', js: 'calendar4' })
       .form-booking__date
-        .form-booking__subtitle
-          +subtitle({ id: 'exitBooking', text: 'выезд', tag: 'label' })
-        +dropdown-date({ id: 'exitBooking', value: '23.08.2019' })
+        +dropdown-date({ text: 'выезд', value: '23.08.2019' })
     .form-booking__guests
-      .form-booking__subtitle
-        +subtitle({ id: 'guestsBooking', text: 'гости', tag: 'label' })
-      +dropdown-list({ id: 'guestsBooking', value: '3 гостя', list: guests, additionalButtons: true })
+      +dropdown-list({ text: 'гости', value: '3 гостя', list: guests, additionalButtons: true })
     ul.form-booking__list 
       each val in prices
         li.form-booking__item 
@@ -38,4 +31,4 @@ mixin form-booking(options)
       p.form-booking__ellipsis
       p.form-booking__total-number 38 081₽
     .form-booking__submit
-      +button({ text: 'ЗАБРОНИРОВАТЬ', type: 'button', theme: 'filled', icon: 'arrow' })
+      +button({ text: 'забронировать', type: 'button', theme: 'filled', icon: 'arrow' })

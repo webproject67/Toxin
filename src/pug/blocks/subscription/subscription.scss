@@ -3,9 +3,10 @@
 
   &__submit {
     position: absolute;
-    top: 0;
+    top: 24px;
     right: 0;
-    height: 100%;
+    z-index: 4;
+    height: 64%;
     padding: 0 10px;
     font-family: MaterialIcons;
     font-size: 24px;
@@ -16,5 +17,10 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
+
+    &_state_up {
+      top: 0;
+      height: 100%;
+    }
   }
 }

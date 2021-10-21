@@ -1,6 +1,6 @@
 mixin dropdown-list(options)
   -
-    const { id, value, list, additionalButtons, state, theme } = options;
+    const { text, desc, value, list, additionalButtons, state, theme } = options;
 
     const stateModifiers = {
       displayed: 'dropdown-list__select_state_displayed',
@@ -10,7 +10,7 @@ mixin dropdown-list(options)
     ];
 
   .dropdown-list.js-dropdown-list
-    +input({ id, value, readonly: 'readonly', cursor: 'pointer', theme })
+    +input({ text, desc, value, readonly: 'readonly', cursor: 'pointer', theme, icon: 'arrow' })
     .dropdown-list__select(class=classes)
       each val in list
         .dropdown-list__option
