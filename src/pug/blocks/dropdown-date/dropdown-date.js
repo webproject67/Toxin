@@ -37,6 +37,9 @@
 
   $.fn.calendar1 = function () {
     this.each(function () {
+      const dropdown = $(this).parents('.form-elements__item');
+      const inputLeft = dropdown.find('.input__text-field:first');
+      const inputRight = dropdown.find('.input__text-field:last');
       getOptionsDatepicker($(this));
       $(this)
         .datepicker({
@@ -50,20 +53,16 @@
             } else {
               date1 = dateOne;
             }
-
-            $('#input5').val(date1);
-            $('#input6').val(dates[1]);
+            inputLeft.val(date1);
+            inputRight.val(dates[1]);
           },
         })
         .data('datepicker')
         .selectDate([new Date(2019, 7, 8), new Date(2019, 7, 19)]);
       $(this).hide();
       const handleDateClick = () => $('.js-calendar1').toggle();
-      $(this).siblings('#input5').on('click', handleDateClick);
-      $(this)
-        .closest('.form-elements__list')
-        .find('#input6')
-        .on('click', handleDateClick);
+      inputLeft.on('click', handleDateClick);
+      inputRight.on('click', handleDateClick);
 
       let width;
 
@@ -80,6 +79,8 @@
 
   $.fn.calendar2 = function () {
     this.each(function () {
+      const dropdown = $(this).parents('.dropdown-date');
+      const inputLeft = dropdown.find('.input__text-field');
       const getMonthString = (month) => {
         switch (month) {
           case '01':
@@ -130,14 +131,14 @@
               date1Value = value;
             }
 
-            $('#input7').val(date1Value);
+            inputLeft.val(date1Value);
           },
         })
         .data('datepicker')
         .selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
       $(this).hide();
       const handleDateClick = () => $('.js-calendar2').toggle();
-      $(this).siblings('#input7').on('click', handleDateClick);
+      inputLeft.on('click', handleDateClick);
       $(this).find('.datepicker').width(264);
     });
     return this;
@@ -145,23 +146,23 @@
 
   $.fn.calendar3 = function () {
     this.each(function () {
+      const dropdown = $(this).parents('.form-search__dates');
+      const inputLeft = dropdown.find('.input__text-field:first');
+      const inputRight = dropdown.find('.input__text-field:last');
       getOptionsDatepicker($(this));
       $(this)
         .datepicker({
           onSelect: (date) => {
             const dates = date.split(',');
-            $('#arrivalSearch').val(dates[0]);
-            $('#exitSearch').val(dates[1]);
+            inputLeft.val(dates[0]);
+            inputRight.val(dates[1]);
           },
         })
         .data('datepicker');
       $(this).hide();
       const handleDateClick = () => $('.js-calendar3').toggle();
-      $(this).siblings('#arrivalSearch').on('click', handleDateClick);
-      $(this)
-        .closest('.form-search')
-        .find('#exitSearch')
-        .on('click', handleDateClick);
+      inputLeft.on('click', handleDateClick);
+      inputRight.on('click', handleDateClick);
 
       let width;
 
@@ -178,24 +179,24 @@
 
   $.fn.calendar4 = function () {
     this.each(function () {
+      const dropdown = $(this).parents('.form-booking__dates');
+      const inputLeft = dropdown.find('.input__text-field:first');
+      const inputRight = dropdown.find('.input__text-field:last');
       getOptionsDatepicker($(this));
       $(this)
         .datepicker({
           onSelect: (date) => {
             const dates = date.split(',');
-            $('#arrivalBooking').val(dates[0]);
-            $('#exitBooking').val(dates[1]);
+            inputLeft.val(dates[0]);
+            inputRight.val(dates[1]);
           },
         })
         .data('datepicker')
         .selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
       $(this).hide();
       const handleDateClick = () => $('.js-calendar4').toggle();
-      $(this).siblings('#arrivalBooking').on('click', handleDateClick);
-      $(this)
-        .closest('.form-booking')
-        .find('#exitBooking')
-        .on('click', handleDateClick);
+      inputLeft.on('click', handleDateClick);
+      inputRight.on('click', handleDateClick);
 
       let width;
 

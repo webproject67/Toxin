@@ -1,5 +1,4 @@
 extends ../../layouts/layout
-include ../../blocks/subtitle/subtitle
 include ../../blocks/dropdown-date/dropdown-date
 include ../../blocks/dropdown-list/dropdown-list
 include ../../blocks/range/range
@@ -244,33 +243,25 @@ block content
   main.search-room
     aside.search-room__filters
       .search-room__item
-        .search-room__subtitle
-          +subtitle({ id: 'input7', text: 'даты пребывания в отеле', tag: 'label' })
-        +dropdown-date({ id: 'input7', value: '19 авг - 23 авг', js: 'calendar2' })
+        +dropdown-date({ text: 'даты пребывания в отеле', value: '19 авг - 23 авг', js: 'calendar2' })
       .search-room__item
-        .search-room__subtitle
-          +subtitle({ id: 'input12', text: 'гости', tag: 'label' })
-        +dropdown-list({ id: 'input12', value: '3 гостя, 1 младенец', list: guests, additionalButtons: true })
+        +dropdown-list({ text: 'гости', value: '3 гостя, 1 младенец', list: guests, additionalButtons: true })
       .search-room__item
         +range({ text: 'диапазон цены', desc: 'Стоимость за сутки пребывания в номере', selected: '5 000₽ - 10 000₽' })
       .search-room__item
-        .search-room__subtitle
-          +subtitle({ text: 'правила дома' })
+        h3.search-room__subtitle правила дома
         each val in rules
           .search-room__checkbox
             +checkbox(val)
       .search-room__item
-        .search-room__subtitle
-          +subtitle({ text: 'доступность' })
+        h3.search-room__subtitle доступность
         each val in accessibility
           .search-room__checkbox-access
             +checkbox(val)
       .search-room__item
-        .search-room__subtitle
-          +subtitle({ id: 'input9', text: 'удобства номера', tag: 'label' })
-        +dropdown-list({ id: 'input9', value: '2 спальни, 2 кровати...', list: rooms })
+        +dropdown-list({ text: 'удобства номера', value: '2 спальни, 2 кровати...', list: rooms })
       .search-room__item
-        +checkbox-list({ value: 'ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА', checkboxes: conveniences })
+        +checkbox-list({ value: 'дополнительные удобства', checkboxes: conveniences })
     section.search-room__rooms
       h1.search-room__title Номера, которые мы для вас подобрали
       .search-room__cards

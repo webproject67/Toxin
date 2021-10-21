@@ -9,6 +9,7 @@
     font-size: 12px;
     line-height: 15px;
     color: $color;
+    text-transform: uppercase;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -20,6 +21,7 @@
       right: 11px;
       font-family: MaterialIcons;
       font-size: 20px;
+      text-transform: none;
     }
   }
 

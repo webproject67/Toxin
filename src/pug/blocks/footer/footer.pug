@@ -14,9 +14,7 @@ mixin footer(options)
     ];
 
   footer.footer(class=classes)
-    .footer__top(
-      class=state === 'displayed' ? 'footer__top_state_displayed' : false
-    )
+    .footer__top(class=state === 'displayed' ? 'footer__top_state_displayed' : false)
       .footer__block-logo 
         .footer__logo-header
           +logo
@@ -31,7 +29,7 @@ mixin footer(options)
       .footer__block-subscription
         h3.footer__title Подписка
         p.footer__subscription Получайте специальные предложения и новости сервиса
-        +subscription({ placeholder: 'Email' })
+        +subscription({ placeholder: 'Email', state: 'up' })
     .footer__streak(
       class=state === 'displayed' ? 'footer__streak_state_displayed' : false
     )

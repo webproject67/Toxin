@@ -1,4 +1,3 @@
-include ../subtitle/subtitle
 include ../dropdown-date/dropdown-date
 include ../dropdown-list/dropdown-list
 include ../button/button
@@ -8,16 +7,10 @@ mixin form-search(options)
     h1.form-search__title Найдём номера под ваши пожелания
     .form-search__dates
       .form-search__date
-        .form-search__subtitle
-          +subtitle({ id: 'arrivalSearch', text: 'прибытие', tag: 'label' })
-        +dropdown-date({ id: 'arrivalSearch', value: 'ДД.ММ.ГГГГ', js: 'calendar3' })
+        +dropdown-date({ text: 'прибытие', value: 'ДД.ММ.ГГГГ', js: 'calendar3' })
       .form-search__date
-        .form-search__subtitle
-          +subtitle({ id: 'exitSearch', text: 'выезд', tag: 'label' })
-        +dropdown-date({ id: 'exitSearch', value: 'ДД.ММ.ГГГГ' })
+        +dropdown-date({ text: 'выезд', value: 'ДД.ММ.ГГГГ' })
     .form-search__guests
-      .form-search__subtitle
-        +subtitle({ id: 'guestsSearch', text: 'гости', tag: 'label' })
-      +dropdown-list({ id: 'guestsSearch', value: 'Сколько гостей', list: options, additionalButtons: true })
+      +dropdown-list({ text: 'гости', value: 'Сколько гостей', list: options, additionalButtons: true })
     .form-search__submit 
-      +button({ text: 'ПОДОБРАТЬ НОМЕР', type: 'button', theme: 'filled', icon: 'arrow' })
+      +button({ text: 'подобрать номер', type: 'button', theme: 'filled', icon: 'arrow' })

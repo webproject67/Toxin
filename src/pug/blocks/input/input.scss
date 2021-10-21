@@ -1,43 +1,78 @@
 .input {
   position: relative;
-  z-index: 3;
-  width: 100%;
-  padding: 13px;
-  background: transparent;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  transition: all 0.4s ease;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color;
+  cursor: pointer;
 
-  &_cursor_pointer {
-    cursor: pointer;
-  }
-
-  &_size_indentation {
-    padding-right: 44px;
-  }
-
-  &_theme_bordered {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    border-radius: 2px;
-  }
-
-  &::placeholder {
-    color: $color-25;
-    transition: all 0.4s ease;
-  }
-
-  &:hover,
-  &:focus,
-  &_state_hovering {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-
-    &::placeholder {
-      color: $color-75;
+  &_icon_arrow {
+    &::before {
+      position: absolute;
+      z-index: 2;
+      content: 'expand_more';
+      top: 29px;
+      right: 10px;
+      font-family: MaterialIcons;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 24px;
+      color: $color-50;
+      text-transform: none;
     }
   }
 
-  &[pattern]:invalid {
-    color: red;
-    border: 1px solid red;
+  &__desc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: normal;
+    color: $color-50;
+  }
+
+  &__text-field {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 13px;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+
+    &_cursor_pointer {
+      cursor: pointer;
+    }
+
+    &_size_indentation {
+      padding-right: 44px;
+    }
+
+    &_theme_bordered {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      border-radius: 2px;
+    }
+
+    &::placeholder {
+      color: $color-25;
+      transition: all 0.4s ease;
+    }
+
+    &:hover,
+    &:focus,
+    &_state_hovering {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+
+      &::placeholder {
+        color: $color-75;
+      }
+    }
+
+    &[pattern]:invalid {
+      color: red;
+      border: 1px solid red;
+    }
   }
 }

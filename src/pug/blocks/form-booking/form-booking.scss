@@ -49,15 +49,11 @@
   &__dates {
     display: flex;
     justify-content: space-between;
-    margin: 6px 0 20px;
+    margin: 2px 0 16px;
   }
 
   &__date {
     max-width: 150px;
-  }
-
-  &__subtitle {
-    margin-bottom: 5px;
   }
 
   &__list {

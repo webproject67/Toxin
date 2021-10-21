@@ -2,7 +2,7 @@ include ../../blocks/input/input
 
 mixin dropdown-date(options)
   -
-    const { id, value, js } = options;
+    const { text, value, js } = options;
 
     const jsClass = {
       calendar1: 'js-calendar1',
@@ -17,5 +17,5 @@ mixin dropdown-date(options)
     ];
 
   .dropdown-date
-    +input({ id, value, readonly: 'readonly', cursor: 'pointer' })
+    +input({ text, value, readonly: 'readonly', cursor: 'pointer', icon: 'arrow' })
     div(class=classes)

@@ -1,6 +1,5 @@
 extends ../../layouts/ui-kit-layout
 include ../../blocks/logo-ui-kit/logo-ui-kit
-include ../../blocks/subtitle/subtitle
 include ../../blocks/input/input
 include ../../blocks/dropdown-list/dropdown-list
 include ../../blocks/button/button
@@ -202,66 +201,45 @@ block body
       h1.form-elements__title Form Elements
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input1', text: 'Text Field', desc: 'default', tag: 'label' })
-          +input({ id: 'input1', placeholder: 'Email' })
+          +input({ text: 'Text Field', desc: 'default', placeholder: 'Email' })
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input2', text: 'Text Field', desc: 'Hover / Focus', tag: 'label' })
-          +input({ state: 'hovering', id: 'input2', placeholder: 'This is pretty awesome' })
+          +input({ state: 'hovering', text: 'Text Field', desc: 'Hover / Focus', placeholder: 'This is pretty awesome' })
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input3', text: 'dropdown', tag: 'label' })
-          +dropdown-list({ id: 'input3', value: 'Сколько гостей', list: guests1, additionalButtons: true })
+          +dropdown-list({ text: 'dropdown', value: 'Сколько гостей', list: guests1, additionalButtons: true })
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input4', text: 'masked text field', tag: 'label' })
-          +input({ id: 'input4', placeholder: 'ДД.ММ.ГГГГ', js: 'birthDate', maxlength: 10, pattern: dateFormat })
+          +input({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', js: 'birthDate', maxlength: 10, pattern: dateFormat })
         .form-elements__item.form-elements__item_size_displayed
           .form-elements__item-date
-            .form-elements__subtitle
-              +subtitle({ id: 'input5', text: 'date dropdown', tag: 'label' })
-            +dropdown-date({ id: 'input5', value: 'ДД.ММ.ГГГГ', js: 'calendar1' })
+            +dropdown-date({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ', js: 'calendar1' })
           .form-elements__item-date
-            .form-elements__subtitle
-              +subtitle({ id: 'input6', text: 'date dropdown', tag: 'label' })
-            +dropdown-date({ id: 'input6', value: 'ДД.ММ.ГГГГ' })
+            +dropdown-date({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ' })
         .form-elements__item.form-elements__item_size_narrow
-          .form-elements__subtitle
-            +subtitle({ id: 'input7', text: 'filter date dropdown', tag: 'label' })
-          +dropdown-date({ id: 'input7', value: '19 авг - 23 авг', js: 'calendar2' })
+          +dropdown-date({ text: 'filter date dropdown', value: '19 авг - 23 авг', js: 'calendar2' })
         .form-elements__item.form-elements__item_size_narrow
-          .form-elements__subtitle
-            +subtitle({ id: 'input8', text: 'subscription text field', tag: 'label' })
-          +subscription({ id: 'input8', placeholder: 'Email' })
+          +subscription({ text: 'subscription text field', placeholder: 'Email' })
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'Checkbox Buttons' })
+          h3.form-elements__subtitle Checkbox Buttons
           each val in rules
             .form-elements__checkbox
               +checkbox(val)
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'Radio Buttons' })
+          h3.form-elements__subtitle Radio Buttons
           .form-elements__radio
             each val in genders
               +radio(val) 
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'Toggle' })
+          h3.form-elements__subtitle Toggle
           each val in specialOffers
             .form-elements__toggle
               +toggle(val) 
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'Like button' })
+          h3.form-elements__subtitle Like button
           .form-elements__like
             each val in likes
               +like(val) 
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'Rate button' })
+          h3.form-elements__subtitle Rate button
           .form-elements__rate
             each val in rates
               +rate(val) 
@@ -269,8 +247,7 @@ block body
         .form-elements__item.form-elements__item_size_narrow
           +range({ text: 'Range Slider', selected: '5 000₽ - 10 000₽' })
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'buttons' })
+          h3.form-elements__subtitle buttons
           .form-elements__buttons-filled
             +button({ text: 'click me', type: 'button', theme: 'filled' })
             +button({ text: 'click me', type: 'button', theme: 'filled', state: 'hovering' })
@@ -281,47 +258,36 @@ block body
             +button({ text: 'click me', type: 'button' })
             +button({ text: 'click me', type: 'button', state : 'hovering' })
           .form-elements__button
-            +button({ text: 'ПЕРЕЙТИ К ОПЛАТЕ', type: 'button', theme: 'filled', icon: 'arrow' })
+            +button({ text: 'перейти к оплате', type: 'button', theme: 'filled', icon: 'arrow' })
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'pagination' })
+          h3.form-elements__subtitle pagination
           .form-elements__pagination
             +pagination
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input9', text: 'dropdown', desc: 'default', tag: 'label' })
-          +dropdown-list({ id: 'input9', value: '2 спальни, 2 кровати...', list: rooms })
+          +dropdown-list({ text: 'dropdown', desc: 'default', value: '2 спальни, 2 кровати...', list: rooms })
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input10', text: 'dropdown', desc: 'expanded', tag: 'label' })
-          +dropdown-list({ id: 'input10', value: '2 спальни, 2 кровати...', list: rooms, state: 'displayed', theme: 'bordered' })
+          +dropdown-list({ text: 'dropdown', desc: 'expanded', value: '2 спальни, 2 кровати...', list: rooms, state: 'displayed', theme: 'bordered' })
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input11', text: 'dropdown', tag: 'label' })
-          +dropdown-list({ id: 'input11', value: 'Сколько гостей', list: guests1, additionalButtons: true, state: 'displayed', theme: 'bordered' })
+          +dropdown-list({ text: 'dropdown', value: 'Сколько гостей', list: guests1, additionalButtons: true, state: 'displayed', theme: 'bordered' })
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ id: 'input12', text: 'dropdown', tag: 'label' })
-          +dropdown-list({ id: 'input12', value: '3 гостя', list: guests2, additionalButtons: true, state: 'displayed', theme: 'bordered' })
+          +dropdown-list({ text: 'dropdown', value: '3 гостя', list: guests2, additionalButtons: true, state: 'displayed', theme: 'bordered' })
       .form-elements__list
         .form-elements__item
-          +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', checkboxes: conveniences })
+          +checkbox-list({ value: 'expandable checkbox list', checkboxes: conveniences })
         .form-elements__item
-          +checkbox-list({ value: 'EXPANDABLE CHECKBOX LIST', checkboxes: conveniences, state: 'active' })
+          +checkbox-list({ value: 'expandable checkbox list', checkboxes: conveniences, state: 'active' })
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'rich Checkbox Buttons' })
+          h3.form-elements__subtitle rich Checkbox Buttons
           each val in accessibility
             .form-elements__checkbox-access
               +checkbox(val)
       .form-elements__list
         .form-elements__item
-          .form-elements__subtitle
-            +subtitle({ text: 'bullet list' })
+          h3.form-elements__subtitle bullet list
           +bullet-list(bulletLists)
       .form-elements__list
         .form-elements__item

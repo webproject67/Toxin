@@ -1,6 +1,5 @@
 include ../input/input
 include ../radio/radio
-include ../subtitle/subtitle
 include ../toggle/toggle
 
 mixin form-sign-up(options)
@@ -19,13 +18,9 @@ mixin form-sign-up(options)
       each val in genders
         +radio(val)
     .form-sign-up__birthday
-      .form-sign-up__subtitle
-        +subtitle({ id: 'birthDate', text: 'дата рождения', tag: 'label' })
-      +input({ id: 'birthDate', placeholder: 'ДД.ММ.ГГГГ', js: 'birthDate', maxlength: 10, pattern: dateFormat })
+      +input({ text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', js: 'birthDate', maxlength: 10, pattern: dateFormat })
     .form-sign-up__email
-      .form-sign-up__subtitle
-        +subtitle({ id: 'email', text: 'данные для входа в сервис', tag: 'label' })
-      +input({ id: 'email', type: 'email', placeholder: 'Email' })
+      +input({ text: 'данные для входа в сервис', type: 'email', placeholder: 'Email' })
     .form-sign-up__password
       +input({ type: 'password', placeholder: 'Пароль' })
     .form-sign-up__checkbox
