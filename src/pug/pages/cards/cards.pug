@@ -81,7 +81,7 @@ block body
         price: '9 990',
         count: 5,
         review: 145,
-        images: ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'],
+        images: ['room-1.jpg', 'room-2.jpg', 'room-3.jpg', 'room-4.jpg'],
         state: 'hovering'
       },
       {
@@ -89,7 +89,7 @@ block body
         price: '9 900',
         count: 4,
         review: 65,
-        images: ['image2.jpg', 'image1.jpg', 'image4.jpg', 'image3.jpg']
+        images: ['room-2.jpg', 'room-1.jpg', 'room-4.jpg', 'room-3.jpg']
       }
     ];
 
@@ -102,7 +102,7 @@ block body
       .cards__list
         +form-booking({ prices, guests: guestsBooking })
       .cards__list.cards__list_size_middle
-        .dropdown-date.js-calendar5
+        .dropdown-date.js-calendarNoInput
       .cards__list
         +form-sign-up({ genders, textSubmit: 'перейти к оплате' })
       .cards__list

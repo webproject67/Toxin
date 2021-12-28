@@ -8,10 +8,10 @@
       $(evt.target).closest('.datepicker--nav-action').length;
 
     if (clickOnAClass()) return;
-    $('.js-calendar1').hide();
-    $('.js-calendar2').hide();
-    $('.js-calendar3').hide();
-    $('.js-calendar4').hide();
+    $('.js-calendarTwoInputsHalfEmpty').hide();
+    $('.js-calendarOneInput').hide();
+    $('.js-calendarTwoInputsEmpty').hide();
+    $('.js-calendarTwoInputsFilled').hide();
   };
 
   const getOptionsDatepicker = (input) => {
@@ -35,7 +35,7 @@
     $(document).on('click', handleDocumentClick);
   };
 
-  $.fn.calendar1 = function () {
+  $.fn.twoInputsHalfEmpty = function () {
     this.each(function () {
       const dropdown = $(this).parents('.form-elements__item');
       const inputLeft = dropdown.find('.input__text-field:first');
@@ -60,7 +60,8 @@
         .data('datepicker')
         .selectDate([new Date(2019, 7, 8), new Date(2019, 7, 19)]);
       $(this).hide();
-      const handleDateClick = () => $('.js-calendar1').toggle();
+      const handleDateClick = () =>
+        $('.js-calendarTwoInputsHalfEmpty').toggle();
       inputLeft.on('click', handleDateClick);
       inputRight.on('click', handleDateClick);
 
@@ -77,7 +78,7 @@
     return this;
   };
 
-  $.fn.calendar2 = function () {
+  $.fn.oneInput = function () {
     this.each(function () {
       const dropdown = $(this).parents('.dropdown-date');
       const inputLeft = dropdown.find('.input__text-field');
@@ -137,14 +138,14 @@
         .data('datepicker')
         .selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
       $(this).hide();
-      const handleDateClick = () => $('.js-calendar2').toggle();
+      const handleDateClick = () => $('.js-calendarOneInput').toggle();
       inputLeft.on('click', handleDateClick);
       $(this).find('.datepicker').width(264);
     });
     return this;
   };
 
-  $.fn.calendar3 = function () {
+  $.fn.twoInputsEmpty = function () {
     this.each(function () {
       const dropdown = $(this).parents('.form-search__dates');
       const inputLeft = dropdown.find('.input__text-field:first');
@@ -160,7 +161,7 @@
         })
         .data('datepicker');
       $(this).hide();
-      const handleDateClick = () => $('.js-calendar3').toggle();
+      const handleDateClick = () => $('.js-calendarTwoInputsEmpty').toggle();
       inputLeft.on('click', handleDateClick);
       inputRight.on('click', handleDateClick);
 
@@ -177,7 +178,7 @@
     return this;
   };
 
-  $.fn.calendar4 = function () {
+  $.fn.twoInputsFilled = function () {
     this.each(function () {
       const dropdown = $(this).parents('.form-booking__dates');
       const inputLeft = dropdown.find('.input__text-field:first');
@@ -194,7 +195,7 @@
         .data('datepicker')
         .selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
       $(this).hide();
-      const handleDateClick = () => $('.js-calendar4').toggle();
+      const handleDateClick = () => $('.js-calendarTwoInputsFilled').toggle();
       inputLeft.on('click', handleDateClick);
       inputRight.on('click', handleDateClick);
 
@@ -211,7 +212,7 @@
     return this;
   };
 
-  $.fn.calendar5 = function () {
+  $.fn.noInput = function () {
     this.each(function () {
       getOptionsDatepicker($(this));
       $(this)

@@ -186,7 +186,7 @@ block body
     ];
 
     const feedbacks = {
-      image: 'image16', 
+      image: 'avatar-1', 
       value: 12,
       state: 'active',
       name: 'Мурад Сарафанов', 
@@ -210,11 +210,11 @@ block body
           +input({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', js: 'birthDate', maxlength: 10, pattern: dateFormat })
         .form-elements__item.form-elements__item_size_displayed
           .form-elements__item-date
-            +dropdown-date({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ', js: 'calendar1' })
+            +dropdown-date({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ', js: 'calendarTwoInputsHalfEmpty' })
           .form-elements__item-date
             +dropdown-date({ text: 'date dropdown', value: 'ДД.ММ.ГГГГ' })
         .form-elements__item.form-elements__item_size_narrow
-          +dropdown-date({ text: 'filter date dropdown', value: '19 авг - 23 авг', js: 'calendar2' })
+          +dropdown-date({ text: 'filter date dropdown', value: '19 авг - 23 авг', js: 'calendarOneInput' })
         .form-elements__item.form-elements__item_size_narrow
           +subscription({ text: 'subscription text field', placeholder: 'Email' })
       .form-elements__list
