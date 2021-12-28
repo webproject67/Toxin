@@ -13,13 +13,13 @@ module.exports = {
   entry: './src/scripts/index.ts',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'docs'),
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: path.resolve(__dirname, 'docs'),
     port: 9000,
   },
   plugins: [
@@ -42,14 +42,14 @@ module.exports = {
     new CopyPlugin([
       {
         from: path.resolve(__dirname, 'src/assets/favicon/*.{png,svg}'),
-        to: path.resolve(__dirname, 'public/img/favicon/[name].[ext]'),
+        to: path.resolve(__dirname, 'docs/img/favicon/[name].[ext]'),
       },
       {
         from: path.resolve(
           __dirname,
           'src/assets/favicon/*.{xml,webmanifest,ico}'
         ),
-        to: path.resolve(__dirname, 'public/[name].[ext]'),
+        to: path.resolve(__dirname, 'docs/[name].[ext]'),
       },
     ]),
     new ImageminPlugin({
