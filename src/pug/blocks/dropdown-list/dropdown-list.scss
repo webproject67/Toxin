@@ -8,11 +8,13 @@
     z-index: 4;
     display: none;
     width: 100%;
+    margin: 0;
     padding: 0 7px 6px 13px;
     background: #ffffff;
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 2px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    list-style: none;
 
     &_state_displayed {
       display: block;

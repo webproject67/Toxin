@@ -5,6 +5,7 @@ mixin button(options)
     const tag = {
       link: 'a',
       button: 'button',
+      submit: 'button',
     }
 
     const themeModifiers = {
@@ -31,4 +32,6 @@ mixin button(options)
       sizeModifiers[size],
     ];
 
-  #{tag[type]}.button(class=classes, href=href)= text
+    const buttonType = type === 'submit' && type;
+
+  #{tag[type]}.button(class=classes, type=buttonType, href=href)= text

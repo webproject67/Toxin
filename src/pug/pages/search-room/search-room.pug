@@ -264,9 +264,9 @@ block content
         +checkbox-list({ value: 'дополнительные удобства', checkboxes: conveniences })
     section.search-room__rooms
       h1.search-room__title Номера, которые мы для вас подобрали
-      .search-room__cards
+      ul.search-room__cards
         each val in cards
-          .search-room__card
+          li.search-room__card
             +card-room(val)
       .search-room__pagination
         +pagination
