@@ -13,4 +13,4 @@ mixin form-search(options)
     .form-search__guests
       +dropdown-list({ text: 'гости', value: 'Сколько гостей', list: options, additionalButtons: true })
     .form-search__submit 
-      +button({ text: 'подобрать номер', type: 'button', theme: 'filled', icon: 'arrow' })
+      +button({ text: 'подобрать номер', type: 'submit', theme: 'filled', icon: 'arrow' })

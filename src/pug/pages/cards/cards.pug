@@ -107,7 +107,7 @@ block body
         +form-sign-up({ genders, textSubmit: 'перейти к оплате' })
       .cards__list
         +form-sign-in
-      .cards__list.cards__list_size_middle
+      ul.cards__list.cards__list_size_middle
         each val in cards
-          .cards__card-room
+          li.cards__card-room
             +card-room(val)

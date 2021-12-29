@@ -11,9 +11,9 @@ mixin dropdown-list(options)
 
   .dropdown-list.js-dropdown-list
     +input({ text, desc, value, readonly: 'readonly', cursor: 'pointer', theme, icon: 'arrow' })
-    .dropdown-list__select(class=classes)
+    ul.dropdown-list__select(class=classes)
       each val in list
-        .dropdown-list__option
+        li.dropdown-list__option
           p.dropdown-list__text= val.text
           .dropdown-list__buttons 
             input.dropdown-list__btn(

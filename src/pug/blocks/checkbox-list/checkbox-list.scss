@@ -29,15 +29,18 @@
     transform: rotate(180deg);
   }
 
-  &_state_active #{&}__checkboxes {
+  &_state_active #{&}__list {
     display: block;
   }
 
-  &__checkboxes {
+  &__list {
     display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
-  &__checkbox {
+  &__item {
     margin-left: 30px;
     margin-bottom: 6px;
   }
