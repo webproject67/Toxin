@@ -21,87 +21,115 @@
 
     const inputOptionFirst = input.find(desc).text();
     if (inputOptionFirst === 'взрослые') {
-      const count1 = counts[0] + counts[1];
-      const count2 = counts[2];
-      const countMore1 = count1 >= 2;
-      const countLess1 = count1 <= 4;
-      const countResult1 = countMore1 && countLess1;
-      const countMore2 = count2 >= 2;
-      const countLess2 = count2 <= 4;
-      const countResult2 = countMore2 && countLess2;
+      const countGrownup = counts[0] + counts[1];
+      const countChildren = counts[2];
+      const countMoreGrownup = countGrownup >= 2;
+      const countLessGrownup = countGrownup <= 4;
+      const countResultGrownup = countMoreGrownup && countLessGrownup;
+      const countMoreChildren = countChildren >= 2;
+      const countLessChildren = countChildren <= 4;
+      const countResultChildren = countMoreChildren && countLessChildren;
 
-      let value1;
-      if (count1 === 0) {
-        value1 = 'Сколько гостей';
-      } else if (count1 === 1) {
-        value1 = 'гость';
-      } else if (countResult1) {
-        value1 = 'гостя';
+      let grownup;
+      if (countGrownup === 0) {
+        grownup = 'Сколько гостей';
+      } else if (countGrownup === 1) {
+        grownup = 'гость';
+      } else if (countResultGrownup) {
+        grownup = 'гостя';
       } else {
-        value1 = 'гостей';
+        grownup = 'гостей';
       }
 
-      let value2;
-      if (count2 === 1) {
-        value2 = 'младенец';
-      } else if (countResult2) {
-        value2 = 'младенца';
+      let children;
+      if (countChildren === 1) {
+        children = 'младенец';
+      } else if (countResultChildren) {
+        children = 'младенца';
       } else {
-        value2 = 'младенцев';
+        children = 'младенцев';
       }
 
-      const count1Bool = count1 === 0;
-      const count2Bool = count2 === 0;
-      const countResult3 = count1Bool && count2Bool;
-      if (countResult3) {
-        input.find(result).val(`${value1}`);
-      } else if (count1Bool) {
-        input.find(result).val(`${count2} ${value2}`);
-      } else if (count2Bool) {
-        input.find(result).val(`${count1} ${value1}`);
-      } else {
-        input.find(result).val(`${count1} ${value1}, ${count2} ${value2}`);
-      }
-    } else if (inputOptionFirst === 'спальни') {
-      let value1;
-      const countMore1 = counts[0] >= 2;
-      const countLess1 = counts[0] <= 4;
-      const countResult1 = countMore1 && countLess1;
-      if (counts[0] === 0) {
-        value1 = 'Сколько спален';
-      } else if (counts[0] === 1) {
-        value1 = 'спальня';
-      } else if (countResult1) {
-        value1 = 'спальни';
-      } else {
-        value1 = 'спален';
-      }
-
-      let value2;
-      const countMore2 = counts[1] >= 2;
-      const countLess2 = counts[1] <= 4;
-      const countResult2 = countMore2 && countLess2;
-      if (counts[1] === 1) {
-        value2 = 'кровать';
-      } else if (countResult2) {
-        value2 = 'кровати';
-      } else {
-        value2 = 'кроватей';
-      }
-
-      const count1Bool = counts[0] === 0;
-      const count2Bool = counts[1] === 0;
-      const countResult = count1Bool && count2Bool;
+      const countGrownupBool = countGrownup === 0;
+      const countChildrenBool = countChildren === 0;
+      const countResult = countGrownupBool && countChildrenBool;
       if (countResult) {
-        input.find(result).val(`${value1}`);
-      } else if (count1Bool) {
-        input.find(result).val(`${counts[1]} ${value2}`);
-      } else if (count2Bool) {
-        input.find(result).val(`${counts[0]} ${value1}`);
+        input.find(result).val(`${grownup}`);
+      } else if (countGrownupBool) {
+        input.find(result).val(`${countChildren} ${children}`);
+      } else if (countChildrenBool) {
+        input.find(result).val(`${countGrownup} ${grownup}`);
       } else {
         input
           .find(result)
-          .val(`${counts[0]} ${value1}, ${counts[1]} ${value2}...`);
+          .val(`${countGrownup} ${grownup}, ${countChildren} ${children}`);
+      }
+    } else if (inputOptionFirst === 'спальни') {
+      let bedroom;
+      const countMoreBedroom = counts[0] >= 2;
+      const countLessBedroom = counts[0] <= 4;
+      const countResultBedroom = countMoreBedroom && countLessBedroom;
+      if (counts[0] === 0) {
+        bedroom = 'Сколько спален';
+      } else if (counts[0] === 1) {
+        bedroom = 'спальня';
+      } else if (countResultBedroom) {
+        bedroom = 'спальни';
+      } else {
+        bedroom = 'спален';
+      }
+
+      let bed;
+      const countMoreBed = counts[1] >= 2;
+      const countLessBed = counts[1] <= 4;
+      const countResultBed = countMoreBed && countLessBed;
+      if (counts[1] === 1) {
+        bed = 'кровать';
+      } else if (countResultBed) {
+        bed = 'кровати';
+      } else {
+        bed = 'кроватей';
+      }
+
+      let bathroom;
+      const countMoreBathroom = counts[2] >= 2;
+      const countLessBathroom = counts[2] <= 4;
+      const countResultBathroom = countMoreBathroom && countLessBathroom;
+      if (counts[2] === 1) {
+        bathroom = 'ванная комната';
+      } else if (countResultBathroom) {
+        bathroom = 'ванные комнаты';
+      } else {
+        bathroom = 'ванных комнат';
+      }
+
+      const countBedroomNull = counts[0] === 0;
+      const countBedNull = counts[1] === 0;
+      const countBathroomNull = counts[2] === 0;
+      const countNull = countBedroomNull && countBedNull && countBathroomNull;
+      const countBedroom = countBedNull && countBathroomNull;
+      const countBed = countBedroomNull && countBathroomNull;
+      const countBathroom = countBedroomNull && countBedNull;
+      if (countNull) {
+        input.find(result).val(`${bedroom}`);
+      } else if (countBedroom) {
+        input.find(result).val(`${counts[0]} ${bedroom}`);
+      } else if (countBed) {
+        input.find(result).val(`${counts[1]} ${bed}`);
+      } else if (countBathroom) {
+        input.find(result).val(`${counts[2]} ${bathroom}`);
+      } else if (countBedroomNull) {
+        input.find(result).val(`${counts[1]} ${bed}, ${counts[2]} ${bathroom}`);
+      } else if (countBathroomNull) {
+        input.find(result).val(`${counts[0]} ${bedroom}, ${counts[1]} ${bed}`);
+      } else if (countBedNull) {
+        input
+          .find(result)
+          .val(`${counts[0]} ${bedroom}, ${counts[2]} ${bathroom}`);
+      } else {
+        input
+          .find(result)
+          .val(`${counts[0]} ${bedroom}, ${counts[1]} ${bed}...`);
       }
     }
   };
